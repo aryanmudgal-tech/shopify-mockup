@@ -1,0 +1,709 @@
+{
+  "fetched_at": "2026-11-15T17:25:22.619Z",
+  "url": "https://mygarvee.myshopify.com/api/ucp/mcp",
+  "final_url": "https://mygarvee.myshopify.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "search_catalog",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/valid-with-capabilities.json"
+          }
+        },
+        "catalog": {
+          "query": "swatch",
+          "pagination": {
+            "limit": 10
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"services\":{\"dev.ucp.shopping\":[]},\"capabilities\":{\"dev.ucp.shopping.checkout\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/checkout/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/checkout.json\"}],\"dev.ucp.shopping.fulfillment\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}},\"config\":{\"multi_destination\":[],\"method_combinations\":[[\"shipping\"]]}}],\"dev.ucp.shopping.buyer_consent\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json\",\"extends\":[\"dev.ucp.shopping.cart\",\"dev.ucp.shopping.checkout\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.discount\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/discount.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.cart\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/cart/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/cart.json\"}],\"dev.ucp.shopping.order\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/order/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/order.json\"}],\"dev.ucp.shopping.catalog.search\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json\"}],\"dev.ucp.shopping.catalog.lookup\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json\"}],\"dev.shopify.catalog\":[{\"version\":\"2026-08-25\",\"spec\":\"https://shopify.dev/docs/agents/catalog/storefront-catalog\",\"schema\":\"https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json\",\"extends\":[\"dev.ucp.shopping.catalog.search\",\"dev.ucp.shopping.catalog.lookup\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}]},\"payment_handlers\":{\"com.google.pay\":[{\"id\":\"gpay\",\"version\":\"2026-01-11\",\"spec\":\"https://pay.google.com/gp/p/ucp/2026-01-11/\",\"schema\":\"https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json\",\"config\":{\"api_version\":2,\"api_version_minor\":0,\"merchant_info\":{\"merchant_name\":\"GARVEE\",\"merchant_id\":\"16708973830884969730\",\"merchant_origin\":\"www.garvee.com\",\"auth_jwt\":\"\"},\"allowed_payment_methods\":[{\"type\":\"CARD\",\"parameters\":{\"allowed_auth_methods\":[\"PAN_ONLY\",\"CRYPTOGRAM_3DS\"],\"allowed_card_networks\":[\"VISA\",\"MASTERCARD\",\"DISCOVER\",\"AMEX\",\"JCB\"],\"billing_address_required\":true,\"billing_address_parameters\":{\"format\":\"FULL\",\"phone_number_required\":true}},\"tokenization_specification\":{\"type\":\"PAYMENT_GATEWAY\",\"parameters\":{\"gateway\":\"shopify\",\"gatewayMerchantId\":\"72466989369\"}}}]}}],\"dev.shopify.card\":[{\"id\":\"shopify.card\",\"version\":\"2026-01-15\",\"spec\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md\",\"schema\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json\",\"config\":{\"payment_methods\":[{\"type\":\"card\",\"enabled_card_brands\":[\"visa\",\"master\",\"discover\",\"american_express\",\"diners_club\",\"cartes_bancaires\",\"jcb\",\"unionpay\",\"visaelectron\",\"maestro\"]}]}}],\"dev.shopify.shop_pay\":[{\"id\":\"shop_pay\",\"version\":\"2026-04-08\",\"spec\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md\",\"schema\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json\",\"config\":{\"shop_id\":\"72466989369\"}}]}},\"products\":[{\"id\":\"gid://shopify/Product/10081897283897\",\"title\":\"Garvee 10L Commercial Ultrasonic Cleaner, 40kHz Digital Timer Heater Stainless Steel for Jewelry Watches Glasses\",\"description\":{\"html\":\".garvee-uc10 { max-width: 1120px; margin: 0 auto; overflow: hidden; background: #ffffff; color: #202a30; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; } .garvee-uc10 * { box-sizing: border-box; } .garvee-uc10 img { display: block; width: 100%; height: auto; object-fit: contain; } .garvee-uc10 h1, .garvee-uc10 h2, .garvee-uc10 h3, .garvee-uc10 p { margin-top: 0; } .garvee-uc10 .uc-brand { padding: 15px 28px; background: #26343d; border-bottom: 4px solid #ed7024; color: #ffffff; font-size: 21px; font-weight: 800; letter-spacing: .08em; } .garvee-uc10 .uc-intro, .garvee-uc10 .uc-section { padding: 34px 5% 38px; background: #f3f5f5; text-align: center; } .garvee-uc10 .uc-label { margin-bottom: 7px; color: #a84916; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; } .garvee-uc10 h1 { margin-bottom: 12px; color: #202a30; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; } .garvee-uc10 h2 { margin-bottom: 14px; color: #202a30; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; } .garvee-uc10 .uc-intro p { max-width: 740px; margin: 0 auto; color: #52616a; font-size: 16px; } .garvee-uc10 .uc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc10 .uc-card { min-width: 0; padding: 18px 15px; background: #ffffff; border: 1px solid #dfe5e7; border-top: 4px solid #ed7024; } .garvee-uc10 .uc-card strong { display: block; margin-bottom: 6px; color: #b94f15 !important; font-size: 22px; line-height: 1.15; overflow-wrap: anywhere; } .garvee-uc10 .uc-card span { color: #26343d !important; font-size: 13px; font-weight: 700; line-height: 1.35; } .garvee-uc10 .uc-features { padding: 34px 5% 38px; background: #ffffff; text-align: center; } .garvee-uc10 .uc-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc10 .uc-feature { padding: 18px; background: #f3f5f5; border-left: 4px solid #ed7024; } .garvee-uc10 .uc-feature h3 { margin-bottom: 6px; color: #202a30; font-size: 18px; line-height: 1.25; } .garvee-uc10 .uc-feature p { margin-bottom: 0; color: #52616a; font-size: 14px; } .garvee-uc10 .uc-note { margin: 18px auto 0; max-width: 760px; color: #52616a; font-size: 13px; } @media (max-width: 680px) { .garvee-uc10 .uc-brand { padding: 11px 16px; font-size: 17px; } .garvee-uc10 .uc-intro, .garvee-uc10 .uc-section, .garvee-uc10 .uc-features { padding: 25px 14px 28px; } .garvee-uc10 h1 { font-size: 28px; } .garvee-uc10 h2 { font-size: 24px; } .garvee-uc10 .uc-intro p { font-size: 15px; } .garvee-uc10 .uc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .garvee-uc10 .uc-card { padding: 13px 11px; } .garvee-uc10 .uc-card strong { font-size: 19px; } .garvee-uc10 .uc-feature-grid { gap: 8px; } .garvee-uc10 .uc-feature { padding: 13px 11px; } .garvee-uc10 .uc-feature h3 { font-size: 16px; } .garvee-uc10 .uc-feature p { font-size: 13px; line-height: 1.45; } } GARVEE Digital Ultrasonic Cleaner 10L Ultrasonic Cleaner A stainless-steel ultrasonic cleaner with digital time and temperature settings for compatible jewelry, tools and metal parts. Product Highlights Cleaning Control at a Glance 10L Tank Capacity 40kHz Ultrasonic Frequency 1–99 min Timer Setting 0–80°C Temperature Setting Key Features Designed for Adjustable Cleaning Digital Controls Set the cleaning time and temperature using the digital panel. Built-In Heating The heating function helps support cleaning when warmth is appropriate for the item and cleaning solution. 304 Stainless Steel The listed stainless-steel tank, basket and cover support everyday cleaning tasks. Compatible Items Suitable for compatible jewelry, metal parts and other items approved for ultrasonic cleaning. Check that the item and cleaning solution are suitable for ultrasonic cleaning before use. Specifications 10L Model Details 300W Listed Heating Power 304 Stainless Steel 300 × 240 × 150 mm Tank Size · L × W × H 360 × 270 × 280 mm Overall Size · L × W × H\"},\"url\":\"https://www.garvee.com/products/garvee-ultrasonic-cleaner-10l-digital-timer-heater-watch-phk_014ax0ib\",\"handle\":\"garvee-ultrasonic-cleaner-10l-digital-timer-heater-watch-phk_014ax0ib\",\"price_range\":{\"min\":{\"amount\":13699,\"currency\":\"USD\"},\"max\":{\"amount\":13699,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":20599,\"currency\":\"USD\"},\"max\":{\"amount\":20599,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/51475365724473\",\"sku\":\"PIS_014AX0IB\",\"title\":\"10L\",\"description\":{\"html\":\".garvee-uc10 { max-width: 1120px; margin: 0 auto; overflow: hidden; background: #ffffff; color: #202a30; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; } .garvee-uc10 * { box-sizing: border-box; } .garvee-uc10 img { display: block; width: 100%; height: auto; object-fit: contain; } .garvee-uc10 h1, .garvee-uc10 h2, .garvee-uc10 h3, .garvee-uc10 p { margin-top: 0; } .garvee-uc10 .uc-brand { padding: 15px 28px; background: #26343d; border-bottom: 4px solid #ed7024; color: #ffffff; font-size: 21px; font-weight: 800; letter-spacing: .08em; } .garvee-uc10 .uc-intro, .garvee-uc10 .uc-section { padding: 34px 5% 38px; background: #f3f5f5; text-align: center; } .garvee-uc10 .uc-label { margin-bottom: 7px; color: #a84916; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; } .garvee-uc10 h1 { margin-bottom: 12px; color: #202a30; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; } .garvee-uc10 h2 { margin-bottom: 14px; color: #202a30; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; } .garvee-uc10 .uc-intro p { max-width: 740px; margin: 0 auto; color: #52616a; font-size: 16px; } .garvee-uc10 .uc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc10 .uc-card { min-width: 0; padding: 18px 15px; background: #ffffff; border: 1px solid #dfe5e7; border-top: 4px solid #ed7024; } .garvee-uc10 .uc-card strong { display: block; margin-bottom: 6px; color: #b94f15 !important; font-size: 22px; line-height: 1.15; overflow-wrap: anywhere; } .garvee-uc10 .uc-card span { color: #26343d !important; font-size: 13px; font-weight: 700; line-height: 1.35; } .garvee-uc10 .uc-features { padding: 34px 5% 38px; background: #ffffff; text-align: center; } .garvee-uc10 .uc-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc10 .uc-feature { padding: 18px; background: #f3f5f5; border-left: 4px solid #ed7024; } .garvee-uc10 .uc-feature h3 { margin-bottom: 6px; color: #202a30; font-size: 18px; line-height: 1.25; } .garvee-uc10 .uc-feature p { margin-bottom: 0; color: #52616a; font-size: 14px; } .garvee-uc10 .uc-note { margin: 18px auto 0; max-width: 760px; color: #52616a; font-size: 13px; } @media (max-width: 680px) { .garvee-uc10 .uc-brand { padding: 11px 16px; font-size: 17px; } .garvee-uc10 .uc-intro, .garvee-uc10 .uc-section, .garvee-uc10 .uc-features { padding: 25px 14px 28px; } .garvee-uc10 h1 { font-size: 28px; } .garvee-uc10 h2 { font-size: 24px; } .garvee-uc10 .uc-intro p { font-size: 15px; } .garvee-uc10 .uc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .garvee-uc10 .uc-card { padding: 13px 11px; } .garvee-uc10 .uc-card strong { font-size: 19px; } .garvee-uc10 .uc-feature-grid { gap: 8px; } .garvee-uc10 .uc-feature { padding: 13px 11px; } .garvee-uc10 .uc-feature h3 { font-size: 16px; } .garvee-uc10 .uc-feature p { font-size: 13px; line-height: 1.45; } } GARVEE Digital Ultrasonic Cleaner 10L Ultrasonic Cleaner A stainless-steel ultrasonic cleaner with digital time and temperature settings for compatible jewelry, tools and metal parts. Product Highlights Cleaning Control at a Glance 10L Tank Capacity 40kHz Ultrasonic Frequency 1–99 min Timer Setting 0–80°C Temperature Setting Key Features Designed for Adjustable Cleaning Digital Controls Set the cleaning time and temperature using the digital panel. Built-In Heating The heating function helps support cleaning when warmth is appropriate for the item and cleaning solution. 304 Stainless Steel The listed stainless-steel tank, basket and cover support everyday cleaning tasks. Compatible Items Suitable for compatible jewelry, metal parts and other items approved for ultrasonic cleaning. Check that the item and cleaning solution are suitable for ultrasonic cleaning before use. Specifications 10L Model Details 300W Listed Heating Power 304 Stainless Steel 300 × 240 × 150 mm Tank Size · L × W × H 360 × 270 × 280 mm Overall Size · L × W × H\"},\"price\":{\"amount\":13699,\"currency\":\"USD\"},\"list_price\":{\"amount\":20599,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Size\",\"label\":\"10L\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0724/6698/9369/files/71t0zuJ70WL.jpg?v=1766559166\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://mygarvee.myshopify.com/cart/51475365724473:1\"}],\"options\":[{\"name\":\"Size\",\"values\":[{\"label\":\"10L\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0724/6698/9369/files/71t0zuJ70WL.jpg?v=1766559166\",\"alt_text\":\"PIS_014AX0IB\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/hg-9-9\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Active-20251226\",\"CL#1_Power \\u0026 Hand Tools\",\"CL#2_Lab\",\"CL#3_Ultrasonic Cleaner\",\"discount__Save an Extra [5% Off] — Black Friday Exclusive with Code:BF5\",\"DTM_FB-202512-NEW\",\"FB-All Products\",\"FB-All Products-collection\",\"Home Improvement Deals\",\"Lab\",\"Members_林智超\",\"MK_Discount\",\"NEW90\",\"PCode 7AQBJ QKZUY\",\"Power \\u0026 Hand Tools\",\"Price drop until 2026.12.06\",\"tag__hot_Black Friday\",\"Time-20251224\",\"Ultrasonic Cleaner\",\"上架-B0DJM564CV\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/462297923897\",\"handle\":\"agriculture-forestry-equipment\",\"title\":\"Agriculture \\u0026 Forestry Equipment\",\"description\":{\"html\":\"Agriculture \\u0026 Forestry Equipment GARVEE offers agriculture and forestry equipment for farms, ranches, rural properties and backyard operations. Explore tractor attachments, land preparation tools, livestock fencing, poultry supplies and logging equipment for a wide range of property maintenance and agricultural tasks. Our tractor attachment selection includes pallet forks, hay spears, trailer hitches, scarifiers and other equipment for lifting, towing and material handling. For driveway and land maintenance, browse drag chain harrows, driveway drags, disc harrows and rakes designed for grading, leveling and surface preparation. Livestock and poultry owners can find livestock fencing, fence tools, chicken coops, nesting boxes, poultry feeders and other supplies for animal housing and daily care. Forestry and logging products include log tongs, cant hooks and chainsaw mills for handling and processing timber. Review each product page carefully for dimensions, rated capacity, mounting requirements and equipment compatibility. Choose the product that matches your tractor, loader, property size and intended task.\"}},{\"id\":\"gid://shopify/Collection/462381580601\",\"handle\":\"lab\",\"title\":\"Lab\",\"description\":{\"html\":\"Are you looking for some budget friendly lab equipment for your fledgling laboratory. Garvee has got your covered. We offer budget friendly Lab products and Cleaning Equipment without compromising on quality and features. These products are some among the best in the market and have been praised immensely by lab owners. Our Lab Incubators are our flagship products that can be used by hospitals, research institutes and independent pathology labs. Garvee lab incubators are fitted with advanced features that makes research and identification an easy task for the lab technicians. We have range of incubator with varying capacities fitted with precision temperature control, advanced air circulation system and adjustable shelves. How do you handle cleaning tasks for tools that must be sterile before you use them? We have a range of Ultrasonic Cleaners that can clean all your tools like test tubes, beakers, flasks, tongs, forceps, etc. The cleaner can remove dirt, grime and other contaminants from the tools promoting easy and thorough cleaning. Our other products under the lab category includes Water Hardness Test Kit to know the pH level of water, Geiger Counter to detect radiation levels and Hydraulic Hand Pressure Test Pump to check fluid pressure of vessels such as, cylinders, valves, boilers, tube pipes, castings, components etc. The water hardness test kit can be used to check total alkalinity, pH, free chlorine, total hardness, Cyanuric acid, and total chlorine. The Geiger counter can identify electromagnetic and nuclear radiation and can also indicate the temperature humidity level in your lab.\"}},{\"id\":\"gid://shopify/Collection/512160792889\",\"handle\":\"power-hand-tools\",\"title\":\"Power \\u0026 Hand Tools\",\"description\":{\"html\":\"Power \\u0026 Hand ToolsDiscover Garvee's robust power and hand tools, including secure rolling tool chests and versatile mechanic sets. Enjoy organized storage and reliable performance for your projects. Shop now for quality and convenience.\"}},{\"id\":\"gid://shopify/Collection/512163414329\",\"handle\":\"google-flash-deals\",\"title\":\"Google Flash Deals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/512163512633\",\"handle\":\"products-sitewide\",\"title\":\"Products Sitewide-exclude gift card\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/10168647287097\",\"title\":\"Garvee 3L Ultrasonic Cleaner with Heated Function, Digital Timer \\u0026 Stainless Steel Tank, Ultrasonic Cleaning Machine for Jewelry, Glasses, Watches, Circuit Boards, Small Parts\",\"description\":{\"html\":\"3L Ultrasonic Cleaner with Heated Function, Digital Timer \\u0026 Stainless Steel Tank, Ultrasonic Cleaning Machine for Jewelry, Glasses, Watches, Circuit Boards, Small Parts 【Professional 40kHz Cleaning】Operating at 40kHz industrial frequency, this ultrasonic cleaner generates high-frequency vibrations that reach deep into crevices and blind corners. Equipped with three advanced sandwich-type piezoelectric transducers, it delivers consistent cleaning power. The 120W ultrasonic power combined with 150W heating capacity effectively removes dirt, grease, and oxidation while protecting delicate surfaces from damage. 【Large Capacity】- With a 3L capacity, this ultrasonic cleaner offers ample space for various items. The package includes a durable stainless steel basket (8.46x4.72x1.97inch/215*120*50mm), allowing you to easily submerge and retrieve your valuables like jewelry, watch parts, and small mechanical components. 【Precise Digital Controls】- The clear digital display allows for easy control of all settings. You can precisely adjust the 0-30 minute timer and temperature range from 0 to 80℃/176℉, optimizing cleaning results for various materials and meeting diverse cleaning needs. 【Quiet \\u0026 Stable Performance】- Engineered for low-noise operation, this heated ultrasonic cleaner maintains steady performance without disruptive sounds. The stable base minimizes vibration during cleaning cycles, creating a more comfortable environment for extended use. The soundproof lid contains splashes while reducing noise during operation. 【Certified Safe Construction】- Built with quality materials and certified to FCC, CE, RoHS, and UL standards, this ultrasonic cleaner meets international safety requirements. 【Versatile Multi-Purpose Use】- This ultrasonic cleaning machine suits various items: it reaches deep into eyeglasses, watch parts, and headphone filters to remove dust and grease; it works for dentures, and contact lens cases; it cleans silver jewelry and small mechanical parts by removing oxidation and oil without surface damage. It effectively cleans metals, plastics, and delicate items without causing abrasion. Specifications Brand Garvee Capacity 3L Frequency 40kHz Ultrasonic Power 120W Heating Power 150W Time Settings 0-30Min Temp Settings 0-80℃/176℉ Certified FCC/CE/RoHS/UL Material 304SUS Item Weight ‎7.5 pounds\"},\"url\":\"https://www.garvee.com/products/garvee-3l-ultrasonic-cleaner-with-heated-pls-33jxbge6\",\"handle\":\"garvee-3l-ultrasonic-cleaner-with-heated-pls-33jxbge6\",\"price_range\":{\"min\":{\"amount\":6999,\"currency\":\"USD\"},\"max\":{\"amount\":6999,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":8599,\"currency\":\"USD\"},\"max\":{\"amount\":8599,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/52087187505465\",\"sku\":\"PLS_33JXBGE6\",\"title\":\"3L\",\"description\":{\"html\":\"3L Ultrasonic Cleaner with Heated Function, Digital Timer \\u0026 Stainless Steel Tank, Ultrasonic Cleaning Machine for Jewelry, Glasses, Watches, Circuit Boards, Small Parts 【Professional 40kHz Cleaning】Operating at 40kHz industrial frequency, this ultrasonic cleaner generates high-frequency vibrations that reach deep into crevices and blind corners. Equipped with three advanced sandwich-type piezoelectric transducers, it delivers consistent cleaning power. The 120W ultrasonic power combined with 150W heating capacity effectively removes dirt, grease, and oxidation while protecting delicate surfaces from damage. 【Large Capacity】- With a 3L capacity, this ultrasonic cleaner offers ample space for various items. The package includes a durable stainless steel basket (8.46x4.72x1.97inch/215*120*50mm), allowing you to easily submerge and retrieve your valuables like jewelry, watch parts, and small mechanical components. 【Precise Digital Controls】- The clear digital display allows for easy control of all settings. You can precisely adjust the 0-30 minute timer and temperature range from 0 to 80℃/176℉, optimizing cleaning results for various materials and meeting diverse cleaning needs. 【Quiet \\u0026 Stable Performance】- Engineered for low-noise operation, this heated ultrasonic cleaner maintains steady performance without disruptive sounds. The stable base minimizes vibration during cleaning cycles, creating a more comfortable environment for extended use. The soundproof lid contains splashes while reducing noise during operation. 【Certified Safe Construction】- Built with quality materials and certified to FCC, CE, RoHS, and UL standards, this ultrasonic cleaner meets international safety requirements. 【Versatile Multi-Purpose Use】- This ultrasonic cleaning machine suits various items: it reaches deep into eyeglasses, watch parts, and headphone filters to remove dust and grease; it works for dentures, and contact lens cases; it cleans silver jewelry and small mechanical parts by removing oxidation and oil without surface damage. It effectively cleans metals, plastics, and delicate items without causing abrasion. Specifications Brand Garvee Capacity 3L Frequency 40kHz Ultrasonic Power 120W Heating Power 150W Time Settings 0-30Min Temp Settings 0-80℃/176℉ Certified FCC/CE/RoHS/UL Material 304SUS Item Weight ‎7.5 pounds\"},\"price\":{\"amount\":6999,\"currency\":\"USD\"},\"list_price\":{\"amount\":8599,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Size\",\"label\":\"3L\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0724/6698/9369/files/shopify_2Fai_images_2Ftmpiss49rrs.jpg?v=1775531076\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://mygarvee.myshopify.com/cart/52087187505465:1\"}],\"options\":[{\"name\":\"Size\",\"values\":[{\"label\":\"3L\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0724/6698/9369/files/shopify_2Fai_images_2Ftmpiss49rrs.jpg?v=1775531076\",\"alt_text\":\"PLS_33JXBGE6\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/hg-9-9\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Active-20260407\",\"ASIN-B0GQ3WTXZ5\",\"CL#1_Power \\u0026 Hand Tools\",\"CL#2_Lab\",\"CL#3_Ultrasonic Cleaner\",\"discount__Save an Extra [5% Off] — Black Friday Exclusive with Code:BF5\",\"FB-All Products\",\"highlight_0604\",\"Lab\",\"Members_林智超\",\"MK_Discount\",\"NEW90\",\"PCode 7LNYO Q3HYO\",\"Power \\u0026 Hand Tools\",\"tag__hot_Black Friday\",\"Time-20260407\",\"Ultrasonic Cleaner\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/462297923897\",\"handle\":\"agriculture-forestry-equipment\",\"title\":\"Agriculture \\u0026 Forestry Equipment\",\"description\":{\"html\":\"Agriculture \\u0026 Forestry Equipment GARVEE offers agriculture and forestry equipment for farms, ranches, rural properties and backyard operations. Explore tractor attachments, land preparation tools, livestock fencing, poultry supplies and logging equipment for a wide range of property maintenance and agricultural tasks. Our tractor attachment selection includes pallet forks, hay spears, trailer hitches, scarifiers and other equipment for lifting, towing and material handling. For driveway and land maintenance, browse drag chain harrows, driveway drags, disc harrows and rakes designed for grading, leveling and surface preparation. Livestock and poultry owners can find livestock fencing, fence tools, chicken coops, nesting boxes, poultry feeders and other supplies for animal housing and daily care. Forestry and logging products include log tongs, cant hooks and chainsaw mills for handling and processing timber. Review each product page carefully for dimensions, rated capacity, mounting requirements and equipment compatibility. Choose the product that matches your tractor, loader, property size and intended task.\"}},{\"id\":\"gid://shopify/Collection/462381580601\",\"handle\":\"lab\",\"title\":\"Lab\",\"description\":{\"html\":\"Are you looking for some budget friendly lab equipment for your fledgling laboratory. Garvee has got your covered. We offer budget friendly Lab products and Cleaning Equipment without compromising on quality and features. These products are some among the best in the market and have been praised immensely by lab owners. Our Lab Incubators are our flagship products that can be used by hospitals, research institutes and independent pathology labs. Garvee lab incubators are fitted with advanced features that makes research and identification an easy task for the lab technicians. We have range of incubator with varying capacities fitted with precision temperature control, advanced air circulation system and adjustable shelves. How do you handle cleaning tasks for tools that must be sterile before you use them? We have a range of Ultrasonic Cleaners that can clean all your tools like test tubes, beakers, flasks, tongs, forceps, etc. The cleaner can remove dirt, grime and other contaminants from the tools promoting easy and thorough cleaning. Our other products under the lab category includes Water Hardness Test Kit to know the pH level of water, Geiger Counter to detect radiation levels and Hydraulic Hand Pressure Test Pump to check fluid pressure of vessels such as, cylinders, valves, boilers, tube pipes, castings, components etc. The water hardness test kit can be used to check total alkalinity, pH, free chlorine, total hardness, Cyanuric acid, and total chlorine. The Geiger counter can identify electromagnetic and nuclear radiation and can also indicate the temperature humidity level in your lab.\"}},{\"id\":\"gid://shopify/Collection/512160792889\",\"handle\":\"power-hand-tools\",\"title\":\"Power \\u0026 Hand Tools\",\"description\":{\"html\":\"Power \\u0026 Hand ToolsDiscover Garvee's robust power and hand tools, including secure rolling tool chests and versatile mechanic sets. Enjoy organized storage and reliable performance for your projects. Shop now for quality and convenience.\"}},{\"id\":\"gid://shopify/Collection/512163414329\",\"handle\":\"google-flash-deals\",\"title\":\"Google Flash Deals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/512163512633\",\"handle\":\"products-sitewide\",\"title\":\"Products Sitewide-exclude gift card\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/10081901347129\",\"title\":\"Garvee  6.5L Commercial Ultrasonic Cleaner, 40kHz Digital Timer Heater Stainless Steel for Jewelry Watches Glasses\",\"description\":{\"html\":\".garvee-uc65 { max-width: 1120px; margin: 0 auto; overflow: hidden; background: #ffffff; color: #202a30; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; } .garvee-uc65 * { box-sizing: border-box; } .garvee-uc65 img { display: block; width: 100%; height: auto; object-fit: contain; } .garvee-uc65 h1, .garvee-uc65 h2, .garvee-uc65 h3, .garvee-uc65 p { margin-top: 0; } .garvee-uc65 .uc-brand { padding: 15px 28px; background: #26343d; border-bottom: 4px solid #ed7024; color: #ffffff; font-size: 21px; font-weight: 800; letter-spacing: .08em; } .garvee-uc65 .uc-intro, .garvee-uc65 .uc-section { padding: 34px 5% 38px; background: #f3f5f5; text-align: center; } .garvee-uc65 .uc-label { margin-bottom: 7px; color: #a84916; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; } .garvee-uc65 h1 { margin-bottom: 12px; color: #202a30; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; } .garvee-uc65 h2 { margin-bottom: 14px; color: #202a30; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; } .garvee-uc65 .uc-intro p { max-width: 740px; margin: 0 auto; color: #52616a; font-size: 16px; } .garvee-uc65 .uc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc65 .uc-card { min-width: 0; padding: 18px 15px; background: #ffffff; border: 1px solid #dfe5e7; border-top: 4px solid #ed7024; } .garvee-uc65 .uc-card strong { display: block; margin-bottom: 6px; color: #b94f15 !important; font-size: 22px; line-height: 1.15; overflow-wrap: anywhere; } .garvee-uc65 .uc-card span { color: #26343d !important; font-size: 13px; font-weight: 700; line-height: 1.35; } .garvee-uc65 .uc-features { padding: 34px 5% 38px; background: #ffffff; text-align: center; } .garvee-uc65 .uc-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc65 .uc-feature { padding: 18px; background: #f3f5f5; border-left: 4px solid #ed7024; } .garvee-uc65 .uc-feature h3 { margin-bottom: 6px; color: #202a30; font-size: 18px; line-height: 1.25; } .garvee-uc65 .uc-feature p { margin-bottom: 0; color: #52616a; font-size: 14px; } .garvee-uc65 .uc-note { margin: 18px auto 0; max-width: 760px; color: #52616a; font-size: 13px; } @media (max-width: 680px) { .garvee-uc65 .uc-brand { padding: 11px 16px; font-size: 17px; } .garvee-uc65 .uc-intro, .garvee-uc65 .uc-section, .garvee-uc65 .uc-features { padding: 25px 14px 28px; } .garvee-uc65 h1 { font-size: 28px; } .garvee-uc65 h2 { font-size: 24px; } .garvee-uc65 .uc-intro p { font-size: 15px; } .garvee-uc65 .uc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .garvee-uc65 .uc-card { padding: 13px 11px; } .garvee-uc65 .uc-card strong { font-size: 19px; } .garvee-uc65 .uc-feature-grid { gap: 8px; } .garvee-uc65 .uc-feature { padding: 13px 11px; } .garvee-uc65 .uc-feature h3 { font-size: 16px; } .garvee-uc65 .uc-feature p { font-size: 13px; line-height: 1.45; } } GARVEE Digital Ultrasonic Cleaner 6.5L Ultrasonic Cleaner A stainless-steel ultrasonic cleaner with digital time and temperature settings for compatible jewelry, tools and metal parts. Product Highlights Cleaning Control at a Glance 6.5L Tank Capacity 40kHz Ultrasonic Frequency 1–99 min Timer Setting 0–80°C Temperature Setting Key Features Designed for Adjustable Cleaning Digital Controls Set the cleaning time and temperature using the digital panel. Built-In Heating The heating function helps support cleaning when warmth is appropriate for the item and cleaning solution. 304 Stainless Steel The listed stainless-steel tank, basket and cover support everyday cleaning tasks. Compatible Items Suitable for compatible jewelry, metal parts and other items approved for ultrasonic cleaning. Check that the item and cleaning solution are suitable for ultrasonic cleaning before use. Specifications 6.5L Model Details 180W Ultrasonic Power 300W Heating Power 300 × 155 × 150 mm Tank Size · L × W × H 360 × 180 × 280 mm Overall Size · L × W × H\"},\"url\":\"https://www.garvee.com/products/garvee-ultrasonic-cleaner-65l-digital-timer-heater-watch-eyeglasses-pis_0149xksj\",\"handle\":\"garvee-ultrasonic-cleaner-65l-digital-timer-heater-watch-eyeglasses-pis_0149xksj\",\"price_range\":{\"min\":{\"amount\":12199,\"currency\":\"USD\"},\"max\":{\"amount\":12199,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":17999,\"currency\":\"USD\"},\"max\":{\"amount\":17999,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/51475372048697\",\"sku\":\"PIS_0149XKSJ\",\"title\":\"6.5L\",\"description\":{\"html\":\".garvee-uc65 { max-width: 1120px; margin: 0 auto; overflow: hidden; background: #ffffff; color: #202a30; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; } .garvee-uc65 * { box-sizing: border-box; } .garvee-uc65 img { display: block; width: 100%; height: auto; object-fit: contain; } .garvee-uc65 h1, .garvee-uc65 h2, .garvee-uc65 h3, .garvee-uc65 p { margin-top: 0; } .garvee-uc65 .uc-brand { padding: 15px 28px; background: #26343d; border-bottom: 4px solid #ed7024; color: #ffffff; font-size: 21px; font-weight: 800; letter-spacing: .08em; } .garvee-uc65 .uc-intro, .garvee-uc65 .uc-section { padding: 34px 5% 38px; background: #f3f5f5; text-align: center; } .garvee-uc65 .uc-label { margin-bottom: 7px; color: #a84916; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; } .garvee-uc65 h1 { margin-bottom: 12px; color: #202a30; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; } .garvee-uc65 h2 { margin-bottom: 14px; color: #202a30; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; } .garvee-uc65 .uc-intro p { max-width: 740px; margin: 0 auto; color: #52616a; font-size: 16px; } .garvee-uc65 .uc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc65 .uc-card { min-width: 0; padding: 18px 15px; background: #ffffff; border: 1px solid #dfe5e7; border-top: 4px solid #ed7024; } .garvee-uc65 .uc-card strong { display: block; margin-bottom: 6px; color: #b94f15 !important; font-size: 22px; line-height: 1.15; overflow-wrap: anywhere; } .garvee-uc65 .uc-card span { color: #26343d !important; font-size: 13px; font-weight: 700; line-height: 1.35; } .garvee-uc65 .uc-features { padding: 34px 5% 38px; background: #ffffff; text-align: center; } .garvee-uc65 .uc-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc65 .uc-feature { padding: 18px; background: #f3f5f5; border-left: 4px solid #ed7024; } .garvee-uc65 .uc-feature h3 { margin-bottom: 6px; color: #202a30; font-size: 18px; line-height: 1.25; } .garvee-uc65 .uc-feature p { margin-bottom: 0; color: #52616a; font-size: 14px; } .garvee-uc65 .uc-note { margin: 18px auto 0; max-width: 760px; color: #52616a; font-size: 13px; } @media (max-width: 680px) { .garvee-uc65 .uc-brand { padding: 11px 16px; font-size: 17px; } .garvee-uc65 .uc-intro, .garvee-uc65 .uc-section, .garvee-uc65 .uc-features { padding: 25px 14px 28px; } .garvee-uc65 h1 { font-size: 28px; } .garvee-uc65 h2 { font-size: 24px; } .garvee-uc65 .uc-intro p { font-size: 15px; } .garvee-uc65 .uc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .garvee-uc65 .uc-card { padding: 13px 11px; } .garvee-uc65 .uc-card strong { font-size: 19px; } .garvee-uc65 .uc-feature-grid { gap: 8px; } .garvee-uc65 .uc-feature { padding: 13px 11px; } .garvee-uc65 .uc-feature h3 { font-size: 16px; } .garvee-uc65 .uc-feature p { font-size: 13px; line-height: 1.45; } } GARVEE Digital Ultrasonic Cleaner 6.5L Ultrasonic Cleaner A stainless-steel ultrasonic cleaner with digital time and temperature settings for compatible jewelry, tools and metal parts. Product Highlights Cleaning Control at a Glance 6.5L Tank Capacity 40kHz Ultrasonic Frequency 1–99 min Timer Setting 0–80°C Temperature Setting Key Features Designed for Adjustable Cleaning Digital Controls Set the cleaning time and temperature using the digital panel. Built-In Heating The heating function helps support cleaning when warmth is appropriate for the item and cleaning solution. 304 Stainless Steel The listed stainless-steel tank, basket and cover support everyday cleaning tasks. Compatible Items Suitable for compatible jewelry, metal parts and other items approved for ultrasonic cleaning. Check that the item and cleaning solution are suitable for ultrasonic cleaning before use. Specifications 6.5L Model Details 180W Ultrasonic Power 300W Heating Power 300 × 155 × 150 mm Tank Size · L × W × H 360 × 180 × 280 mm Overall Size · L × W × H\"},\"price\":{\"amount\":12199,\"currency\":\"USD\"},\"list_price\":{\"amount\":17999,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Size\",\"label\":\"6.5L\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0724/6698/9369/files/71x2p0o6b8L.jpg?v=1766559438\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://mygarvee.myshopify.com/cart/51475372048697:1\"}],\"options\":[{\"name\":\"Size\",\"values\":[{\"label\":\"6.5L\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0724/6698/9369/files/71x2p0o6b8L.jpg?v=1766559438\",\"alt_text\":\"PIS_0149XKSJ\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/hg-9-9\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Active-20251226\",\"CL#1_Power \\u0026 Hand Tools\",\"CL#2_Lab\",\"CL#3_Ultrasonic Cleaner\",\"discount__Save an Extra [5% Off] — Black Friday Exclusive with Code:BF5\",\"DTM_FB-202512-NEW\",\"FB-All Products\",\"FB-All Products-collection\",\"Lab\",\"Members_林智超\",\"MK_Discount\",\"NEW90\",\"PCode 7AQBX QKZVY\",\"Power \\u0026 Hand Tools\",\"tag__hot_Black Friday\",\"Time-20251224\",\"Ultrasonic Cleaner\",\"上架-B0DJM4V3BH\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/462297923897\",\"handle\":\"agriculture-forestry-equipment\",\"title\":\"Agriculture \\u0026 Forestry Equipment\",\"description\":{\"html\":\"Agriculture \\u0026 Forestry Equipment GARVEE offers agriculture and forestry equipment for farms, ranches, rural properties and backyard operations. Explore tractor attachments, land preparation tools, livestock fencing, poultry supplies and logging equipment for a wide range of property maintenance and agricultural tasks. Our tractor attachment selection includes pallet forks, hay spears, trailer hitches, scarifiers and other equipment for lifting, towing and material handling. For driveway and land maintenance, browse drag chain harrows, driveway drags, disc harrows and rakes designed for grading, leveling and surface preparation. Livestock and poultry owners can find livestock fencing, fence tools, chicken coops, nesting boxes, poultry feeders and other supplies for animal housing and daily care. Forestry and logging products include log tongs, cant hooks and chainsaw mills for handling and processing timber. Review each product page carefully for dimensions, rated capacity, mounting requirements and equipment compatibility. Choose the product that matches your tractor, loader, property size and intended task.\"}},{\"id\":\"gid://shopify/Collection/462381580601\",\"handle\":\"lab\",\"title\":\"Lab\",\"description\":{\"html\":\"Are you looking for some budget friendly lab equipment for your fledgling laboratory. Garvee has got your covered. We offer budget friendly Lab products and Cleaning Equipment without compromising on quality and features. These products are some among the best in the market and have been praised immensely by lab owners. Our Lab Incubators are our flagship products that can be used by hospitals, research institutes and independent pathology labs. Garvee lab incubators are fitted with advanced features that makes research and identification an easy task for the lab technicians. We have range of incubator with varying capacities fitted with precision temperature control, advanced air circulation system and adjustable shelves. How do you handle cleaning tasks for tools that must be sterile before you use them? We have a range of Ultrasonic Cleaners that can clean all your tools like test tubes, beakers, flasks, tongs, forceps, etc. The cleaner can remove dirt, grime and other contaminants from the tools promoting easy and thorough cleaning. Our other products under the lab category includes Water Hardness Test Kit to know the pH level of water, Geiger Counter to detect radiation levels and Hydraulic Hand Pressure Test Pump to check fluid pressure of vessels such as, cylinders, valves, boilers, tube pipes, castings, components etc. The water hardness test kit can be used to check total alkalinity, pH, free chlorine, total hardness, Cyanuric acid, and total chlorine. The Geiger counter can identify electromagnetic and nuclear radiation and can also indicate the temperature humidity level in your lab.\"}},{\"id\":\"gid://shopify/Collection/512160792889\",\"handle\":\"power-hand-tools\",\"title\":\"Power \\u0026 Hand Tools\",\"description\":{\"html\":\"Power \\u0026 Hand ToolsDiscover Garvee's robust power and hand tools, including secure rolling tool chests and versatile mechanic sets. Enjoy organized storage and reliable performance for your projects. Shop now for quality and convenience.\"}},{\"id\":\"gid://shopify/Collection/512163414329\",\"handle\":\"google-flash-deals\",\"title\":\"Google Flash Deals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/512163512633\",\"handle\":\"products-sitewide\",\"title\":\"Products Sitewide-exclude gift card\",\"description\":{\"html\":\"\"}}]}],\"pagination\":{\"has_next_page\":false},\"messages\":[]}"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "status": "success",
+          "services": {
+            "dev.ucp.shopping": []
+          },
+          "capabilities": {
+            "dev.ucp.shopping.checkout": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/checkout/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/checkout.json"
+              }
+            ],
+            "dev.ucp.shopping.fulfillment": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json",
+                "extends": [
+                  "dev.ucp.shopping.checkout",
+                  "dev.ucp.shopping.cart"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                },
+                "config": {
+                  "multi_destination": [],
+                  "method_combinations": [
+                    [
+                      "shipping"
+                    ]
+                  ]
+                }
+              }
+            ],
+            "dev.ucp.shopping.buyer_consent": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json",
+                "extends": [
+                  "dev.ucp.shopping.cart",
+                  "dev.ucp.shopping.checkout"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ],
+            "dev.ucp.shopping.discount": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/discount.json",
+                "extends": [
+                  "dev.ucp.shopping.checkout",
+                  "dev.ucp.shopping.cart"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ],
+            "dev.ucp.shopping.cart": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/cart/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/cart.json"
+              }
+            ],
+            "dev.ucp.shopping.order": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/order/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/order.json"
+              }
+            ],
+            "dev.ucp.shopping.catalog.search": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+              }
+            ],
+            "dev.ucp.shopping.catalog.lookup": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+              }
+            ],
+            "dev.shopify.catalog": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://shopify.dev/docs/agents/catalog/storefront-catalog",
+                "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json",
+                "extends": [
+                  "dev.ucp.shopping.catalog.search",
+                  "dev.ucp.shopping.catalog.lookup"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ]
+          },
+          "payment_handlers": {
+            "com.google.pay": [
+              {
+                "id": "gpay",
+                "version": "2026-01-11",
+                "spec": "https://pay.google.com/gp/p/ucp/2026-01-11/",
+                "schema": "https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json",
+                "config": {
+                  "api_version": 2,
+                  "api_version_minor": 0,
+                  "merchant_info": {
+                    "merchant_name": "GARVEE",
+                    "merchant_id": "16708973830884969730",
+                    "merchant_origin": "www.garvee.com",
+                    "auth_jwt": ""
+                  },
+                  "allowed_payment_methods": [
+                    {
+                      "type": "CARD",
+                      "parameters": {
+                        "allowed_auth_methods": [
+                          "PAN_ONLY",
+                          "CRYPTOGRAM_3DS"
+                        ],
+                        "allowed_card_networks": [
+                          "VISA",
+                          "MASTERCARD",
+                          "DISCOVER",
+                          "AMEX",
+                          "JCB"
+                        ],
+                        "billing_address_required": true,
+                        "billing_address_parameters": {
+                          "format": "FULL",
+                          "phone_number_required": true
+                        }
+                      },
+                      "tokenization_specification": {
+                        "type": "PAYMENT_GATEWAY",
+                        "parameters": {
+                          "gateway": "shopify",
+                          "gatewayMerchantId": "72466989369"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "dev.shopify.card": [
+              {
+                "id": "shopify.card",
+                "version": "2026-01-15",
+                "spec": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md",
+                "schema": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json",
+                "config": {
+                  "payment_methods": [
+                    {
+                      "type": "card",
+                      "enabled_card_brands": [
+                        "visa",
+                        "master",
+                        "discover",
+                        "american_express",
+                        "diners_club",
+                        "cartes_bancaires",
+                        "jcb",
+                        "unionpay",
+                        "visaelectron",
+                        "maestro"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "dev.shopify.shop_pay": [
+              {
+                "id": "shop_pay",
+                "version": "2026-04-08",
+                "spec": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md",
+                "schema": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json",
+                "config": {
+                  "shop_id": "72466989369"
+                }
+              }
+            ]
+          }
+        },
+        "products": [
+          {
+            "id": "gid://shopify/Product/10081897283897",
+            "title": "Garvee 10L Commercial Ultrasonic Cleaner, 40kHz Digital Timer Heater Stainless Steel for Jewelry Watches Glasses",
+            "description": {
+              "html": ".garvee-uc10 { max-width: 1120px; margin: 0 auto; overflow: hidden; background: #ffffff; color: #202a30; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; } .garvee-uc10 * { box-sizing: border-box; } .garvee-uc10 img { display: block; width: 100%; height: auto; object-fit: contain; } .garvee-uc10 h1, .garvee-uc10 h2, .garvee-uc10 h3, .garvee-uc10 p { margin-top: 0; } .garvee-uc10 .uc-brand { padding: 15px 28px; background: #26343d; border-bottom: 4px solid #ed7024; color: #ffffff; font-size: 21px; font-weight: 800; letter-spacing: .08em; } .garvee-uc10 .uc-intro, .garvee-uc10 .uc-section { padding: 34px 5% 38px; background: #f3f5f5; text-align: center; } .garvee-uc10 .uc-label { margin-bottom: 7px; color: #a84916; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; } .garvee-uc10 h1 { margin-bottom: 12px; color: #202a30; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; } .garvee-uc10 h2 { margin-bottom: 14px; color: #202a30; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; } .garvee-uc10 .uc-intro p { max-width: 740px; margin: 0 auto; color: #52616a; font-size: 16px; } .garvee-uc10 .uc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc10 .uc-card { min-width: 0; padding: 18px 15px; background: #ffffff; border: 1px solid #dfe5e7; border-top: 4px solid #ed7024; } .garvee-uc10 .uc-card strong { display: block; margin-bottom: 6px; color: #b94f15 !important; font-size: 22px; line-height: 1.15; overflow-wrap: anywhere; } .garvee-uc10 .uc-card span { color: #26343d !important; font-size: 13px; font-weight: 700; line-height: 1.35; } .garvee-uc10 .uc-features { padding: 34px 5% 38px; background: #ffffff; text-align: center; } .garvee-uc10 .uc-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc10 .uc-feature { padding: 18px; background: #f3f5f5; border-left: 4px solid #ed7024; } .garvee-uc10 .uc-feature h3 { margin-bottom: 6px; color: #202a30; font-size: 18px; line-height: 1.25; } .garvee-uc10 .uc-feature p { margin-bottom: 0; color: #52616a; font-size: 14px; } .garvee-uc10 .uc-note { margin: 18px auto 0; max-width: 760px; color: #52616a; font-size: 13px; } @media (max-width: 680px) { .garvee-uc10 .uc-brand { padding: 11px 16px; font-size: 17px; } .garvee-uc10 .uc-intro, .garvee-uc10 .uc-section, .garvee-uc10 .uc-features { padding: 25px 14px 28px; } .garvee-uc10 h1 { font-size: 28px; } .garvee-uc10 h2 { font-size: 24px; } .garvee-uc10 .uc-intro p { font-size: 15px; } .garvee-uc10 .uc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .garvee-uc10 .uc-card { padding: 13px 11px; } .garvee-uc10 .uc-card strong { font-size: 19px; } .garvee-uc10 .uc-feature-grid { gap: 8px; } .garvee-uc10 .uc-feature { padding: 13px 11px; } .garvee-uc10 .uc-feature h3 { font-size: 16px; } .garvee-uc10 .uc-feature p { font-size: 13px; line-height: 1.45; } } GARVEE Digital Ultrasonic Cleaner 10L Ultrasonic Cleaner A stainless-steel ultrasonic cleaner with digital time and temperature settings for compatible jewelry, tools and metal parts. Product Highlights Cleaning Control at a Glance 10L Tank Capacity 40kHz Ultrasonic Frequency 1–99 min Timer Setting 0–80°C Temperature Setting Key Features Designed for Adjustable Cleaning Digital Controls Set the cleaning time and temperature using the digital panel. Built-In Heating The heating function helps support cleaning when warmth is appropriate for the item and cleaning solution. 304 Stainless Steel The listed stainless-steel tank, basket and cover support everyday cleaning tasks. Compatible Items Suitable for compatible jewelry, metal parts and other items approved for ultrasonic cleaning. Check that the item and cleaning solution are suitable for ultrasonic cleaning before use. Specifications 10L Model Details 300W Listed Heating Power 304 Stainless Steel 300 × 240 × 150 mm Tank Size · L × W × H 360 × 270 × 280 mm Overall Size · L × W × H"
+            },
+            "url": "https://www.garvee.com/products/garvee-ultrasonic-cleaner-10l-digital-timer-heater-watch-phk_014ax0ib",
+            "handle": "garvee-ultrasonic-cleaner-10l-digital-timer-heater-watch-phk_014ax0ib",
+            "price_range": {
+              "min": {
+                "amount": 13699,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 13699,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 20599,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 20599,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/51475365724473",
+                "sku": "PIS_014AX0IB",
+                "title": "10L",
+                "description": {
+                  "html": ".garvee-uc10 { max-width: 1120px; margin: 0 auto; overflow: hidden; background: #ffffff; color: #202a30; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; } .garvee-uc10 * { box-sizing: border-box; } .garvee-uc10 img { display: block; width: 100%; height: auto; object-fit: contain; } .garvee-uc10 h1, .garvee-uc10 h2, .garvee-uc10 h3, .garvee-uc10 p { margin-top: 0; } .garvee-uc10 .uc-brand { padding: 15px 28px; background: #26343d; border-bottom: 4px solid #ed7024; color: #ffffff; font-size: 21px; font-weight: 800; letter-spacing: .08em; } .garvee-uc10 .uc-intro, .garvee-uc10 .uc-section { padding: 34px 5% 38px; background: #f3f5f5; text-align: center; } .garvee-uc10 .uc-label { margin-bottom: 7px; color: #a84916; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; } .garvee-uc10 h1 { margin-bottom: 12px; color: #202a30; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; } .garvee-uc10 h2 { margin-bottom: 14px; color: #202a30; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; } .garvee-uc10 .uc-intro p { max-width: 740px; margin: 0 auto; color: #52616a; font-size: 16px; } .garvee-uc10 .uc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc10 .uc-card { min-width: 0; padding: 18px 15px; background: #ffffff; border: 1px solid #dfe5e7; border-top: 4px solid #ed7024; } .garvee-uc10 .uc-card strong { display: block; margin-bottom: 6px; color: #b94f15 !important; font-size: 22px; line-height: 1.15; overflow-wrap: anywhere; } .garvee-uc10 .uc-card span { color: #26343d !important; font-size: 13px; font-weight: 700; line-height: 1.35; } .garvee-uc10 .uc-features { padding: 34px 5% 38px; background: #ffffff; text-align: center; } .garvee-uc10 .uc-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc10 .uc-feature { padding: 18px; background: #f3f5f5; border-left: 4px solid #ed7024; } .garvee-uc10 .uc-feature h3 { margin-bottom: 6px; color: #202a30; font-size: 18px; line-height: 1.25; } .garvee-uc10 .uc-feature p { margin-bottom: 0; color: #52616a; font-size: 14px; } .garvee-uc10 .uc-note { margin: 18px auto 0; max-width: 760px; color: #52616a; font-size: 13px; } @media (max-width: 680px) { .garvee-uc10 .uc-brand { padding: 11px 16px; font-size: 17px; } .garvee-uc10 .uc-intro, .garvee-uc10 .uc-section, .garvee-uc10 .uc-features { padding: 25px 14px 28px; } .garvee-uc10 h1 { font-size: 28px; } .garvee-uc10 h2 { font-size: 24px; } .garvee-uc10 .uc-intro p { font-size: 15px; } .garvee-uc10 .uc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .garvee-uc10 .uc-card { padding: 13px 11px; } .garvee-uc10 .uc-card strong { font-size: 19px; } .garvee-uc10 .uc-feature-grid { gap: 8px; } .garvee-uc10 .uc-feature { padding: 13px 11px; } .garvee-uc10 .uc-feature h3 { font-size: 16px; } .garvee-uc10 .uc-feature p { font-size: 13px; line-height: 1.45; } } GARVEE Digital Ultrasonic Cleaner 10L Ultrasonic Cleaner A stainless-steel ultrasonic cleaner with digital time and temperature settings for compatible jewelry, tools and metal parts. Product Highlights Cleaning Control at a Glance 10L Tank Capacity 40kHz Ultrasonic Frequency 1–99 min Timer Setting 0–80°C Temperature Setting Key Features Designed for Adjustable Cleaning Digital Controls Set the cleaning time and temperature using the digital panel. Built-In Heating The heating function helps support cleaning when warmth is appropriate for the item and cleaning solution. 304 Stainless Steel The listed stainless-steel tank, basket and cover support everyday cleaning tasks. Compatible Items Suitable for compatible jewelry, metal parts and other items approved for ultrasonic cleaning. Check that the item and cleaning solution are suitable for ultrasonic cleaning before use. Specifications 10L Model Details 300W Listed Heating Power 304 Stainless Steel 300 × 240 × 150 mm Tank Size · L × W × H 360 × 270 × 280 mm Overall Size · L × W × H"
+                },
+                "price": {
+                  "amount": 13699,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 20599,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Size",
+                    "label": "10L"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/71t0zuJ70WL.jpg?v=1766559166"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://mygarvee.myshopify.com/cart/51475365724473:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Size",
+                "values": [
+                  {
+                    "label": "10L"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/71t0zuJ70WL.jpg?v=1766559166",
+                "alt_text": "PIS_014AX0IB"
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/hg-9-9",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "Active-20251226",
+              "CL#1_Power & Hand Tools",
+              "CL#2_Lab",
+              "CL#3_Ultrasonic Cleaner",
+              "discount__Save an Extra [5% Off] — Black Friday Exclusive with Code:BF5",
+              "DTM_FB-202512-NEW",
+              "FB-All Products",
+              "FB-All Products-collection",
+              "Home Improvement Deals",
+              "Lab",
+              "Members_林智超",
+              "MK_Discount",
+              "NEW90",
+              "PCode 7AQBJ QKZUY",
+              "Power & Hand Tools",
+              "Price drop until 2026.12.06",
+              "tag__hot_Black Friday",
+              "Time-20251224",
+              "Ultrasonic Cleaner",
+              "上架-B0DJM564CV"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/462297923897",
+                "handle": "agriculture-forestry-equipment",
+                "title": "Agriculture & Forestry Equipment",
+                "description": {
+                  "html": "Agriculture & Forestry Equipment GARVEE offers agriculture and forestry equipment for farms, ranches, rural properties and backyard operations. Explore tractor attachments, land preparation tools, livestock fencing, poultry supplies and logging equipment for a wide range of property maintenance and agricultural tasks. Our tractor attachment selection includes pallet forks, hay spears, trailer hitches, scarifiers and other equipment for lifting, towing and material handling. For driveway and land maintenance, browse drag chain harrows, driveway drags, disc harrows and rakes designed for grading, leveling and surface preparation. Livestock and poultry owners can find livestock fencing, fence tools, chicken coops, nesting boxes, poultry feeders and other supplies for animal housing and daily care. Forestry and logging products include log tongs, cant hooks and chainsaw mills for handling and processing timber. Review each product page carefully for dimensions, rated capacity, mounting requirements and equipment compatibility. Choose the product that matches your tractor, loader, property size and intended task."
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/462381580601",
+                "handle": "lab",
+                "title": "Lab",
+                "description": {
+                  "html": "Are you looking for some budget friendly lab equipment for your fledgling laboratory. Garvee has got your covered. We offer budget friendly Lab products and Cleaning Equipment without compromising on quality and features. These products are some among the best in the market and have been praised immensely by lab owners. Our Lab Incubators are our flagship products that can be used by hospitals, research institutes and independent pathology labs. Garvee lab incubators are fitted with advanced features that makes research and identification an easy task for the lab technicians. We have range of incubator with varying capacities fitted with precision temperature control, advanced air circulation system and adjustable shelves. How do you handle cleaning tasks for tools that must be sterile before you use them? We have a range of Ultrasonic Cleaners that can clean all your tools like test tubes, beakers, flasks, tongs, forceps, etc. The cleaner can remove dirt, grime and other contaminants from the tools promoting easy and thorough cleaning. Our other products under the lab category includes Water Hardness Test Kit to know the pH level of water, Geiger Counter to detect radiation levels and Hydraulic Hand Pressure Test Pump to check fluid pressure of vessels such as, cylinders, valves, boilers, tube pipes, castings, components etc. The water hardness test kit can be used to check total alkalinity, pH, free chlorine, total hardness, Cyanuric acid, and total chlorine. The Geiger counter can identify electromagnetic and nuclear radiation and can also indicate the temperature humidity level in your lab."
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/512160792889",
+                "handle": "power-hand-tools",
+                "title": "Power & Hand Tools",
+                "description": {
+                  "html": "Power & Hand ToolsDiscover Garvee's robust power and hand tools, including secure rolling tool chests and versatile mechanic sets. Enjoy organized storage and reliable performance for your projects. Shop now for quality and convenience."
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/512163414329",
+                "handle": "google-flash-deals",
+                "title": "Google Flash Deals",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/512163512633",
+                "handle": "products-sitewide",
+                "title": "Products Sitewide-exclude gift card",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/10168647287097",
+            "title": "Garvee 3L Ultrasonic Cleaner with Heated Function, Digital Timer & Stainless Steel Tank, Ultrasonic Cleaning Machine for Jewelry, Glasses, Watches, Circuit Boards, Small Parts",
+            "description": {
+              "html": "3L Ultrasonic Cleaner with Heated Function, Digital Timer & Stainless Steel Tank, Ultrasonic Cleaning Machine for Jewelry, Glasses, Watches, Circuit Boards, Small Parts 【Professional 40kHz Cleaning】Operating at 40kHz industrial frequency, this ultrasonic cleaner generates high-frequency vibrations that reach deep into crevices and blind corners. Equipped with three advanced sandwich-type piezoelectric transducers, it delivers consistent cleaning power. The 120W ultrasonic power combined with 150W heating capacity effectively removes dirt, grease, and oxidation while protecting delicate surfaces from damage. 【Large Capacity】- With a 3L capacity, this ultrasonic cleaner offers ample space for various items. The package includes a durable stainless steel basket (8.46x4.72x1.97inch/215*120*50mm), allowing you to easily submerge and retrieve your valuables like jewelry, watch parts, and small mechanical components. 【Precise Digital Controls】- The clear digital display allows for easy control of all settings. You can precisely adjust the 0-30 minute timer and temperature range from 0 to 80℃/176℉, optimizing cleaning results for various materials and meeting diverse cleaning needs. 【Quiet & Stable Performance】- Engineered for low-noise operation, this heated ultrasonic cleaner maintains steady performance without disruptive sounds. The stable base minimizes vibration during cleaning cycles, creating a more comfortable environment for extended use. The soundproof lid contains splashes while reducing noise during operation. 【Certified Safe Construction】- Built with quality materials and certified to FCC, CE, RoHS, and UL standards, this ultrasonic cleaner meets international safety requirements. 【Versatile Multi-Purpose Use】- This ultrasonic cleaning machine suits various items: it reaches deep into eyeglasses, watch parts, and headphone filters to remove dust and grease; it works for dentures, and contact lens cases; it cleans silver jewelry and small mechanical parts by removing oxidation and oil without surface damage. It effectively cleans metals, plastics, and delicate items without causing abrasion. Specifications Brand Garvee Capacity 3L Frequency 40kHz Ultrasonic Power 120W Heating Power 150W Time Settings 0-30Min Temp Settings 0-80℃/176℉ Certified FCC/CE/RoHS/UL Material 304SUS Item Weight ‎7.5 pounds"
+            },
+            "url": "https://www.garvee.com/products/garvee-3l-ultrasonic-cleaner-with-heated-pls-33jxbge6",
+            "handle": "garvee-3l-ultrasonic-cleaner-with-heated-pls-33jxbge6",
+            "price_range": {
+              "min": {
+                "amount": 6999,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 6999,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 8599,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 8599,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/52087187505465",
+                "sku": "PLS_33JXBGE6",
+                "title": "3L",
+                "description": {
+                  "html": "3L Ultrasonic Cleaner with Heated Function, Digital Timer & Stainless Steel Tank, Ultrasonic Cleaning Machine for Jewelry, Glasses, Watches, Circuit Boards, Small Parts 【Professional 40kHz Cleaning】Operating at 40kHz industrial frequency, this ultrasonic cleaner generates high-frequency vibrations that reach deep into crevices and blind corners. Equipped with three advanced sandwich-type piezoelectric transducers, it delivers consistent cleaning power. The 120W ultrasonic power combined with 150W heating capacity effectively removes dirt, grease, and oxidation while protecting delicate surfaces from damage. 【Large Capacity】- With a 3L capacity, this ultrasonic cleaner offers ample space for various items. The package includes a durable stainless steel basket (8.46x4.72x1.97inch/215*120*50mm), allowing you to easily submerge and retrieve your valuables like jewelry, watch parts, and small mechanical components. 【Precise Digital Controls】- The clear digital display allows for easy control of all settings. You can precisely adjust the 0-30 minute timer and temperature range from 0 to 80℃/176℉, optimizing cleaning results for various materials and meeting diverse cleaning needs. 【Quiet & Stable Performance】- Engineered for low-noise operation, this heated ultrasonic cleaner maintains steady performance without disruptive sounds. The stable base minimizes vibration during cleaning cycles, creating a more comfortable environment for extended use. The soundproof lid contains splashes while reducing noise during operation. 【Certified Safe Construction】- Built with quality materials and certified to FCC, CE, RoHS, and UL standards, this ultrasonic cleaner meets international safety requirements. 【Versatile Multi-Purpose Use】- This ultrasonic cleaning machine suits various items: it reaches deep into eyeglasses, watch parts, and headphone filters to remove dust and grease; it works for dentures, and contact lens cases; it cleans silver jewelry and small mechanical parts by removing oxidation and oil without surface damage. It effectively cleans metals, plastics, and delicate items without causing abrasion. Specifications Brand Garvee Capacity 3L Frequency 40kHz Ultrasonic Power 120W Heating Power 150W Time Settings 0-30Min Temp Settings 0-80℃/176℉ Certified FCC/CE/RoHS/UL Material 304SUS Item Weight ‎7.5 pounds"
+                },
+                "price": {
+                  "amount": 6999,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 8599,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Size",
+                    "label": "3L"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/shopify_2Fai_images_2Ftmpiss49rrs.jpg?v=1775531076"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://mygarvee.myshopify.com/cart/52087187505465:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Size",
+                "values": [
+                  {
+                    "label": "3L"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/shopify_2Fai_images_2Ftmpiss49rrs.jpg?v=1775531076",
+                "alt_text": "PLS_33JXBGE6"
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/hg-9-9",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "Active-20260407",
+              "ASIN-B0GQ3WTXZ5",
+              "CL#1_Power & Hand Tools",
+              "CL#2_Lab",
+              "CL#3_Ultrasonic Cleaner",
+              "discount__Save an Extra [5% Off] — Black Friday Exclusive with Code:BF5",
+              "FB-All Products",
+              "highlight_0604",
+              "Lab",
+              "Members_林智超",
+              "MK_Discount",
+              "NEW90",
+              "PCode 7LNYO Q3HYO",
+              "Power & Hand Tools",
+              "tag__hot_Black Friday",
+              "Time-20260407",
+              "Ultrasonic Cleaner"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/462297923897",
+                "handle": "agriculture-forestry-equipment",
+                "title": "Agriculture & Forestry Equipment",
+                "description": {
+                  "html": "Agriculture & Forestry Equipment GARVEE offers agriculture and forestry equipment for farms, ranches, rural properties and backyard operations. Explore tractor attachments, land preparation tools, livestock fencing, poultry supplies and logging equipment for a wide range of property maintenance and agricultural tasks. Our tractor attachment selection includes pallet forks, hay spears, trailer hitches, scarifiers and other equipment for lifting, towing and material handling. For driveway and land maintenance, browse drag chain harrows, driveway drags, disc harrows and rakes designed for grading, leveling and surface preparation. Livestock and poultry owners can find livestock fencing, fence tools, chicken coops, nesting boxes, poultry feeders and other supplies for animal housing and daily care. Forestry and logging products include log tongs, cant hooks and chainsaw mills for handling and processing timber. Review each product page carefully for dimensions, rated capacity, mounting requirements and equipment compatibility. Choose the product that matches your tractor, loader, property size and intended task."
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/462381580601",
+                "handle": "lab",
+                "title": "Lab",
+                "description": {
+                  "html": "Are you looking for some budget friendly lab equipment for your fledgling laboratory. Garvee has got your covered. We offer budget friendly Lab products and Cleaning Equipment without compromising on quality and features. These products are some among the best in the market and have been praised immensely by lab owners. Our Lab Incubators are our flagship products that can be used by hospitals, research institutes and independent pathology labs. Garvee lab incubators are fitted with advanced features that makes research and identification an easy task for the lab technicians. We have range of incubator with varying capacities fitted with precision temperature control, advanced air circulation system and adjustable shelves. How do you handle cleaning tasks for tools that must be sterile before you use them? We have a range of Ultrasonic Cleaners that can clean all your tools like test tubes, beakers, flasks, tongs, forceps, etc. The cleaner can remove dirt, grime and other contaminants from the tools promoting easy and thorough cleaning. Our other products under the lab category includes Water Hardness Test Kit to know the pH level of water, Geiger Counter to detect radiation levels and Hydraulic Hand Pressure Test Pump to check fluid pressure of vessels such as, cylinders, valves, boilers, tube pipes, castings, components etc. The water hardness test kit can be used to check total alkalinity, pH, free chlorine, total hardness, Cyanuric acid, and total chlorine. The Geiger counter can identify electromagnetic and nuclear radiation and can also indicate the temperature humidity level in your lab."
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/512160792889",
+                "handle": "power-hand-tools",
+                "title": "Power & Hand Tools",
+                "description": {
+                  "html": "Power & Hand ToolsDiscover Garvee's robust power and hand tools, including secure rolling tool chests and versatile mechanic sets. Enjoy organized storage and reliable performance for your projects. Shop now for quality and convenience."
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/512163414329",
+                "handle": "google-flash-deals",
+                "title": "Google Flash Deals",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/512163512633",
+                "handle": "products-sitewide",
+                "title": "Products Sitewide-exclude gift card",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/10081901347129",
+            "title": "Garvee  6.5L Commercial Ultrasonic Cleaner, 40kHz Digital Timer Heater Stainless Steel for Jewelry Watches Glasses",
+            "description": {
+              "html": ".garvee-uc65 { max-width: 1120px; margin: 0 auto; overflow: hidden; background: #ffffff; color: #202a30; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; } .garvee-uc65 * { box-sizing: border-box; } .garvee-uc65 img { display: block; width: 100%; height: auto; object-fit: contain; } .garvee-uc65 h1, .garvee-uc65 h2, .garvee-uc65 h3, .garvee-uc65 p { margin-top: 0; } .garvee-uc65 .uc-brand { padding: 15px 28px; background: #26343d; border-bottom: 4px solid #ed7024; color: #ffffff; font-size: 21px; font-weight: 800; letter-spacing: .08em; } .garvee-uc65 .uc-intro, .garvee-uc65 .uc-section { padding: 34px 5% 38px; background: #f3f5f5; text-align: center; } .garvee-uc65 .uc-label { margin-bottom: 7px; color: #a84916; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; } .garvee-uc65 h1 { margin-bottom: 12px; color: #202a30; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; } .garvee-uc65 h2 { margin-bottom: 14px; color: #202a30; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; } .garvee-uc65 .uc-intro p { max-width: 740px; margin: 0 auto; color: #52616a; font-size: 16px; } .garvee-uc65 .uc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc65 .uc-card { min-width: 0; padding: 18px 15px; background: #ffffff; border: 1px solid #dfe5e7; border-top: 4px solid #ed7024; } .garvee-uc65 .uc-card strong { display: block; margin-bottom: 6px; color: #b94f15 !important; font-size: 22px; line-height: 1.15; overflow-wrap: anywhere; } .garvee-uc65 .uc-card span { color: #26343d !important; font-size: 13px; font-weight: 700; line-height: 1.35; } .garvee-uc65 .uc-features { padding: 34px 5% 38px; background: #ffffff; text-align: center; } .garvee-uc65 .uc-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc65 .uc-feature { padding: 18px; background: #f3f5f5; border-left: 4px solid #ed7024; } .garvee-uc65 .uc-feature h3 { margin-bottom: 6px; color: #202a30; font-size: 18px; line-height: 1.25; } .garvee-uc65 .uc-feature p { margin-bottom: 0; color: #52616a; font-size: 14px; } .garvee-uc65 .uc-note { margin: 18px auto 0; max-width: 760px; color: #52616a; font-size: 13px; } @media (max-width: 680px) { .garvee-uc65 .uc-brand { padding: 11px 16px; font-size: 17px; } .garvee-uc65 .uc-intro, .garvee-uc65 .uc-section, .garvee-uc65 .uc-features { padding: 25px 14px 28px; } .garvee-uc65 h1 { font-size: 28px; } .garvee-uc65 h2 { font-size: 24px; } .garvee-uc65 .uc-intro p { font-size: 15px; } .garvee-uc65 .uc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .garvee-uc65 .uc-card { padding: 13px 11px; } .garvee-uc65 .uc-card strong { font-size: 19px; } .garvee-uc65 .uc-feature-grid { gap: 8px; } .garvee-uc65 .uc-feature { padding: 13px 11px; } .garvee-uc65 .uc-feature h3 { font-size: 16px; } .garvee-uc65 .uc-feature p { font-size: 13px; line-height: 1.45; } } GARVEE Digital Ultrasonic Cleaner 6.5L Ultrasonic Cleaner A stainless-steel ultrasonic cleaner with digital time and temperature settings for compatible jewelry, tools and metal parts. Product Highlights Cleaning Control at a Glance 6.5L Tank Capacity 40kHz Ultrasonic Frequency 1–99 min Timer Setting 0–80°C Temperature Setting Key Features Designed for Adjustable Cleaning Digital Controls Set the cleaning time and temperature using the digital panel. Built-In Heating The heating function helps support cleaning when warmth is appropriate for the item and cleaning solution. 304 Stainless Steel The listed stainless-steel tank, basket and cover support everyday cleaning tasks. Compatible Items Suitable for compatible jewelry, metal parts and other items approved for ultrasonic cleaning. Check that the item and cleaning solution are suitable for ultrasonic cleaning before use. Specifications 6.5L Model Details 180W Ultrasonic Power 300W Heating Power 300 × 155 × 150 mm Tank Size · L × W × H 360 × 180 × 280 mm Overall Size · L × W × H"
+            },
+            "url": "https://www.garvee.com/products/garvee-ultrasonic-cleaner-65l-digital-timer-heater-watch-eyeglasses-pis_0149xksj",
+            "handle": "garvee-ultrasonic-cleaner-65l-digital-timer-heater-watch-eyeglasses-pis_0149xksj",
+            "price_range": {
+              "min": {
+                "amount": 12199,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 12199,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 17999,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 17999,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/51475372048697",
+                "sku": "PIS_0149XKSJ",
+                "title": "6.5L",
+                "description": {
+                  "html": ".garvee-uc65 { max-width: 1120px; margin: 0 auto; overflow: hidden; background: #ffffff; color: #202a30; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; } .garvee-uc65 * { box-sizing: border-box; } .garvee-uc65 img { display: block; width: 100%; height: auto; object-fit: contain; } .garvee-uc65 h1, .garvee-uc65 h2, .garvee-uc65 h3, .garvee-uc65 p { margin-top: 0; } .garvee-uc65 .uc-brand { padding: 15px 28px; background: #26343d; border-bottom: 4px solid #ed7024; color: #ffffff; font-size: 21px; font-weight: 800; letter-spacing: .08em; } .garvee-uc65 .uc-intro, .garvee-uc65 .uc-section { padding: 34px 5% 38px; background: #f3f5f5; text-align: center; } .garvee-uc65 .uc-label { margin-bottom: 7px; color: #a84916; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; } .garvee-uc65 h1 { margin-bottom: 12px; color: #202a30; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; } .garvee-uc65 h2 { margin-bottom: 14px; color: #202a30; font-size: clamp(24px, 3vw, 32px); line-height: 1.2; } .garvee-uc65 .uc-intro p { max-width: 740px; margin: 0 auto; color: #52616a; font-size: 16px; } .garvee-uc65 .uc-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc65 .uc-card { min-width: 0; padding: 18px 15px; background: #ffffff; border: 1px solid #dfe5e7; border-top: 4px solid #ed7024; } .garvee-uc65 .uc-card strong { display: block; margin-bottom: 6px; color: #b94f15 !important; font-size: 22px; line-height: 1.15; overflow-wrap: anywhere; } .garvee-uc65 .uc-card span { color: #26343d !important; font-size: 13px; font-weight: 700; line-height: 1.35; } .garvee-uc65 .uc-features { padding: 34px 5% 38px; background: #ffffff; text-align: center; } .garvee-uc65 .uc-feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; text-align: left; } .garvee-uc65 .uc-feature { padding: 18px; background: #f3f5f5; border-left: 4px solid #ed7024; } .garvee-uc65 .uc-feature h3 { margin-bottom: 6px; color: #202a30; font-size: 18px; line-height: 1.25; } .garvee-uc65 .uc-feature p { margin-bottom: 0; color: #52616a; font-size: 14px; } .garvee-uc65 .uc-note { margin: 18px auto 0; max-width: 760px; color: #52616a; font-size: 13px; } @media (max-width: 680px) { .garvee-uc65 .uc-brand { padding: 11px 16px; font-size: 17px; } .garvee-uc65 .uc-intro, .garvee-uc65 .uc-section, .garvee-uc65 .uc-features { padding: 25px 14px 28px; } .garvee-uc65 h1 { font-size: 28px; } .garvee-uc65 h2 { font-size: 24px; } .garvee-uc65 .uc-intro p { font-size: 15px; } .garvee-uc65 .uc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .garvee-uc65 .uc-card { padding: 13px 11px; } .garvee-uc65 .uc-card strong { font-size: 19px; } .garvee-uc65 .uc-feature-grid { gap: 8px; } .garvee-uc65 .uc-feature { padding: 13px 11px; } .garvee-uc65 .uc-feature h3 { font-size: 16px; } .garvee-uc65 .uc-feature p { font-size: 13px; line-height: 1.45; } } GARVEE Digital Ultrasonic Cleaner 6.5L Ultrasonic Cleaner A stainless-steel ultrasonic cleaner with digital time and temperature settings for compatible jewelry, tools and metal parts. Product Highlights Cleaning Control at a Glance 6.5L Tank Capacity 40kHz Ultrasonic Frequency 1–99 min Timer Setting 0–80°C Temperature Setting Key Features Designed for Adjustable Cleaning Digital Controls Set the cleaning time and temperature using the digital panel. Built-In Heating The heating function helps support cleaning when warmth is appropriate for the item and cleaning solution. 304 Stainless Steel The listed stainless-steel tank, basket and cover support everyday cleaning tasks. Compatible Items Suitable for compatible jewelry, metal parts and other items approved for ultrasonic cleaning. Check that the item and cleaning solution are suitable for ultrasonic cleaning before use. Specifications 6.5L Model Details 180W Ultrasonic Power 300W Heating Power 300 × 155 × 150 mm Tank Size · L × W × H 360 × 180 × 280 mm Overall Size · L × W × H"
+                },
+                "price": {
+                  "amount": 12199,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 17999,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Size",
+                    "label": "6.5L"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/71x2p0o6b8L.jpg?v=1766559438"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://mygarvee.myshopify.com/cart/51475372048697:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Size",
+                "values": [
+                  {
+                    "label": "6.5L"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/71x2p0o6b8L.jpg?v=1766559438",
+                "alt_text": "PIS_0149XKSJ"
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/hg-9-9",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "Active-20251226",
+              "CL#1_Power & Hand Tools",
+              "CL#2_Lab",
+              "CL#3_Ultrasonic Cleaner",
+              "discount__Save an Extra [5% Off] — Black Friday Exclusive with Code:BF5",
+              "DTM_FB-202512-NEW",
+              "FB-All Products",
+              "FB-All Products-collection",
+              "Lab",
+              "Members_林智超",
+              "MK_Discount",
+              "NEW90",
+              "PCode 7AQBX QKZVY",
+              "Power & Hand Tools",
+              "tag__hot_Black Friday",
+              "Time-20251224",
+              "Ultrasonic Cleaner",
+              "上架-B0DJM4V3BH"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/462297923897",
+                "handle": "agriculture-forestry-equipment",
+                "title": "Agriculture & Forestry Equipment",
+                "description": {
+                  "html": "Agriculture & Forestry Equipment GARVEE offers agriculture and forestry equipment for farms, ranches, rural properties and backyard operations. Explore tractor attachments, land preparation tools, livestock fencing, poultry supplies and logging equipment for a wide range of property maintenance and agricultural tasks. Our tractor attachment selection includes pallet forks, hay spears, trailer hitches, scarifiers and other equipment for lifting, towing and material handling. For driveway and land maintenance, browse drag chain harrows, driveway drags, disc harrows and rakes designed for grading, leveling and surface preparation. Livestock and poultry owners can find livestock fencing, fence tools, chicken coops, nesting boxes, poultry feeders and other supplies for animal housing and daily care. Forestry and logging products include log tongs, cant hooks and chainsaw mills for handling and processing timber. Review each product page carefully for dimensions, rated capacity, mounting requirements and equipment compatibility. Choose the product that matches your tractor, loader, property size and intended task."
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/462381580601",
+                "handle": "lab",
+                "title": "Lab",
+                "description": {
+                  "html": "Are you looking for some budget friendly lab equipment for your fledgling laboratory. Garvee has got your covered. We offer budget friendly Lab products and Cleaning Equipment without compromising on quality and features. These products are some among the best in the market and have been praised immensely by lab owners. Our Lab Incubators are our flagship products that can be used by hospitals, research institutes and independent pathology labs. Garvee lab incubators are fitted with advanced features that makes research and identification an easy task for the lab technicians. We have range of incubator with varying capacities fitted with precision temperature control, advanced air circulation system and adjustable shelves. How do you handle cleaning tasks for tools that must be sterile before you use them? We have a range of Ultrasonic Cleaners that can clean all your tools like test tubes, beakers, flasks, tongs, forceps, etc. The cleaner can remove dirt, grime and other contaminants from the tools promoting easy and thorough cleaning. Our other products under the lab category includes Water Hardness Test Kit to know the pH level of water, Geiger Counter to detect radiation levels and Hydraulic Hand Pressure Test Pump to check fluid pressure of vessels such as, cylinders, valves, boilers, tube pipes, castings, components etc. The water hardness test kit can be used to check total alkalinity, pH, free chlorine, total hardness, Cyanuric acid, and total chlorine. The Geiger counter can identify electromagnetic and nuclear radiation and can also indicate the temperature humidity level in your lab."
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/512160792889",
+                "handle": "power-hand-tools",
+                "title": "Power & Hand Tools",
+                "description": {
+                  "html": "Power & Hand ToolsDiscover Garvee's robust power and hand tools, including secure rolling tool chests and versatile mechanic sets. Enjoy organized storage and reliable performance for your projects. Shop now for quality and convenience."
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/512163414329",
+                "handle": "google-flash-deals",
+                "title": "Google Flash Deals",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/512163512633",
+                "handle": "products-sitewide",
+                "title": "Products Sitewide-exclude gift card",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          }
+        ],
+        "pagination": {
+          "has_next_page": false
+        },
+        "messages": []
+      }
+    }
+  }
+}

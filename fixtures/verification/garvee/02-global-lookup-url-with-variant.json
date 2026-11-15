@@ -1,0 +1,291 @@
+{
+  "fetched_at": "2026-11-15T17:25:20.481Z",
+  "url": "https://catalog.shopify.com/api/ucp/mcp",
+  "final_url": "https://catalog.shopify.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "lookup_catalog",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/valid-with-capabilities.json"
+          }
+        },
+        "catalog": {
+          "ids": [
+            "https://www.garvee.com/products/garvee-137-modular-cloud-sectional-sofa-large-u-grey-vnn-33c9xngg?variant=51296972898617"
+          ],
+          "context": {
+            "address_country": "US",
+            "address_region": "NY",
+            "postal_code": "14228"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "capabilities": {
+            "dev.ucp.shopping.catalog.search": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+              }
+            ],
+            "dev.ucp.shopping.catalog.lookup": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+              }
+            ],
+            "dev.shopify.catalog.global": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://shopify.dev/docs/agents/catalog/global-catalog",
+                "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog_global.json",
+                "extends": [
+                  "dev.ucp.shopping.catalog.search",
+                  "dev.ucp.shopping.catalog.lookup"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ]
+          },
+          "status": "success"
+        },
+        "products": [
+          {
+            "id": "gid://shopify/p/1Sq2NP9E1koN07pwcinkoY",
+            "title": "Garvee 137\" Modular Sectional Sofa, Modern Cloud Sectional Couch with Deep Seat, L-Shape Boneless Couch with Chaise for Living Room Apartments, No Assembly Required (4 Seater + 2 Ottoman), Grey",
+            "description": {
+              "plain": "<p id=\"Pt-Description\"><iframe width=\"560\" height=\"315\" src=\"https://cdn.shopify.com/videos/c/o/v/52afe6dadaf7489fb919aa479bedcbdb.mp4\" title=\"YouTube video player\"></iframe></p>\n<p><span>Modular Cloud Couch Sectional, Soft Corduroy Fabric, No Assembly Required, L-Shaped Sectional Sofa with Chaise for Small Space, Apartment Living Room</span></p>\n<p><span><br></span></p>\n<p><span>✨ Transform Your Living Space with Endless Comfort &amp; Style</span></p>\n<p><span>Tired of compromising between style, comfort, and practicality? Meet our Modular Cloud Couch Sectional—the ultimate solution for modern living. Engineered for those who value flexibility, luxury, and hassle-free convenience, this sofa invites you to sink into a new level of relaxation while perfectly adapting to your unique space and lifestyle.</span></p>\n<p><span><br></span></p>\n<p><span>🌪️ Key Benefits You'll Love:</span></p>\n<p><span>🚚 Effortless Setup: Truly \"Zero Assembly Required\"—unbox, place, pat the cushions, and relax. Your sofa will fully expand to its plush shape within 72 hours.</span></p>\n<p><span><br></span></p>\n<p><span>🧩 Ultimate Flexibility: Our modular design empowers you. Create an L-shape, U-shape, chaise lounge, or separate seating clusters—rearrange anytime to refresh your room's layout.</span></p>\n<p><span><br></span></p>\n<p><span>☁️ Cloud-Like Comfort: Sink into the deep seats and experience unparalleled support with high-resilience foam, all wrapped in a luxuriously soft, upgraded corduroy fabric.</span></p>\n<p><span><br></span></p>\n<p><span>🏠 Perfect for Any Home: Specifically designed to navigate tight apartment stairways and narrow doorframes with ease. Its space-savvy design maximizes seating without overwhelming your room.</span></p>\n<p><span><br></span></p>\n<p><span>🛡️ Durable &amp; Family-Friendly: The wrinkle and stain-resistant corduroy fabric stands up to daily life, from movie nights to playful pets, ensuring long-lasting beauty and ease of care.</span></p>\n<p> </p>\n<p><span>We are dedicated to your 100% satisfaction. If you have any questions about your cloud couch or need any assistance, our friendly customer support team is just a message away.</span><strong></strong></p>\n<h3><strong>Specifications</strong></h3>\n<table class=\"responsive-table\">\n<tbody>\n<tr>\n<td>Brand Name</td>\n<td>Garvee</td>\n</tr>\n<tr>\n<td>Sofa Type</td>\n<td>Sectional</td>\n</tr>\n<tr>\n<td>Included Components</td>\n<td>Ottoman</td>\n</tr>\n<tr>\n<td>Item Height</td>\n<td>31.5 inches</td>\n</tr>\n<tr>\n<td>Material Type</td>\n<td>Rubberwood</td>\n</tr>\n<tr>\n<td>Required Assembly</td>\n<td>No</td>\n</tr>\n<tr>\n<td>Seat Height</td>\n<td>16.54 Inches</td>\n</tr>\n<tr>\n<td>Item Dimensions D x W x H</td>\n<td>65.8\"D x 137\"W x 31.5\"H</td>\n</tr>\n<tr>\n<td>Item Weight</td>\n<td>163.1 Pounds</td>\n</tr>\n<tr>\n<td>Size</td>\n<td>4 Seater + 2 Ottoman</td>\n</tr>\n<tr>\n<td>Seating Capacity</td>\n<td>4</td>\n</tr>\n<tr>\n<td>Color</td>\n<td>Corduroy | Grey</td>\n</tr>\n</tbody>\n</table>\n<style>\n    .aplus_module STANDARD_PRODUCT_ATTRIBUTES h3{\n      margin-bottom: 10px;\n    }\n    .responsive-table {\n      border-collapse: collapse;\n      width: 100%;\n      margin-bottom: 20px;\n    }\n    .responsive-table td {\n      border: 1px solid #ddd;\n      padding: 8px;\n      text-align: left;\n    }\n    .responsive-table tr:nth-child(odd) {\n      background-color: #F2F2F2;\n    }\n    .responsive-table tr:nth-child(even) {\n      background-color: #E6E6E6;\n    }\n    .responsive-table tr:hover {\n      background-color: #DDDDDD;\n    }\n    @media screen and (max-width: 800px) {\n      .responsive-table td {\n        box-sizing: border-box;\n        width: 100%;\n        text-align: left;\n        padding: 10px;\n      }\n      .responsive-table tr:nth-child(odd) td {\n        background-color: #F2F2F2;\n      }\n      .responsive-table tr:nth-child(even) td {\n        background-color: #E6E6E6;\n      }\n      .responsive-table tr:hover td {\n        background-color: #DDDDDD;\n      }\n    }\n</style>\n<style>\n    .aplus_module{\n        margin-bottom:24px;\n    }\n    .aplus_module img{\n        width:100%;\n    }\n    .aplus_module h1,h2,h3,h4,h5,h6{\n        margin:0 !important;\n    }\n    .count_imgs_wrap{\n        display:flex;\n    }\n    .count_imgs_wrap>div{\n        flex: 1;\n        margin-right: 30px;\n    }\n    .count_imgs_wrap>div:last-child {\n        margin-right: 0;\n    }\n    @media screen and (max-width:800px){\n        .count_imgs_wrap{\n            flex-direction: column;\n        }\n        .count_imgs_wrap>div{\n            margin-right: 0;\n        }\n        .count_imgs{\n            display:flex;\n            justify-content: center;\n        }\n        .count_imgs>img{\n            width:auto;\n            max-width:100%;\n        }\n    }\n</style>\n<style>\n    .img_floatleft{\n        display:flex;\n        justify-content:space-between;\n    }\n    .leftwrap{\n        flex:3;\n        display:flex;\n    }\n    .lefttext{\n        margin:0 30px;\n    }\n    .lefttext>ul{\n        padding:0;\n    }\n    .lefttext>ul>li{\n        padding-bottom:18px;\n    }\n    .rightwrap{\n        flex:1;\n    }\n    .rightwrap_inner{\n        border-left:1px solid #dddddd;\n        padding-left:30px;\n    }\n    .rightwrap_inner>ul{\n        background-color: white;\n        padding:18px 32px;\n        border-radius: 8px;\n    }\n    @media screen and (max-width:800px){\n        .img_floatleft{\n            flex-direction: column;\n        }\n        .leftwrap{\n            flex-direction: column;\n            flex: initial;\n        }\n        .leftimage{\n            display:flex;\n            justify-content: center;\n        }\n        .leftimage>img{\n            max-width:100%;\n            width:auto;\n        }\n        .lefttext{\n            margin:0;\n        }\n        .lefttext>ul{\n            padding-left:32px;\n        }\n        .rightwrap{\n            flex: initial;\n        }\n        .rightwrap_inner{\n            border-left:0;\n            padding-left:0;\n        }\n        .rightwrap_inner>ul{\n            padding-right:0;\n        }\n    }\n</style>"
+            },
+            "handle": "garvee-137-modular-cloud-sectional-sofa-large-u-grey-vnn-33c9xngg",
+            "rating": {
+              "value": 5,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 192
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/cimage_6f9815505600f44c.jpg",
+                "alt_text": "VNN_33C9XNGG",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/cimage_6f9815505600f44c.jpg",
+                  "width": 2000,
+                  "height": 2000
+                },
+                "width": 2000,
+                "height": 2000
+              },
+              {
+                "type": "video",
+                "url": "https://cdn.shopify.com/videos/c/vp/696ad19117454fddb4558c241c677d9b/696ad19117454fddb4558c241c677d9b.m3u8",
+                "alt_text": "Garvee 137\" Modular Sectional Sofa, Modern Cloud Sectional Couch with Deep Seat, L-Shape Boneless Couch with Chaise for Living Room Apartments, No Assembly Required (4 Seater + 2 Ottoman), Grey",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/preview_images/696ad19117454fddb4558c241c677d9b.thumbnail.0000000000.jpg",
+                  "width": 1920,
+                  "height": 1080
+                },
+                "duration": 39,
+                "sources": [
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/696ad19117454fddb4558c241c677d9b/696ad19117454fddb4558c241c677d9b.m3u8",
+                    "mime_type": "application/x-mpegURL",
+                    "format": "m3u8",
+                    "width": 1920,
+                    "height": 1080
+                  },
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/696ad19117454fddb4558c241c677d9b/696ad19117454fddb4558c241c677d9b.HD-1080p-2.5Mbps-63660240.mp4",
+                    "mime_type": "video/mp4",
+                    "format": "mp4",
+                    "width": 1920,
+                    "height": 1080
+                  },
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/696ad19117454fddb4558c241c677d9b/696ad19117454fddb4558c241c677d9b.HD-720p-1.6Mbps-63660240.mp4",
+                    "mime_type": "video/mp4",
+                    "format": "mp4",
+                    "width": 1280,
+                    "height": 720
+                  },
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/696ad19117454fddb4558c241c677d9b/696ad19117454fddb4558c241c677d9b.SD-480p-0.9Mbps-63660240.mp4",
+                    "mime_type": "video/mp4",
+                    "format": "mp4",
+                    "width": 852,
+                    "height": 480
+                  }
+                ]
+              }
+            ],
+            "options": [
+              {
+                "name": "Color",
+                "values": [
+                  {
+                    "label": "Corduroy | Black"
+                  },
+                  {
+                    "label": "Corduroy | Grey"
+                  }
+                ]
+              },
+              {
+                "name": "Size",
+                "values": [
+                  {
+                    "label": "3 Seater + 1 Ottoman"
+                  },
+                  {
+                    "label": "3 Seater + 2 Ottoman"
+                  },
+                  {
+                    "label": "4 Seater + 1 Ottoman"
+                  },
+                  {
+                    "label": "4 Seater + 2 Ottoman"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Zero assembly required with modular design for customizable seating arrangements and plush comfort."
+              ],
+              "top_features": [
+                "Zero assembly required for instant setup and convenience",
+                "Modular design allows L-shape, U-shape, or separate seating for flexible layouts",
+                "Deep seat with high-resilience foam provides cloud-like comfort",
+                "Upgraded soft corduroy fabric is wrinkle and stain resistant for easy care",
+                "Durable construction suitable for daily use and family environments"
+              ],
+              "tech_specs": [
+                "Item Height: 31.5 inches",
+                "Seat Height: 16.54 inches",
+                "Item Dimensions: 65.8 D x 137 W x 31.5 H inches",
+                "Item Weight: 163.1 pounds",
+                "Material Type: Rubberwood",
+                "Seating Capacity: 4 (with 2 ottoman or 1 ottoman depending on model)"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/51296972898617",
+                "title": "Garvee 137\" Modular Sectional Sofa, Modern Cloud Sectional Couch with Deep Seat, L-Shape Boneless Couch with Chaise for Living Room Apartments, No Assembly Required (4 Seater + 2 Ottoman), Grey",
+                "description": {
+                  "plain": "<p id=\"Pt-Description\"><iframe width=\"560\" height=\"315\" src=\"https://cdn.shopify.com/videos/c/o/v/52afe6dadaf7489fb919aa479bedcbdb.mp4\" title=\"YouTube video player\"></iframe></p>\n<p><span>Modular Cloud Couch Sectional, Soft Corduroy Fabric, No Assembly Required, L-Shaped Sectional Sofa with Chaise for Small Space, Apartment Living Room</span></p>\n<p><span><br></span></p>\n<p><span>✨ Transform Your Living Space with Endless Comfort &amp; Style</span></p>\n<p><span>Tired of compromising between style, comfort, and practicality? Meet our Modular Cloud Couch Sectional—the ultimate solution for modern living. Engineered for those who value flexibility, luxury, and hassle-free convenience, this sofa invites you to sink into a new level of relaxation while perfectly adapting to your unique space and lifestyle.</span></p>\n<p><span><br></span></p>\n<p><span>🌪️ Key Benefits You'll Love:</span></p>\n<p><span>🚚 Effortless Setup: Truly \"Zero Assembly Required\"—unbox, place, pat the cushions, and relax. Your sofa will fully expand to its plush shape within 72 hours.</span></p>\n<p><span><br></span></p>\n<p><span>🧩 Ultimate Flexibility: Our modular design empowers you. Create an L-shape, U-shape, chaise lounge, or separate seating clusters—rearrange anytime to refresh your room's layout.</span></p>\n<p><span><br></span></p>\n<p><span>☁️ Cloud-Like Comfort: Sink into the deep seats and experience unparalleled support with high-resilience foam, all wrapped in a luxuriously soft, upgraded corduroy fabric.</span></p>\n<p><span><br></span></p>\n<p><span>🏠 Perfect for Any Home: Specifically designed to navigate tight apartment stairways and narrow doorframes with ease. Its space-savvy design maximizes seating without overwhelming your room.</span></p>\n<p><span><br></span></p>\n<p><span>🛡️ Durable &amp; Family-Friendly: The wrinkle and stain-resistant corduroy fabric stands up to daily life, from movie nights to playful pets, ensuring long-lasting beauty and ease of care.</span></p>\n<p> </p>\n<p><span>We are dedicated to your 100% satisfaction. If you have any questions about your cloud couch or need any assistance, our friendly customer support team is just a message away.</span><strong></strong></p>\n<h3><strong>Specifications</strong></h3>\n<table class=\"responsive-table\">\n<tbody>\n<tr>\n<td>Brand Name</td>\n<td>Garvee</td>\n</tr>\n<tr>\n<td>Sofa Type</td>\n<td>Sectional</td>\n</tr>\n<tr>\n<td>Included Components</td>\n<td>Ottoman</td>\n</tr>\n<tr>\n<td>Item Height</td>\n<td>31.5 inches</td>\n</tr>\n<tr>\n<td>Material Type</td>\n<td>Rubberwood</td>\n</tr>\n<tr>\n<td>Required Assembly</td>\n<td>No</td>\n</tr>\n<tr>\n<td>Seat Height</td>\n<td>16.54 Inches</td>\n</tr>\n<tr>\n<td>Item Dimensions D x W x H</td>\n<td>65.8\"D x 137\"W x 31.5\"H</td>\n</tr>\n<tr>\n<td>Item Weight</td>\n<td>163.1 Pounds</td>\n</tr>\n<tr>\n<td>Size</td>\n<td>4 Seater + 2 Ottoman</td>\n</tr>\n<tr>\n<td>Seating Capacity</td>\n<td>4</td>\n</tr>\n<tr>\n<td>Color</td>\n<td>Corduroy | Grey</td>\n</tr>\n</tbody>\n</table>\n<style>\n    .aplus_module STANDARD_PRODUCT_ATTRIBUTES h3{\n      margin-bottom: 10px;\n    }\n    .responsive-table {\n      border-collapse: collapse;\n      width: 100%;\n      margin-bottom: 20px;\n    }\n    .responsive-table td {\n      border: 1px solid #ddd;\n      padding: 8px;\n      text-align: left;\n    }\n    .responsive-table tr:nth-child(odd) {\n      background-color: #F2F2F2;\n    }\n    .responsive-table tr:nth-child(even) {\n      background-color: #E6E6E6;\n    }\n    .responsive-table tr:hover {\n      background-color: #DDDDDD;\n    }\n    @media screen and (max-width: 800px) {\n      .responsive-table td {\n        box-sizing: border-box;\n        width: 100%;\n        text-align: left;\n        padding: 10px;\n      }\n      .responsive-table tr:nth-child(odd) td {\n        background-color: #F2F2F2;\n      }\n      .responsive-table tr:nth-child(even) td {\n        background-color: #E6E6E6;\n      }\n      .responsive-table tr:hover td {\n        background-color: #DDDDDD;\n      }\n    }\n</style>\n<style>\n    .aplus_module{\n        margin-bottom:24px;\n    }\n    .aplus_module img{\n        width:100%;\n    }\n    .aplus_module h1,h2,h3,h4,h5,h6{\n        margin:0 !important;\n    }\n    .count_imgs_wrap{\n        display:flex;\n    }\n    .count_imgs_wrap>div{\n        flex: 1;\n        margin-right: 30px;\n    }\n    .count_imgs_wrap>div:last-child {\n        margin-right: 0;\n    }\n    @media screen and (max-width:800px){\n        .count_imgs_wrap{\n            flex-direction: column;\n        }\n        .count_imgs_wrap>div{\n            margin-right: 0;\n        }\n        .count_imgs{\n            display:flex;\n            justify-content: center;\n        }\n        .count_imgs>img{\n            width:auto;\n            max-width:100%;\n        }\n    }\n</style>\n<style>\n    .img_floatleft{\n        display:flex;\n        justify-content:space-between;\n    }\n    .leftwrap{\n        flex:3;\n        display:flex;\n    }\n    .lefttext{\n        margin:0 30px;\n    }\n    .lefttext>ul{\n        padding:0;\n    }\n    .lefttext>ul>li{\n        padding-bottom:18px;\n    }\n    .rightwrap{\n        flex:1;\n    }\n    .rightwrap_inner{\n        border-left:1px solid #dddddd;\n        padding-left:30px;\n    }\n    .rightwrap_inner>ul{\n        background-color: white;\n        padding:18px 32px;\n        border-radius: 8px;\n    }\n    @media screen and (max-width:800px){\n        .img_floatleft{\n            flex-direction: column;\n        }\n        .leftwrap{\n            flex-direction: column;\n            flex: initial;\n        }\n        .leftimage{\n            display:flex;\n            justify-content: center;\n        }\n        .leftimage>img{\n            max-width:100%;\n            width:auto;\n        }\n        .lefttext{\n            margin:0;\n        }\n        .lefttext>ul{\n            padding-left:32px;\n        }\n        .rightwrap{\n            flex: initial;\n        }\n        .rightwrap_inner{\n            border-left:0;\n            padding-left:0;\n        }\n        .rightwrap_inner>ul{\n            padding-right:0;\n        }\n    }\n</style>"
+                },
+                "handle": "garvee-137-modular-cloud-sectional-sofa-large-u-grey-vnn-33c9xngg",
+                "url": "https://www.garvee.com/products/garvee-137-modular-cloud-sectional-sofa-large-u-grey-vnn-33c9xngg?_gsid=3R41HerWZSFK&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 68199,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 88799,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Color",
+                    "label": "Corduroy | Grey"
+                  },
+                  {
+                    "name": "Size",
+                    "label": "4 Seater + 2 Ottoman"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/cimage_6f9815505600f44c.jpg",
+                    "alt_text": "VNN_33C9XNGG",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/cimage_6f9815505600f44c.jpg",
+                      "width": 2000,
+                      "height": 2000
+                    },
+                    "width": 2000,
+                    "height": 2000
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/72466989369",
+                  "name": "GARVEE",
+                  "url": "https://www.garvee.com",
+                  "domain": "mygarvee.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/72466989369/policies/30681661753.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/72466989369/policies/30681694521.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/72466989369/policies/30681628985.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/72466989369/policies/30681727289.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://mygarvee.myshopify.com/buy/51296972898617:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=headless&attribution/click_id_tag=_gsid&attribution/click_id_value=3R41HerWZSFK&_gsid=3R41HerWZSFK",
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify",
+                "inputs": [
+                  {
+                    "id": "https://www.garvee.com/products/garvee-137-modular-cloud-sectional-sofa-large-u-grey-vnn-33c9xngg?variant=51296972898617",
+                    "match": "featured"
+                  }
+                ]
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 68199,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 68199,
+                "currency": "USD"
+              }
+            }
+          }
+        ],
+        "messages": []
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "fetched_at": "2026-11-15T17:25:36.559Z",
+  "url": "https://mygarvee.myshopify.com/api/ucp/mcp",
+  "final_url": "https://mygarvee.myshopify.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "ask_business",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/ask.json"
+          }
+        },
+        "ask": {
+          "query": "If I return this item after delivery to 14228, what will I pay? Include any restocking fee and whether it depends on packaging, who pays return shipping and how much, whether original delivery charges are refunded, the return window and when it starts, and whether this item is final sale.",
+          "ids": [
+            "gid://shopify/ProductVariant/51296972898617"
+          ],
+          "context": {
+            "address_country": "US",
+            "address_region": "NY",
+            "postal_code": "14228",
+            "language": "en"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"capabilities\":{\"dev.ucp.common.ask\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/ask/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/ask.json\"}]}},\"answer\":{\"plain\":\"For this sofa, the store’s information doesn’t specify a single total cost for a return to 14228 or a return-shipping amount. For a change-of-mind return, you pay return shipping and the restocking cost; the policy mentions that a restocking fee may apply but does not state its amount or whether packaging changes it. The 30-day return window applies, but the policy doesn’t specify when it starts. Original delivery charges are not addressed for ordinary returns; a separate rule for returns due to specified delivery delays says the original shipping fee is not refunded and a 20% restocking fee is deducted. The sofa is not identified as final sale.\"},\"links\":[{\"type\":\"product\",\"url\":\"https://www.garvee.com/products/garvee-137-modular-cloud-sectional-sofa-large-u-grey-vnn-33c9xngg?variant=51296972898617\",\"title\":\"Garvee 137\\\" Modular Sectional Sofa, Modern Cloud Sectional Couch with Deep Seat, L-Shape Boneless Couch with Chaise for Living Room Apartments, No Assembly Required (4 Seater + 2 Ottoman), Grey - Corduroy | Grey / 4 Seater + 2 Ottoman\",\"id\":\"gid://shopify/ProductVariant/51296972898617\"}]}"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "status": "success",
+          "capabilities": {
+            "dev.ucp.common.ask": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/common/ask/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/common/ask.json"
+              }
+            ]
+          }
+        },
+        "answer": {
+          "plain": "For this sofa, the store’s information doesn’t specify a single total cost for a return to 14228 or a return-shipping amount. For a change-of-mind return, you pay return shipping and the restocking cost; the policy mentions that a restocking fee may apply but does not state its amount or whether packaging changes it. The 30-day return window applies, but the policy doesn’t specify when it starts. Original delivery charges are not addressed for ordinary returns; a separate rule for returns due to specified delivery delays says the original shipping fee is not refunded and a 20% restocking fee is deducted. The sofa is not identified as final sale."
+        },
+        "links": [
+          {
+            "type": "product",
+            "url": "https://www.garvee.com/products/garvee-137-modular-cloud-sectional-sofa-large-u-grey-vnn-33c9xngg?variant=51296972898617",
+            "title": "Garvee 137\" Modular Sectional Sofa, Modern Cloud Sectional Couch with Deep Seat, L-Shape Boneless Couch with Chaise for Living Room Apartments, No Assembly Required (4 Seater + 2 Ottoman), Grey - Corduroy | Grey / 4 Seater + 2 Ottoman",
+            "id": "gid://shopify/ProductVariant/51296972898617"
+          }
+        ]
+      }
+    }
+  }
+}
