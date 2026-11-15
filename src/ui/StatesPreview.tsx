@@ -39,6 +39,19 @@ const BASE: CardModel = {
 
 const STATES: { title: string; card: CardModel }[] = [
   {
+    title: "The link named no variant, so the check picked one and says so in the header.",
+    card: {
+      ...BASE,
+      product: { ...BASE.product, variantNote: "Your link didn't name a fabric, so this shows Oat - Boucle." },
+      ifWrong: {
+        status: "terms",
+        sources: BOTH,
+        lines: [{ kind: "exchange", count: 1, conditions: "with the original box, within the 14 days", quotes: [P("Items may be returned within 14 days.")] }],
+        window: { days: 14, starts: null, quotes: [P("Items may be returned within 14 days.")] },
+      },
+    },
+  },
+  {
     title: "The store's assistant is unavailable, so the policy page alone. Flat return shipping and delivery the store keeps both go into the figure.",
     card: {
       ...BASE,

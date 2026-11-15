@@ -259,6 +259,16 @@ a {
   color: var(--ink-3);
 }
 
+/* The check picked a variant the link didn't name: say so where the variant shows. */
+.variant-note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  text-decoration: underline dashed var(--ink-3);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
 .seller-line {
   display: flex;
   flex-wrap: wrap;

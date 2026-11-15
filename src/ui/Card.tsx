@@ -51,6 +51,7 @@ function Header({ product }: { product: ProductHeader }) {
             </li>
           ))}
         </ul>
+        {product.variantNote && <p className="variant-note">{product.variantNote}</p>}
         <div className="seller-line">
           <span className="seller">{product.seller.name}</span>
           {product.rating ? (

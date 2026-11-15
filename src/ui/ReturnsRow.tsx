@@ -150,12 +150,15 @@ function Line({ line }: { line: Merged }) {
           + {line.deliveryCents === null ? "delivery charges" : `${formatUsd(line.deliveryCents)} delivery`}, <Gap>refund not stated</Gap>
         </p>
       );
-    case "exchange":
+    case "exchange": {
+      const what = line.count === 1 ? "one free exchange" : line.count ? `${line.count} free exchanges` : "a free exchange";
       return (
         <p className="plain exchange">
-          <span className="figure figure-small">Or $0:</span> one free exchange, {line.conditions}.
+          <span className="figure figure-small">Or $0:</span> {what}
+          {line.conditions ? `, ${line.conditions}` : ""}.
         </p>
       );
+    }
     case "final_sale":
       return <p className="plain">{line.value ? "Final sale: no returns on this item." : "Not final sale."}</p>;
     case "disagreement":
