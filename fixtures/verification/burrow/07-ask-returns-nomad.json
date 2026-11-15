@@ -1,0 +1,72 @@
+{
+  "fetched_at": "2026-11-15T17:23:54.009Z",
+  "url": "https://burrow-prod.myshopify.com/api/ucp/mcp",
+  "final_url": "https://burrow-prod.myshopify.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "ask_business",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/ask.json"
+          }
+        },
+        "ask": {
+          "query": "If I return this item after delivery to 14228, what will I pay? Include any restocking fee and whether it depends on packaging, who pays return shipping and how much, whether original delivery charges are refunded, the return window and when it starts, and whether this item is final sale.",
+          "ids": [
+            "gid://shopify/ProductVariant/50484946305326"
+          ],
+          "context": {
+            "address_country": "US",
+            "address_region": "NY",
+            "postal_code": "14228",
+            "language": "en"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"capabilities\":{\"dev.ucp.common.ask\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/ask/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/ask.json\"}]}},\"answer\":{\"plain\":\"For the referenced Nomad Sofa variant, the return fee is 10% of the amount paid with its original packaging, or 20% without it, capped at $250. Burrow arranges the return shipping or pickup and chooses the method; the fee is described as a return-shipping fee, but the exact shipping charge is not specified. Original delivery charges are not addressed. A return must be initiated within 30 calendar days of confirmed delivery—not unboxing—and the sofa must be in usable condition; returns are not guaranteed and are subject to Burrow’s approval. This sofa is not listed as final sale, but its return eligibility is subject to those conditions.\"},\"links\":[{\"type\":\"product\",\"url\":\"https://checkout.burrow.com/products/nomad-plus-sofa?variant=50484946305326\",\"title\":\"Nomad Sofa - Crushed Gravel - Performance Chenille / Black - Metal / Block\",\"id\":\"gid://shopify/ProductVariant/50484946305326\"}]}"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "status": "success",
+          "capabilities": {
+            "dev.ucp.common.ask": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/common/ask/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/common/ask.json"
+              }
+            ]
+          }
+        },
+        "answer": {
+          "plain": "For the referenced Nomad Sofa variant, the return fee is 10% of the amount paid with its original packaging, or 20% without it, capped at $250. Burrow arranges the return shipping or pickup and chooses the method; the fee is described as a return-shipping fee, but the exact shipping charge is not specified. Original delivery charges are not addressed. A return must be initiated within 30 calendar days of confirmed delivery—not unboxing—and the sofa must be in usable condition; returns are not guaranteed and are subject to Burrow’s approval. This sofa is not listed as final sale, but its return eligibility is subject to those conditions."
+        },
+        "links": [
+          {
+            "type": "product",
+            "url": "https://checkout.burrow.com/products/nomad-plus-sofa?variant=50484946305326",
+            "title": "Nomad Sofa - Crushed Gravel - Performance Chenille / Black - Metal / Block",
+            "id": "gid://shopify/ProductVariant/50484946305326"
+          }
+        ]
+      }
+    }
+  }
+}

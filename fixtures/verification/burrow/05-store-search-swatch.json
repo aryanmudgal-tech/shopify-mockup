@@ -1,0 +1,2946 @@
+{
+  "fetched_at": "2026-11-15T17:23:38.969Z",
+  "url": "https://burrow-prod.myshopify.com/api/ucp/mcp",
+  "final_url": "https://burrow-prod.myshopify.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "search_catalog",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/valid-with-capabilities.json"
+          }
+        },
+        "catalog": {
+          "query": "swatch",
+          "pagination": {
+            "limit": 20
+          },
+          "context": {
+            "address_country": "US",
+            "address_region": "NY",
+            "postal_code": "14228"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"services\":{\"dev.ucp.shopping\":[]},\"capabilities\":{\"dev.ucp.shopping.checkout\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/checkout/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/checkout.json\"}],\"dev.ucp.shopping.fulfillment\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}},\"config\":{\"multi_destination\":[],\"method_combinations\":[[\"shipping\"]]}}],\"dev.ucp.shopping.buyer_consent\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json\",\"extends\":[\"dev.ucp.shopping.cart\",\"dev.ucp.shopping.checkout\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.discount\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/discount.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.cart\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/cart/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/cart.json\"}],\"dev.ucp.shopping.order\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/order/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/order.json\"}],\"dev.ucp.shopping.catalog.search\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json\"}],\"dev.ucp.shopping.catalog.lookup\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json\"}],\"dev.shopify.catalog\":[{\"version\":\"2026-08-25\",\"spec\":\"https://shopify.dev/docs/agents/catalog/storefront-catalog\",\"schema\":\"https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json\",\"extends\":[\"dev.ucp.shopping.catalog.search\",\"dev.ucp.shopping.catalog.lookup\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.common.location.search\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/location/search\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/location_search.json\"}],\"dev.ucp.common.location.lookup\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/location/lookup\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/location_lookup.json\"}]},\"payment_handlers\":{\"com.google.pay\":[{\"id\":\"gpay\",\"version\":\"2026-01-11\",\"spec\":\"https://pay.google.com/gp/p/ucp/2026-01-11/\",\"schema\":\"https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json\",\"config\":{\"api_version\":2,\"api_version_minor\":0,\"merchant_info\":{\"merchant_name\":\"Burrow\",\"merchant_id\":\"16708973830884969730\",\"merchant_origin\":\"checkout.burrow.com\",\"auth_jwt\":\"\"},\"allowed_payment_methods\":[{\"type\":\"CARD\",\"parameters\":{\"allowed_auth_methods\":[\"PAN_ONLY\",\"CRYPTOGRAM_3DS\"],\"allowed_card_networks\":[\"VISA\",\"MASTERCARD\",\"AMEX\",\"DISCOVER\",\"JCB\"],\"billing_address_required\":true,\"billing_address_parameters\":{\"format\":\"FULL\",\"phone_number_required\":true}},\"tokenization_specification\":{\"type\":\"PAYMENT_GATEWAY\",\"parameters\":{\"gateway\":\"shopify\",\"gatewayMerchantId\":\"93232202030\"}}}]}}],\"dev.shopify.card\":[{\"id\":\"shopify.card\",\"version\":\"2026-01-15\",\"spec\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md\",\"schema\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json\",\"config\":{\"payment_methods\":[{\"type\":\"card\",\"enabled_card_brands\":[\"visa\",\"master\",\"american_express\",\"discover\",\"diners_club\",\"elo\",\"jcb\",\"unionpay\"]}]}}],\"dev.shopify.shop_pay\":[{\"id\":\"shop_pay\",\"version\":\"2026-04-08\",\"spec\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md\",\"schema\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json\",\"config\":{\"shop_id\":\"93232202030\"}}]}},\"products\":[{\"id\":\"gid://shopify/Product/9817517523246\",\"title\":\"Camel Top-Grain Leather\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/camel-top-grain-leather\",\"handle\":\"camel-top-grain-leather\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422584110\",\"sku\":\"UPH-TN-LTH\",\"title\":\"Camel - Top Grain Leather\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Camel - Top Grain Leather\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-TN-LTH.webp?v=1749236762\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422584110:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Camel - Top Grain Leather\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-TN-LTH.webp?v=1749236762\",\"alt_text\":\"Close-up of textured brown leather surface with natural creases and grain detail.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"regular\",\"Swatch\",\"Top Grain Leather\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188663086\",\"handle\":\"swatches-leather\",\"title\":\"Leather\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517424942\",\"title\":\"Papyrus Performance Basketweave\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/papyrus-performance-basketweave\",\"handle\":\"papyrus-performance-basketweave\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422453038\",\"sku\":\"UPH-PY-FAB-PLYPRP\",\"title\":\"Papyrus - Performance Basketweave\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Papyrus - Performance Basketweave\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-PY-FAB-PLYPRP.webp?v=1749236871\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422453038:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Papyrus - Performance Basketweave\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-PY-FAB-PLYPRP.webp?v=1749236871\",\"alt_text\":\"Close-up image of beige woven fabric with a textured, basket-weave pattern.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Basketweave\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188695854\",\"handle\":\"swatches-performance-basketweave\",\"title\":\"Performance Basketweave\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517261102\",\"title\":\"Navy Blue Performance Basketweave\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/navy-blue-performance-basketweave\",\"handle\":\"navy-blue-performance-basketweave\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422321966\",\"sku\":\"UPH-NB-FAB-PLYPRP\",\"title\":\"Navy Blue - Performance Basketweave\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Navy Blue - Performance Basketweave\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-NB-FAB-PLYPRP.webp?v=1749237026\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422321966:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Navy Blue - Performance Basketweave\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-NB-FAB-PLYPRP.webp?v=1749237026\",\"alt_text\":\"Close-up image of dark blue woven fabric with a textured, grid-like pattern and subtle variations in thread thickness.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Basketweave\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188695854\",\"handle\":\"swatches-performance-basketweave\",\"title\":\"Performance Basketweave\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817516966190\",\"title\":\"Moss Green Performance Basketweave\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/moss-green-performance-basketweave\",\"handle\":\"moss-green-performance-basketweave\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422059822\",\"sku\":\"UPH-MG-FAB-PLYPRP\",\"title\":\"Moss Green - Performance Basketweave\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Moss Green - Performance Basketweave\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-MG-FAB-PLYPRP.webp?v=1749237265\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422059822:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Moss Green - Performance Basketweave\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-MG-FAB-PLYPRP.webp?v=1749237265\",\"alt_text\":\"Close-up of tightly woven fabric in olive green and muted green threads, showing a textured square pattern weave.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Basketweave\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188695854\",\"handle\":\"swatches-performance-basketweave\",\"title\":\"Performance Basketweave\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817516998958\",\"title\":\"Stone Grey Performance Basketweave\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/stone-grey-performance-basketweave\",\"handle\":\"stone-grey-performance-basketweave\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422125358\",\"sku\":\"UPH-SG-FAB-PLYPRP\",\"title\":\"Stone Grey - Performance Basketweave\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Stone Grey - Performance Basketweave\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SG-FAB-PLYPRP.webp?v=1749237242\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422125358:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Stone Grey - Performance Basketweave\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SG-FAB-PLYPRP.webp?v=1749237242\",\"alt_text\":\"Close-up of woven gray and off-white textured fabric with a checkered pattern, showcasing detailed fibers and stitching.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Basketweave\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188695854\",\"handle\":\"swatches-performance-basketweave\",\"title\":\"Performance Basketweave\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517556014\",\"title\":\"Navy Blue Performance Chenille\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/navy-blue-performance-chenille\",\"handle\":\"navy-blue-performance-chenille\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422682414\",\"sku\":\"UPH-NB-FAB-CHEN\",\"title\":\"Navy Blue - Performance Chenille\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Navy Blue - Performance Chenille\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-NB-FAB-CHNIL.webp?v=1749236709\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422682414:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Navy Blue - Performance Chenille\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-NB-FAB-CHNIL.webp?v=1749236709\",\"alt_text\":\"Close-up of dark gray woven fabric with tightly knit textured pattern and visible fibers.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Chenille\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188728622\",\"handle\":\"swatches-chenille\",\"title\":\"Performance Chenille\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817516802350\",\"title\":\"Sage Performance Chenille\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/sage-performance-chenille\",\"handle\":\"sage-performance-chenille\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269421863214\",\"sku\":\"UPH-SE-FAB-CHEN\",\"title\":\"Sage - Performance Chenille\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Sage - Performance Chenille\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SE-FAB-CHEN.webp?v=1749237425\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269421863214:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Sage - Performance Chenille\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SE-FAB-CHEN.webp?v=1749237425\",\"alt_text\":\"Close-up of textured brown woven fabric with a small, checkered pattern and a slightly rough surface.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Chenille\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188728622\",\"handle\":\"swatches-chenille\",\"title\":\"Performance Chenille\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/15417898008878\",\"title\":\"Shale All Weather Fabric\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/shale-all-weather-fabric\",\"handle\":\"shale-all-weather-fabric\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/67705629081902\",\"sku\":\"OD-SH-AWB\",\"title\":\"Shale - All Weather Fabric\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Shale - All Weather Fabric\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/OD-SH-AWB.jpg?v=1792070782\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/67705629081902:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Shale - All Weather Fabric\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/OD-SH-AWB.jpg?v=1792070782\",\"alt_text\":\"Close-up of Shale All Weather Fabric swatch, a tight soft grey basketweave\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"All Weather Fabric\",\"in-stock-rts\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/539937505582\",\"handle\":\"swatches-all-weather\",\"title\":\"All-Weather\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517097262\",\"title\":\"Crushed Gravel Performance Basketweave\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/crushed-gravel-performance-basketweave\",\"handle\":\"crushed-gravel-performance-basketweave\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422158126\",\"sku\":\"UPH-CG-FAB-PLYPRP\",\"title\":\"Crushed Gravel - Performance Basketweave\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Crushed Gravel - Performance Basketweave\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-CG-FAB-PLYPRP.webp?v=1749237171\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422158126:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Crushed Gravel - Performance Basketweave\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-CG-FAB-PLYPRP.webp?v=1749237171\",\"alt_text\":\"Close-up of gray and white woven fabric texture with small rectangular patterns.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Basketweave\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188695854\",\"handle\":\"swatches-performance-basketweave\",\"title\":\"Performance Basketweave\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/15417897910574\",\"title\":\"Charcoal All Weather Fabric\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/charcoal-all-weather-fabric\",\"handle\":\"charcoal-all-weather-fabric\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/67705627672878\",\"sku\":\"OD-CH-AWB\",\"title\":\"Charcoal - All Weather Fabric\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Charcoal - All Weather Fabric\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/OD-CH-AWB.jpg?v=1792070769\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/67705627672878:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Charcoal - All Weather Fabric\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/OD-CH-AWB.jpg?v=1792070769\",\"alt_text\":\"Close-up of Charcoal All Weather Fabric swatch, a tight dark grey basketweave\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"All Weather Fabric\",\"in-stock-rts\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/539937505582\",\"handle\":\"swatches-all-weather\",\"title\":\"All-Weather\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/10167821566254\",\"title\":\"Moss Green Flatweave\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/moss-green-flatweave\",\"handle\":\"moss-green-flatweave\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/51372436160814\",\"sku\":\"UPH-MG-FAB-FW\",\"title\":\"Moss Green - Performance Flatweave\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Moss Green - Performance Flatweave\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/Swatch_MossGreenFlatweave_1200.jpg?v=1764964053\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/51372436160814:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Moss Green - Performance Flatweave\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/Swatch_MossGreenFlatweave_1200.jpg?v=1764964053\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Performance Flatweave\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/526848852270\",\"handle\":\"performance-flatweave\",\"title\":\"Performance Flatweave\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517392174\",\"title\":\"Heather Charcoal Performance Chenille\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/heather-charcoal-performance-chenille\",\"handle\":\"heather-charcoal-performance-chenille\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422420270\",\"sku\":\"UPH-HC-FAB-CHEN\",\"title\":\"Heather Charcoal - Performance Chenille\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Heather Charcoal - Performance Chenille\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-HC-FAB-CHNIL.webp?v=1749236906\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422420270:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Heather Charcoal - Performance Chenille\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-HC-FAB-CHNIL.webp?v=1749236906\",\"alt_text\":\"Close-up of dark gray woven fabric texture with a slightly rough, looped surface pattern.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Chenille\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188728622\",\"handle\":\"swatches-chenille\",\"title\":\"Performance Chenille\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517293870\",\"title\":\"Ivory Performance Chenille\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/ivory-performance-chenille\",\"handle\":\"ivory-performance-chenille\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422354734\",\"sku\":\"UPH-IV-FAB-CHEN\",\"title\":\"Ivory - Performance Chenille\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Ivory - Performance Chenille\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-IV-FAB-CHNIL.webp?v=1749237001\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422354734:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Ivory - Performance Chenille\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-IV-FAB-CHNIL.webp?v=1749237001\",\"alt_text\":\"Close-up of a neutral beige woven fabric texture with a soft, natural fiber appearance.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Chenille\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188728622\",\"handle\":\"swatches-chenille\",\"title\":\"Performance Chenille\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/10532645404974\",\"title\":\"Espresso Performance Brushed Chenille\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/espresso-performance-brushed-chenille\",\"handle\":\"espresso-performance-brushed-chenille\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/52060764569902\",\"sku\":\"UPH-ES-FAB-BCHEN\",\"title\":\"Espresso - Performance Brushed Chenille\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Espresso - Performance Brushed Chenille\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/UPH-ES-FAB-BCHEN.png?v=1778885243\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/52060764569902:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Espresso - Performance Brushed Chenille\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/UPH-ES-FAB-BCHEN.png?v=1778885243\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Brushed Chenille\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/532505723182\",\"handle\":\"performance-brushed-chenille\",\"title\":\"Performance Brushed Chenille\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517588782\",\"title\":\"Georgia Clay Performance Chenille\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/georgia-clay-performance-chenille\",\"handle\":\"georgia-clay-performance-chenille\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422616878\",\"sku\":\"UPH-GC-FAB-CHEN\",\"title\":\"Georgia Clay - Performance Chenille\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Georgia Clay - Performance Chenille\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-GC-FAB-CHEN.webp?v=1749236683\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422616878:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Georgia Clay - Performance Chenille\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-GC-FAB-CHEN.webp?v=1749236683\",\"alt_text\":\"Close-up of beige woven fabric with a soft texture and tightly knit threads, suitable for upholstery or clothing.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Performance Chenille\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188728622\",\"handle\":\"swatches-chenille\",\"title\":\"Performance Chenille\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517228334\",\"title\":\"Oatmeal Performance Chenille\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/oatmeal-performance-chenille\",\"handle\":\"oatmeal-performance-chenille\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422289198\",\"sku\":\"UPH-OA-FAB-CHEN\",\"title\":\"Oatmeal - Performance Chenille\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Oatmeal - Performance Chenille\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-OA-FAB-CHNIL.webp?v=1749237061\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422289198:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Oatmeal - Performance Chenille\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-OA-FAB-CHNIL.webp?v=1749237061\",\"alt_text\":\"Close-up image of beige woven fabric texture with a coarse and natural fiber appearance.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Chenille\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188728622\",\"handle\":\"swatches-chenille\",\"title\":\"Performance Chenille\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817516900654\",\"title\":\"Slate Top-Grain Leather\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/slate-top-grain-leather\",\"handle\":\"slate-top-grain-leather\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269421895982\",\"sku\":\"UPH-SL-LTH\",\"title\":\"Slate - Top Grain Leather\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Slate - Top Grain Leather\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SL-LTH.webp?v=1749237328\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269421895982:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Slate - Top Grain Leather\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SL-LTH.webp?v=1749237328\",\"alt_text\":\"Close-up of black textured leather material with natural wrinkles and grain pattern for upholstery or fashion use.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"regular\",\"Swatch\",\"Top Grain Leather\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188663086\",\"handle\":\"swatches-leather\",\"title\":\"Leather\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517719854\",\"title\":\"Chestnut Top-Grain Leather\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/chestnut-top-grain-leather\",\"handle\":\"chestnut-top-grain-leather\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422747950\",\"sku\":\"UPH-CN-LTH\",\"title\":\"Chestnut - Top Grain Leather\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Chestnut - Top Grain Leather\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-CN-LTH.webp?v=1749236218\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422747950:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Chestnut - Top Grain Leather\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-CN-LTH.webp?v=1749236218\",\"alt_text\":\"Close-up of rich brown textured leather surface with natural grain patterns and fine creases.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"regular\",\"Swatch\",\"Top Grain Leather\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188663086\",\"handle\":\"swatches-leather\",\"title\":\"Leather\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517064494\",\"title\":\"Seaglass Performance Chenille\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/seaglass-performance-chenille\",\"handle\":\"seaglass-performance-chenille\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422092590\",\"sku\":\"UPH-SG-FAB-CHEN\",\"title\":\"Seaglass - Performance Chenille\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Seaglass - Performance Chenille\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SS-FAB-CHEN.webp?v=1749237196\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422092590:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Seaglass - Performance Chenille\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SS-FAB-CHEN.webp?v=1749237196\",\"alt_text\":\"Close-up of light gray woven textured fabric with a subtle diagonal pattern and soft appearance.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Chenille\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188728622\",\"handle\":\"swatches-chenille\",\"title\":\"Performance Chenille\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9817517326638\",\"title\":\"Heather Charcoal Performance Basketweave\",\"description\":{\"html\":\"\"},\"url\":\"https://checkout.burrow.com/products/heather-charcoal-performance-basketweave\",\"handle\":\"heather-charcoal-performance-basketweave\",\"price_range\":{\"min\":{\"amount\":100,\"currency\":\"USD\"},\"max\":{\"amount\":100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/50269422387502\",\"sku\":\"UPH-HC-FAB-PLYPRP\",\"title\":\"Heather Charcoal - Performance Basketweave\",\"description\":{\"html\":\"\"},\"price\":{\"amount\":100,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Fabric\",\"label\":\"Heather Charcoal - Performance Basketweave\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-HC-FAB-PLYPRP.webp?v=1749236970\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://burrow-prod.myshopify.com/cart/50269422387502:1\"}],\"options\":[{\"name\":\"Fabric\",\"values\":[{\"label\":\"Heather Charcoal - Performance Basketweave\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-HC-FAB-PLYPRP.webp?v=1749236970\",\"alt_text\":\"Close-up of dark gray woven fabric texture with a grid-like pattern of interlaced fibers.\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/ae-2-1-2-14-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"in-stock-rts\",\"Performance Basketweave\",\"regular\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/517835620654\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518188695854\",\"handle\":\"swatches-performance-basketweave\",\"title\":\"Performance Basketweave\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/518385697070\",\"handle\":\"eligible-for-discounts\",\"title\":\"Eligible for Discounts\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051679534\",\"handle\":\"tax-holiday-items-ma\",\"title\":\"Tax Holiday Items - MA\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/536051876142\",\"handle\":\"boston-tax-holiday\",\"title\":\"Boston - Tax Holiday\",\"description\":{\"html\":\"\"}}]}],\"pagination\":{\"has_next_page\":true,\"cursor\":\"eyJncmFwaHFsX2N1cnNvciI6ImV5SndZV2RsSWpveUxDSnNZWE4wWDJsa0lqbzVPREUzTlRFM016STJOak00TENKeVpYWmxjbk5sSWpwMGNuVmxMQ0p2Wm1aelpYUWlPakU1ZlE9PSIsInBhZ2UiOjJ9\"},\"messages\":[]}"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "status": "success",
+          "services": {
+            "dev.ucp.shopping": []
+          },
+          "capabilities": {
+            "dev.ucp.shopping.checkout": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/checkout/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/checkout.json"
+              }
+            ],
+            "dev.ucp.shopping.fulfillment": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json",
+                "extends": [
+                  "dev.ucp.shopping.checkout",
+                  "dev.ucp.shopping.cart"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                },
+                "config": {
+                  "multi_destination": [],
+                  "method_combinations": [
+                    [
+                      "shipping"
+                    ]
+                  ]
+                }
+              }
+            ],
+            "dev.ucp.shopping.buyer_consent": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json",
+                "extends": [
+                  "dev.ucp.shopping.cart",
+                  "dev.ucp.shopping.checkout"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ],
+            "dev.ucp.shopping.discount": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/discount.json",
+                "extends": [
+                  "dev.ucp.shopping.checkout",
+                  "dev.ucp.shopping.cart"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ],
+            "dev.ucp.shopping.cart": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/cart/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/cart.json"
+              }
+            ],
+            "dev.ucp.shopping.order": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/order/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/order.json"
+              }
+            ],
+            "dev.ucp.shopping.catalog.search": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+              }
+            ],
+            "dev.ucp.shopping.catalog.lookup": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+              }
+            ],
+            "dev.shopify.catalog": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://shopify.dev/docs/agents/catalog/storefront-catalog",
+                "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json",
+                "extends": [
+                  "dev.ucp.shopping.catalog.search",
+                  "dev.ucp.shopping.catalog.lookup"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ],
+            "dev.ucp.common.location.search": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/common/location/search",
+                "schema": "https://ucp.dev/2026-08-25/schemas/common/location_search.json"
+              }
+            ],
+            "dev.ucp.common.location.lookup": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/common/location/lookup",
+                "schema": "https://ucp.dev/2026-08-25/schemas/common/location_lookup.json"
+              }
+            ]
+          },
+          "payment_handlers": {
+            "com.google.pay": [
+              {
+                "id": "gpay",
+                "version": "2026-01-11",
+                "spec": "https://pay.google.com/gp/p/ucp/2026-01-11/",
+                "schema": "https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json",
+                "config": {
+                  "api_version": 2,
+                  "api_version_minor": 0,
+                  "merchant_info": {
+                    "merchant_name": "Burrow",
+                    "merchant_id": "16708973830884969730",
+                    "merchant_origin": "checkout.burrow.com",
+                    "auth_jwt": ""
+                  },
+                  "allowed_payment_methods": [
+                    {
+                      "type": "CARD",
+                      "parameters": {
+                        "allowed_auth_methods": [
+                          "PAN_ONLY",
+                          "CRYPTOGRAM_3DS"
+                        ],
+                        "allowed_card_networks": [
+                          "VISA",
+                          "MASTERCARD",
+                          "AMEX",
+                          "DISCOVER",
+                          "JCB"
+                        ],
+                        "billing_address_required": true,
+                        "billing_address_parameters": {
+                          "format": "FULL",
+                          "phone_number_required": true
+                        }
+                      },
+                      "tokenization_specification": {
+                        "type": "PAYMENT_GATEWAY",
+                        "parameters": {
+                          "gateway": "shopify",
+                          "gatewayMerchantId": "93232202030"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "dev.shopify.card": [
+              {
+                "id": "shopify.card",
+                "version": "2026-01-15",
+                "spec": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md",
+                "schema": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json",
+                "config": {
+                  "payment_methods": [
+                    {
+                      "type": "card",
+                      "enabled_card_brands": [
+                        "visa",
+                        "master",
+                        "american_express",
+                        "discover",
+                        "diners_club",
+                        "elo",
+                        "jcb",
+                        "unionpay"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "dev.shopify.shop_pay": [
+              {
+                "id": "shop_pay",
+                "version": "2026-04-08",
+                "spec": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md",
+                "schema": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json",
+                "config": {
+                  "shop_id": "93232202030"
+                }
+              }
+            ]
+          }
+        },
+        "products": [
+          {
+            "id": "gid://shopify/Product/9817517523246",
+            "title": "Camel Top-Grain Leather",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/camel-top-grain-leather",
+            "handle": "camel-top-grain-leather",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422584110",
+                "sku": "UPH-TN-LTH",
+                "title": "Camel - Top Grain Leather",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Camel - Top Grain Leather"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-TN-LTH.webp?v=1749236762"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422584110:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Camel - Top Grain Leather"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-TN-LTH.webp?v=1749236762",
+                "alt_text": "Close-up of textured brown leather surface with natural creases and grain detail."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "regular",
+              "Swatch",
+              "Top Grain Leather"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188663086",
+                "handle": "swatches-leather",
+                "title": "Leather",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517424942",
+            "title": "Papyrus Performance Basketweave",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/papyrus-performance-basketweave",
+            "handle": "papyrus-performance-basketweave",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422453038",
+                "sku": "UPH-PY-FAB-PLYPRP",
+                "title": "Papyrus - Performance Basketweave",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Papyrus - Performance Basketweave"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-PY-FAB-PLYPRP.webp?v=1749236871"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422453038:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Papyrus - Performance Basketweave"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-PY-FAB-PLYPRP.webp?v=1749236871",
+                "alt_text": "Close-up image of beige woven fabric with a textured, basket-weave pattern."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Basketweave",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188695854",
+                "handle": "swatches-performance-basketweave",
+                "title": "Performance Basketweave",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517261102",
+            "title": "Navy Blue Performance Basketweave",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/navy-blue-performance-basketweave",
+            "handle": "navy-blue-performance-basketweave",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422321966",
+                "sku": "UPH-NB-FAB-PLYPRP",
+                "title": "Navy Blue - Performance Basketweave",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Navy Blue - Performance Basketweave"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-NB-FAB-PLYPRP.webp?v=1749237026"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422321966:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Navy Blue - Performance Basketweave"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-NB-FAB-PLYPRP.webp?v=1749237026",
+                "alt_text": "Close-up image of dark blue woven fabric with a textured, grid-like pattern and subtle variations in thread thickness."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Basketweave",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188695854",
+                "handle": "swatches-performance-basketweave",
+                "title": "Performance Basketweave",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817516966190",
+            "title": "Moss Green Performance Basketweave",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/moss-green-performance-basketweave",
+            "handle": "moss-green-performance-basketweave",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422059822",
+                "sku": "UPH-MG-FAB-PLYPRP",
+                "title": "Moss Green - Performance Basketweave",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Moss Green - Performance Basketweave"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-MG-FAB-PLYPRP.webp?v=1749237265"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422059822:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Moss Green - Performance Basketweave"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-MG-FAB-PLYPRP.webp?v=1749237265",
+                "alt_text": "Close-up of tightly woven fabric in olive green and muted green threads, showing a textured square pattern weave."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Basketweave",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188695854",
+                "handle": "swatches-performance-basketweave",
+                "title": "Performance Basketweave",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817516998958",
+            "title": "Stone Grey Performance Basketweave",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/stone-grey-performance-basketweave",
+            "handle": "stone-grey-performance-basketweave",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422125358",
+                "sku": "UPH-SG-FAB-PLYPRP",
+                "title": "Stone Grey - Performance Basketweave",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Stone Grey - Performance Basketweave"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SG-FAB-PLYPRP.webp?v=1749237242"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422125358:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Stone Grey - Performance Basketweave"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SG-FAB-PLYPRP.webp?v=1749237242",
+                "alt_text": "Close-up of woven gray and off-white textured fabric with a checkered pattern, showcasing detailed fibers and stitching."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Basketweave",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188695854",
+                "handle": "swatches-performance-basketweave",
+                "title": "Performance Basketweave",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517556014",
+            "title": "Navy Blue Performance Chenille",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/navy-blue-performance-chenille",
+            "handle": "navy-blue-performance-chenille",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422682414",
+                "sku": "UPH-NB-FAB-CHEN",
+                "title": "Navy Blue - Performance Chenille",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Navy Blue - Performance Chenille"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-NB-FAB-CHNIL.webp?v=1749236709"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422682414:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Navy Blue - Performance Chenille"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-NB-FAB-CHNIL.webp?v=1749236709",
+                "alt_text": "Close-up of dark gray woven fabric with tightly knit textured pattern and visible fibers."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Chenille",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188728622",
+                "handle": "swatches-chenille",
+                "title": "Performance Chenille",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817516802350",
+            "title": "Sage Performance Chenille",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/sage-performance-chenille",
+            "handle": "sage-performance-chenille",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269421863214",
+                "sku": "UPH-SE-FAB-CHEN",
+                "title": "Sage - Performance Chenille",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Sage - Performance Chenille"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SE-FAB-CHEN.webp?v=1749237425"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269421863214:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Sage - Performance Chenille"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SE-FAB-CHEN.webp?v=1749237425",
+                "alt_text": "Close-up of textured brown woven fabric with a small, checkered pattern and a slightly rough surface."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Chenille",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188728622",
+                "handle": "swatches-chenille",
+                "title": "Performance Chenille",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/15417898008878",
+            "title": "Shale All Weather Fabric",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/shale-all-weather-fabric",
+            "handle": "shale-all-weather-fabric",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/67705629081902",
+                "sku": "OD-SH-AWB",
+                "title": "Shale - All Weather Fabric",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Shale - All Weather Fabric"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/OD-SH-AWB.jpg?v=1792070782"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/67705629081902:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Shale - All Weather Fabric"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/OD-SH-AWB.jpg?v=1792070782",
+                "alt_text": "Close-up of Shale All Weather Fabric swatch, a tight soft grey basketweave"
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "All Weather Fabric",
+              "in-stock-rts",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/539937505582",
+                "handle": "swatches-all-weather",
+                "title": "All-Weather",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517097262",
+            "title": "Crushed Gravel Performance Basketweave",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/crushed-gravel-performance-basketweave",
+            "handle": "crushed-gravel-performance-basketweave",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422158126",
+                "sku": "UPH-CG-FAB-PLYPRP",
+                "title": "Crushed Gravel - Performance Basketweave",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Crushed Gravel - Performance Basketweave"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-CG-FAB-PLYPRP.webp?v=1749237171"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422158126:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Crushed Gravel - Performance Basketweave"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-CG-FAB-PLYPRP.webp?v=1749237171",
+                "alt_text": "Close-up of gray and white woven fabric texture with small rectangular patterns."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Basketweave",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188695854",
+                "handle": "swatches-performance-basketweave",
+                "title": "Performance Basketweave",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/15417897910574",
+            "title": "Charcoal All Weather Fabric",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/charcoal-all-weather-fabric",
+            "handle": "charcoal-all-weather-fabric",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/67705627672878",
+                "sku": "OD-CH-AWB",
+                "title": "Charcoal - All Weather Fabric",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Charcoal - All Weather Fabric"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/OD-CH-AWB.jpg?v=1792070769"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/67705627672878:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Charcoal - All Weather Fabric"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/OD-CH-AWB.jpg?v=1792070769",
+                "alt_text": "Close-up of Charcoal All Weather Fabric swatch, a tight dark grey basketweave"
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "All Weather Fabric",
+              "in-stock-rts",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/539937505582",
+                "handle": "swatches-all-weather",
+                "title": "All-Weather",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/10167821566254",
+            "title": "Moss Green Flatweave",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/moss-green-flatweave",
+            "handle": "moss-green-flatweave",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/51372436160814",
+                "sku": "UPH-MG-FAB-FW",
+                "title": "Moss Green - Performance Flatweave",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Moss Green - Performance Flatweave"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/Swatch_MossGreenFlatweave_1200.jpg?v=1764964053"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/51372436160814:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Moss Green - Performance Flatweave"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/Swatch_MossGreenFlatweave_1200.jpg?v=1764964053"
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "Performance Flatweave",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/526848852270",
+                "handle": "performance-flatweave",
+                "title": "Performance Flatweave",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517392174",
+            "title": "Heather Charcoal Performance Chenille",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/heather-charcoal-performance-chenille",
+            "handle": "heather-charcoal-performance-chenille",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422420270",
+                "sku": "UPH-HC-FAB-CHEN",
+                "title": "Heather Charcoal - Performance Chenille",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Heather Charcoal - Performance Chenille"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-HC-FAB-CHNIL.webp?v=1749236906"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422420270:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Heather Charcoal - Performance Chenille"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-HC-FAB-CHNIL.webp?v=1749236906",
+                "alt_text": "Close-up of dark gray woven fabric texture with a slightly rough, looped surface pattern."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Chenille",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188728622",
+                "handle": "swatches-chenille",
+                "title": "Performance Chenille",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517293870",
+            "title": "Ivory Performance Chenille",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/ivory-performance-chenille",
+            "handle": "ivory-performance-chenille",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422354734",
+                "sku": "UPH-IV-FAB-CHEN",
+                "title": "Ivory - Performance Chenille",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Ivory - Performance Chenille"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-IV-FAB-CHNIL.webp?v=1749237001"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422354734:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Ivory - Performance Chenille"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-IV-FAB-CHNIL.webp?v=1749237001",
+                "alt_text": "Close-up of a neutral beige woven fabric texture with a soft, natural fiber appearance."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Chenille",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188728622",
+                "handle": "swatches-chenille",
+                "title": "Performance Chenille",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/10532645404974",
+            "title": "Espresso Performance Brushed Chenille",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/espresso-performance-brushed-chenille",
+            "handle": "espresso-performance-brushed-chenille",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/52060764569902",
+                "sku": "UPH-ES-FAB-BCHEN",
+                "title": "Espresso - Performance Brushed Chenille",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Espresso - Performance Brushed Chenille"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/UPH-ES-FAB-BCHEN.png?v=1778885243"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/52060764569902:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Espresso - Performance Brushed Chenille"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/UPH-ES-FAB-BCHEN.png?v=1778885243"
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Brushed Chenille",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/532505723182",
+                "handle": "performance-brushed-chenille",
+                "title": "Performance Brushed Chenille",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517588782",
+            "title": "Georgia Clay Performance Chenille",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/georgia-clay-performance-chenille",
+            "handle": "georgia-clay-performance-chenille",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422616878",
+                "sku": "UPH-GC-FAB-CHEN",
+                "title": "Georgia Clay - Performance Chenille",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Georgia Clay - Performance Chenille"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-GC-FAB-CHEN.webp?v=1749236683"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422616878:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Georgia Clay - Performance Chenille"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-GC-FAB-CHEN.webp?v=1749236683",
+                "alt_text": "Close-up of beige woven fabric with a soft texture and tightly knit threads, suitable for upholstery or clothing."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "Performance Chenille",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188728622",
+                "handle": "swatches-chenille",
+                "title": "Performance Chenille",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517228334",
+            "title": "Oatmeal Performance Chenille",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/oatmeal-performance-chenille",
+            "handle": "oatmeal-performance-chenille",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422289198",
+                "sku": "UPH-OA-FAB-CHEN",
+                "title": "Oatmeal - Performance Chenille",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Oatmeal - Performance Chenille"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-OA-FAB-CHNIL.webp?v=1749237061"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422289198:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Oatmeal - Performance Chenille"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-OA-FAB-CHNIL.webp?v=1749237061",
+                "alt_text": "Close-up image of beige woven fabric texture with a coarse and natural fiber appearance."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Chenille",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188728622",
+                "handle": "swatches-chenille",
+                "title": "Performance Chenille",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817516900654",
+            "title": "Slate Top-Grain Leather",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/slate-top-grain-leather",
+            "handle": "slate-top-grain-leather",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269421895982",
+                "sku": "UPH-SL-LTH",
+                "title": "Slate - Top Grain Leather",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Slate - Top Grain Leather"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SL-LTH.webp?v=1749237328"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269421895982:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Slate - Top Grain Leather"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SL-LTH.webp?v=1749237328",
+                "alt_text": "Close-up of black textured leather material with natural wrinkles and grain pattern for upholstery or fashion use."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "regular",
+              "Swatch",
+              "Top Grain Leather"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188663086",
+                "handle": "swatches-leather",
+                "title": "Leather",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517719854",
+            "title": "Chestnut Top-Grain Leather",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/chestnut-top-grain-leather",
+            "handle": "chestnut-top-grain-leather",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422747950",
+                "sku": "UPH-CN-LTH",
+                "title": "Chestnut - Top Grain Leather",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Chestnut - Top Grain Leather"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-CN-LTH.webp?v=1749236218"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422747950:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Chestnut - Top Grain Leather"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-CN-LTH.webp?v=1749236218",
+                "alt_text": "Close-up of rich brown textured leather surface with natural grain patterns and fine creases."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "regular",
+              "Swatch",
+              "Top Grain Leather"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188663086",
+                "handle": "swatches-leather",
+                "title": "Leather",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517064494",
+            "title": "Seaglass Performance Chenille",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/seaglass-performance-chenille",
+            "handle": "seaglass-performance-chenille",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422092590",
+                "sku": "UPH-SG-FAB-CHEN",
+                "title": "Seaglass - Performance Chenille",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Seaglass - Performance Chenille"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SS-FAB-CHEN.webp?v=1749237196"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422092590:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Seaglass - Performance Chenille"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-SS-FAB-CHEN.webp?v=1749237196",
+                "alt_text": "Close-up of light gray woven textured fabric with a subtle diagonal pattern and soft appearance."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Chenille",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188728622",
+                "handle": "swatches-chenille",
+                "title": "Performance Chenille",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "gid://shopify/Product/9817517326638",
+            "title": "Heather Charcoal Performance Basketweave",
+            "description": {
+              "html": ""
+            },
+            "url": "https://checkout.burrow.com/products/heather-charcoal-performance-basketweave",
+            "handle": "heather-charcoal-performance-basketweave",
+            "price_range": {
+              "min": {
+                "amount": 100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 100,
+                "currency": "USD"
+              }
+            },
+            "list_price_range": {
+              "min": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 0,
+                "currency": "USD"
+              }
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50269422387502",
+                "sku": "UPH-HC-FAB-PLYPRP",
+                "title": "Heather Charcoal - Performance Basketweave",
+                "description": {
+                  "html": ""
+                },
+                "price": {
+                  "amount": 100,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Heather Charcoal - Performance Basketweave"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-HC-FAB-PLYPRP.webp?v=1749236970"
+                  }
+                ],
+                "requires": {
+                  "shipping": true
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/cart/50269422387502:1"
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Heather Charcoal - Performance Basketweave"
+                  }
+                ]
+              }
+            ],
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/SAMP-UPH-HC-FAB-PLYPRP.webp?v=1749236970",
+                "alt_text": "Close-up of dark gray woven fabric texture with a grid-like pattern of interlaced fibers."
+              }
+            ],
+            "categories": [
+              {
+                "value": "gid://shopify/TaxonomyCategory/ae-2-1-2-14-2",
+                "taxonomy": "shopify"
+              }
+            ],
+            "tags": [
+              "in-stock-rts",
+              "Performance Basketweave",
+              "regular",
+              "Swatch"
+            ],
+            "gift_card": false,
+            "collections": [
+              {
+                "id": "gid://shopify/Collection/517835620654",
+                "handle": "all",
+                "title": "All",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518188695854",
+                "handle": "swatches-performance-basketweave",
+                "title": "Performance Basketweave",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/518385697070",
+                "handle": "eligible-for-discounts",
+                "title": "Eligible for Discounts",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051679534",
+                "handle": "tax-holiday-items-ma",
+                "title": "Tax Holiday Items - MA",
+                "description": {
+                  "html": ""
+                }
+              },
+              {
+                "id": "gid://shopify/Collection/536051876142",
+                "handle": "boston-tax-holiday",
+                "title": "Boston - Tax Holiday",
+                "description": {
+                  "html": ""
+                }
+              }
+            ]
+          }
+        ],
+        "pagination": {
+          "has_next_page": true,
+          "cursor": "eyJncmFwaHFsX2N1cnNvciI6ImV5SndZV2RsSWpveUxDSnNZWE4wWDJsa0lqbzVPREUzTlRFM016STJOak00TENKeVpYWmxjbk5sSWpwMGNuVmxMQ0p2Wm1aelpYUWlPakU1ZlE9PSIsInBhZ2UiOjJ9"
+        },
+        "messages": []
+      }
+    }
+  }
+}

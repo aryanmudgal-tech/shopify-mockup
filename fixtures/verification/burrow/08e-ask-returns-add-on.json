@@ -1,0 +1,72 @@
+{
+  "fetched_at": "2026-11-15T17:24:46.521Z",
+  "url": "https://burrow-prod.myshopify.com/api/ucp/mcp",
+  "final_url": "https://burrow-prod.myshopify.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "ask_business",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/ask.json"
+          }
+        },
+        "ask": {
+          "query": "If I return this item after delivery to 14228, what will I pay? Include any restocking fee and whether it depends on packaging, who pays return shipping and how much, whether original delivery charges are refunded, the return window and when it starts, and whether this item is final sale.",
+          "ids": [
+            "gid://shopify/ProductVariant/50546965938478"
+          ],
+          "context": {
+            "address_country": "US",
+            "address_region": "NY",
+            "postal_code": "14228",
+            "language": "en"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"capabilities\":{\"dev.ucp.common.ask\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/ask/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/ask.json\"}]}},\"answer\":{\"plain\":\"For the Oak Title Storage Case Add-on delivered to 14228, the return fee is 10% of the amount paid with the original packaging, or 20% without it, capped at $250 per item. At its listed price of $242, that would be $24.20 with the packaging or $48.40 without it, before any applicable taxes or other order-specific adjustments. Burrow arranges the return by shipping label or pickup and chooses the method; the stated fee is the return shipping fee, but the information doesn’t specify whether original delivery charges are refunded. The general window is 30 calendar days from delivery confirmation, not unboxing; the return must be initiated within that period, and eligibility depends on the item being in usable condition and Burrow accepting the return. This specific add-on’s final-sale status isn’t specified; the policy excludes individually purchased components or add-ons that were not part of the original order.\"},\"links\":[{\"type\":\"product\",\"url\":\"https://checkout.burrow.com/products/title-storage-case?variant=50546965938478\",\"title\":\"Title Storage Case Add-on - Oak - Wood\",\"id\":\"gid://shopify/ProductVariant/50546965938478\"}]}"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "status": "success",
+          "capabilities": {
+            "dev.ucp.common.ask": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/common/ask/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/common/ask.json"
+              }
+            ]
+          }
+        },
+        "answer": {
+          "plain": "For the Oak Title Storage Case Add-on delivered to 14228, the return fee is 10% of the amount paid with the original packaging, or 20% without it, capped at $250 per item. At its listed price of $242, that would be $24.20 with the packaging or $48.40 without it, before any applicable taxes or other order-specific adjustments. Burrow arranges the return by shipping label or pickup and chooses the method; the stated fee is the return shipping fee, but the information doesn’t specify whether original delivery charges are refunded. The general window is 30 calendar days from delivery confirmation, not unboxing; the return must be initiated within that period, and eligibility depends on the item being in usable condition and Burrow accepting the return. This specific add-on’s final-sale status isn’t specified; the policy excludes individually purchased components or add-ons that were not part of the original order."
+        },
+        "links": [
+          {
+            "type": "product",
+            "url": "https://checkout.burrow.com/products/title-storage-case?variant=50546965938478",
+            "title": "Title Storage Case Add-on - Oak - Wood",
+            "id": "gid://shopify/ProductVariant/50546965938478"
+          }
+        ]
+      }
+    }
+  }
+}
