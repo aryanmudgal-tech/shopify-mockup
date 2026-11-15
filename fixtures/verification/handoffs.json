@@ -1,0 +1,71 @@
+[
+  {
+    "store": "Burrow",
+    "button": "Buy it",
+    "hops": [
+      {
+        "status": 303,
+        "at": "burrow-prod.myshopify.com/buy/50484946305326:1"
+      },
+      {
+        "status": 301,
+        "at": "burrow-prod.myshopify.com/cart/c/{token}"
+      },
+      {
+        "status": 302,
+        "at": "checkout.burrow.com/cart/c/{token}"
+      },
+      {
+        "status": 302,
+        "at": "shop.app/checkout/93232202030/cn/{token}/en-us/shoppay"
+      },
+      {
+        "status": 403,
+        "at": "checkout.burrow.com/checkouts/cn/{token}/en-us"
+      }
+    ],
+    "checked_at": "2026-11-15T22:01:35.017Z"
+  },
+  {
+    "store": "Burrow",
+    "button": "Order the sample",
+    "hops": [
+      {
+        "status": 301,
+        "at": "burrow-prod.myshopify.com/cart/50269421830446:1"
+      },
+      {
+        "status": 302,
+        "at": "checkout.burrow.com/cart/50269421830446:1"
+      },
+      {
+        "status": 302,
+        "at": "shop.app/checkout/93232202030/cn/{token}/en-us/shoppay"
+      },
+      {
+        "status": 403,
+        "at": "checkout.burrow.com/checkouts/cn/{token}/en-us"
+      }
+    ],
+    "checked_at": "2026-11-15T22:01:36.158Z"
+  },
+  {
+    "store": "GARVEE",
+    "button": "Buy it",
+    "hops": [
+      {
+        "status": 303,
+        "at": "mygarvee.myshopify.com/buy/51296972898617:1"
+      },
+      {
+        "status": 301,
+        "at": "mygarvee.myshopify.com/cart/c/{token}"
+      },
+      {
+        "status": 404,
+        "at": "www.garvee.com/cart/c/{token}"
+      }
+    ],
+    "checked_at": "2026-11-15T22:01:38.172Z"
+  }
+]

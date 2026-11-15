@@ -200,3 +200,28 @@ Rows filled, before -> after:
 | Kit-only stores | The swatch matcher also reports whether any result is a sample, of any fabric | Rove Lab now reads "This store sells samples, but none of this exact fabric." |
 
 The golden test held through all of it: 18 of 18 fresh reads matched after the changes (section 9.2).
+
+## 11. Hand-offs - stage 5
+
+- Run with: [`scripts/check-handoffs.ts`](../scripts/check-handoffs.ts), on 2026-11-15. Results are in [`fixtures/verification/handoffs.json`](../fixtures/verification/handoffs.json), with the stores' checkout tokens masked.
+- Result: Burrow's two hand-offs WORK. Garvee's "Buy it" most likely DEAD-ENDS on the store's own site.
+
+### 11.1 What the app checks before a link reaches the page
+
+Both buttons use a `checkout_url` from Shopify's data: the sofa's from Global Catalog, and the swatch's from the store's catalog. [`server/handoff.ts`](../server/handoff.ts) checks each one: it must be https, on the store's own domain, and a `/buy/` or `/cart/` permalink for exactly the variant on the card, quantity one. The query string is passed on exactly as Shopify gave it, so the attribution parameters stay intact. A link that fails loses its button, and "How I checked" says why.
+
+After a click, the thread records what opened, for example "Opened Burrow's checkout for the Crushed Gravel Performance Chenille sample ($1) in a new tab. Nothing is charged until you pay there."
+
+### 11.2 Where the links actually go
+
+I requested each link once and followed the redirects by hand. That's what a buyer's click starts: the store opens a checkout, nothing is bought, and no personal data is sent.
+
+| Store | Button | Redirect chain | Verdict |
+|---|---|---|---|
+| Burrow | Buy it | `/buy/50484946305326:1` -> 303 -> `/cart/c/{token}` -> `checkout.burrow.com` -> Shop Pay -> `checkout.burrow.com/checkouts/cn/{token}` | WORKS. It reaches Shopify checkout. The last hop answers 403 to a script, which I assume is bot protection, since a browser would get the page. |
+| Burrow | Order the sample | `/cart/50269421830446:1` -> `checkout.burrow.com` -> Shop Pay -> `checkout.burrow.com/checkouts/cn/{token}` | WORKS, the same way. |
+| Garvee | Buy it | `/buy/51296972898617:1` -> 303 -> `mygarvee.myshopify.com/cart/c/{token}` -> 301 -> `www.garvee.com/cart/c/{token}` -> **404** | DEAD END. `www.garvee.com` is a separate headless site (the link even carries `channel=headless`), and it has no cart pages: a made-up `/cart/c/` address returns "Page Not Found" too. |
+
+This is my biggest surprise of stage 5. I haven't opened Garvee's link in a real browser, so I'm not certain a buyer sees the 404, but every server response points that way. The plain `/cart/51296972898617:1` permalink and the cart's own `continue_url` both use the same routes, so they dead-end too.
+
+**Proposed fix, for your call:** for stores like Garvee, hand off through the Checkout MCP instead. Garvee's `tools/list` offers `create_checkout`, which should return a Shopify-hosted checkout that doesn't pass through the store's own site. I haven't tried it yet. Until then, Garvee's "Buy it" isn't part of the demo path, which only taps "Order the sample" at Burrow.
