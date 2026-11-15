@@ -1,8 +1,9 @@
 # Before You Buy: design spec
 
 - Date: 2026-11-15
-- Revision: 2, scope trimmed. Removed the fit panel, the showroom row and follow-up questions. Added the stack, the scripted entry, the delivery-refund rule and the made-to-order return test.
-- Status: approved, ready for stage 2 after the verification run
+- Revision: 3, after the verification run on 2026-11-15. Changes: return-terms format (fee caps, fees with no stated amount, shipping included in the fee, free exchange), $1 swatch, Shopify's example profiles, variant links, delivery destination rule, made-to-order moment dropped.
+- Revision 2 trimmed scope: removed the fit panel, the showroom row and follow-up questions.
+- Status: verification done; ready for stage 2
 - Supersedes: `2026-11-14-room-planner-design.md` and revision 1 of this file
 - Audience: the Claude Code session that will verify, plan and build the prototype
 - Owner: Aryan Mudgal
@@ -45,9 +46,9 @@ Published:
 
 From the owner's own live probes on 2026-11-14 (unpublished, small samples):
 
-- The price at the door in a cart ran from 15% below to 40% above the Catalog price. Verify these compared the same variant (see 11, step 6).
 - All 40 sampled stores answered a return question. Answers ranged from free to 84% of the price, to no returns at all.
-- A sample product existed at 17 of 22 well-known brands and about 15% of generic sellers. Delivery was quoted in the cart for 12 of 22.
+- A sample product existed at 17 of 22 well-known brands and about 15% of generic sellers.
+- The probes also reported door prices from 15% below to 40% above the Catalog price, and delivery quoted in 12 of 22 carts. The verification run did not reproduce either: both carts priced the same variant at the Catalog price, and delivery appeared only once a shipping destination was given. Do not cite these two figures in the video.
 
 Assumption, stated as such in the video: first-timers do not know these questions exist. Experienced buyers know to order swatches and check restocking fees and return freight. This comes from the owner's ChatGPT test, where each useful answer appeared only after he asked for it.
 
@@ -64,7 +65,7 @@ Supporting signal: Shopify already exposes storefront tools to agents running in
 Each principle is a requirement. A build that drops one has drifted from the design.
 
 1. **Answers first.** The card appears as soon as the product and ZIP are known. There is no intake questionnaire.
-2. **Ask only what is needed.** The ZIP code is the only question, because price and return freight depend on it.
+2. **Ask only what is needed.** The ZIP code is the only question up front, because price and return freight depend on it. If the cart needs more than a ZIP to quote delivery, ask for it at that moment and say why. Never invent an address.
 3. **Show the work.** Every value names its source and the step that produced it, for example "Priced in a cart for 14228."
 4. **Quote the store.** Any figure derived from the store's answer is shown next to the store's own words.
 5. **Say when something is missing.** "This store lists no sample." Empty or unstated values are shown, never hidden or guessed.
@@ -117,8 +118,8 @@ Rows, in this order:
 | Row | Shows | Source label |
 |---|---|---|
 | To buy | Estimated price at the door before tax (item plus delivery), next to the listed price | "Cart estimate for {ZIP}" |
-| Try it first | A sample in the sofa's fabric, with its price (often $0) | "Store catalog" |
-| If you're wrong | What you lose if you return it, by condition (with box, without box), within the window, plus return shipping and delivery terms | "The store's answer" with the quoted text and a link to the refund policy |
+| Try it first | A sample in the sofa's fabric, with its price (often around $1) | "Store catalog" |
+| If you're wrong | What you lose if you return it, by condition (with box, without box), within the window, plus return shipping and delivery terms. A free exchange, if the store offers one | "The store's answer" with the quoted text and a link to the refund policy |
 
 Below the rows, a "How I checked" strip, collapsed by default, lists each step: product identified, cart priced, store catalog searched for a sample, store asked about returns. Each step shows what came back.
 
@@ -126,23 +127,25 @@ Empty and partial states:
 
 - No sample: "This store lists no sample. The return terms are your way back."
 - Return shipping charged but amount not stated: "+ return shipping, amount not stated by the store."
+- Return shipping included in the fee: say "includes return shipping" beside the fee. No separate line.
+- Restocking fee charged but amount not stated: "You pay a restocking fee; the store doesn't state the amount."
 - Delivery refund not stated: "+ ${delivery} delivery, refund not stated." Do not add it into the total.
 - Store answer unavailable: fall back to the refund policy page (see 7.4) and label it "From the store's policy page."
 - No returns on this item: "This store does not accept returns on this item," with the quote.
 
-Illustrative values, from the owner's probe of a Burrow sofa for a Chicago ZIP. Listed $1,217; $1,286 at the door, so delivery is $69. The store's terms were a 10% restocking fee with the box and 20% without, within 30 days of delivery. Whether delivery is refunded was not recorded, so the card would read:
+Verified values for ZIP 14228, from the verification run on 2026-11-15:
 
-| Row | Value |
-|---|---|
-| To buy | $1,217 listed, $1,286 at the door before tax |
-| Try it first | $0 swatch in that exact fabric |
-| If you're wrong | $121.70 with the box, $243.40 without, + $69 delivery, refund not stated. Within 30 days of delivery. |
+| Row | Burrow Nomad Sofa | Garvee 137" Cloud Sectional |
+|---|---|---|
+| To buy | $1,364 listed, $1,433 at the door ($69 shipping) | $681.99 listed, $681.99 at the door (free delivery) |
+| Try it first | $1 swatch in the exact fabric, Crushed Gravel Performance Chenille | This store lists no sample. |
+| If you're wrong | $136.40 with the box, $250 without (20% capped at $250), includes return shipping, + $69 delivery, refund not stated. Or $0: one free exchange with the original box. 30 days from confirmed delivery. | You pay return shipping and a restocking fee; the store states neither amount. |
 
 ### 6.4 Actions
 
 Two buttons of equal weight:
 
-- "Order the sample ($X)": creates a cart at the store with the sample variant, then hands off to the store's checkout.
+- "Order the sample ($X)": hands off to the store's checkout using the swatch's own `checkout_url`.
 - "Buy it": hands off to the store's checkout for the piece.
 
 If no sample exists, only "Buy it" appears, with the "If you're wrong" row kept in view.
@@ -156,12 +159,13 @@ All storefront calls go to the store's own UCP endpoint, `https://{store-domain}
 - UCP version 2026-08-25. The ask tool is not available on earlier versions.
 - Declare, at minimum: `dev.ucp.shopping.catalog.search`, `dev.ucp.shopping.catalog.lookup`, `dev.shopify.catalog`, `dev.shopify.catalog.global`, the cart capability, `dev.ucp.common.ask`.
 - Base capabilities unlock tools. Extensions unlock Shopify's enriched fields. An extension without its base capability is pruned.
-- The dashboard profile used on 2026-11-14 was at `2026-04-08` and is not enough. First check whether Shopify hosts a 2026-08-25 example profile that declares ask. If not, host our own profile at a public HTTPS URL so stores can fetch it.
+- Verified 2026-11-15: Shopify's two example profiles, one for catalog and cart and one for ask, work side by side. No self-hosted profile is needed. The profile URLs are recorded in `docs/verification.md`.
 - Use `tools/list` on each store to see which tools it offers for this profile.
 
 ### 7.2 Identify the product
 
 - Global Catalog `lookup_catalog` with the pasted product URL. Shopify announced URL lookup for Catalog; confirm the parameter name.
+- Pass the URL with its `?variant=` parameter. Burrow's links resolve only with it; Garvee's resolve without. The demo link includes the variant.
 - Fallback: `search_catalog` with the product title from the page.
 - Keep: product, the selected variant, `seller.domain`, `seller.url`, `seller.links`, `checkout_url`.
 - Variant IDs in Global Catalog responses are store-native (`gid://shopify/ProductVariant/...`), so they can be passed to the store's cart and ask tools.
@@ -169,6 +173,7 @@ All storefront calls go to the store's own UCP endpoint, `https://{store-domain}
 ### 7.3 Price at the door
 
 - Cart MCP `create_cart` at the store endpoint with the variant, quantity 1, and context `address_country`, `address_region`, `postal_code`.
+- The cart quotes delivery only when given a shipping destination. Context with a ZIP alone is not enough. Use the smallest destination the cart accepts, ZIP plus city and state if possible. Never invent a street address. If a street address is required, ask the buyer for it at that moment and say why.
 - Read the estimated totals: item subtotal, delivery or shipping estimate, total before tax.
 - Call `cancel_cart` afterwards, so the check does not leave carts open.
 - Label as an estimate. Authoritative shipping comes from checkout.
@@ -176,7 +181,7 @@ All storefront calls go to the store's own UCP endpoint, `https://{store-domain}
 
 ### 7.4 Sample
 
-- Storefront Catalog `search_catalog` on the store with queries such as "swatch", "sample", and "{fabric name} swatch".
+- Storefront Catalog `search_catalog` on the store. Search "{fabric name} swatch" first, using the selected variant's fabric option label. Fall back to "swatch" and "sample". In verification, a plain "swatch" search missed Burrow's fabric and the fabric-name search found it.
 - Swatches are ordinary products. The model matches a result to the selected variant's fabric or colour option, and returns the matching product and variant IDs plus the option label it matched on. Code checks the IDs exist in the search results.
 - If no match: show the row as empty.
 
@@ -195,14 +200,17 @@ Fallback, when the store does not offer `ask_business`:
 
 Extraction (model, see 8.3) turns the text into structured terms with a supporting quote for each term. Code computes the dollar amounts:
 
-- Loss if returned in a given condition = item price × (100% − refund percentage for that condition) + delivery if the store says it is not refunded + return shipping if an amount is stated.
+- Fee for a condition: a percent fee is item price × percent, capped at the stated cap if there is one; a flat fee is the stated amount; no fee is $0.
+- Loss if returned in that condition = fee + delivery if the store says it is not refunded + return shipping if a flat amount is stated and it is not included in the fee.
 - If the store does not say whether delivery is refunded, show "+ ${delivery} delivery, refund not stated" beside the figure and do not add it in.
-- If return shipping is charged but no amount is stated, show "+ return shipping, amount not stated."
+- If return shipping is charged but no amount is stated, show "+ return shipping, amount not stated." If it is included in the fee, say "includes return shipping."
+- If a restocking fee is charged but no amount is stated, show the fee as text, with no dollar figure.
+- If the store offers a free exchange, show it as its own line with its conditions and quote, for example "Or $0: one free exchange with the original box."
 
 ### 7.6 Hand-off
 
 - Piece: the variant's `checkout_url`, keeping attribution parameters intact.
-- Sample: the cart's checkout continue URL, or a `checkout_url` for the sample variant if Catalog returns one.
+- Sample: the swatch variant's own `checkout_url`. Verified at Burrow; no cart is needed.
 
 ## 8. Agent design
 
@@ -231,18 +239,20 @@ The model returns JSON only, enforced by the API's structured output or tool-cal
 
 ```json
 {
-  "window": { "days": 30, "starts": "delivery", "quote": "string" },
-  "refund_by_condition": [
-    { "condition": "with original packaging", "refund_pct": 90, "quote": "string" },
-    { "condition": "without original packaging", "refund_pct": 80, "quote": "string" }
+  "window": { "days": 30, "starts": "confirmed delivery", "quote": "string" },
+  "fees_by_condition": [
+    { "condition": "with original box", "fee": { "type": "percent", "percent": 10, "amount": null, "cap": null }, "quote": "string" },
+    { "condition": "without original box", "fee": { "type": "percent", "percent": 20, "amount": null, "cap": 250 }, "quote": "string" }
   ],
-  "return_shipping": { "type": "free | flat | customer_pays_unstated | not_mentioned", "amount": null, "quote": "string" },
+  "return_shipping": { "type": "free | flat | included_in_fee | customer_pays_unstated | not_mentioned", "amount": null, "quote": "string" },
   "original_delivery_refunded": { "value": null, "quote": null },
+  "exchange": { "free": true, "conditions": "one exchange, original box", "quote": "string" },
   "final_sale": { "value": false, "quote": "string" }
 }
 ```
 
-Fields the store did not address are `null`, never guessed.
+- `fee.type` is one of `percent`, `flat`, `none`, `charged_amount_unstated`. Garvee's terms map to one condition with `charged_amount_unstated` and `return_shipping.type` of `customer_pays_unstated`.
+- Fields the store did not address are `null`, never guessed.
 
 ### 8.4 Model and key handling
 
@@ -344,22 +354,24 @@ Steps, for each store:
 
 Pass criteria: store A returns usable values for all three rows. Store B may return empty rows; that is the second demo case.
 
+Result, 2026-11-15: both stores passed. Full write-up in `docs/verification.md`; responses in `fixtures/verification/`. Store A is the Burrow Nomad Sofa and store B the Garvee 137" Cloud Sectional, both for ZIP 14228. Burrow has no made-to-order items, so step 8 found no demo moment. A returns question about an add-on did surface the policy's add-on exception, so `ask_business` does answer about specific items.
+
 ## 12. Build stages
 
 Stop for the owner's review after each stage. Within stages 3 and 4, build rows in priority order, so whatever is finished still demos: "If you're wrong" first, then "Price at your door", then "Try it first."
 
-1. **Verification and fixtures** (section 11).
+1. **Verification and fixtures** (section 11). Done 2026-11-15.
 2. **Card shell on fixtures.** Scripted thread, URL and ZIP input, card, three rows, empty states, "How I checked" strip, two action buttons.
 3. **Live calls** behind the data layer: lookup, ask with fallback, cart, sample search.
 4. **Extraction and cost.** Model extraction with quote checks; `cost` arithmetic with unit tests.
-5. **Actions.** Sample cart hand-off and buy hand-off.
+5. **Actions.** Sample and buy hand-offs, both through `checkout_url`.
 6. **Demo polish.** Timing, recorded mode, rehearsal against three minutes.
 
 ## 13. Demo path and video outline
 
 - **0:00 to 0:30, problem.** "You've never bought furniture online. You found this sofa on TikTok. You see one price; the costs that decide it are hidden." One statistic. The vision line.
-- **0:30 to 1:45, store A.** Paste the link. ZIP. The card fills: door price, $0 swatch, cost if wrong with the store's words. Open "How I checked." If the made-to-order test found a difference, show it here. Tap "Order the sample."
-- **1:45 to 2:15, store B.** Same check on a generic seller. No sample, harsher or unstated return terms, all stated plainly.
+- **0:30 to 1:45, store A (Burrow Nomad).** Paste the link. ZIP 14228. The card fills: $1,433 at the door against $1,364 listed, a $1 swatch in the exact fabric, and what a return costs in the store's words, including the free exchange. Open "How I checked." Tap "Order the sample."
+- **1:45 to 2:15, store B (Garvee).** Half the price and free delivery, but no sample, and a return costs a restocking fee and return shipping the store doesn't state. The contrast is the point: the cheaper sofa hides its way back. State it neutrally, as what each store says.
 - **2:15 to 3:00, reflection.** See section 14.
 
 ## 14. Reflection notes
@@ -370,6 +382,7 @@ Weakest parts:
 - Coverage is uneven and thinnest at generic sellers, where doubt is highest.
 - `ask_business` returns prose. Extraction can err. The quote check limits this but does not remove it.
 - The door price is a cart estimate. Authoritative shipping and tax come at checkout.
+- The cart needs a shipping destination to quote delivery, so a ZIP-only check can miss delivery at some stores.
 - The prototype simulates the agent surface. The real home is inside an assistant or the shopper's browser.
 
 Merchant question: the card favours stores with lenient terms. The meta-analysis suggests clear, lenient terms raise purchases, so it rewards merchants who offer a safe way back.
@@ -379,7 +392,7 @@ Next, with more time:
 - Run the check inside an agent, through UCP or WebMCP, as the step before checkout.
 - "Will it get through the door": compare box dimensions with doorway and stair measurements. More useful to first-timers than a room plan, but it needs package dimensions the Catalog does not carry today.
 - Showrooms through UCP location search, to answer "how does it feel to sit on?"
-- Follow-up questions answered by the store through `ask_business`.
+- Follow-up questions answered by the store through `ask_business`, which already surfaced an item-specific exception (Burrow's add-ons) in verification.
 - Compare the same piece across stores on the same three rows. The owner's probes found 35% of sampled pieces sold by several stores, and the cheapest listing was never the one with the best way back.
 
 ## 15. References
