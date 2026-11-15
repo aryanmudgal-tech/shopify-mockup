@@ -136,30 +136,67 @@ A forced tool call gives Haiku no room to think, so I added a first `analysis` f
 
 After that, fresh reads matched the golden lines 22 times in a row: 16 on the recorded texts and 6 against live Shopify. The swatch reads matched every time, and the model gave its reason ("the Performance Basketweave sample is a different weave").
 
+After the fixes in section 10.3 (prompt version 4), I ran it again: 18 of 18 fresh reads matched, 14 on the recorded texts and 4 live.
+
+### 9.3 Checks after the arithmetic - fail closed
+
+The quote check proves the words are real, but not that the figures use them correctly. Sundays showed the gap (section 10), so two checks now run after the arithmetic in [`server/cost.ts`](../server/cost.ts):
+
+1. **Without the box can't cost less than with it.** A cheaper without-box return means a charge landed on the wrong line.
+2. **Every dollar amount in the quoted cost sentences must be used.** It counts as used if it's an input to the arithmetic (the price, a cap, a flat charge, delivery the store keeps) or one of its results (a fee the store worked out itself, such as "$136.40"). Any other amount is a dropped charge.
+
+If either check fails, the row FAILS CLOSED: it shows the store's own sentences and the reason, and no computed figure. Lines that carry no arithmetic (an exchange, final sale, the window) stay.
+
+One rule sits in front of the checks: a single quoted charge is counted once. If a flat fee and the flat return shipping charge rest on the same sentence and the same amount, they're one charge filed twice, so the fee adds nothing on top. It's an identity rule, not a guess, and both checks still run afterwards.
+
 ## 10. Generalization run - three more stores
 
-- Run with: `npx tsx scripts/check.ts <link> 14228 --record fixtures/generalization/<store>`, live, on 2026-11-15. Every call, page and the final card are in [`fixtures/generalization/`](../fixtures/generalization/). None of these stores is part of the demo.
+- Run with: `npx tsx scripts/check.ts <link> 14228 --record fixtures/generalization/<store>/<before|after>`, live, on 2026-11-15. Every call, page and the final card are in [`fixtures/generalization/`](../fixtures/generalization/), in `before/` and `after/` for each store. None of these stores is part of the demo.
 - Stores: three furniture sellers from Global Catalog that offer `ask_business`, picked for variety. Sundays sells one swatch per fabric, Rove Lab sells a swatch kit, and Slumberland is a traditional furniture retailer.
+- Before is the first run with prompt version 3. After is the rerun with the fixes in 10.3 (prompt version 4 plus the checks in 9.3).
 
-| Store and product | To buy | Try it first | If you're wrong |
+| Store and product | Row | Before | After |
 |---|---|---|---|
-| Sundays, Get Together 3-Piece Modular Sofa, Cream Linen | FILLED: $3,800, free delivery | FILLED: $0 Cream Linen swatch, the exact fabric | FILLED, but one figure is WRONG (see 10.1) |
-| Rove Lab, M1 Boneless Sofa Sectional, Helium Cloud | Partly: $997 listed, the cart quoted no delivery | Empty: the store sells a kit, not this fabric's swatch | FILLED: $99 for any return, 100 days, a disagreement on return shipping |
-| Slumberland, Mahoney Loveseat, Chocolate | Partly: $489.99 listed, the cart quoted no delivery | Empty: no swatches, which is right | Unreadable |
+| Sundays, Get Together 3-Piece Modular Sofa, Cream Linen | To buy | $3,800, free delivery | Same |
+| | Try it first | $0 Cream Linen swatch, the exact fabric | Same |
+| | If you're wrong | $150 with the box, $75 without (WRONG), and a false disagreement | $150 with the box, $225 without (RIGHT), 30 days from delivery |
+| Rove Lab, M1 Boneless Sofa Sectional, Helium Cloud | To buy | $997 listed, the cart quoted no delivery | Same |
+| | Try it first | "This store lists no sample" (too strong) | "This store sells samples, but none of this exact fabric" |
+| | If you're wrong | $99 for any return, 100 days, a disagreement on return shipping | $99 for any return, return shipping included per the assistant, 100 days, no disagreement |
+| Slumberland, Mahoney Loveseat, Chocolate | To buy | $489.99 listed, the cart quoted no delivery | Same |
+| | Try it first | No swatches, which is right | Same |
+| | If you're wrong | Unreadable, and the known 5-day window hidden | 5-day window shown, cost marked "not stated" by either source |
 
-Rows filled: Sundays 3 of 3, Rove Lab 1 of 3 plus a partial door price, Slumberland 0 of 3 plus a partial door price.
+Rows filled, before -> after:
 
-### 10.1 Extraction errors I found by reading the policies myself
+- Sundays: 3 of 3, but one figure wrong -> 3 of 3, all right.
+- Rove Lab: 1 of 3 plus a partial door price -> same count, with the false disagreement gone and the sample row worded correctly.
+- Slumberland: 0 of 3 plus a partial door price -> the returns row now shows the window, but no cost.
 
-1. **Sundays, wrong figure.** The policy charges "A flat rate return shipping fee of $150" on every return, plus "a return re-packaging fee of $75" without the original packaging. So a return costs $150 with the box and $225 without. The card says $150 and $75, so the without-box return looks cheaper. Every quote was real, which is why the quote check couldn't catch it. The cause is my contract: one charge can be filed as a fee or as return shipping. The policy read filed the $150 as the with-box fee, and the assistant read filed it as return shipping, which also raised a false disagreement.
-   - **Proposed fix:** a rule that a charge called return shipping goes in `return_shipping` unless the fee itself is described as the shipping charge, plus a code check that flags any card where the without-box loss is lower than the with-box loss.
-2. **Rove Lab, over-reading.** The policy read called return shipping "free" because of "We will then send you a return shipping label". The policy never says the label is free. The assistant says the $99 fee covers return shipping. The card showed both quotes and computed nothing from either, so the buyer still sees the $99 fee. That's the right failure, but the policy read shouldn't have inferred "free".
-3. **Slumberland, missed term.** The assistant's answer says the store "offers a full refund if you’re unhappy with its size, shape, look, or fit within the first 5 days after taking possession". The model read the 5-day window correctly but didn't read "full refund" as no fee. With no cost line, the card turns unreadable and hides the window it does know. Two fixes are possible: treat a stated full refund as no fee, and show a known window even when costs are unknown.
+### 10.1 Extraction errors I found by reading the policies myself (first run)
 
-### 10.2 What else the run showed
+1. **Sundays, wrong figure.** The policy charges "A flat rate return shipping fee of $150" on every return, plus "a return re-packaging fee of $75" without the original packaging. So a return costs $150 with the box and $225 without. The card said $150 and $75, so the without-box return looked cheaper. Every quote was real, which is why the quote check couldn't catch it. The cause was my contract: one charge could be filed as a fee or as return shipping. The policy read filed the $150 as the with-box fee, and the assistant read filed it as return shipping, which also raised a false disagreement.
+2. **Rove Lab, over-reading.** The policy read called return shipping "free" because of "We will then send you a return shipping label". The policy never says the label is free. The card showed both quotes and computed nothing from either, which was the right failure, but the read shouldn't have inferred "free".
+3. **Slumberland, missed term.** The assistant's answer says the store "offers a full refund if you’re unhappy with its size, shape, look, or fit within the first 5 days after taking possession". The model read the 5-day window but didn't read "full refund" as no fee. With no cost line, the card turned unreadable and hid the window it did know.
+
+### 10.2 What else the first run showed
 
 - **Swatch matching generalized well.** At Sundays the model picked "Swatch Cream Linen, LiveLife™ Fabric" and named the Cream Boucle swatch as a different fabric.
 - **Two of three carts quoted no delivery** with country and ZIP. Burrow and Garvee both did, so the "Price at your door" row is thinner than the demo suggests. The card says so instead of guessing.
 - **Slumberland's `refund_policy` link has no return terms.** It covers service, repairs and payment refunds. The assistant knew the 5-day rule from somewhere else.
-- **"This store lists no sample" is too strong for Rove Lab,** which does sell a swatch kit. Better copy for that case: "No sample of this exact fabric."
-- **Maiden Home, which I didn't run in full,** puts the fabric in the product title instead of an option, so the check has no fabric to match a swatch against.
+- **"This store lists no sample" was too strong for Rove Lab,** which does sell a swatch kit.
+- **Maiden Home, which I didn't run in full,** puts the fabric in the product title instead of an option, so the check has no fabric to match a swatch against. Still open.
+
+### 10.3 What I changed, and what happened
+
+| Fix | What changed | Result |
+|---|---|---|
+| Flat return shipping goes in `return_shipping` | One flat return shipping amount for every return is filed as return shipping. A shipping charge that's a percentage or depends on packaging stays a fee with shipping "included" (Burrow). A charge that applies only without the packaging gets an explicit "none" with the packaging. | The Sundays read filed the $150 as return shipping, but ALSO kept it as the with-box fee, so the with-box figure came out at $300. Check 1 caught it ($225 without < $300 with) and the row failed closed. Counting one quoted charge once then gave $150 and $225. |
+| Check 1: without the box can't cost less | New check after the arithmetic, failing closed | Caught the double-filed $150 above. |
+| Check 2: every quoted dollar amount must be used | New check after the arithmetic, failing closed | Passes on all five stores. A unit test covers a dropped "$50 pickup charge". |
+| "Free" needs the store to say it pays | Sending or providing a return label is no longer enough | Rove Lab's policy read no longer says "free". The assistant's "the $99 fee is described as covering return shipping" fills in, so the disagreement is gone. |
+| A stated full refund counts as no fee | Added to the fee rule | The model still didn't apply it at Slumberland. On reflection I'm comfortable with that: the same answer says the store doesn't specify "return-shipping responsibility or cost", so a $0 figure would overstate what the buyer knows. The card says the cost isn't stated. |
+| Show a known window when costs are unknown | New "cost not stated" line instead of unreadable | Slumberland now shows the 5-day window. |
+| Kit-only stores | The swatch matcher also reports whether any result is a sample, of any fabric | Rove Lab now reads "This store sells samples, but none of this exact fabric." |
+
+The golden test held through all of it: 18 of 18 fresh reads matched after the changes (section 9.2).
