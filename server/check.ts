@@ -1,16 +1,21 @@
 // Runs one check: identify the product, then in parallel price it at the
 // door, look for a sample, read the refund policy and ask the store's
-// assistant. Each part fails on its own, so one slow or broken call shows as
-// that row's state instead of losing the card. Builds the card and the
-// "How I checked" steps (spec 6.3).
+// assistant. The model reads the policy and the answer into terms; code
+// reconciles them and does the arithmetic. Each part fails on its own, so one
+// slow or broken call shows as that row's state instead of losing the card.
+// Builds the card and the "How I checked" steps (spec 6.3).
 
 import type { AssistantSource, Card, CheckStep, IfWrongRow, PolicySource, ToBuyRow, TryFirstRow } from "../shared/card";
 import { formatUsd } from "../shared/money";
 import { askAssistant } from "./ask";
 import { quoteDoorPrice, type CartQuote } from "./cart";
 import { findProduct, searchSample, type FoundProduct, type SampleSearch } from "./catalog";
+import { returnsRow } from "./cost";
+import { extractReturns, type Extraction, type ModelDeps } from "./extract";
+import { modelFromEnv } from "./model";
+import { cacheFromEnv } from "./modelCache";
 import { readRefundPolicy } from "./policy";
-import { standInReturns } from "./standins";
+import { reconcile, type Reconciled } from "./reconcile";
 import type { Transport } from "./ucp/transport";
 import { UcpError } from "./ucp/transport";
 
@@ -24,7 +29,11 @@ async function settle<T>(p: Promise<T>): Promise<Settled<T>> {
   }
 }
 
-export async function runCheck(t: Transport, link: string, zip: string): Promise<Card> {
+export function defaultDeps(): ModelDeps {
+  return { model: modelFromEnv(), cache: cacheFromEnv() };
+}
+
+export async function runCheck(t: Transport, link: string, zip: string, deps: ModelDeps = defaultDeps()): Promise<Card> {
   const found = await findProduct(t, link, zip);
   if (!found) {
     throw new UcpError(
@@ -35,14 +44,19 @@ export async function runCheck(t: Transport, link: string, zip: string): Promise
 
   const [cart, sample, policy, assistant] = await Promise.all([
     settle(quoteDoorPrice(t, found.storeDomain, found.variantId, zip)),
-    settle(searchSample(t, found.storeDomain, found.fabric)),
+    settle(searchSample(t, found.storeDomain, found.fabric, deps)),
     readRefundPolicy(t, found.refundPolicyUrl),
     askAssistant(t, found.storeDomain, found.variantId, zip),
   ]);
 
   const toBuy: ToBuyRow = cart.ok ? toBuyRow(found, cart.value) : { status: "unavailable", reason: cart.reason };
   const deliveryCents = toBuy.status === "priced" ? toBuy.deliveryCents : null;
-  const ifWrong: IfWrongRow = standInReturns(found.storeDomain, { policy, assistant }, deliveryCents);
+
+  const sources = { policy, assistant };
+  const item = { title: found.header.title, options: found.header.options, seller: found.header.seller.name, variantId: found.variantId };
+  const extraction = await extractReturns(deps, item, sources, zip);
+  const reconciled = reconcile(extraction.policy?.terms ?? null, extraction.assistant?.terms ?? null);
+  const ifWrong: IfWrongRow = returnsFrom(extraction, reconciled, { itemCents: found.header.listedCents, deliveryCents }, sources);
 
   return {
     mode: t.mode,
@@ -58,8 +72,25 @@ export async function runCheck(t: Transport, link: string, zip: string): Promise
       sampleStep(found, sample),
       policyStep(policy),
       assistantStep(found, assistant, zip),
+      extractStep(extraction, reconciled),
     ],
   };
+}
+
+function returnsFrom(
+  extraction: Extraction,
+  reconciled: Reconciled,
+  prices: { itemCents: number; deliveryCents: number | null },
+  sources: { policy: PolicySource; assistant: AssistantSource },
+): IfWrongRow {
+  if (sources.policy.status !== "read" && sources.assistant.status !== "answered") {
+    return { status: "unreadable", reason: "Neither the policy page nor the store's assistant could be read.", sources };
+  }
+  const reads = [extraction.policy, extraction.assistant].filter((x) => x !== null);
+  if (reads.every((x) => x.terms === null)) {
+    return { status: "unreadable", reason: reads[0]?.error ?? "The model couldn't read the terms.", sources };
+  }
+  return returnsRow(reconciled.terms, reconciled.disagreements, prices, sources);
 }
 
 function toBuyRow(found: FoundProduct, q: CartQuote): ToBuyRow {
@@ -95,6 +126,7 @@ const numericId = (gid: string) => gid.split("/").pop() ?? gid;
 
 function identifyStep(f: FoundProduct): CheckStep {
   const matched = `${f.header.title}, variant ${numericId(f.variantId)} (${f.variantTitle}), sold by ${f.header.seller.name} and listed at ${formatUsd(f.header.listedCents)}`;
+  const guessed = f.variantGuessed ? " The link named no variant, so this is the one the Catalog shows first." : "";
   if (f.via.kind === "search") {
     return {
       id: "identify",
@@ -103,8 +135,7 @@ function identifyStep(f: FoundProduct): CheckStep {
       endpoint: "Global Catalog",
       outcome: "ok",
       summary:
-        `Looking up the link found nothing, so I searched the Catalog for the page's title, "${f.via.query}", and picked ${f.header.seller.name}'s listing: ${matched}.` +
-        (f.via.variantGuessed ? " The link named no variant, so this is the one the Catalog shows first." : ""),
+        `Looking up the link found nothing, so I searched the Catalog for the page's title, "${f.via.query}", and picked ${f.header.seller.name}'s listing: ${matched}.${guessed}`,
     };
   }
   return {
@@ -113,7 +144,7 @@ function identifyStep(f: FoundProduct): CheckStep {
     tool: "lookup_catalog",
     endpoint: "Global Catalog",
     outcome: "ok",
-    summary: `Matched the link to ${matched}.`,
+    summary: `Matched the link to ${matched}.${guessed}`,
   };
 }
 
@@ -143,13 +174,15 @@ function priceStep(f: FoundProduct, cart: Settled<CartQuote>, row: ToBuyRow, zip
 function sampleStep(f: FoundProduct, s: Settled<SampleSearch>): CheckStep {
   const base = { id: "sample" as const, title: "Store catalog searched for a sample", tool: "search_catalog", endpoint: f.storeDomain };
   if (!s.ok) return { ...base, outcome: "failed", summary: s.reason };
-  const searched = s.value.queries.map((q) => `"${q.query}" (${q.results} results)`).join(", then ");
-  const match = s.value.match;
+  const { queries, match, reason, rejected, model, cached } = s.value;
+  const searched = queries.map((q) => `"${q.query}" (${q.results} results)`).join(", then ");
+  const by = model ? ` ${model} compared the results with the sofa's fabric${cached ? " (a saved read of the same results)" : ""}: ${reason}` : "";
+  const check = rejected ? ` ${rejected} So it was not used.` : match ? " Its ID is in the search results." : "";
   if (match) {
-    return { ...base, outcome: "ok", summary: `Searched ${searched}. ${match.title} matches the sofa's fabric, ${match.matchedOn}, at ${formatUsd(match.priceCents)}.` };
+    return { ...base, outcome: "ok", summary: `Searched ${searched}.${by}${check} ${match.title}, ${formatUsd(match.priceCents)}.` };
   }
   const what = f.fabric ? `a sample of ${f.fabric.label}` : "a sample";
-  return { ...base, outcome: "empty", summary: `Searched ${searched}. None of the results is ${what}.` };
+  return { ...base, outcome: "empty", summary: `Searched ${searched}.${by}${check} None of the results is ${what}.` };
 }
 
 function policyStep(policy: PolicySource): CheckStep {
@@ -189,4 +222,41 @@ function shortUrl(url: string): string {
   } catch {
     return url;
   }
+}
+
+function extractStep(x: Extraction, r: Reconciled): CheckStep {
+  const base = { id: "extract" as const, title: "Terms read and compared", tool: x.model, endpoint: x.cached ? "a saved read of the same texts" : "Anthropic API" };
+  const reads = [x.policy, x.assistant].filter((e) => e !== null);
+  if (reads.length === 0) return { ...base, outcome: "empty", summary: "There was no policy text or assistant answer to read." };
+  const failed = reads.filter((e) => e.terms === null);
+  if (failed.length === reads.length) return { ...base, outcome: "failed", summary: failed[0]!.error ?? "The model couldn't read the terms." };
+
+  const parts = reads.map((e) => {
+    const who = e.source === "policy" ? "the policy" : "the assistant's answer";
+    if (!e.terms) return `It couldn't read ${who}: ${e.error}`;
+    const n = countStated(e.terms);
+    const retried = e.attempts > 1 ? `, after one retry` : "";
+    const dropped = e.dropped.length ? `, and dropped ${e.dropped.length} value${e.dropped.length > 1 ? "s" : ""} whose quotes didn't check out` : "";
+    return `${n} term${n === 1 ? "" : "s"} from ${who}${retried}${dropped}`;
+  });
+  const compared =
+    r.disagreements.length === 0
+      ? "Compared field by field, the two sources don't contradict each other."
+      : `Compared field by field, they disagree on ${r.disagreements.map((d) => d.topic).join(" and ")}, so the card shows both and picks neither.`;
+  return {
+    ...base,
+    outcome: "ok",
+    summary: `The model read ${parts.join("; ")}. Every quote was checked word for word against its source, and every number against its quote; code did the arithmetic. ${compared}`,
+  };
+}
+
+function countStated(t: NonNullable<Extraction["policy"]>["terms"] & object): number {
+  return (
+    (t.window.days !== null || t.window.starts !== null ? 1 : 0) +
+    t.fees_by_condition.length +
+    (t.return_shipping.type !== "not_mentioned" ? 1 : 0) +
+    (t.original_delivery_refunded.value !== null ? 1 : 0) +
+    (t.exchange.free !== null ? 1 : 0) +
+    (t.final_sale.value !== null ? 1 : 0)
+  );
 }

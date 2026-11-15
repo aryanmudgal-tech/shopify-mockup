@@ -5,6 +5,9 @@
 import http from "node:http";
 import { createServer as createVite } from "vite";
 import { handleApi } from "./api";
+import { loadDotEnv } from "./env";
+
+loadDotEnv();
 
 const PORT = Number(process.env.PORT ?? 5173);
 
@@ -27,5 +30,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Before You Buy on http://localhost:${PORT}`);
+  const model = process.env.ANTHROPIC_API_KEY ? "model reads on" : "no API key: saved model reads only";
+  console.log(`Before You Buy on http://localhost:${PORT} (${process.env.DATA_MODE ?? "recorded"}, ${model})`);
 });

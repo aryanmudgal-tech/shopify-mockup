@@ -1,6 +1,8 @@
 // Global Catalog lookup and Storefront Catalog sample search (spec 7.2, 7.4).
 
 import type { ProductHeader } from "../shared/card";
+import type { ModelDeps } from "./extract";
+import { matchSwatch, type SwatchMatch } from "./swatch";
 import type { Transport } from "./ucp/transport";
 
 export interface FoundProduct {
@@ -13,7 +15,9 @@ export interface FoundProduct {
   /** The option that names the fabric or colour; drives the sample search. */
   fabric: { name: string; label: string } | null;
   /** How the product was found, for "How I checked". */
-  via: { kind: "lookup" } | { kind: "search"; query: string; variantGuessed: boolean };
+  via: { kind: "lookup" } | { kind: "search"; query: string };
+  /** The link named no variant (or one the Catalog didn't have), so the check picked one. */
+  variantGuessed: boolean;
 }
 
 const FABRIC_OPTION = /fabric|colou?r|material|upholstery/i;
@@ -35,15 +39,16 @@ export async function findProduct(t: Transport, link: string, zip: string): Prom
     (p.variants ?? []).some((v: any) => bareHost(v.seller?.url ?? "") === host),
   );
   if (!match) return null;
-  const variantGuessed = !wanted || !(match.variants ?? []).some((v: any) => String(v.id).endsWith(`/${wanted}`));
-  return toFound(match, wanted, { kind: "search", query, variantGuessed });
+  return toFound(match, wanted, { kind: "search", query });
 }
 
 function toFound(product: any, wanted: string | null, via: FoundProduct["via"]): FoundProduct | null {
   // Prefer the variant named in the link; Global Catalog returns it first in practice.
   const variants: any[] = product.variants ?? [];
-  const variant = variants.find((v) => wanted && String(v.id).endsWith(`/${wanted}`)) ?? variants[0];
+  const named = variants.find((v) => wanted && String(v.id).endsWith(`/${wanted}`));
+  const variant = named ?? variants[0];
   if (!variant) return null;
+  const variantGuessed = !named;
 
   const seller = variant.seller ?? product.seller ?? {};
   const options: { name: string; label: string }[] = (variant.options ?? []).map((o: any) => ({
@@ -51,6 +56,8 @@ function toFound(product: any, wanted: string | null, via: FoundProduct["via"]):
     label: String(o.label),
   }));
   const image = (product.media ?? []).find((m: any) => /\.(jpe?g|png|webp|avif)(\?|$)/i.test(m.url ?? ""));
+  const fabric = options.find((o) => FABRIC_OPTION.test(o.name)) ?? null;
+  const shown = fabric ?? options[0];
 
   return {
     header: {
@@ -63,15 +70,22 @@ function toFound(product: any, wanted: string | null, via: FoundProduct["via"]):
         : null,
       listedCents: variant.price.amount,
       checkoutUrl: variant.checkout_url ?? null,
-      variantNote: null,
+      variantNote: variantGuessed ? guessedNote(shown, options.length > 0) : null,
     },
     variantId: variant.id,
     variantTitle: options.map((o) => o.label).join(" / ") || variant.title,
     storeDomain: seller.domain,
     refundPolicyUrl: (seller.links ?? []).find((l: any) => l.type === "refund_policy")?.url ?? null,
-    fabric: options.find((o) => FABRIC_OPTION.test(o.name)) ?? null,
+    fabric,
     via,
+    variantGuessed,
   };
+}
+
+/** "Your link didn't name a fabric, so this shows Crushed Gravel - Performance Chenille." */
+function guessedNote(option: { name: string; label: string } | undefined, hasOptions: boolean): string | null {
+  if (!hasOptions || !option) return null;
+  return `Your link didn't name a ${option.name.toLowerCase()}, so this shows ${option.label}.`;
 }
 
 /**
@@ -98,14 +112,13 @@ function bareHost(url: string): string {
 
 export interface SampleSearch {
   queries: { query: string; results: number }[];
-  match: {
-    title: string;
-    variantId: string;
-    priceCents: number;
-    imageUrl: string | null;
-    checkoutUrl: string;
-    matchedOn: string;
-  } | null;
+  match: SwatchMatch | null;
+  /** The model's one-line reason for its last decision. */
+  reason: string | null;
+  /** Set when the model named an ID that isn't in the results. */
+  rejected: string | null;
+  model: string | null;
+  cached: boolean;
 }
 
 /** "Crushed Gravel - Performance Chenille" -> "Crushed Gravel"; "Corduroy | Grey" -> "Corduroy". */
@@ -122,46 +135,25 @@ export async function searchSample(
   t: Transport,
   storeDomain: string,
   fabric: { name: string; label: string } | null,
+  deps: ModelDeps,
 ): Promise<SampleSearch> {
-  const queries: SampleSearch["queries"] = [];
+  const out: SampleSearch = { queries: [], match: null, reason: null, rejected: null, model: null, cached: true };
   for (const query of sampleQueries(fabric)) {
     const result = await t.call(storeDomain, "search_catalog", {
       catalog: { query, pagination: { limit: 20 } },
     });
     const products: any[] = result.structuredContent?.products ?? [];
-    queries.push({ query, results: products.length });
-    const match = fabric ? matchSample(products, fabric.label) : null;
-    if (match) return { queries, match };
+    out.queries.push({ query, results: products.length });
+    // Without a fabric option there is nothing to match a sample to.
+    if (!fabric || products.length === 0) continue;
+    const decision = await matchSwatch(deps, fabric, query, products);
+    out.reason = decision.reason;
+    out.model = decision.model;
+    out.cached &&= decision.cached;
+    if (decision.rejected) out.rejected = decision.rejected;
+    if (decision.match) return { ...out, match: decision.match };
   }
-  return { queries, match: null };
-}
-
-// STAGE 2 STAND-IN. Spec 7.4 gives matching to the model, with code checking
-// the IDs exist. Until stage 4 this rule does the job: a product tagged or
-// titled as a swatch or sample whose variant carries the same option label.
-function matchSample(products: any[], fabricLabel: string): SampleSearch["match"] {
-  const wanted = normalise(fabricLabel);
-  for (const p of products) {
-    const words = [p.title, ...(p.tags ?? [])].join(" ");
-    if (!/\b(swatch|sample)\b/i.test(words)) continue;
-    const variant = (p.variants ?? []).find((v: any) =>
-      (v.options ?? []).some((o: any) => normalise(String(o.label)) === wanted),
-    );
-    if (!variant?.checkout_url) continue;
-    return {
-      title: p.title,
-      variantId: variant.id,
-      priceCents: variant.price.amount,
-      imageUrl: p.media?.[0]?.url ?? null,
-      checkoutUrl: variant.checkout_url,
-      matchedOn: fabricLabel,
-    };
-  }
-  return null;
-}
-
-function normalise(s: string): string {
-  return s.toLowerCase().replace(/\s+/g, " ").trim();
+  return out;
 }
 
 function safeUrl(s: string): URL | null {
