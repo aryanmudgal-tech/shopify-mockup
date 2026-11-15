@@ -29,7 +29,9 @@ describe("runCheck on recorded responses", () => {
       ["policy", "ok"],
       ["assistant", "ok"],
       ["extract", "ok"],
+      ["handoff", "ok"],
     ]);
+    expect(card.steps.find((s) => s.id === "handoff")!.summary).toContain("burrow-prod.myshopify.com/cart/50269421830446:1");
     expect(card.steps.find((s) => s.id === "extract")!.endpoint).toBe("a saved read of the same texts");
   });
 
@@ -108,5 +110,24 @@ describe("findProduct fallback", () => {
       replace: (endpoint, tool) => (endpoint === "global" && tool === "search_catalog" ? { structuredContent: { products: [] } } : undefined),
     });
     await expect(runCheck(t, plain, "14228", saved)).rejects.toMatchObject({ code: "not_found" });
+  });
+});
+
+describe("hand-off check", () => {
+  it("hides Buy it when the checkout link isn't the store's checkout for the variant shown", async () => {
+    const t = faulty({
+      replace: async (endpoint, tool, args) => {
+        if (endpoint !== "global" || tool !== "lookup_catalog") return undefined;
+        const real = await new RecordedTransport().call(endpoint, tool, args);
+        const copy = JSON.parse(JSON.stringify(real));
+        copy.structuredContent.products[0].variants[0].checkout_url = "https://checkout.example.com/buy/50484946305326:1";
+        return copy;
+      },
+    });
+    const card = await runCheck(t, BURROW, "14228", saved);
+    expect(card.product.checkoutUrl).toBeNull();
+    expect(card.steps.find((s) => s.id === "handoff")).toMatchObject({ outcome: "failed", summary: expect.stringContaining("not the store") });
+    // The sample's own link still passes.
+    expect(card.tryFirst).toMatchObject({ status: "sample", checkoutUrl: "https://burrow-prod.myshopify.com/cart/50269421830446:1" });
   });
 });

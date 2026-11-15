@@ -77,8 +77,8 @@ export type TryFirstRow =
       imageUrl: string | null;
       /** The sofa option label the sample was matched on. */
       matchedOn: string;
-      /** The swatch variant's own checkout link (spec 7.6). */
-      checkoutUrl: string;
+      /** The swatch variant's own checkout link (spec 7.6); null if it failed the hand-off check. */
+      checkoutUrl: string | null;
     }
   /** otherSamples: the store sells samples, just none of this exact fabric. */
   | { status: "none"; otherSamples: boolean }
@@ -178,7 +178,7 @@ export type IfWrongRow =
 // --- How I checked ----------------------------------------------------------
 
 export interface CheckStep {
-  id: "identify" | "price" | "sample" | "policy" | "assistant" | "extract";
+  id: "identify" | "price" | "sample" | "policy" | "assistant" | "extract" | "handoff";
   title: string;
   /** The UCP tool called, e.g. "lookup_catalog"; null for a page read. */
   tool: string | null;

@@ -593,13 +593,23 @@ a {
 
 /* --- Actions --------------------------------------------------------------- */
 
+.actions-wrap {
+  padding: 1rem 1.25rem 1.1rem;
+  border-top: 1px solid var(--line);
+}
+
 .actions {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   gap: 0.75rem;
-  padding: 1rem 1.25rem 1.25rem;
-  border-top: 1px solid var(--line);
+}
+
+.handoff-note {
+  margin: 0.6rem 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  text-align: center;
 }
 
 .action {
@@ -666,8 +676,11 @@ a {
     padding-top: 0;
   }
 
+  .actions-wrap {
+    padding: 1rem;
+  }
+
   .actions {
     grid-auto-flow: row;
-    padding: 1rem;
   }
 }

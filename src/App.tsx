@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Card as CardModel, CheckResponse, DataMode } from "../shared/card";
-import { Card } from "./ui/Card";
+import { formatUsd } from "../shared/money";
+import { Card, type HandoffKind } from "./ui/Card";
 import { shortDate, shortLink } from "./ui/format";
 
 // The scripted assistant thread from spec 6.1. There is no open chat: the
@@ -86,6 +87,16 @@ export function App() {
     inputRef.current?.focus();
   }
 
+  /** After a hand-off, say what opened, so the thread records it. */
+  function handoff(kind: HandoffKind, card: CardModel) {
+    const seller = card.product.seller.name;
+    const what =
+      kind === "sample" && card.tryFirst.status === "sample"
+        ? `the ${card.tryFirst.title} sample (${formatUsd(card.tryFirst.priceCents)})`
+        : `the ${shortTitle(card.product.title)} (${formatUsd(card.product.listedCents)})`;
+    say({ from: "assistant", text: `Opened ${seller}'s checkout for ${what} in a new tab. Nothing is charged until you pay there.` });
+  }
+
   function submit(e: React.FormEvent) {
     e.preventDefault();
     const value = input.trim();
@@ -117,7 +128,7 @@ export function App() {
         {messages.map((m) =>
           "card" in m ? (
             <div key={m.id} className="msg msg-card">
-              <Card card={m.card} />
+              <Card card={m.card} onHandoff={(kind) => handoff(kind, m.card)} />
             </div>
           ) : m.from === "buyer" ? (
             <p key={m.id} className="msg msg-buyer" title={m.link}>
@@ -187,6 +198,12 @@ function ModeFooter({ config, onPick }: { config: Config | null; onPick: (link: 
       <a href="?states">Empty states</a>
     </footer>
   );
+}
+
+/** "Garvee 137\" Modular Sectional Sofa" from a long marketplace title. */
+function shortTitle(title: string): string {
+  const first = title.split(",")[0]!.trim();
+  return first.length > 60 ? `${first.slice(0, 57)}...` : first;
 }
 
 function isLink(s: string): boolean {

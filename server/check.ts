@@ -12,6 +12,7 @@ import { quoteDoorPrice, type CartQuote } from "./cart";
 import { findProduct, searchSample, type FoundProduct, type SampleSearch } from "./catalog";
 import { returnsRow } from "./cost";
 import { extractReturns, type Extraction, type ModelDeps } from "./extract";
+import { checkHandoff, hostOf, type HandoffCheck } from "./handoff";
 import { modelFromEnv } from "./model";
 import { cacheFromEnv } from "./modelCache";
 import { readRefundPolicy } from "./policy";
@@ -58,13 +59,20 @@ export async function runCheck(t: Transport, link: string, zip: string, deps: Mo
   const reconciled = reconcile(extraction.policy?.terms ?? null, extraction.assistant?.terms ?? null);
   const ifWrong: IfWrongRow = returnsFrom(extraction, reconciled, { itemCents: found.header.listedCents, deliveryCents }, sources);
 
+  // Hand-offs: a link only reaches the page if it is the store's checkout for the variant shown.
+  const hosts = [found.storeDomain, hostOf(found.header.seller.url)];
+  const buy = checkHandoff(found.header.checkoutUrl, found.variantId, hosts);
+  let tryFirst: TryFirstRow = sample.ok ? tryFirstRow(sample.value) : { status: "unavailable", reason: sample.reason };
+  const sampleLink = tryFirst.status === "sample" ? checkHandoff(tryFirst.checkoutUrl, tryFirst.variantId, hosts) : null;
+  if (tryFirst.status === "sample" && sampleLink && !sampleLink.ok) tryFirst = { ...tryFirst, checkoutUrl: null };
+
   return {
     mode: t.mode,
     recordedAt: t.recordedAt,
     zip,
-    product: found.header,
+    product: { ...found.header, checkoutUrl: buy.ok ? buy.url : null },
     toBuy,
-    tryFirst: sample.ok ? tryFirstRow(sample.value) : { status: "unavailable", reason: sample.reason },
+    tryFirst,
     ifWrong,
     steps: [
       identifyStep(found),
@@ -73,7 +81,25 @@ export async function runCheck(t: Transport, link: string, zip: string, deps: Mo
       policyStep(policy),
       assistantStep(found, assistant, zip),
       extractStep(extraction, reconciled),
+      handoffStep(found.header.seller.name, buy, sampleLink),
     ],
+  };
+}
+
+function handoffStep(seller: string, buy: HandoffCheck, sample: HandoffCheck | null): CheckStep {
+  const describe = (label: string, c: HandoffCheck) =>
+    c.ok
+      ? `"${label}" opens ${c.host}${c.path}${c.keepsAttribution ? " with Shopify's attribution parameters kept as given" : ""}.`
+      : `"${label}" is hidden: ${c.reason}`;
+  const parts = [describe("Buy it", buy), sample ? describe("Order the sample", sample) : "There is no sample, so only \"Buy it\" shows."];
+  const failed = !buy.ok || (sample !== null && !sample.ok);
+  return {
+    id: "handoff",
+    title: "Checkout links checked",
+    tool: null,
+    endpoint: "checkout_url from Shopify",
+    outcome: failed ? "failed" : "ok",
+    summary: `${parts.join(" ")} Each link must be ${seller}'s own checkout for the variant on the card. Nothing is charged here; the buyer pays at the store.`,
   };
 }
 

@@ -5,7 +5,9 @@ import { thumb } from "./format";
 import { ReturnsRow } from "./ReturnsRow";
 import { Swatch } from "./Swatch";
 
-export function Card({ card }: { card: CardModel }) {
+export type HandoffKind = "sample" | "buy";
+
+export function Card({ card, onHandoff }: { card: CardModel; onHandoff?: (kind: HandoffKind) => void }) {
   return (
     <article className="card" aria-label={`Check for ${card.product.title}`}>
       <Header product={card.product} />
@@ -17,7 +19,7 @@ export function Card({ card }: { card: CardModel }) {
       </Row>
       <ReturnsRow row={card.ifWrong} />
       <HowIChecked steps={card.steps} />
-      <Actions card={card} />
+      <Actions card={card} onHandoff={onHandoff} />
     </article>
   );
 }
@@ -142,20 +144,27 @@ export function Gap({ children }: { children: React.ReactNode }) {
   return <span className="gap">{children}</span>;
 }
 
-function Actions({ card }: { card: CardModel }) {
-  const sample = card.tryFirst.status === "sample" ? card.tryFirst : null;
+function Actions({ card, onHandoff }: { card: CardModel; onHandoff?: (kind: HandoffKind) => void }) {
+  const sample = card.tryFirst.status === "sample" && card.tryFirst.checkoutUrl ? card.tryFirst : null;
+  const buy = card.product.checkoutUrl;
+  if (!sample && !buy) return null;
   return (
-    <footer className="actions">
-      {sample && (
-        <a className="action" href={sample.checkoutUrl} target="_blank" rel="noopener noreferrer">
-          Order the sample ({formatUsd(sample.priceCents)})
-        </a>
-      )}
-      {card.product.checkoutUrl && (
-        <a className="action" href={card.product.checkoutUrl} target="_blank" rel="noopener noreferrer">
-          Buy it
-        </a>
-      )}
+    <footer className="actions-wrap">
+      <div className="actions">
+        {sample && (
+          <a className="action" href={sample.checkoutUrl!} target="_blank" rel="noopener noreferrer" onClick={() => onHandoff?.("sample")}>
+            Order the sample ({formatUsd(sample.priceCents)})
+          </a>
+        )}
+        {buy && (
+          <a className="action" href={buy} target="_blank" rel="noopener noreferrer" onClick={() => onHandoff?.("buy")}>
+            Buy it
+          </a>
+        )}
+      </div>
+      <p className="handoff-note">
+        {sample && buy ? "Both open" : "This opens"} {card.product.seller.name}'s own checkout in a new tab. You pay there, not here.
+      </p>
     </footer>
   );
 }
