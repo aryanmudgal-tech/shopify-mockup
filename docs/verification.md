@@ -88,3 +88,21 @@ The extraction contract in spec 8.3 couldn't hold everything these two answers s
 ## 7. Fixtures
 
 Files are numbered by the step in spec section 11. `00` is the store's `/.well-known/ucp`, `01` and `02` are the Global Catalog search and lookup, `03` is `tools/list` per profile, `04` is the cart and its cancel (`04e` and `garvee/04c` are the country-plus-ZIP reruns), `05` is the swatch search, `07` is the return question, and `08` is the policy page and the made-to-order probes. Each JSON file holds the request, the HTTP status and the full response.
+
+## 8. Live mode run - stage 3
+
+- Run with: [`scripts/check.ts`](../scripts/check.ts), which runs the app's own check from the terminal (`npx tsx scripts/check.ts <link> 14228`).
+- Result: all three live checks PASS and match the recorded cards.
+
+| Link | Time | What came back |
+|---|---|---|
+| Burrow Nomad, with `?variant=` | 1.7s | $1,433 at the door, $1 Crushed Gravel Performance Chenille swatch, $136.40 or $250 back, + $69 delivery, refund not stated, one free exchange, not final sale |
+| Garvee Cloud Sectional | 2.2s | $681.99 with free delivery, no sample after three searches, both fees charged with neither amount stated |
+| Burrow Nomad, plain link | 2.4s | Lookup found nothing, so the app read the product page, searched the Catalog for its title "Nomad Sofa" and took Burrow's listing. The card says the variant was guessed. |
+
+### 8.1 What I noticed
+
+- **The assistant answered word for word what it said two hours earlier.** Both stores' live `ask_business` answers were identical to the `07b` fixtures and came back in about a second. I assume Shopify caches answers to the same question for the same item, but I haven't checked this. It means the assistant's quotes pass the exact-substring check today, but a reworded answer would drop them, which is the right failure.
+- **The policy pages hadn't changed either.** The text the live check read from both `refund_policy` links matched the recorded HTML line for line, so every policy quote held.
+- **Live searches return more results than the fixtures.** The app asks for 20 results where the verification run asked for 10, so Garvee's "Corduroy swatch" search shows 20 results live and 10 recorded. Neither contains a sample, so the card is the same.
+- **burrow.com served its product page to the server** without blocking it, so the title fallback works for Burrow. Other stores may block it; then the app searches with the link's handle words instead.

@@ -133,7 +133,10 @@ function priceStep(f: FoundProduct, cart: Settled<CartQuote>, row: ToBuyRow, zip
   return {
     ...base,
     outcome: "ok",
-    summary: `One sofa to ZIP ${zip}: ${formatUsd(q.subtotalCents)} + ${formatUsd(row.deliveryCents)} ${row.deliveryLabel} = ${formatUsd(row.doorCents)} before tax. Same variant and price as the Catalog.${cancelled}`,
+    summary:
+      row.deliveryCents === 0
+        ? `One sofa to ZIP ${zip}: ${formatUsd(q.subtotalCents)} with free delivery, "${row.deliveryLabel}", so ${formatUsd(row.doorCents)} before tax. Same variant and price as the Catalog.${cancelled}`
+        : `One sofa to ZIP ${zip}: ${formatUsd(q.subtotalCents)} + ${formatUsd(row.deliveryCents)} ${row.deliveryLabel} = ${formatUsd(row.doorCents)} before tax. Same variant and price as the Catalog.${cancelled}`,
   };
 }
 
