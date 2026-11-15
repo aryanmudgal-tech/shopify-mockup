@@ -2,7 +2,7 @@
 // country plus ZIP: verification showed both stores quote delivery with that
 // alone, so the check never needs a street address.
 
-import type { UcpTransport } from "./ucp/transport";
+import type { Transport } from "./ucp/transport";
 
 export interface CartQuote {
   variantId: string | null;
@@ -16,7 +16,7 @@ export interface CartQuote {
 }
 
 export async function quoteDoorPrice(
-  t: UcpTransport,
+  t: Transport,
   storeDomain: string,
   variantId: string,
   zip: string,

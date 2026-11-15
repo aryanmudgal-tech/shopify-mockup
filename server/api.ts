@@ -4,16 +4,18 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { CheckResponse, DataMode } from "../shared/card";
 import { runCheck } from "./check";
+import { LiveTransport } from "./ucp/live";
 import { RECORDED_LINKS, RecordedTransport } from "./ucp/recorded";
-import type { UcpTransport } from "./ucp/transport";
+import type { Transport } from "./ucp/transport";
 import { UcpError } from "./ucp/transport";
 
 const MODE = (process.env.DATA_MODE ?? "recorded") as DataMode;
 
-function transport(): UcpTransport {
+function transport(): Transport {
   if (MODE === "recorded") return new RecordedTransport();
-  // Live calls arrive in stage 3; mock only if Shopify access fails.
-  throw new UcpError("mode_unavailable", `The ${MODE} data mode isn't built yet. Run with DATA_MODE=recorded.`);
+  if (MODE === "live") return new LiveTransport();
+  // Mock is only for the case where Shopify access fails, which it hasn't.
+  throw new UcpError("mode_unavailable", `The ${MODE} data mode isn't built. Run with DATA_MODE=recorded or live.`);
 }
 
 export interface ConfigResponse {

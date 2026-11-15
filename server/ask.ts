@@ -1,7 +1,7 @@
 // The returns question through the Ask MCP (spec 7.5). The policy-page
 // fallback arrives with live calls in stage 3.
 
-import type { UcpTransport } from "./ucp/transport";
+import type { Transport } from "./ucp/transport";
 
 /**
  * Spec 7.5's question plus the exchange clause accepted on 2026-11-15
@@ -17,7 +17,7 @@ export function returnsQuestion(zip: string): string {
 }
 
 export async function askReturns(
-  t: UcpTransport,
+  t: Transport,
   storeDomain: string,
   variantId: string,
   zip: string,

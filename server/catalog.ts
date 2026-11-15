@@ -1,7 +1,7 @@
 // Global Catalog lookup and Storefront Catalog sample search (spec 7.2, 7.4).
 
 import type { ProductHeader } from "../shared/card";
-import type { UcpTransport } from "./ucp/transport";
+import type { Transport } from "./ucp/transport";
 
 export interface FoundProduct {
   header: ProductHeader;
@@ -16,7 +16,7 @@ export interface FoundProduct {
 
 const FABRIC_OPTION = /fabric|colou?r|material|upholstery/i;
 
-export async function lookupProduct(t: UcpTransport, link: string, zip: string): Promise<FoundProduct | null> {
+export async function lookupProduct(t: Transport, link: string, zip: string): Promise<FoundProduct | null> {
   const result = await t.call("global", "lookup_catalog", {
     catalog: { ids: [link], context: { address_country: "US", postal_code: zip } },
   });
@@ -79,7 +79,7 @@ export function sampleQueries(fabric: { label: string } | null): string[] {
 }
 
 export async function searchSample(
-  t: UcpTransport,
+  t: Transport,
   storeDomain: string,
   fabric: { name: string; label: string } | null,
 ): Promise<SampleSearch> {

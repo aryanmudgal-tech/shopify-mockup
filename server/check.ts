@@ -7,10 +7,10 @@ import { askReturns } from "./ask";
 import { quoteDoorPrice, type CartQuote } from "./cart";
 import { lookupProduct, searchSample, type FoundProduct, type SampleSearch } from "./catalog";
 import { standInReturns } from "./standins";
-import type { UcpTransport } from "./ucp/transport";
+import type { Transport } from "./ucp/transport";
 import { UcpError } from "./ucp/transport";
 
-export async function runCheck(t: UcpTransport, link: string, zip: string): Promise<Card> {
+export async function runCheck(t: Transport, link: string, zip: string): Promise<Card> {
   const found = await lookupProduct(t, link, zip);
   if (!found) {
     throw new UcpError(
