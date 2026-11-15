@@ -1,0 +1,101 @@
+{
+  "model": "claude-haiku-5-5",
+  "cached": false,
+  "policy": {
+    "source": "policy",
+    "terms": {
+      "window": {
+        "days": 30,
+        "starts": "carrier_confirmed_delivery",
+        "quotes": [
+          {
+            "text": "The return process must be initiated within 30 calendar days of receipt for all products, with the sole exception of mattresses.",
+            "source": "policy"
+          },
+          {
+            "text": "Receipt is when the last package for an individual product is delivered per shipping carrier confirmation and not when the order is unboxed.",
+            "source": "policy"
+          }
+        ]
+      },
+      "fees_by_condition": [
+        {
+          "condition": "with_original_packaging",
+          "fee": {
+            "type": "percent",
+            "percent": 10,
+            "amount": null,
+            "cap": 250
+          },
+          "quotes": [
+            {
+              "text": "we charge a return shipping fee equal to 10% of what you paid for the product, with the original packaging intact.",
+              "source": "policy"
+            },
+            {
+              "text": "The fee is always capped at $250, per returned item.",
+              "source": "policy"
+            }
+          ]
+        },
+        {
+          "condition": "without_original_packaging",
+          "fee": {
+            "type": "percent",
+            "percent": 20,
+            "amount": null,
+            "cap": 250
+          },
+          "quotes": [
+            {
+              "text": "If you don't have the original packaging, the fee is 20% of the paid value.",
+              "source": "policy"
+            },
+            {
+              "text": "The fee is always capped at $250, per returned item.",
+              "source": "policy"
+            }
+          ]
+        }
+      ],
+      "return_shipping": {
+        "type": "included_in_fee",
+        "amount": null,
+        "quotes": [
+          {
+            "text": "we charge a return shipping fee equal to 10% of what you paid for the product, with the original packaging intact.",
+            "source": "policy"
+          }
+        ]
+      },
+      "original_delivery_refunded": {
+        "value": null,
+        "quotes": []
+      },
+      "exchange": {
+        "free": true,
+        "count": 1,
+        "needs_original_packaging": true,
+        "within_return_window": true,
+        "quotes": [
+          {
+            "text": "we offer one free exchange within the 30-day return window, with original packaging.",
+            "source": "policy"
+          },
+          {
+            "text": "We’ll process your return for your original product without fees and refund your order in full.",
+            "source": "policy"
+          }
+        ]
+      },
+      "final_sale": {
+        "value": null,
+        "quotes": []
+      }
+    },
+    "attempts": 1,
+    "dropped": [],
+    "error": null
+  },
+  "assistant": null
+}

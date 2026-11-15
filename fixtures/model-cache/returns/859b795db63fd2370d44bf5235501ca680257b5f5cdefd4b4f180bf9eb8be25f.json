@@ -1,0 +1,147 @@
+{
+  "model": "claude-haiku-5-5",
+  "cached": false,
+  "policy": {
+    "source": "policy",
+    "terms": {
+      "window": {
+        "days": 30,
+        "starts": null,
+        "quotes": [
+          {
+            "text": "GARVEE offers a 30-day Return Guarantee.",
+            "source": "policy"
+          },
+          {
+            "text": "you have the option to return it within 30 days for a replacement or a refund, whichever you prefer.",
+            "source": "policy"
+          }
+        ]
+      },
+      "fees_by_condition": [
+        {
+          "condition": "any",
+          "fee": {
+            "type": "charged_amount_unstated",
+            "percent": null,
+            "amount": null,
+            "cap": null
+          },
+          "quotes": [
+            {
+              "text": "GARVEE reserves the right to refuse responsibility and may impose a restocking fee at our discretion.",
+              "source": "policy"
+            }
+          ]
+        }
+      ],
+      "return_shipping": {
+        "type": "customer_pays_unstated",
+        "amount": null,
+        "quotes": [
+          {
+            "text": "We will not cover the cost of shipping and handling unless the return is due to a mistake on our part.",
+            "source": "policy"
+          },
+          {
+            "text": "Please be aware that GARVEE does not cover the shipping costs for returns initiated by the customer.",
+            "source": "policy"
+          }
+        ]
+      },
+      "original_delivery_refunded": {
+        "value": null,
+        "quotes": []
+      },
+      "exchange": {
+        "free": null,
+        "count": null,
+        "needs_original_packaging": true,
+        "within_return_window": null,
+        "quotes": [
+          {
+            "text": "All returns or exchanges must come with their original packaging unaltered.",
+            "source": "policy"
+          }
+        ]
+      },
+      "final_sale": {
+        "value": null,
+        "quotes": []
+      }
+    },
+    "attempts": 1,
+    "dropped": [],
+    "error": null
+  },
+  "assistant": {
+    "source": "assistant",
+    "terms": {
+      "window": {
+        "days": 30,
+        "starts": null,
+        "quotes": [
+          {
+            "text": "The 30-day return window applies, but the information doesn’t clarify whether it starts at delivery or another date",
+            "source": "assistant"
+          }
+        ]
+      },
+      "fees_by_condition": [
+        {
+          "condition": "any",
+          "fee": {
+            "type": "charged_amount_unstated",
+            "percent": null,
+            "amount": null,
+            "cap": null
+          },
+          "quotes": [
+            {
+              "text": "you pay return shipping and the return/restocking cost, but no specific shipping amount or restocking-fee rate is given",
+              "source": "assistant"
+            }
+          ]
+        }
+      ],
+      "return_shipping": {
+        "type": "customer_pays_unstated",
+        "amount": null,
+        "quotes": [
+          {
+            "text": "If you return it because you changed your mind or no longer want it, you pay return shipping and the return/restocking cost, but no specific shipping amount or restocking-fee rate is given",
+            "source": "assistant"
+          }
+        ]
+      },
+      "original_delivery_refunded": {
+        "value": null,
+        "quotes": [
+          {
+            "text": "original delivery charges are not addressed for ordinary returns",
+            "source": "assistant"
+          }
+        ]
+      },
+      "exchange": {
+        "free": null,
+        "count": null,
+        "needs_original_packaging": null,
+        "within_return_window": null,
+        "quotes": []
+      },
+      "final_sale": {
+        "value": null,
+        "quotes": [
+          {
+            "text": "the information doesn’t clarify",
+            "source": "assistant"
+          }
+        ]
+      }
+    },
+    "attempts": 1,
+    "dropped": [],
+    "error": null
+  }
+}

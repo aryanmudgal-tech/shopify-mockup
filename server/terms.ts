@@ -79,13 +79,18 @@ const object = (properties: Record<string, object>) => ({
 export const TERMS_TOOL_NAME = "record_return_terms";
 
 export const TERMS_SCHEMA = object({
+  analysis: {
+    type: "string",
+    description:
+      "Fill this first, in a few sentences: which passages state the return fee, return shipping, the window and when it starts, delivery refunds, exchanges and final sale for a change-of-mind return of this item, and which passages you are setting aside because they apply to other situations. Not shown to the buyer.",
+  },
   window: object({
     days: nullable({ type: "integer", description: "Days the buyer has to start a return." }),
     starts: nullable({
       type: "string",
       enum: ["carrier_confirmed_delivery", "delivery", "purchase", "shipment"],
       description:
-        "When the window starts. carrier_confirmed_delivery if the text ties it to the carrier confirming delivery; delivery for delivery or receipt without that detail; null if not stated.",
+        "When the window starts. carrier_confirmed_delivery when it starts at delivery as confirmed by the carrier (carrier or tracking confirmation), even if the text calls that moment receipt; delivery when it starts at delivery or receipt with no mention of carrier confirmation; purchase or shipment when stated; null when not stated.",
     }),
     quotes,
   }),
@@ -99,7 +104,8 @@ export const TERMS_SCHEMA = object({
         type: {
           type: "string",
           enum: ["percent", "flat", "none", "charged_amount_unstated"],
-          description: "charged_amount_unstated when the text says a fee is charged but gives no amount or rate.",
+          description:
+            "charged_amount_unstated when the text says the buyer pays a return or restocking fee but gives no amount or rate. none only when the text says change-of-mind returns carry no fee.",
         },
         percent: nullable({ type: "number", description: "The stated percentage, for type percent." }),
         amount: nullable({ type: "number", description: "The stated dollar amount, for type flat, as a plain number." }),
@@ -113,7 +119,7 @@ export const TERMS_SCHEMA = object({
       type: "string",
       enum: ["free", "flat", "included_in_fee", "customer_pays_unstated", "not_mentioned"],
       description:
-        "included_in_fee when the return fee itself is the return shipping charge; customer_pays_unstated when the buyer pays return shipping but no amount is stated; free when the store pays it; flat with amount for a stated fixed charge.",
+        "included_in_fee when the return fee is itself described as the return shipping charge, even if the text doesn't say who pays the carrier; customer_pays_unstated when the buyer pays return shipping and no amount is stated; free when the store pays it; flat with amount for a stated fixed charge.",
     },
     amount: nullable({ type: "number", description: "The stated dollar amount, for type flat." }),
     quotes,

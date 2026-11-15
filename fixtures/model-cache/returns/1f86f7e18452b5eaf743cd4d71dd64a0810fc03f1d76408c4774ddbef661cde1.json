@@ -1,0 +1,90 @@
+{
+  "model": "claude-haiku-5-5",
+  "cached": false,
+  "policy": null,
+  "assistant": {
+    "source": "assistant",
+    "terms": {
+      "window": {
+        "days": 30,
+        "starts": "carrier_confirmed_delivery",
+        "quotes": [
+          {
+            "text": "You can start a return within 30 calendar days of delivery confirmed by the carrier—not when you unbox it",
+            "source": "assistant"
+          }
+        ]
+      },
+      "fees_by_condition": [
+        {
+          "condition": "with_original_packaging",
+          "fee": {
+            "type": "percent",
+            "percent": 10,
+            "amount": null,
+            "cap": 250
+          },
+          "quotes": [
+            {
+              "text": "the return fee is 10% of the amount paid with the original packaging intact, or 20% without it, capped at $250",
+              "source": "assistant"
+            }
+          ]
+        },
+        {
+          "condition": "without_original_packaging",
+          "fee": {
+            "type": "percent",
+            "percent": 20,
+            "amount": null,
+            "cap": 250
+          },
+          "quotes": [
+            {
+              "text": "the return fee is 10% of the amount paid with the original packaging intact, or 20% without it, capped at $250",
+              "source": "assistant"
+            }
+          ]
+        }
+      ],
+      "return_shipping": {
+        "type": "included_in_fee",
+        "amount": null,
+        "quotes": [
+          {
+            "text": "the fee is described as return shipping, but the store doesn’t specify who pays the carrier separately or give a separate shipping price",
+            "source": "assistant"
+          }
+        ]
+      },
+      "original_delivery_refunded": {
+        "value": null,
+        "quotes": []
+      },
+      "exchange": {
+        "free": true,
+        "count": 1,
+        "needs_original_packaging": true,
+        "within_return_window": true,
+        "quotes": [
+          {
+            "text": "One free exchange is available within the 30-day window if the original packaging is intact",
+            "source": "assistant"
+          }
+        ]
+      },
+      "final_sale": {
+        "value": false,
+        "quotes": [
+          {
+            "text": "this item is not identified as final sale",
+            "source": "assistant"
+          }
+        ]
+      }
+    },
+    "attempts": 1,
+    "dropped": [],
+    "error": null
+  }
+}
