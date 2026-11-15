@@ -105,6 +105,11 @@ export class RecordedTransport implements Transport {
   readonly recordedAt = readFixture("burrow", "04e-create-cart-zip-only-dest.json").fetched_at;
 
   async call(endpoint: Endpoint, tool: string, args: Record<string, any>, opts: CallOptions = {}): Promise<UcpResult> {
+    const zip = args.catalog?.context?.postal_code ?? args.cart?.context?.postal_code ?? args.ask?.context?.postal_code;
+    if (zip && zip !== RECORDED_ZIP) {
+      throw new UcpError("not_recorded", `Recorded mode only has ZIP ${RECORDED_ZIP}.`);
+    }
+
     if (endpoint === "global") {
       if (tool !== "lookup_catalog") throw notRecorded(`Global Catalog ${tool}`);
       const key = lookupKey(args.catalog?.ids?.[0] ?? "");
@@ -129,10 +134,6 @@ export class RecordedTransport implements Transport {
       return unwrap(readFixture(store.dir, file));
     }
 
-    const zip = args.cart?.context?.postal_code ?? args.ask?.context?.postal_code;
-    if (zip && zip !== RECORDED_ZIP) {
-      throw new UcpError("not_recorded", `Recorded mode only has ZIP ${RECORDED_ZIP}.`);
-    }
     const key = tool === "tools/list" ? `tools/list:${opts.profile ?? "cap"}` : tool;
     const file = store.tools[key];
     if (!file) throw notRecorded(`${tool} at ${endpoint}`);

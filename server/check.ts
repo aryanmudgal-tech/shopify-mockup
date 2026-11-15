@@ -1,35 +1,48 @@
-// Runs one check: identify the product, price it at the door, look for a
-// sample, ask about returns. Builds the card and the "How I checked" steps.
+// Runs one check: identify the product, then in parallel price it at the
+// door, look for a sample, read the refund policy and ask the store's
+// assistant. Each part fails on its own, so one slow or broken call shows as
+// that row's state instead of losing the card. Builds the card and the
+// "How I checked" steps (spec 6.3).
 
-import type { Card, CheckStep, IfWrongRow, ToBuyRow, TryFirstRow } from "../shared/card";
+import type { AssistantSource, Card, CheckStep, IfWrongRow, PolicySource, ToBuyRow, TryFirstRow } from "../shared/card";
 import { formatUsd } from "../shared/money";
-import { askReturns } from "./ask";
+import { askAssistant } from "./ask";
 import { quoteDoorPrice, type CartQuote } from "./cart";
-import { lookupProduct, searchSample, type FoundProduct, type SampleSearch } from "./catalog";
+import { findProduct, searchSample, type FoundProduct, type SampleSearch } from "./catalog";
+import { readRefundPolicy } from "./policy";
 import { standInReturns } from "./standins";
 import type { Transport } from "./ucp/transport";
 import { UcpError } from "./ucp/transport";
 
+type Settled<T> = { ok: true; value: T } | { ok: false; reason: string };
+
+async function settle<T>(p: Promise<T>): Promise<Settled<T>> {
+  try {
+    return { ok: true, value: await p };
+  } catch (err) {
+    return { ok: false, reason: err instanceof Error ? err.message : "Unknown error." };
+  }
+}
+
 export async function runCheck(t: Transport, link: string, zip: string): Promise<Card> {
-  const found = await lookupProduct(t, link, zip);
+  const found = await findProduct(t, link, zip);
   if (!found) {
     throw new UcpError(
       "not_found",
-      "Shopify's catalog didn't recognise that link. If it's a product page, try the link with its ?variant= part.",
+      "Shopify's catalog didn't recognise that link, and a search for the page's title found no match from that store.",
     );
   }
 
-  const [quote, sample, answer] = await Promise.all([
-    quoteDoorPrice(t, found.storeDomain, found.variantId, zip),
-    searchSample(t, found.storeDomain, found.fabric),
-    askReturns(t, found.storeDomain, found.variantId, zip),
+  const [cart, sample, policy, assistant] = await Promise.all([
+    settle(quoteDoorPrice(t, found.storeDomain, found.variantId, zip)),
+    settle(searchSample(t, found.storeDomain, found.fabric)),
+    readRefundPolicy(t, found.refundPolicyUrl),
+    askAssistant(t, found.storeDomain, found.variantId, zip),
   ]);
 
-  const toBuy = toBuyRow(found, quote);
-  const deliveryCents = toBuy.status === "priced" ? toBuy.deliveryCents : 0;
-  const ifWrong: IfWrongRow = answer
-    ? standInReturns(found.storeDomain, answer.answer, deliveryCents, found.refundPolicyUrl)
-    : { status: "unreadable", source: "answer", policyUrl: found.refundPolicyUrl, raw: "" };
+  const toBuy: ToBuyRow = cart.ok ? toBuyRow(found, cart.value) : { status: "unavailable", reason: cart.reason };
+  const deliveryCents = toBuy.status === "priced" ? toBuy.deliveryCents : null;
+  const ifWrong: IfWrongRow = standInReturns(found.storeDomain, { policy, assistant }, deliveryCents);
 
   return {
     mode: t.mode,
@@ -37,13 +50,14 @@ export async function runCheck(t: Transport, link: string, zip: string): Promise
     zip,
     product: found.header,
     toBuy,
-    tryFirst: tryFirstRow(sample),
+    tryFirst: sample.ok ? tryFirstRow(sample.value) : { status: "unavailable", reason: sample.reason },
     ifWrong,
     steps: [
       identifyStep(found),
-      priceStep(found, quote, toBuy, zip),
+      priceStep(found, cart, toBuy, zip),
       sampleStep(found, sample),
-      returnsStep(found, answer, zip),
+      policyStep(policy),
+      assistantStep(found, assistant, zip),
     ],
   };
 }
@@ -80,57 +94,96 @@ function tryFirstRow(s: SampleSearch): TryFirstRow {
 const numericId = (gid: string) => gid.split("/").pop() ?? gid;
 
 function identifyStep(f: FoundProduct): CheckStep {
+  const matched = `${f.header.title}, variant ${numericId(f.variantId)} (${f.variantTitle}), sold by ${f.header.seller.name} and listed at ${formatUsd(f.header.listedCents)}`;
+  if (f.via.kind === "search") {
+    return {
+      id: "identify",
+      title: "Product identified",
+      tool: "search_catalog",
+      endpoint: "Global Catalog",
+      outcome: "ok",
+      summary:
+        `Looking up the link found nothing, so I searched the Catalog for the page's title, "${f.via.query}", and picked ${f.header.seller.name}'s listing: ${matched}.` +
+        (f.via.variantGuessed ? " The link named no variant, so this is the one the Catalog shows first." : ""),
+    };
+  }
   return {
     id: "identify",
     title: "Product identified",
     tool: "lookup_catalog",
     endpoint: "Global Catalog",
     outcome: "ok",
-    summary: `Matched the link to ${f.header.title}, variant ${numericId(f.variantId)} (${f.variantTitle}), sold by ${f.header.seller.name} and listed at ${formatUsd(f.header.listedCents)}.`,
+    summary: `Matched the link to ${matched}.`,
   };
 }
 
-function priceStep(f: FoundProduct, q: CartQuote, row: ToBuyRow, zip: string): CheckStep {
-  const call = { tool: "create_cart", endpoint: f.storeDomain };
-  const cancelled = q.cancelled ? " The cart was cancelled afterwards." : "";
-  if (row.status === "mismatch") {
-    return { id: "price", title: "Cart priced", ...call, outcome: "failed", summary: `${row.detail}${cancelled}` };
-  }
+function priceStep(f: FoundProduct, cart: Settled<CartQuote>, row: ToBuyRow, zip: string): CheckStep {
+  const base = { id: "price" as const, title: "Cart priced", tool: "create_cart", endpoint: f.storeDomain };
+  if (!cart.ok) return { ...base, outcome: "failed", summary: cart.reason };
+  const q = cart.value;
+  const cancelled = q.cancelled ? " The cart was cancelled afterwards." : " The cart couldn't be cancelled; it expires on its own.";
+  if (row.status === "mismatch") return { ...base, outcome: "failed", summary: `${row.detail}${cancelled}` };
   if (row.status !== "priced") {
     return {
-      id: "price",
-      title: "Cart priced",
-      ...call,
+      ...base,
       outcome: "empty",
       summary: `The cart for ZIP ${zip} came back at ${formatUsd(q.subtotalCents)} with no delivery line.${cancelled}`,
     };
   }
   return {
-    id: "price",
-    title: "Cart priced",
-    ...call,
+    ...base,
     outcome: "ok",
     summary: `One sofa to ZIP ${zip}: ${formatUsd(q.subtotalCents)} + ${formatUsd(row.deliveryCents)} ${row.deliveryLabel} = ${formatUsd(row.doorCents)} before tax. Same variant and price as the Catalog.${cancelled}`,
   };
 }
 
-function sampleStep(f: FoundProduct, s: SampleSearch): CheckStep {
-  const searched = s.queries.map((q) => `"${q.query}" (${q.results} results)`).join(", then ");
+function sampleStep(f: FoundProduct, s: Settled<SampleSearch>): CheckStep {
   const base = { id: "sample" as const, title: "Store catalog searched for a sample", tool: "search_catalog", endpoint: f.storeDomain };
-  if (s.match) {
-    return { ...base, outcome: "ok", summary: `Searched ${searched}. ${s.match.title} matches the sofa's fabric, ${s.match.matchedOn}, at ${formatUsd(s.match.priceCents)}.` };
+  if (!s.ok) return { ...base, outcome: "failed", summary: s.reason };
+  const searched = s.value.queries.map((q) => `"${q.query}" (${q.results} results)`).join(", then ");
+  const match = s.value.match;
+  if (match) {
+    return { ...base, outcome: "ok", summary: `Searched ${searched}. ${match.title} matches the sofa's fabric, ${match.matchedOn}, at ${formatUsd(match.priceCents)}.` };
   }
   const what = f.fabric ? `a sample of ${f.fabric.label}` : "a sample";
   return { ...base, outcome: "empty", summary: `Searched ${searched}. None of the results is ${what}.` };
 }
 
-function returnsStep(f: FoundProduct, answer: { answer: string } | null, zip: string): CheckStep {
-  const base = { id: "returns" as const, title: "Store asked about returns", tool: "ask_business", endpoint: f.storeDomain };
-  if (!answer) return { ...base, outcome: "failed", summary: "The store didn't answer the returns question." };
+function policyStep(policy: PolicySource): CheckStep {
+  const endpoint = policy.url ? shortUrl(policy.url) : "seller.links";
+  const base = { id: "policy" as const, title: "Refund policy read", tool: null, endpoint };
+  if (policy.status === "failed") return { ...base, outcome: "failed", summary: policy.reason };
+  const words = policy.text.split(/\s+/).length;
   return {
     ...base,
     outcome: "ok",
-    summary: `Asked what a return after delivery to ${zip} would cost, including fees, return shipping, delivery refunds, the window, final sale and exchanges. The store answered:`,
-    detail: answer.answer,
+    summary: `Read the store's refund policy page, ${words.toLocaleString("en-US")} words. Every figure in "If you're wrong" and every highlighted quote comes from it.`,
+    detail: { kind: "policy", text: policy.text },
   };
+}
+
+function assistantStep(f: FoundProduct, assistant: AssistantSource, zip: string): CheckStep {
+  const base = { id: "assistant" as const, title: "Store's assistant asked about returns", tool: "ask_business", endpoint: f.storeDomain };
+  switch (assistant.status) {
+    case "not_offered":
+      return { ...base, outcome: "empty", summary: "This store doesn't offer ask_business, so the card uses the policy page alone." };
+    case "failed":
+      return { ...base, outcome: "failed", summary: assistant.reason };
+    case "answered":
+      return {
+        ...base,
+        outcome: "ok",
+        summary: `Asked what a return after delivery to ${zip} would cost, including fees, return shipping, delivery refunds, the window, final sale and exchanges. Its answer is an AI-written summary, used only for what the policy can't settle for this item:`,
+        detail: { kind: "assistant", text: assistant.text },
+      };
+  }
+}
+
+function shortUrl(url: string): string {
+  try {
+    const u = new URL(url);
+    return `${u.hostname}${u.pathname}`;
+  } catch {
+    return url;
+  }
 }

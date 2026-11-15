@@ -445,14 +445,16 @@ a {
   content: "”";
 }
 
-.raw {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+.assistant-words {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-2);
 }
 
-.raw p {
-  font-family: var(--serif);
-  font-style: italic;
+.assistant-label {
+  font-weight: 600;
+  color: var(--ink-3);
 }
 
 /* --- How I checked --------------------------------------------------------- */
@@ -556,10 +558,23 @@ a {
   margin: 0.45rem 0 0;
   padding-left: 0.75rem;
   border-left: 2px solid var(--line);
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 0.95rem;
   line-height: 1.5;
+}
+
+/* The policy page is the store's own text: serif, upright for reading length. */
+.step-policy {
+  max-height: 14rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  white-space: pre-line;
+  font-family: var(--serif);
+  font-size: 0.92rem;
+}
+
+/* The assistant's answer is an AI summary: plain type, labelled. */
+.step-assistant {
+  font-size: 0.875rem;
+  color: var(--ink-2);
 }
 
 /* --- Actions --------------------------------------------------------------- */

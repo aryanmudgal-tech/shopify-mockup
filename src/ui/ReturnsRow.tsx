@@ -1,27 +1,47 @@
-import type { IfWrongRow, ReturnLine } from "../../shared/card";
+import type { IfWrongRow, Quote, ReturnLine, ReturnsSources } from "../../shared/card";
 import { formatUsd } from "../../shared/money";
 import { Gap, Row } from "./Card";
 import { describeFee, groupByQuotes } from "./format";
 
-export function ReturnsRow({ row }: { row: IfWrongRow }) {
-  const source = (
-    <>
-      {row.source === "answer" ? "The store's answer" : "From the store's policy page"}
-      {row.policyUrl && (
-        <>
-          {", "}
-          <a href={row.policyUrl} target="_blank" rel="noopener noreferrer">
-            refund policy
-          </a>
-        </>
-      )}
-    </>
-  );
+// Spec revision 4, principle 4: figures and highlighted quotes come from the
+// store's refund policy. The Ask tool's answer is an AI-written summary, so
+// it is labelled "The store's assistant" and never styled as the store's words.
 
+export function ReturnsRow({ row }: { row: IfWrongRow }) {
   return (
-    <Row label="If you're wrong" source={source}>
+    <Row label="If you're wrong" source={<SourceLabel row={row} />}>
       <ReturnsBody row={row} />
     </Row>
+  );
+}
+
+function usesAssistant(row: IfWrongRow): boolean {
+  if (row.status === "no_returns") return row.quote.source === "assistant";
+  if (row.status !== "terms") return false;
+  return [...row.lines.flatMap((l) => l.quotes), ...(row.window?.quotes ?? [])].some((q) => q.source === "assistant");
+}
+
+function SourceLabel({ row }: { row: IfWrongRow }) {
+  const { policy } = row.sources;
+  if (policy.status === "read") {
+    return (
+      <>
+        <a href={policy.url} target="_blank" rel="noopener noreferrer">
+          The store's policy
+        </a>
+        {usesAssistant(row) && ", with notes from the store's assistant"}
+      </>
+    );
+  }
+  return usesAssistant(row) ? <>The store's assistant</> : <>The store's policy couldn't be read</>;
+}
+
+function PolicyMissingNote({ sources }: { sources: ReturnsSources }) {
+  if (sources.policy.status === "read" || sources.assistant.status !== "answered") return null;
+  return (
+    <p className="lead">
+      I couldn't read the store's policy page, so these terms come from the store's assistant, an AI-written summary.
+    </p>
   );
 }
 
@@ -37,31 +57,24 @@ function ReturnsBody({ row }: { row: IfWrongRow }) {
   if (row.status === "unreadable") {
     return (
       <>
-        <p className="plain error-text">Couldn't read the store's answer.</p>
-        {row.raw && (
-          <details className="raw">
-            <summary>Show what the store said</summary>
-            <p>{row.raw}</p>
-          </details>
-        )}
+        <p className="plain error-text">Couldn't read the store's terms.</p>
+        <p className="breakdown">{row.reason} What was read is under How I checked.</p>
       </>
     );
   }
 
   const groups = groupByQuotes(mergeUnstated(row.lines));
-  const hasLoss = row.lines.some((l) => l.kind === "loss");
   return (
     <>
-      {hasLoss && <p className="lead">What you lose if you send it back:</p>}
+      <PolicyMissingNote sources={row.sources} />
+      {row.lines.some((l) => l.kind === "loss") && <p className="lead">What you lose if you send it back:</p>}
       {groups.map((g, i) => (
         <div className="quote-group" key={i}>
-          {g.lines.some((l) => l.kind === "loss") ? (
+          {g.lines.some((l) => l.kind === "loss") && (
             <table className="losses">
-              <tbody>
-                {g.lines.map((l, j) => (l.kind === "loss" ? <LossRow key={j} line={l} /> : null))}
-              </tbody>
+              <tbody>{g.lines.map((l, j) => (l.kind === "loss" ? <LossRow key={j} line={l} /> : null))}</tbody>
             </table>
-          ) : null}
+          )}
           {g.lines.map((l, j) => (l.kind === "loss" ? null : <Line key={j} line={l} />))}
           <Quotes quotes={g.quotes} />
         </div>
@@ -73,7 +86,7 @@ function ReturnsBody({ row }: { row: IfWrongRow }) {
             {row.window.starts ? ` of ${row.window.starts}.` : ". "}
             {!row.window.starts && <Gap>start not stated</Gap>}
           </p>
-          <Quotes quotes={[row.window.quote]} />
+          <Quotes quotes={row.window.quotes} />
         </div>
       )}
     </>
@@ -99,13 +112,14 @@ function LossRow({ line }: { line: Loss }) {
   );
 }
 
-type Merged = ReturnLine | { kind: "both_unstated"; quotes: string[] };
+type Merged = ReturnLine | { kind: "both_unstated"; quotes: Quote[] };
 
 /** Restocking fee and return shipping both unstated read better as one sentence (spec 6.3 table). */
 function mergeUnstated(lines: ReturnLine[]): Merged[] {
   const fee = lines.find((l) => l.kind === "fee_unstated");
   const ship = lines.find((l) => l.kind === "return_shipping_unstated");
-  if (!fee || !ship || fee.quotes.join() !== ship.quotes.join()) return lines;
+  const same = fee && ship && JSON.stringify(fee.quotes) === JSON.stringify(ship.quotes);
+  if (!fee || !ship || !same) return lines;
   const merged: Merged = { kind: "both_unstated", quotes: fee.quotes };
   return lines.flatMap((l): Merged[] => (l === fee ? [merged] : l === ship ? [] : [l]));
 }
@@ -133,7 +147,7 @@ function Line({ line }: { line: Merged }) {
     case "delivery_refund_unstated":
       return (
         <p className="plain">
-          + {formatUsd(line.deliveryCents)} delivery, <Gap>refund not stated</Gap>
+          + {line.deliveryCents === null ? "delivery charges" : `${formatUsd(line.deliveryCents)} delivery`}, <Gap>refund not stated</Gap>
         </p>
       );
     case "exchange":
@@ -142,22 +156,41 @@ function Line({ line }: { line: Merged }) {
           <span className="figure figure-small">Or $0:</span> one free exchange, {line.conditions}.
         </p>
       );
+    case "final_sale":
+      return <p className="plain">{line.value ? "Final sale: no returns on this item." : "Not final sale."}</p>;
+    case "disagreement":
+      return (
+        <p className="plain">
+          <Gap>The policy and the store's assistant disagree on {line.topic}.</Gap> Both are quoted below.
+        </p>
+      );
     case "loss":
       return null;
   }
 }
 
-function Quotes({ quotes }: { quotes: string[] }) {
-  if (!quotes.length) return null;
+/** Policy quotes in the store's voice; the assistant's words labelled, in plain type. */
+function Quotes({ quotes }: { quotes: Quote[] }) {
+  const policy = quotes.filter((q) => q.source === "policy");
+  const assistant = quotes.filter((q) => q.source === "assistant");
   return (
-    <blockquote className="store-words">
-      {quotes.map((q, i) => (
-        <span key={i}>
-          {i > 0 && " … "}
-          <mark>{q}</mark>
-        </span>
-      ))}
-    </blockquote>
+    <>
+      {policy.length > 0 && (
+        <blockquote className="store-words">
+          {policy.map((q, i) => (
+            <span key={i}>
+              {i > 0 && " … "}
+              <mark>{q.text}</mark>
+            </span>
+          ))}
+        </blockquote>
+      )}
+      {assistant.length > 0 && (
+        <p className="assistant-words">
+          <span className="assistant-label">The store's assistant:</span> “{assistant.map((q) => q.text).join(" … ")}”
+        </p>
+      )}
+    </>
   );
 }
 

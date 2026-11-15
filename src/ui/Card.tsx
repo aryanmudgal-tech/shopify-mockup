@@ -108,6 +108,9 @@ function ToBuy({ row }: { row: ToBuyRow }) {
 }
 
 function TryFirst({ row }: { row: TryFirstRow }) {
+  if (row.status === "unavailable") {
+    return <p className="plain error-text">Couldn't search the store's catalog for a sample: {row.reason}</p>;
+  }
   if (row.status === "none") {
     return (
       <div className="sample">

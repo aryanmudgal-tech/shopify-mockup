@@ -18,11 +18,26 @@ export function HowIChecked({ steps }: { steps: CheckStep[] }) {
               <p className="step-title">
                 {s.title}
                 <span className="step-call">
-                  <code>{s.tool}</code> on {s.endpoint}
+                  {s.tool ? (
+                    <>
+                      <code>{s.tool}</code> on {s.endpoint}
+                    </>
+                  ) : (
+                    s.endpoint
+                  )}
                 </span>
               </p>
               <p className="step-summary">{s.summary}</p>
-              {s.detail && <p className="step-detail">{s.detail}</p>}
+              {s.detail?.kind === "policy" && (
+                <div className="step-detail step-policy" tabIndex={0} aria-label="The store's refund policy text">
+                  {s.detail.text}
+                </div>
+              )}
+              {s.detail?.kind === "assistant" && (
+                <p className="step-detail step-assistant">
+                  <span className="assistant-label">The store's assistant:</span> {s.detail.text}
+                </p>
+              )}
             </div>
           </li>
         ))}

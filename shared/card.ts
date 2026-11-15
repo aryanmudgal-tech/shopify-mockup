@@ -73,11 +73,24 @@ export type TryFirstRow =
       /** The swatch variant's own checkout link (spec 7.6). */
       checkoutUrl: string;
     }
-  | { status: "none" };
+  | { status: "none" }
+  | { status: "unavailable"; reason: string };
 
 // --- If you're wrong --------------------------------------------------------
 
-export type ReturnsSource = "answer" | "policy_page";
+/**
+ * Where a quote comes from (spec revision 4, principle 4). "policy" is the
+ * store's own refund policy text and may be styled as the store's words.
+ * "assistant" is the AI-written answer from Shopify's Ask tool: it is labelled
+ * "The store's assistant" and never styled as the store's words.
+ */
+export type QuoteSource = "policy" | "assistant";
+
+export interface Quote {
+  /** An exact substring of that source's text, after whitespace normalisation. */
+  text: string;
+  source: QuoteSource;
+}
 
 export type Fee =
   | { type: "percent"; percent: number; capCents: number | null }
@@ -85,9 +98,8 @@ export type Fee =
   | { type: "none" };
 
 /**
- * One line of the "If you're wrong" row. Every line that rests on the store's
- * words carries its quotes, each an exact substring of `raw`. Lines next to
- * each other with the same quotes share them, and the page shows them once.
+ * One line of the "If you're wrong" row, with the quotes it rests on. Lines
+ * next to each other with the same quotes share them, and the page shows them once.
  */
 export type ReturnLine =
   | {
@@ -101,45 +113,56 @@ export type ReturnLine =
       includesDeliveryCents: number;
       /** A flat return-shipping charge, already inside lossCents. */
       includesReturnShippingCents: number;
-      quotes: string[];
+      quotes: Quote[];
     }
-  | { kind: "fee_unstated"; quotes: string[] }
-  | { kind: "return_shipping_unstated"; quotes: string[] }
-  | { kind: "delivery_refund_unstated"; deliveryCents: number; quotes: string[] }
-  | { kind: "exchange"; conditions: string; quotes: string[] };
+  | { kind: "fee_unstated"; quotes: Quote[] }
+  | { kind: "return_shipping_unstated"; quotes: Quote[] }
+  /** deliveryCents is null when the cart couldn't price delivery. */
+  | { kind: "delivery_refund_unstated"; deliveryCents: number | null; quotes: Quote[] }
+  | { kind: "exchange"; conditions: string; quotes: Quote[] }
+  | { kind: "final_sale"; value: boolean; quotes: Quote[] }
+  /** The policy and the assistant say different things: show both, pick neither. */
+  | { kind: "disagreement"; topic: string; quotes: Quote[] };
 
 export interface ReturnWindow {
   days: number | null;
   /** e.g. "confirmed delivery"; null when the store doesn't say. */
   starts: string | null;
-  quote: string;
+  quotes: Quote[];
+}
+
+export type PolicySource =
+  | { status: "read"; url: string; text: string }
+  | { status: "failed"; url: string | null; reason: string };
+
+export type AssistantSource =
+  | { status: "answered"; text: string }
+  | { status: "failed"; reason: string }
+  | { status: "not_offered" };
+
+/** Both sources are read on every check (spec 7.5). */
+export interface ReturnsSources {
+  policy: PolicySource;
+  assistant: AssistantSource;
 }
 
 export type IfWrongRow =
-  | {
-      status: "terms";
-      source: ReturnsSource;
-      lines: ReturnLine[];
-      window: ReturnWindow | null;
-      policyUrl: string | null;
-      /** The full text the quotes come from. */
-      raw: string;
-    }
-  | { status: "no_returns"; source: ReturnsSource; quote: string; policyUrl: string | null; raw: string }
-  | { status: "unreadable"; source: ReturnsSource; policyUrl: string | null; raw: string };
+  | { status: "terms"; lines: ReturnLine[]; window: ReturnWindow | null; sources: ReturnsSources }
+  | { status: "no_returns"; quote: Quote; sources: ReturnsSources }
+  | { status: "unreadable"; reason: string; sources: ReturnsSources };
 
 // --- How I checked ----------------------------------------------------------
 
 export interface CheckStep {
-  id: "identify" | "price" | "sample" | "returns";
+  id: "identify" | "price" | "sample" | "policy" | "assistant";
   title: string;
-  /** The UCP tool called, e.g. "lookup_catalog". */
-  tool: string;
-  /** Where it was called: "Global Catalog" or the store's domain. */
+  /** The UCP tool called, e.g. "lookup_catalog"; null for a page read. */
+  tool: string | null;
+  /** Where: "Global Catalog", the store's domain, or the page's address. */
   endpoint: string;
   outcome: "ok" | "empty" | "failed";
   /** What came back, in one or two sentences. */
   summary: string;
-  /** Optional longer text, such as the store's full answer. */
-  detail?: string;
+  /** The full text read, styled by whose words it is. */
+  detail?: { kind: QuoteSource; text: string };
 }

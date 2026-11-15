@@ -7,24 +7,40 @@ export interface FoundProduct {
   header: ProductHeader;
   variantId: string;
   variantTitle: string;
-  /** seller.domain: the store's UCP endpoint host. */
+  /** seller.domain: the store's UCP endpoint host (spec 7.2). */
   storeDomain: string;
   refundPolicyUrl: string | null;
   /** The option that names the fabric or colour; drives the sample search. */
   fabric: { name: string; label: string } | null;
+  /** How the product was found, for "How I checked". */
+  via: { kind: "lookup" } | { kind: "search"; query: string; variantGuessed: boolean };
 }
 
 const FABRIC_OPTION = /fabric|colou?r|material|upholstery/i;
 
-export async function lookupProduct(t: Transport, link: string, zip: string): Promise<FoundProduct | null> {
-  const result = await t.call("global", "lookup_catalog", {
-    catalog: { ids: [link], context: { address_country: "US", postal_code: zip } },
-  });
-  const product = result.structuredContent?.products?.[0];
-  if (!product) return null;
+/** Lookup by link first; if Global Catalog doesn't know the link, search for the page's title (spec 7.2). */
+export async function findProduct(t: Transport, link: string, zip: string): Promise<FoundProduct | null> {
+  const context = { address_country: "US", postal_code: zip };
+  const lookup = await t.call("global", "lookup_catalog", { catalog: { ids: [link], context } });
+  const product = lookup.structuredContent?.products?.[0];
+  const wanted = safeUrl(link)?.searchParams.get("variant") ?? null;
+  if (product) return toFound(product, wanted, { kind: "lookup" });
 
+  const query = await pageTitle(t, link);
+  if (!query) return null;
+  const search = await t.call("global", "search_catalog", { catalog: { query, context, pagination: { limit: 10 } } });
+  const host = bareHost(link);
+  // Only accept a listing from the store the buyer linked to.
+  const match = (search.structuredContent?.products ?? []).find((p: any) =>
+    (p.variants ?? []).some((v: any) => bareHost(v.seller?.url ?? "") === host),
+  );
+  if (!match) return null;
+  const variantGuessed = !wanted || !(match.variants ?? []).some((v: any) => String(v.id).endsWith(`/${wanted}`));
+  return toFound(match, wanted, { kind: "search", query, variantGuessed });
+}
+
+function toFound(product: any, wanted: string | null, via: FoundProduct["via"]): FoundProduct | null {
   // Prefer the variant named in the link; Global Catalog returns it first in practice.
-  const wanted = safeUrl(link)?.searchParams.get("variant");
   const variants: any[] = product.variants ?? [];
   const variant = variants.find((v) => wanted && String(v.id).endsWith(`/${wanted}`)) ?? variants[0];
   if (!variant) return null;
@@ -53,7 +69,30 @@ export async function lookupProduct(t: Transport, link: string, zip: string): Pr
     storeDomain: seller.domain,
     refundPolicyUrl: (seller.links ?? []).find((l: any) => l.type === "refund_policy")?.url ?? null,
     fabric: options.find((o) => FABRIC_OPTION.test(o.name)) ?? null,
+    via,
   };
+}
+
+/**
+ * The product's name from its page: og:title, else <title> without the
+ * " | Store" suffix. If the page can't be read, the link's handle stands in.
+ */
+async function pageTitle(t: Transport, link: string): Promise<string | null> {
+  try {
+    const { html } = await t.fetchPage(link);
+    const og = html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i)?.[1];
+    const title = og ?? html.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1];
+    const clean = title?.split(/\s[|–—-]\s/)[0]?.replace(/&amp;/g, "&").trim();
+    if (clean) return clean;
+  } catch {
+    // Fall through to the handle.
+  }
+  const handle = safeUrl(link)?.pathname.match(/\/products\/([^/]+)/)?.[1];
+  return handle ? handle.replace(/-/g, " ") : null;
+}
+
+function bareHost(url: string): string {
+  return safeUrl(url)?.hostname.replace(/^www\./, "") ?? "";
 }
 
 export interface SampleSearch {

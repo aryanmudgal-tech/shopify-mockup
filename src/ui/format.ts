@@ -1,9 +1,9 @@
-import type { Fee } from "../../shared/card";
+import type { Fee, Quote } from "../../shared/card";
 import { formatUsd } from "../../shared/money";
 
 /** Groups neighbouring lines that rest on the same quotes, so each quote shows once. */
-export function groupByQuotes<T extends { quotes: string[] }>(lines: T[]): { lines: T[]; quotes: string[] }[] {
-  const groups: { lines: T[]; quotes: string[] }[] = [];
+export function groupByQuotes<T extends { quotes: Quote[] }>(lines: T[]): { lines: T[]; quotes: Quote[] }[] {
+  const groups: { lines: T[]; quotes: Quote[] }[] = [];
   for (const line of lines) {
     const last = groups[groups.length - 1];
     if (last && sameQuotes(last.quotes, line.quotes)) last.lines.push(line);
@@ -12,8 +12,8 @@ export function groupByQuotes<T extends { quotes: string[] }>(lines: T[]): { lin
   return groups;
 }
 
-function sameQuotes(a: string[], b: string[]): boolean {
-  return a.length === b.length && a.every((q, i) => q === b[i]);
+function sameQuotes(a: Quote[], b: Quote[]): boolean {
+  return a.length === b.length && a.every((q, i) => q.text === b[i]!.text && q.source === b[i]!.source);
 }
 
 /** "10% fee", "20% fee, capped at $250", "$49 flat fee", "no fee". */
