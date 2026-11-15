@@ -1,0 +1,645 @@
+/* Two voices: figures the code worked out are set in the grotesk; the store's
+   own words are set in the serif italic with a highlighter mark. */
+
+:root {
+  --paper: #f5f6f3;
+  --card: #ffffff;
+  --ink: #1e2a26;
+  --ink-2: #4f5b57;
+  --ink-3: #78837e;
+  --line: #d9ded9;
+  --bubble: #e6eae5;
+  --spruce: #2d5b50;
+  --mark: #f2e58f;
+  --error: #9b2c1f;
+
+  --sans: "Schibsted Grotesk Variable", system-ui, sans-serif;
+  --serif: "Newsreader Variable", Georgia, serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--spruce);
+  text-underline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--spruce);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* --- Thread ---------------------------------------------------------------- */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.thread {
+  flex: 1;
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.msg {
+  margin: 0;
+  max-width: 100%;
+}
+
+.msg-buyer {
+  align-self: flex-end;
+  max-width: 80%;
+  padding: 0.6rem 0.95rem;
+  background: var(--bubble);
+  border-radius: 1.1rem 1.1rem 0.3rem 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.msg-assistant {
+  align-self: flex-start;
+  font-size: 1.0625rem;
+}
+
+.msg-status {
+  color: var(--ink-2);
+  animation: breathe 1.6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .msg-status {
+    animation: none;
+  }
+}
+
+.msg-card {
+  scroll-margin-top: 1rem;
+}
+
+/* --- Composer -------------------------------------------------------------- */
+
+.composer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem 0.9rem;
+  background: linear-gradient(to bottom, transparent, var(--paper) 1.25rem);
+}
+
+.composer-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.composer-form input {
+  flex: 1;
+  min-width: 0;
+  height: 3rem;
+  padding: 0 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+}
+
+.composer-form input:focus {
+  outline: none;
+  border-color: var(--spruce);
+  box-shadow: 0 0 0 1px var(--spruce);
+}
+
+.composer-form button {
+  height: 3rem;
+  padding: 0 1.2rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background: var(--ink);
+  color: var(--card);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.composer-form button:disabled,
+.composer-form input:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.composer-hint {
+  margin: 0.4rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--error);
+}
+
+.mode {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+
+.demo-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.demo-links button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--spruce);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.mode a {
+  color: var(--ink-3);
+}
+
+/* --- Card ------------------------------------------------------------------ */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.card-head {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1.1rem;
+  padding: 1.25rem;
+}
+
+.product-photo {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 0.4rem;
+  object-fit: cover;
+  background: var(--bubble);
+}
+
+.card-head-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.product-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 650;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.options {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1rem;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
+.option-name {
+  color: var(--ink-3);
+}
+
+.seller-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  margin-top: auto;
+  font-size: 0.875rem;
+  color: var(--ink-2);
+}
+
+.seller {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.listed {
+  margin-left: auto;
+}
+
+.listed strong {
+  color: var(--ink);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Rows ------------------------------------------------------------------ */
+
+.row {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1.1rem;
+  padding: 1.1rem 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.row-label {
+  margin: 0;
+  padding-top: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.row-body {
+  min-width: 0;
+}
+
+.figure-line {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.figure {
+  font-size: 1.95rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  margin-right: 0.15rem;
+}
+
+.figure-small {
+  font-size: 1.25rem;
+}
+
+.breakdown {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.plain {
+  margin: 0;
+}
+
+.lead {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+.error-text {
+  color: var(--error);
+}
+
+.source {
+  margin: 0.75rem 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+
+.source a {
+  color: inherit;
+}
+
+/* Information the store or the cart didn't give. */
+.gap {
+  display: inline;
+  padding: 0 0.35em;
+  border: 1px dashed var(--ink-3);
+  border-radius: 0.3rem;
+  color: var(--ink-2);
+  font-size: 0.92em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* --- Sample ---------------------------------------------------------------- */
+
+.sample {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.swatch {
+  flex: none;
+  width: 4rem;
+  height: 4rem;
+}
+
+.swatch-empty {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1;
+  stroke-dasharray: 3 2.5;
+}
+
+/* --- Returns --------------------------------------------------------------- */
+
+.quote-group + .quote-group {
+  margin-top: 0.85rem;
+}
+
+.losses {
+  border-collapse: collapse;
+}
+
+.losses td {
+  padding: 0.15rem 0;
+  vertical-align: baseline;
+}
+
+.loss-amount {
+  padding-right: 1rem !important;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+.loss-what {
+  font-size: 0.95rem;
+}
+
+.loss-detail {
+  display: block;
+  font-size: 0.83rem;
+  color: var(--ink-2);
+}
+
+.exchange .figure-small {
+  margin-right: 0.3rem;
+}
+
+.store-words {
+  margin: 0.35rem 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.store-words mark {
+  color: inherit;
+  padding: 0 0.12em;
+  background: linear-gradient(transparent 14%, var(--mark) 14%, var(--mark) 90%, transparent 90%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.store-words::before {
+  content: "“";
+}
+
+.store-words::after {
+  content: "”";
+}
+
+.raw {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.raw p {
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+/* --- How I checked --------------------------------------------------------- */
+
+.checked {
+  border-top: 1px solid var(--line);
+}
+
+.checked summary {
+  padding: 0.85rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+  list-style: none;
+}
+
+.checked summary::-webkit-details-marker {
+  display: none;
+}
+
+.checked summary::before {
+  content: "";
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.6rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-0.15rem) rotate(-45deg);
+  transition: transform 0.15s;
+}
+
+.checked[open] summary::before {
+  transform: translateY(-0.2rem) rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .checked summary::before {
+    transition: none;
+  }
+}
+
+.steps {
+  margin: 0;
+  padding: 0 1.25rem 1.1rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 1.4rem 1fr;
+}
+
+.step-mark {
+  font-weight: 700;
+  color: var(--spruce);
+}
+
+.step-empty .step-mark {
+  color: var(--ink-3);
+}
+
+.step-failed .step-mark {
+  color: var(--error);
+}
+
+.step-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.step-title code {
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 0.25rem;
+  background: var(--paper);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ink-2);
+  overflow-wrap: anywhere;
+}
+
+.step-summary {
+  margin: 0.2rem 0 0;
+  font-size: 0.875rem;
+  color: var(--ink-2);
+}
+
+.step-detail {
+  margin: 0.45rem 0 0;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--line);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* --- Actions --------------------------------------------------------------- */
+
+.actions {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0 1rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 0.6rem;
+  background: var(--card);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+
+.action:hover {
+  background: var(--ink);
+  color: var(--card);
+}
+
+/* --- States preview -------------------------------------------------------- */
+
+.state {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.state-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+/* --- Narrow screens -------------------------------------------------------- */
+
+@media (max-width: 560px) {
+  .thread {
+    padding-top: 1.5rem;
+  }
+
+  .card-head {
+    grid-template-columns: 4.5rem 1fr;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .product-photo {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    padding: 1rem;
+  }
+
+  .row-label {
+    padding-top: 0;
+  }
+
+  .actions {
+    grid-auto-flow: row;
+    padding: 1rem;
+  }
+}
