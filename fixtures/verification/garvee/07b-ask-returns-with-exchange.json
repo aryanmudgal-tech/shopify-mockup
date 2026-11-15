@@ -1,0 +1,71 @@
+{
+  "fetched_at": "2026-11-15T19:03:59.993Z",
+  "url": "https://mygarvee.myshopify.com/api/ucp/mcp",
+  "final_url": "https://mygarvee.myshopify.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "ask_business",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/ask.json"
+          }
+        },
+        "ask": {
+          "query": "If I return this item after delivery to 14228, what will I pay? Include any restocking fee and whether it depends on packaging, who pays return shipping and how much, whether original delivery charges are refunded, the return window and when it starts, whether this item is final sale, and whether I can exchange it instead and on what terms.",
+          "ids": [
+            "gid://shopify/ProductVariant/51296972898617"
+          ],
+          "context": {
+            "address_country": "US",
+            "postal_code": "14228",
+            "language": "en"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"capabilities\":{\"dev.ucp.common.ask\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/ask/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/ask.json\"}]}},\"answer\":{\"plain\":\"For the sofa delivered to 14228, the store’s information does not specify an exact return cost or whether it is final sale. The 30-day return window applies, but the information doesn’t clarify whether it starts at delivery or another date; the item must be new and unused, with its original packaging unaltered, and returns require authorization. If you return it because you changed your mind or no longer want it, you pay return shipping and the return/restocking cost, but no specific shipping amount or restocking-fee rate is given; original delivery charges are not addressed for ordinary returns. Free return shipping is described for specified problems, such as damage or an incorrect item, after the store verifies the issue. A replacement is offered as an option within the 30-day guarantee, but exchange-specific terms are not specified.\"},\"links\":[{\"type\":\"product\",\"url\":\"https://www.garvee.com/products/garvee-137-modular-cloud-sectional-sofa-large-u-grey-vnn-33c9xngg?variant=51296972898617\",\"title\":\"Garvee 137\\\" Modular Sectional Sofa, Modern Cloud Sectional Couch with Deep Seat, L-Shape Boneless Couch with Chaise for Living Room Apartments, No Assembly Required (4 Seater + 2 Ottoman), Grey - Corduroy | Grey / 4 Seater + 2 Ottoman\",\"id\":\"gid://shopify/ProductVariant/51296972898617\"}]}"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "status": "success",
+          "capabilities": {
+            "dev.ucp.common.ask": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/common/ask/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/common/ask.json"
+              }
+            ]
+          }
+        },
+        "answer": {
+          "plain": "For the sofa delivered to 14228, the store’s information does not specify an exact return cost or whether it is final sale. The 30-day return window applies, but the information doesn’t clarify whether it starts at delivery or another date; the item must be new and unused, with its original packaging unaltered, and returns require authorization. If you return it because you changed your mind or no longer want it, you pay return shipping and the return/restocking cost, but no specific shipping amount or restocking-fee rate is given; original delivery charges are not addressed for ordinary returns. Free return shipping is described for specified problems, such as damage or an incorrect item, after the store verifies the issue. A replacement is offered as an option within the 30-day guarantee, but exchange-specific terms are not specified."
+        },
+        "links": [
+          {
+            "type": "product",
+            "url": "https://www.garvee.com/products/garvee-137-modular-cloud-sectional-sofa-large-u-grey-vnn-33c9xngg?variant=51296972898617",
+            "title": "Garvee 137\" Modular Sectional Sofa, Modern Cloud Sectional Couch with Deep Seat, L-Shape Boneless Couch with Chaise for Living Room Apartments, No Assembly Required (4 Seater + 2 Ottoman), Grey - Corduroy | Grey / 4 Seater + 2 Ottoman",
+            "id": "gid://shopify/ProductVariant/51296972898617"
+          }
+        ]
+      }
+    }
+  }
+}

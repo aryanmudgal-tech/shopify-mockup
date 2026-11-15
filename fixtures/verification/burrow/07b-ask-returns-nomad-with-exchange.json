@@ -1,0 +1,71 @@
+{
+  "fetched_at": "2026-11-15T19:03:49.927Z",
+  "url": "https://burrow.com/api/ucp/mcp",
+  "final_url": "https://burrow.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "ask_business",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/ask.json"
+          }
+        },
+        "ask": {
+          "query": "If I return this item after delivery to 14228, what will I pay? Include any restocking fee and whether it depends on packaging, who pays return shipping and how much, whether original delivery charges are refunded, the return window and when it starts, whether this item is final sale, and whether I can exchange it instead and on what terms.",
+          "ids": [
+            "gid://shopify/ProductVariant/50484946305326"
+          ],
+          "context": {
+            "address_country": "US",
+            "postal_code": "14228",
+            "language": "en"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"capabilities\":{\"dev.ucp.common.ask\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/ask/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/ask.json\"}]}},\"answer\":{\"plain\":\"For this Nomad Sofa variant, the return fee is 10% of the amount paid with the original packaging intact, or 20% without it, capped at $250. On its listed $1,364 price, that would be $136.40 or $250 respectively, before any applicable taxes or other charges; the fee is described as return shipping, but the store doesn’t specify who pays the carrier separately or give a separate shipping price. You can start a return within 30 calendar days of delivery confirmed by the carrier—not when you unbox it—and the sofa must be in usable condition; returns are subject to Burrow’s approval. The information doesn’t say original delivery charges are refunded, and this item is not identified as final sale. One free exchange is available within the 30-day window if the original packaging is intact: request the exchange, receive a full refund for the original product without fees, then place a new order; the new order’s price isn’t specified.\"},\"links\":[{\"type\":\"product\",\"url\":\"https://checkout.burrow.com/products/nomad-plus-sofa?variant=50484946305326\",\"title\":\"Nomad Sofa - Crushed Gravel - Performance Chenille / Black - Metal / Block\",\"id\":\"gid://shopify/ProductVariant/50484946305326\"}]}"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "status": "success",
+          "capabilities": {
+            "dev.ucp.common.ask": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/common/ask/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/common/ask.json"
+              }
+            ]
+          }
+        },
+        "answer": {
+          "plain": "For this Nomad Sofa variant, the return fee is 10% of the amount paid with the original packaging intact, or 20% without it, capped at $250. On its listed $1,364 price, that would be $136.40 or $250 respectively, before any applicable taxes or other charges; the fee is described as return shipping, but the store doesn’t specify who pays the carrier separately or give a separate shipping price. You can start a return within 30 calendar days of delivery confirmed by the carrier—not when you unbox it—and the sofa must be in usable condition; returns are subject to Burrow’s approval. The information doesn’t say original delivery charges are refunded, and this item is not identified as final sale. One free exchange is available within the 30-day window if the original packaging is intact: request the exchange, receive a full refund for the original product without fees, then place a new order; the new order’s price isn’t specified."
+        },
+        "links": [
+          {
+            "type": "product",
+            "url": "https://checkout.burrow.com/products/nomad-plus-sofa?variant=50484946305326",
+            "title": "Nomad Sofa - Crushed Gravel - Performance Chenille / Black - Metal / Block",
+            "id": "gid://shopify/ProductVariant/50484946305326"
+          }
+        ]
+      }
+    }
+  }
+}
