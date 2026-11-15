@@ -9,7 +9,8 @@ import { handleApi } from "./api";
 const PORT = Number(process.env.PORT ?? 5173);
 
 const vite = await createVite({
-  server: { middlewareMode: true },
+  // A hot-reload port per server port, so recorded (5173) and live (5174) can run side by side.
+  server: { middlewareMode: true, hmr: { port: 24678 + (PORT - 5173) } },
   appType: "spa",
 });
 
