@@ -83,23 +83,24 @@ function identifyStep(f: FoundProduct): CheckStep {
   return {
     id: "identify",
     title: "Product identified",
-    call: "Global Catalog · lookup_catalog",
+    tool: "lookup_catalog",
+    endpoint: "Global Catalog",
     outcome: "ok",
     summary: `Matched the link to ${f.header.title}, variant ${numericId(f.variantId)} (${f.variantTitle}), sold by ${f.header.seller.name} and listed at ${formatUsd(f.header.listedCents)}.`,
   };
 }
 
 function priceStep(f: FoundProduct, q: CartQuote, row: ToBuyRow, zip: string): CheckStep {
-  const call = `${f.storeDomain} · create_cart`;
+  const call = { tool: "create_cart", endpoint: f.storeDomain };
   const cancelled = q.cancelled ? " The cart was cancelled afterwards." : "";
   if (row.status === "mismatch") {
-    return { id: "price", title: "Cart priced", call, outcome: "failed", summary: `${row.detail}${cancelled}` };
+    return { id: "price", title: "Cart priced", ...call, outcome: "failed", summary: `${row.detail}${cancelled}` };
   }
   if (row.status !== "priced") {
     return {
       id: "price",
       title: "Cart priced",
-      call,
+      ...call,
       outcome: "empty",
       summary: `The cart for ZIP ${zip} came back at ${formatUsd(q.subtotalCents)} with no delivery line.${cancelled}`,
     };
@@ -107,7 +108,7 @@ function priceStep(f: FoundProduct, q: CartQuote, row: ToBuyRow, zip: string): C
   return {
     id: "price",
     title: "Cart priced",
-    call,
+    ...call,
     outcome: "ok",
     summary: `One sofa to ZIP ${zip}: ${formatUsd(q.subtotalCents)} + ${formatUsd(row.deliveryCents)} ${row.deliveryLabel} = ${formatUsd(row.doorCents)} before tax. Same variant and price as the Catalog.${cancelled}`,
   };
@@ -115,7 +116,7 @@ function priceStep(f: FoundProduct, q: CartQuote, row: ToBuyRow, zip: string): C
 
 function sampleStep(f: FoundProduct, s: SampleSearch): CheckStep {
   const searched = s.queries.map((q) => `"${q.query}" (${q.results} results)`).join(", then ");
-  const base = { id: "sample" as const, title: "Store catalog searched for a sample", call: `${f.storeDomain} · search_catalog` };
+  const base = { id: "sample" as const, title: "Store catalog searched for a sample", tool: "search_catalog", endpoint: f.storeDomain };
   if (s.match) {
     return { ...base, outcome: "ok", summary: `Searched ${searched}. ${s.match.title} matches the sofa's fabric, ${s.match.matchedOn}, at ${formatUsd(s.match.priceCents)}.` };
   }
@@ -124,7 +125,7 @@ function sampleStep(f: FoundProduct, s: SampleSearch): CheckStep {
 }
 
 function returnsStep(f: FoundProduct, answer: { answer: string } | null, zip: string): CheckStep {
-  const base = { id: "returns" as const, title: "Store asked about returns", call: `${f.storeDomain} · ask_business` };
+  const base = { id: "returns" as const, title: "Store asked about returns", tool: "ask_business", endpoint: f.storeDomain };
   if (!answer) return { ...base, outcome: "failed", summary: "The store didn't answer the returns question." };
   return {
     ...base,

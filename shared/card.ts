@@ -133,8 +133,10 @@ export type IfWrongRow =
 export interface CheckStep {
   id: "identify" | "price" | "sample" | "returns";
   title: string;
-  /** Which endpoint and tool, e.g. "Global Catalog · lookup_catalog". */
-  call: string;
+  /** The UCP tool called, e.g. "lookup_catalog". */
+  tool: string;
+  /** Where it was called: "Global Catalog" or the store's domain. */
+  endpoint: string;
   outcome: "ok" | "empty" | "failed";
   /** What came back, in one or two sentences. */
   summary: string;

@@ -4,6 +4,7 @@ const MARK: Record<CheckStep["outcome"], string> = { ok: "✓", empty: "–", fa
 const SAID: Record<CheckStep["outcome"], string> = { ok: "Done", empty: "Nothing found", failed: "Failed" };
 
 export function HowIChecked({ steps }: { steps: CheckStep[] }) {
+  if (!steps.length) return null;
   return (
     <details className="checked">
       <summary>How I checked</summary>
@@ -15,7 +16,10 @@ export function HowIChecked({ steps }: { steps: CheckStep[] }) {
             </span>
             <div>
               <p className="step-title">
-                {s.title} <code>{s.call}</code>
+                {s.title}
+                <span className="step-call">
+                  <code>{s.tool}</code> on {s.endpoint}
+                </span>
               </p>
               <p className="step-summary">{s.summary}</p>
               {s.detail && <p className="step-detail">{s.detail}</p>}

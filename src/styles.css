@@ -108,8 +108,9 @@ a {
   }
 }
 
+.msg-assistant,
 .msg-card {
-  scroll-margin-top: 1rem;
+  scroll-margin-top: 1.25rem;
 }
 
 /* --- Composer -------------------------------------------------------------- */
@@ -280,7 +281,6 @@ a {
 .listed strong {
   color: var(--ink);
   font-size: 1rem;
-  font-variant-numeric: tabular-nums;
 }
 
 /* --- Rows ------------------------------------------------------------------ */
@@ -315,7 +315,6 @@ a {
   font-weight: 700;
   letter-spacing: -0.015em;
   color: var(--ink);
-  font-variant-numeric: tabular-nums;
   line-height: 1.1;
   margin-right: 0.15rem;
 }
@@ -328,7 +327,6 @@ a {
   margin: 0.2rem 0 0;
   font-size: 0.9rem;
   color: var(--ink-2);
-  font-variant-numeric: tabular-nums;
 }
 
 .plain {
@@ -357,14 +355,10 @@ a {
 
 /* Information the store or the cart didn't give. */
 .gap {
-  display: inline;
-  padding: 0 0.35em;
-  border: 1px dashed var(--ink-3);
-  border-radius: 0.3rem;
   color: var(--ink-2);
-  font-size: 0.92em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  text-decoration: underline dashed var(--ink-3);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
 }
 
 /* --- Sample ---------------------------------------------------------------- */
@@ -410,7 +404,6 @@ a {
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: -0.01em;
-  font-variant-numeric: tabular-nums;
 }
 
 .loss-what {
@@ -535,8 +528,14 @@ a {
   font-weight: 600;
 }
 
-.step-title code {
-  margin-left: 0.4rem;
+.step-call {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--ink-3);
+}
+
+.step-call code {
   padding: 0.05rem 0.35rem;
   border-radius: 0.25rem;
   background: var(--paper);

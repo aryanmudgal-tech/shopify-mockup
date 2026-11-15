@@ -38,6 +38,18 @@ export function shortLink(link: string): string {
   }
 }
 
+/** A resized image from Shopify's CDN, which takes a width parameter. */
+export function thumb(url: string, width: number): string {
+  try {
+    const u = new URL(url);
+    if (u.hostname !== "cdn.shopify.com") return url;
+    u.searchParams.set("width", String(width));
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
 /** "Nov 15, 2026" from an ISO time. */
 export function shortDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });

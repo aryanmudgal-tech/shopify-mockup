@@ -47,9 +47,12 @@ export function App() {
   }, []);
 
   useEffect(() => {
+    // A new card scrolls so the line introducing it sits at the top; anything
+    // else just keeps the newest message in view.
     const last = messages[messages.length - 1];
-    const isCard = last && "card" in last;
-    endRef.current?.previousElementSibling?.scrollIntoView({ behavior: "smooth", block: isCard ? "start" : "end" });
+    const newest = endRef.current?.previousElementSibling;
+    const target = last && "card" in last ? newest?.previousElementSibling : newest;
+    target?.scrollIntoView({ behavior: "smooth", block: last && "card" in last ? "start" : "end" });
   }, [messages]);
 
   const say = (m: NewMessage) => setMessages((ms) => [...ms, { ...m, id: nextId++ } as Message]);

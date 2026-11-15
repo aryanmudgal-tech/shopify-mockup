@@ -83,7 +83,8 @@ function ReturnsBody({ row }: { row: IfWrongRow }) {
 type Loss = Extract<ReturnLine, { kind: "loss" }>;
 
 function LossRow({ line }: { line: Loss }) {
-  const parts = [describeFee(line.fee)];
+  const charged = line.includesReturnShippingCents > 0 || line.includesDeliveryCents > 0;
+  const parts = line.fee.type === "none" && charged ? [] : [describeFee(line.fee)];
   if (line.includesReturnShipping) parts.push("includes return shipping");
   if (line.includesReturnShippingCents) parts.push(`includes ${formatUsd(line.includesReturnShippingCents)} return shipping`);
   if (line.includesDeliveryCents) parts.push(`includes ${formatUsd(line.includesDeliveryCents)} delivery the store keeps`);

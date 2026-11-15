@@ -1,6 +1,7 @@
 import type { Card as CardModel, ProductHeader, ToBuyRow, TryFirstRow } from "../../shared/card";
 import { formatUsd } from "../../shared/money";
 import { HowIChecked } from "./HowIChecked";
+import { thumb } from "./format";
 import { ReturnsRow } from "./ReturnsRow";
 import { Swatch } from "./Swatch";
 
@@ -37,7 +38,7 @@ function Header({ product }: { product: ProductHeader }) {
   return (
     <header className="card-head">
       {product.imageUrl ? (
-        <img className="product-photo" src={product.imageUrl} alt="" />
+        <img className="product-photo" src={thumb(product.imageUrl, 240)} alt="" />
       ) : (
         <div className="product-photo product-photo-missing" aria-hidden />
       )}

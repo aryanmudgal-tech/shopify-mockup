@@ -1,4 +1,5 @@
 import { useId } from "react";
+import { thumb } from "./format";
 
 // A fabric swatch with a pinked edge, the zigzag that pinking shears leave.
 // With no image it draws the same outline dashed: the sample that isn't there.
@@ -31,7 +32,7 @@ export function Swatch({ imageUrl }: { imageUrl: string | null }) {
             </clipPath>
           </defs>
           <image
-            href={imageUrl}
+            href={thumb(imageUrl, 160)}
             width={SIZE}
             height={SIZE}
             preserveAspectRatio="xMidYMid slice"
