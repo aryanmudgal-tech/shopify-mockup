@@ -31,7 +31,9 @@ This is what the card would show for 14228:
 
 ### 2.2 Price at the door
 
-My first cart only had the ZIP in `context`, and it came back with no delivery line at all. The delivery quote only appears when the cart includes a shipping destination under `fulfillment.methods[].destinations[]`, and a ZIP-only destination is enough. That cart returned Standard Shipping at $69, the same figure as the 2026-11-14 probe. I assume the missing destination also explains why only 12 of 22 carts quoted delivery in that earlier probe, but I haven't checked this.
+My first cart only had the ZIP in `context`, and it came back with no delivery line at all. The delivery quote only appears when the cart includes a shipping destination under `fulfillment.methods[].destinations[]`. That cart returned Standard Shipping at $69, the same figure as the 2026-11-14 probe. I assume the missing destination also explains why only 12 of 22 carts quoted delivery in that earlier probe, but I haven't checked this.
+
+What did I actually send? The destination in `04c` was country `US`, state `NY` and ZIP `14228`, with no street address and no city. I took NY from the ZIP myself, so I reran with country and ZIP only (`04e`) to find the real minimum. Burrow still quoted $69 and Garvee still quoted free delivery (`garvee/04c`). The cart echoes the destination back with an empty `street_address` and `address_locality`. So the minimum is country plus ZIP, and the app never needs a street address, a city or a ZIP-to-state lookup to show delivery.
 
 The cart shows no tax line, so I treat its total as the price before tax. Both test carts were cancelled afterwards.
 
@@ -69,19 +71,20 @@ Both carts priced the same variant at the same price as the Catalog. Burrow was 
 - Cart IDs include a `?key=` parameter. `cancel_cart` needs the full ID as the top-level `id` and a fresh UUID in `meta["idempotency-key"]`.
 - Store search returns store-native product IDs (`gid://shopify/Product/...`). Global Catalog returns `gid://shopify/p/...`, which `ask_business` rejects, so ask always gets the variant ID.
 - In Global Catalog the product-level `url` is null for both stores, and the storefront link is on the variant's `url`.
+- Call the store's UCP endpoint on `seller.domain`, not on the storefront host. `www.garvee.com` is a separate site and returns an HTML page at `/api/ucp/mcp`, while `mygarvee.myshopify.com` answers. Burrow happens to answer on both.
 - `ask_business` answers sometimes include dollar figures the store worked out itself, such as "$24.20 with the packaging". My code still does all the arithmetic, and the quote check still applies.
 
-## 6. Decisions needed before stage 4
+## 6. Decisions before stage 4
 
-The extraction contract in spec 8.3 can't hold everything these two answers say. These are my proposals.
+The extraction contract in spec 8.3 couldn't hold everything these two answers say, so I proposed six changes. All six were ACCEPTED on 2026-11-15 and folded into spec revision 3. The free exchange is a required line on the card, because picking the wrong fabric is exactly what a first-timer fears, and leaving it out would make Burrow look riskier than it is.
 
 1. **Fee cap.** Burrow caps its fee at $250, so 20% of $1,364 becomes $250.00 instead of $272.80. Proposal: add `fee_cap` with a quote, and compute the fee as the smaller of price × fee % and the cap.
 2. **Return shipping included in the fee.** Burrow's fee IS the return shipping. With today's contract the card would wrongly add "+ return shipping, amount not stated". Proposal: add `included_in_fee` to `return_shipping.type`.
 3. **Fee mentioned with no amount.** Garvee charges a restocking fee but never says how much. Proposal: allow `refund_pct: null` with a quote, and show "+ restocking fee, amount not stated by the store".
-4. **Free exchange.** Burrow offers one free exchange with the original box, so a buyer who picks the wrong fabric can lose $0. Proposal: add one clause about exchanges to the ask query and show one line in the "If you're wrong" row. This keeps the row's purpose, but it adds scope, so it's the owner's call.
+4. **Free exchange.** Burrow offers one free exchange with the original box, so a buyer who picks the wrong fabric can lose $0. Proposal: add one clause about exchanges to the ask query and show one line in the "If you're wrong" row.
 5. **Made-to-order moment.** There isn't one at Burrow. Proposal: drop it from the demo path. The $250 cap, the unstated delivery refund, and Garvee's unstated fees carry the demo.
 6. **$1 swatch.** The spec's illustration and demo path say "$0 swatch". Proposal: update them to $1.
 
 ## 7. Fixtures
 
-Files are numbered by the step in spec section 11. `00` is the store's `/.well-known/ucp`, `01` and `02` are the Global Catalog search and lookup, `03` is `tools/list` per profile, `04` is the cart and its cancel, `05` is the swatch search, `07` is the return question, and `08` is the policy page and the made-to-order probes. Each JSON file holds the request, the HTTP status and the full response.
+Files are numbered by the step in spec section 11. `00` is the store's `/.well-known/ucp`, `01` and `02` are the Global Catalog search and lookup, `03` is `tools/list` per profile, `04` is the cart and its cancel (`04e` and `garvee/04c` are the country-plus-ZIP reruns), `05` is the swatch search, `07` is the return question, and `08` is the policy page and the made-to-order probes. Each JSON file holds the request, the HTTP status and the full response.
