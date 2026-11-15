@@ -112,7 +112,7 @@ Files are numbered by the step in spec section 11. `00` is the store's `/.well-k
 - Model: `claude-haiku-5-5`, the fast tier, which is on the live model list for this key on 2026-11-15.
 - Output: a forced, strict tool call. `tool_choice` names the tool and `strict: true` makes the input match the schema in [`server/terms.ts`](../server/terms.ts).
 - **Temperature 0 isn't possible.** The spec asked for it, but Haiku 5.5 rejects any non-default temperature with a 400, and on API version 2026-10-21 (what the SDK sends) every model does. Repeatable runs come from the strict schema and from the cache instead.
-- Cache: every read is saved under [`fixtures/model-cache/`](../fixtures/model-cache/), keyed by a hash of the policy text, the assistant's answer and the variant ID, plus the model and a prompt version. A live check whose texts haven't changed takes about 2 seconds instead of 8, and the recorded demo and `npm test` need no network and no key.
+- Cache: every read is saved under [`fixtures/model-cache/`](../fixtures/model-cache/), keyed by a hash of the policy text, the assistant's answer and the variant ID, plus the model and a prompt version. A live Burrow check whose texts haven't changed took 2.6 seconds with the saved read and 6.5 seconds without it, and the recorded demo and `npm test` need no network and no key.
 
 ### 9.1 How a read becomes a figure
 
