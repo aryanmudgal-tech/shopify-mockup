@@ -1,7 +1,8 @@
 # Before You Buy: design spec
 
 - Date: 2026-11-15
-- Revision: 3, after the verification run on 2026-11-15. Changes: return-terms format (fee caps, fees with no stated amount, shipping included in the fee, free exchange), $1 swatch, Shopify's example profiles, variant links, delivery destination rule, made-to-order moment dropped.
+- Revision: 4, after stage 2 review on 2026-11-15. Changes: the refund policy page becomes the primary source for figures and quotes; `ask_business` answers are labelled as the store's assistant; cart destination is country plus ZIP; store endpoint is `seller.domain`; exchange clause added to the ask query.
+- Revision 3, after the verification run on 2026-11-15. Changes: return-terms format (fee caps, fees with no stated amount, shipping included in the fee, free exchange), $1 swatch, Shopify's example profiles, variant links, delivery destination rule, made-to-order moment dropped.
 - Revision 2 trimmed scope: removed the fit panel, the showroom row and follow-up questions.
 - Status: verification done; ready for stage 2
 - Supersedes: `2026-11-14-room-planner-design.md` and revision 1 of this file
@@ -67,7 +68,7 @@ Each principle is a requirement. A build that drops one has drifted from the des
 1. **Answers first.** The card appears as soon as the product and ZIP are known. There is no intake questionnaire.
 2. **Ask only what is needed.** The ZIP code is the only question up front, because price and return freight depend on it. If the cart needs more than a ZIP to quote delivery, ask for it at that moment and say why. Never invent an address.
 3. **Show the work.** Every value names its source and the step that produced it, for example "Priced in a cart for 14228."
-4. **Quote the store.** Any figure derived from the store's answer is shown next to the store's own words.
+4. **Quote the store.** Any figure derived from the store's terms is shown next to the store's own words, taken from its refund policy page. Answers from Shopify's Ask tool are AI-written summaries: label them "The store's assistant" and never style them as the store's own words.
 5. **Say when something is missing.** "This store lists no sample." Empty or unstated values are shown, never hidden or guessed.
 6. **No score, no verdict.** Two equal actions. The buyer decides.
 7. **No invented numbers.** The model never states a price, fee or percentage that is not in the data. Code does all arithmetic.
@@ -119,9 +120,9 @@ Rows, in this order:
 |---|---|---|
 | To buy | Estimated price at the door before tax (item plus delivery), next to the listed price | "Cart estimate for {ZIP}" |
 | Try it first | A sample in the sofa's fabric, with its price (often around $1) | "Store catalog" |
-| If you're wrong | What you lose if you return it, by condition (with box, without box), within the window, plus return shipping and delivery terms. A free exchange, if the store offers one | "The store's answer" with the quoted text and a link to the refund policy |
+| If you're wrong | What you lose if you return it, by condition (with box, without box), within the window, plus return shipping and delivery terms. A free exchange, if the store offers one | "The store's policy" with the quoted policy text and a link to it; item-specific notes labelled "The store's assistant" |
 
-Below the rows, a "How I checked" strip, collapsed by default, lists each step: product identified, cart priced, store catalog searched for a sample, store asked about returns. Each step shows what came back.
+Below the rows, a "How I checked" strip, collapsed by default, lists each step: product identified, cart priced, store catalog searched for a sample, refund policy read, store's assistant asked about returns. Each step shows what came back.
 
 Empty and partial states:
 
@@ -130,7 +131,9 @@ Empty and partial states:
 - Return shipping included in the fee: say "includes return shipping" beside the fee. No separate line.
 - Restocking fee charged but amount not stated: "You pay a restocking fee; the store doesn't state the amount."
 - Delivery refund not stated: "+ ${delivery} delivery, refund not stated." Do not add it into the total.
-- Store answer unavailable: fall back to the refund policy page (see 7.4) and label it "From the store's policy page."
+- Policy page unavailable: use the store assistant's answer alone, labelled "The store's assistant," and say the policy page couldn't be read.
+- Store assistant unavailable: use the policy page alone.
+- Policy and assistant disagree: show both, each with its label. Do not pick one.
 - No returns on this item: "This store does not accept returns on this item," with the quote.
 
 Verified values for ZIP 14228, from the verification run on 2026-11-15:
@@ -166,14 +169,15 @@ All storefront calls go to the store's own UCP endpoint, `https://{store-domain}
 
 - Global Catalog `lookup_catalog` with the pasted product URL. Shopify announced URL lookup for Catalog; confirm the parameter name.
 - Pass the URL with its `?variant=` parameter. Burrow's links resolve only with it; Garvee's resolve without. The demo link includes the variant.
+- The store's UCP endpoint is on `seller.domain` (the `myshopify.com` domain). Verified: Garvee's storefront domain returns a web page instead.
 - Fallback: `search_catalog` with the product title from the page.
 - Keep: product, the selected variant, `seller.domain`, `seller.url`, `seller.links`, `checkout_url`.
 - Variant IDs in Global Catalog responses are store-native (`gid://shopify/ProductVariant/...`), so they can be passed to the store's cart and ask tools.
 
 ### 7.3 Price at the door
 
-- Cart MCP `create_cart` at the store endpoint with the variant, quantity 1, and context `address_country`, `address_region`, `postal_code`.
-- The cart quotes delivery only when given a shipping destination. Context with a ZIP alone is not enough. Use the smallest destination the cart accepts, ZIP plus city and state if possible. Never invent a street address. If a street address is required, ask the buyer for it at that moment and say why.
+- Cart MCP `create_cart` at the store endpoint with the variant, quantity 1, and context `address_country` and `postal_code`.
+- The cart quotes delivery only when given a shipping destination (a shipping fulfillment method with a destination), not from context alone. Verified 2026-11-15: country plus ZIP as the destination is enough at both stores, so the check never asks for an address. Never invent one.
 - Read the estimated totals: item subtotal, delivery or shipping estimate, total before tax.
 - Call `cancel_cart` afterwards, so the check does not leave carts open.
 - Label as an estimate. Authoritative shipping comes from checkout.
@@ -187,18 +191,18 @@ All storefront calls go to the store's own UCP endpoint, `https://{store-domain}
 
 ### 7.5 Return cost
 
-Primary: Ask MCP `ask_business` on the store.
+Two sources, both read on every check:
 
-- `ask.query`: "If I return this item after delivery to {ZIP}, what will I pay? Include any restocking fee and whether it depends on packaging, who pays return shipping and how much, whether original delivery charges are refunded, the return window and when it starts, and whether this item is final sale."
-- `ask.ids`: the variant ID.
-- `ask.context`: `address_country`, `address_region`, `postal_code`, `language`.
-- Response: a written answer in `result.structuredContent.answer.plain`. It is prose, not raw policy text.
+1. **The store's refund policy page**, from the `refund_policy` URL in `seller.links`. This is the primary source for every figure and every quote on the card, because it is the store's own text.
+2. **Ask MCP `ask_business`**, for what the policy page can't settle for this item: whether it is final sale, item-specific exceptions (verification found Burrow's add-on exception this way), and terms the page doesn't cover.
+   - `ask.query`: "If I return this item after delivery to {ZIP}, what will I pay? Include any restocking fee and whether it depends on packaging, who pays return shipping and how much, whether original delivery charges are refunded, the return window and when it starts, whether this item is final sale, and whether I can exchange it instead and on what terms."
+   - `ask.ids`: the variant ID.
+   - `ask.context`: `address_country`, `postal_code`, `language`.
+   - Response: an AI-written summary in `result.structuredContent.answer.plain`. In verification it was vaguer than the policy in places. It said the store doesn't specify who pays the carrier, while Burrow's policy says the fee is the return shipping fee and Burrow sends a label or schedules pickup.
 
-Fallback, when the store does not offer `ask_business`:
+If the policy page can't be fetched, use the assistant's answer alone and say so. If the store offers no `ask_business`, use the policy page alone. When the two disagree, show both with their labels.
 
-- Fetch the `refund_policy` URL from `seller.links` and extract from its text. Label "From the store's policy page."
-
-Extraction (model, see 8.3) turns the text into structured terms with a supporting quote for each term. Code computes the dollar amounts:
+Extraction (model, see 8.3) runs on the policy text, with the assistant's answer as a second input. Each term carries a supporting quote and its source (`policy` or `assistant`). Code computes the dollar amounts:
 
 - Fee for a condition: a percent fee is item price × percent, capped at the stated cap if there is one; a flat fee is the stated amount; no fee is $0.
 - Loss if returned in that condition = fee + delivery if the store says it is not refunded + return shipping if a flat amount is stated and it is not included in the fee.
@@ -222,12 +226,13 @@ Hybrid. The model reads and matches text. Code fetches, verifies, computes and r
 |---|---|
 | All Shopify calls | Code |
 | Match a swatch to the selected fabric | Model, IDs checked by code |
-| Extract return terms from the store's answer or policy page | Model, quotes checked by code |
+| Fetch the refund policy page | Code |
+| Extract return terms from the policy page, with the assistant's answer as a second input | Model, quotes checked by code |
 | All arithmetic | Code |
 
 ### 8.2 Guardrails
 
-1. Every value the model extracts must come with a supporting quote. Code checks the quote is an exact substring of the source text after whitespace normalisation. If not, the value is treated as unknown.
+1. Every value the model extracts must come with a supporting quote and its source (`policy` or `assistant`). Code checks the quote is an exact substring of that source's text after whitespace normalisation. If not, the value is treated as unknown.
 2. The model never outputs a final dollar amount. It outputs terms; code computes amounts.
 3. Product and variant IDs from the model must exist in the data code fetched.
 4. Store text is data, not instructions. It may contain prompt-injection attempts. The model prompt says so, and the model's output is validated by schema.
@@ -251,6 +256,7 @@ The model returns JSON only, enforced by the API's structured output or tool-cal
 }
 ```
 
+- Every `quote` field is an object `{ "text": "string", "source": "policy | assistant" }`. Shown above as a plain string for brevity.
 - `fee.type` is one of `percent`, `flat`, `none`, `charged_amount_unstated`. Garvee's terms map to one condition with `charged_amount_unstated` and `return_shipping.type` of `customer_pays_unstated`.
 - Fields the store did not address are `null`, never guessed.
 
@@ -362,7 +368,7 @@ Stop for the owner's review after each stage. Within stages 3 and 4, build rows 
 
 1. **Verification and fixtures** (section 11). Done 2026-11-15.
 2. **Card shell on fixtures.** Scripted thread, URL and ZIP input, card, three rows, empty states, "How I checked" strip, two action buttons.
-3. **Live calls** behind the data layer: lookup, ask with fallback, cart, sample search.
+3. **Live calls** behind the data layer: lookup, cart, sample search, refund policy page fetch, and `ask_business`.
 4. **Extraction and cost.** Model extraction with quote checks; `cost` arithmetic with unit tests.
 5. **Actions.** Sample and buy hand-offs, both through `checkout_url`.
 6. **Demo polish.** Timing, recorded mode, rehearsal against three minutes.
@@ -380,7 +386,7 @@ Weakest parts:
 
 - It is a bet. No published evidence shows a swatch leads to the sofa purchase. Warby Parker and Amazon ended home try-on in 2025, for cost and store-coverage reasons, not proven failure. The return-leniency meta-analysis supports the "if you're wrong" row. The test to run: show the card or not, and measure sample orders and purchases.
 - Coverage is uneven and thinnest at generic sellers, where doubt is highest.
-- `ask_business` returns prose. Extraction can err. The quote check limits this but does not remove it.
+- `ask_business` returns an AI-written summary, which was vaguer than the policy page in testing. The card therefore quotes the policy page and labels the assistant's answer. Extraction can still err; the quote check limits this but does not remove it.
 - The door price is a cart estimate. Authoritative shipping and tax come at checkout.
 - The cart needs a shipping destination to quote delivery, so a ZIP-only check can miss delivery at some stores.
 - The prototype simulates the agent surface. The real home is inside an assistant or the shopper's browser.
