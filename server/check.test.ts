@@ -36,7 +36,7 @@ describe("runCheck on recorded responses", () => {
   it("builds Garvee's card with no sample and unstated fees", async () => {
     const card = await runCheck(new RecordedTransport(), GARVEE, "14228", saved);
     expect(card.toBuy).toMatchObject({ status: "priced", deliveryCents: 0, doorCents: 68199 });
-    expect(card.tryFirst).toEqual({ status: "none" });
+    expect(card.tryFirst).toEqual({ status: "none", otherSamples: false });
     expect(card.steps.find((s) => s.id === "sample")).toMatchObject({ outcome: "empty", summary: expect.stringContaining('"Corduroy swatch" (10 results)') });
   });
 

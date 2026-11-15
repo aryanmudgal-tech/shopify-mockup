@@ -9,11 +9,7 @@
         "starts": null,
         "quotes": [
           {
-            "text": "GARVEE offers a 30-day Return Guarantee.",
-            "source": "policy"
-          },
-          {
-            "text": "you have the option to return it within 30 days for a replacement or a refund, whichever you prefer.",
+            "text": "GARVEE offers a 30-day Return Guarantee. If you are not content with a product you have purchased from GARVEE, you have the option to return it within 30 days for a replacement or a refund, whichever you prefer.",
             "source": "policy"
           }
         ]
@@ -29,7 +25,11 @@
           },
           "quotes": [
             {
-              "text": "GARVEE reserves the right to refuse responsibility and may impose a restocking fee at our discretion.",
+              "text": "Receive the item but change your mind/Does not meet my expectations",
+              "source": "policy"
+            },
+            {
+              "text": "For the return situations listed below, the buyer will be responsible for covering the cost of returning and restocking the item.",
               "source": "policy"
             }
           ]
@@ -44,7 +44,7 @@
             "source": "policy"
           },
           {
-            "text": "Please be aware that GARVEE does not cover the shipping costs for returns initiated by the customer.",
+            "text": "Kind Reminder: Please be aware that GARVEE does not cover the shipping costs for returns initiated by the customer.",
             "source": "policy"
           }
         ]
@@ -57,10 +57,14 @@
         "free": null,
         "count": null,
         "needs_original_packaging": true,
-        "within_return_window": null,
+        "within_return_window": true,
         "quotes": [
           {
             "text": "All returns or exchanges must come with their original packaging unaltered.",
+            "source": "policy"
+          },
+          {
+            "text": "you have the option to return it within 30 days for a replacement or a refund, whichever you prefer.",
             "source": "policy"
           }
         ]
@@ -109,7 +113,7 @@
         "amount": null,
         "quotes": [
           {
-            "text": "If you return it because you changed your mind or no longer want it, you pay return shipping and the return/restocking cost, but no specific shipping amount or restocking-fee rate is given",
+            "text": "you pay return shipping and the return/restocking cost, but no specific shipping amount or restocking-fee rate is given",
             "source": "assistant"
           }
         ]
@@ -134,7 +138,7 @@
         "value": null,
         "quotes": [
           {
-            "text": "the information doesn’t clarify",
+            "text": "the store’s information does not specify an exact return cost or whether it is final sale",
             "source": "assistant"
           }
         ]
