@@ -1,0 +1,181 @@
+{
+  "mode": "live",
+  "recordedAt": null,
+  "zip": "14228",
+  "product": {
+    "title": "Get Together™ 3-Piece Modular Sofa, Standard, Cream Linen",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-035-018_elevated_Variant_silo.jpg",
+    "options": [
+      {
+        "name": "Marketing colour",
+        "label": "Cream Linen"
+      },
+      {
+        "name": "Product size",
+        "label": "Standard"
+      }
+    ],
+    "seller": {
+      "name": "Sundays Company US",
+      "url": "https://www.sundays-company.com"
+    },
+    "rating": {
+      "value": 4.8,
+      "scaleMax": 5,
+      "count": 3888
+    },
+    "listedCents": 380000,
+    "checkoutUrl": "https://www.sundays-company.com/buy/41588521959495:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&attribution/click_id_tag=_gsid&attribution/click_id_value=tFryW3nXv9HN&_gsid=tFryW3nXv9HN",
+    "variantNote": null
+  },
+  "toBuy": {
+    "status": "priced",
+    "listedCents": 380000,
+    "deliveryCents": 0,
+    "deliveryLabel": "Free Premium Delivery",
+    "doorCents": 380000
+  },
+  "tryFirst": {
+    "status": "sample",
+    "variantId": "gid://shopify/ProductVariant/41588520779847",
+    "title": "Swatch Cream Linen, LiveLife™  Fabric",
+    "priceCents": 0,
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-YJALEX484680_Swatch_Variant_Thumbnail.jpg?v=1780935089",
+    "matchedOn": "Cream Linen",
+    "checkoutUrl": "https://sundays-company-production.myshopify.com/cart/41588520779847:1"
+  },
+  "ifWrong": {
+    "status": "terms",
+    "lines": [
+      {
+        "kind": "loss",
+        "condition": "with the original box",
+        "lossCents": 15000,
+        "fee": {
+          "type": "flat",
+          "cents": 15000
+        },
+        "includesReturnShipping": false,
+        "includesDeliveryCents": 0,
+        "includesReturnShippingCents": 0,
+        "quotes": [
+          {
+            "text": "A flat rate return shipping fee of $150 will be applied to your refund or exchange.",
+            "source": "policy"
+          }
+        ]
+      },
+      {
+        "kind": "loss",
+        "condition": "without the box",
+        "lossCents": 7500,
+        "fee": {
+          "type": "flat",
+          "cents": 7500
+        },
+        "includesReturnShipping": false,
+        "includesDeliveryCents": 0,
+        "includesReturnShippingCents": 0,
+        "quotes": [
+          {
+            "text": "If you do not have the original packaging, a return re-packaging fee of $75 will be applied to your refund or exchange.",
+            "source": "policy"
+          }
+        ]
+      },
+      {
+        "kind": "disagreement",
+        "topic": "who pays return shipping",
+        "quotes": [
+          {
+            "text": "A flat rate return shipping fee of $150 will be applied to your refund or exchange.",
+            "source": "policy"
+          },
+          {
+            "text": "the flat return shipping fee is $150 in either case, charged to you",
+            "source": "assistant"
+          }
+        ]
+      }
+    ],
+    "window": {
+      "days": 30,
+      "starts": "delivery",
+      "quotes": [
+        {
+          "text": "Returns for refund or exchange will be accepted within 30 days of delivery in original condition with original packaging.",
+          "source": "policy"
+        }
+      ]
+    },
+    "sources": {
+      "policy": {
+        "status": "read",
+        "url": "https://checkout.shopify.com/5465964615/policies/8341094471.html",
+        "text": "We hope you enjoy our products as much as we do! If something doesn't work for you, we will make it right. Returns for refund or exchange will be accepted within 30 days of delivery in original condition with original packaging. A flat rate return shipping fee of $150 will be applied to your refund or exchange.\nIf you do not have the original packaging, a return re-packaging fee of $75 will be applied to your refund or exchange.\nOpens external website in a new window.\nOpens in a new window.\nOpens external website.\nOrder details - Sundays Company US - Checkout"
+      },
+      "assistant": {
+        "status": "answered",
+        "text": "For this sofa delivered to 14228, the return window is 30 days from delivery, and it must be in original condition. The return policy conflicts on packaging: one version says returns require the original packaging, while another says missing packaging adds a $75 repackaging fee; the flat return shipping fee is $150 in either case, charged to you. Since this is a sofa, the policy does not specify whether the small-parcel packaging fee applies, so the total fees aren’t clear. The policy says the shipping fee applies to refunds or exchanges, but doesn’t specify whether original delivery charges are refunded; it also doesn’t say whether this item is final sale or give exchange terms beyond accepting exchanges within the 30-day window."
+      }
+    }
+  },
+  "steps": [
+    {
+      "id": "identify",
+      "title": "Product identified",
+      "tool": "lookup_catalog",
+      "endpoint": "Global Catalog",
+      "outcome": "ok",
+      "summary": "Matched the link to Get Together™ 3-Piece Modular Sofa, Standard, Cream Linen, variant 41588521959495 (Cream Linen / Standard), sold by Sundays Company US and listed at $3,800."
+    },
+    {
+      "id": "price",
+      "title": "Cart priced",
+      "tool": "create_cart",
+      "endpoint": "sundays-company-production.myshopify.com",
+      "outcome": "ok",
+      "summary": "One sofa to ZIP 14228: $3,800 with free delivery, \"Free Premium Delivery\", so $3,800 before tax. Same variant and price as the Catalog. The cart was cancelled afterwards."
+    },
+    {
+      "id": "sample",
+      "title": "Store catalog searched for a sample",
+      "tool": "search_catalog",
+      "endpoint": "sundays-company-production.myshopify.com",
+      "outcome": "ok",
+      "summary": "Searched \"Cream Linen swatch\" (20 results). claude-haiku-5-5 compared the results with the sofa's fabric: The swatch \"Swatch Cream Linen, LiveLife™ Fabric\" is the only sample product in Cream Linen, matching the sofa's Cream Linen fabric; the other swatches are different fabrics (Herringbone, Cereal, Cream Boucle). Its ID is in the search results. Swatch Cream Linen, LiveLife™  Fabric, $0."
+    },
+    {
+      "id": "policy",
+      "title": "Refund policy read",
+      "tool": null,
+      "endpoint": "checkout.shopify.com/5465964615/policies/8341094471.html",
+      "outcome": "ok",
+      "summary": "Read the store's refund policy page, 102 words. Every figure in \"If you're wrong\" and every highlighted quote comes from it.",
+      "detail": {
+        "kind": "policy",
+        "text": "We hope you enjoy our products as much as we do! If something doesn't work for you, we will make it right. Returns for refund or exchange will be accepted within 30 days of delivery in original condition with original packaging. A flat rate return shipping fee of $150 will be applied to your refund or exchange.\nIf you do not have the original packaging, a return re-packaging fee of $75 will be applied to your refund or exchange.\nOpens external website in a new window.\nOpens in a new window.\nOpens external website.\nOrder details - Sundays Company US - Checkout"
+      }
+    },
+    {
+      "id": "assistant",
+      "title": "Store's assistant asked about returns",
+      "tool": "ask_business",
+      "endpoint": "sundays-company-production.myshopify.com",
+      "outcome": "ok",
+      "summary": "Asked what a return after delivery to 14228 would cost, including fees, return shipping, delivery refunds, the window, final sale and exchanges. Its answer is an AI-written summary, used only for what the policy can't settle for this item:",
+      "detail": {
+        "kind": "assistant",
+        "text": "For this sofa delivered to 14228, the return window is 30 days from delivery, and it must be in original condition. The return policy conflicts on packaging: one version says returns require the original packaging, while another says missing packaging adds a $75 repackaging fee; the flat return shipping fee is $150 in either case, charged to you. Since this is a sofa, the policy does not specify whether the small-parcel packaging fee applies, so the total fees aren’t clear. The policy says the shipping fee applies to refunds or exchanges, but doesn’t specify whether original delivery charges are refunded; it also doesn’t say whether this item is final sale or give exchange terms beyond accepting exchanges within the 30-day window."
+      }
+    },
+    {
+      "id": "extract",
+      "title": "Terms read and compared",
+      "tool": "claude-haiku-5-5",
+      "endpoint": "Anthropic API",
+      "outcome": "ok",
+      "summary": "The model read 5 terms from the policy; 4 terms from the assistant's answer. Every quote was checked word for word against its source, and every number against its quote; code did the arithmetic. Compared field by field, they disagree on who pays return shipping, so the card shows both and picks neither."
+    }
+  ]
+}

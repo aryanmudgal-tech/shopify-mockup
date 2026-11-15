@@ -1,0 +1,53 @@
+{
+  "fetched_at": "2026-11-15T21:24:46.687Z",
+  "endpoint": "rovelab-us.myshopify.com",
+  "tool": "ask_business",
+  "args": {
+    "ask": {
+      "query": "If I return this item after delivery to 14228, what will I pay? Include any restocking fee and whether it depends on packaging, who pays return shipping and how much, whether original delivery charges are refunded, the return window and when it starts, whether this item is final sale, and whether I can exchange it instead and on what terms.",
+      "ids": [
+        "gid://shopify/ProductVariant/42935829987465"
+      ],
+      "context": {
+        "address_country": "US",
+        "postal_code": "14228",
+        "language": "en"
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"capabilities\":{\"dev.ucp.common.ask\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/ask/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/ask.json\"}]}},\"answer\":{\"plain\":\"For the M1 Boneless Sofa Sectional in Helium Cloud, the information supports a $99 return fee deducted from your refund; the final refund amount also depends on what you paid. The return window is 100 days from delivery, and you must request authorization before shipping the item back. Return eligibility requires original condition, proof of purchase, and protective packaging according to one policy; another says original condition and proof of purchase but does not mention packaging, so the packaging requirement is inconsistent. For U.S. orders, the return label is provided and the $99 fee is described as covering return shipping, but who pays any additional shipping cost is not specified. The information does not say whether original delivery charges are refunded or whether this specific item is final sale; final-sale items generally cannot be returned. Exchanges are handled by returning the original item and placing a new order once the return is approved.\"},\"links\":[{\"type\":\"product\",\"url\":\"https://rovelab.com/products/m1-sofa-sectional?variant=42935829987465\",\"title\":\"M1 Boneless Sofa Sectional - Helium Cloud\",\"id\":\"gid://shopify/ProductVariant/42935829987465\"}]}"
+      }
+    ],
+    "isError": false,
+    "structuredContent": {
+      "ucp": {
+        "version": "2026-08-25",
+        "status": "success",
+        "capabilities": {
+          "dev.ucp.common.ask": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/common/ask/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/common/ask.json"
+            }
+          ]
+        }
+      },
+      "answer": {
+        "plain": "For the M1 Boneless Sofa Sectional in Helium Cloud, the information supports a $99 return fee deducted from your refund; the final refund amount also depends on what you paid. The return window is 100 days from delivery, and you must request authorization before shipping the item back. Return eligibility requires original condition, proof of purchase, and protective packaging according to one policy; another says original condition and proof of purchase but does not mention packaging, so the packaging requirement is inconsistent. For U.S. orders, the return label is provided and the $99 fee is described as covering return shipping, but who pays any additional shipping cost is not specified. The information does not say whether original delivery charges are refunded or whether this specific item is final sale; final-sale items generally cannot be returned. Exchanges are handled by returning the original item and placing a new order once the return is approved."
+      },
+      "links": [
+        {
+          "type": "product",
+          "url": "https://rovelab.com/products/m1-sofa-sectional?variant=42935829987465",
+          "title": "M1 Boneless Sofa Sectional - Helium Cloud",
+          "id": "gid://shopify/ProductVariant/42935829987465"
+        }
+      ]
+    }
+  }
+}

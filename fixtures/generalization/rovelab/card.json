@@ -1,0 +1,156 @@
+{
+  "mode": "live",
+  "recordedAt": null,
+  "zip": "14228",
+  "product": {
+    "title": "M1 Boneless Sofa Sectional",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/Helium_Cloud_406648ec-5d31-478f-870e-697ee18c41c5.webp",
+    "options": [
+      {
+        "name": "Color",
+        "label": "Helium Cloud"
+      }
+    ],
+    "seller": {
+      "name": "Rove Lab™",
+      "url": "https://rovelab.com"
+    },
+    "rating": {
+      "value": 4.6,
+      "scaleMax": 5,
+      "count": 5077
+    },
+    "listedCents": 99700,
+    "checkoutUrl": "https://rovelab.com/buy/42935829987465:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&attribution/click_id_tag=_gsid&attribution/click_id_value=wEbodRQa4835&_gsid=wEbodRQa4835",
+    "variantNote": null
+  },
+  "toBuy": {
+    "status": "no_delivery_quote",
+    "listedCents": 99700,
+    "subtotalCents": 99700
+  },
+  "tryFirst": {
+    "status": "none"
+  },
+  "ifWrong": {
+    "status": "terms",
+    "lines": [
+      {
+        "kind": "loss",
+        "condition": null,
+        "lossCents": 9900,
+        "fee": {
+          "type": "flat",
+          "cents": 9900
+        },
+        "includesReturnShipping": false,
+        "includesDeliveryCents": 0,
+        "includesReturnShippingCents": 0,
+        "quotes": [
+          {
+            "text": "A $99 return fee will be deducted from your refund.",
+            "source": "policy"
+          }
+        ]
+      },
+      {
+        "kind": "delivery_refund_unstated",
+        "deliveryCents": null,
+        "quotes": []
+      },
+      {
+        "kind": "disagreement",
+        "topic": "who pays return shipping",
+        "quotes": [
+          {
+            "text": "We will then send you a return shipping label along with instructions on how and where to send your package.",
+            "source": "policy"
+          },
+          {
+            "text": "the $99 fee is described as covering return shipping",
+            "source": "assistant"
+          }
+        ]
+      }
+    ],
+    "window": {
+      "days": 100,
+      "starts": "delivery",
+      "quotes": [
+        {
+          "text": "Our return policy allows you 100 days from the date you receive your item to request a return.",
+          "source": "policy"
+        }
+      ]
+    },
+    "sources": {
+      "policy": {
+        "status": "read",
+        "url": "https://checkout.shopify.com/65058504841/policies/28521693321.html",
+        "text": "Our return policy allows you 100 days from the date you receive your item to request a return. To be eligible, the item must be in its original condition with protective packaging, and you must provide the receipt or proof of purchase. A $99 return fee will be deducted from your refund.\nTo initiate a return, please contact us at hello@rovelab.com. We will then send you a return shipping label along with instructions on how and where to send your package. Please ensure that you request a return before sending your item; items returned without prior authorization will not be accepted.\nIf you have any questions regarding returns, feel free to reach out to us at hello@rovelab.com.\nDamages and Issues:\nUpon receiving your order, please inspect it immediately. If you find that the item is defective, damaged, or incorrect, contact us right away so we can address the issue promptly.\nExceptions:\nWe are unable to accept returns for final sale items or gift cards.\nExchanges:\nTo get the item you want most quickly, return the original item and place a new order once your return is approved.\nRefunds:\nAfter we receive and inspect your return, we will inform you whether your refund has been approved. If approved, the refund will be processed to your original payment method within 10 business days. Please note that it may take additional time for your bank or credit card company to complete the transaction. If you do not receive your refund within 15 business days of approval, please contact us at hello@rovelab.com.\nOpens external website in a new window.\nOpens in a new window.\nOpens external website.\nContact - Rove Lab™ - Checkout"
+      },
+      "assistant": {
+        "status": "answered",
+        "text": "For the M1 Boneless Sofa Sectional in Helium Cloud, the information supports a $99 return fee deducted from your refund; the final refund amount also depends on what you paid. The return window is 100 days from delivery, and you must request authorization before shipping the item back. Return eligibility requires original condition, proof of purchase, and protective packaging according to one policy; another says original condition and proof of purchase but does not mention packaging, so the packaging requirement is inconsistent. For U.S. orders, the return label is provided and the $99 fee is described as covering return shipping, but who pays any additional shipping cost is not specified. The information does not say whether original delivery charges are refunded or whether this specific item is final sale; final-sale items generally cannot be returned. Exchanges are handled by returning the original item and placing a new order once the return is approved."
+      }
+    }
+  },
+  "steps": [
+    {
+      "id": "identify",
+      "title": "Product identified",
+      "tool": "lookup_catalog",
+      "endpoint": "Global Catalog",
+      "outcome": "ok",
+      "summary": "Matched the link to M1 Boneless Sofa Sectional, variant 42935829987465 (Helium Cloud), sold by Rove Lab™ and listed at $997."
+    },
+    {
+      "id": "price",
+      "title": "Cart priced",
+      "tool": "create_cart",
+      "endpoint": "rovelab-us.myshopify.com",
+      "outcome": "empty",
+      "summary": "The cart for ZIP 14228 came back at $997 with no delivery line. The cart was cancelled afterwards."
+    },
+    {
+      "id": "sample",
+      "title": "Store catalog searched for a sample",
+      "tool": "search_catalog",
+      "endpoint": "rovelab-us.myshopify.com",
+      "outcome": "empty",
+      "summary": "Searched \"Helium Cloud swatch\" (7 results), then \"swatch\" (1 results), then \"sample\" (1 results). claude-haiku-5-5 compared the results with the sofa's fabric: The only search result is a \"Free Swatches\" parent product with swatch kit variants (Classic, Bold, Swatch, Outdoor selections). None is identified as a sample of the Helium Cloud fabric, so no exact fabric match can be confirmed. None of the results is a sample of Helium Cloud."
+    },
+    {
+      "id": "policy",
+      "title": "Refund policy read",
+      "tool": null,
+      "endpoint": "checkout.shopify.com/65058504841/policies/28521693321.html",
+      "outcome": "ok",
+      "summary": "Read the store's refund policy page, 279 words. Every figure in \"If you're wrong\" and every highlighted quote comes from it.",
+      "detail": {
+        "kind": "policy",
+        "text": "Our return policy allows you 100 days from the date you receive your item to request a return. To be eligible, the item must be in its original condition with protective packaging, and you must provide the receipt or proof of purchase. A $99 return fee will be deducted from your refund.\nTo initiate a return, please contact us at hello@rovelab.com. We will then send you a return shipping label along with instructions on how and where to send your package. Please ensure that you request a return before sending your item; items returned without prior authorization will not be accepted.\nIf you have any questions regarding returns, feel free to reach out to us at hello@rovelab.com.\nDamages and Issues:\nUpon receiving your order, please inspect it immediately. If you find that the item is defective, damaged, or incorrect, contact us right away so we can address the issue promptly.\nExceptions:\nWe are unable to accept returns for final sale items or gift cards.\nExchanges:\nTo get the item you want most quickly, return the original item and place a new order once your return is approved.\nRefunds:\nAfter we receive and inspect your return, we will inform you whether your refund has been approved. If approved, the refund will be processed to your original payment method within 10 business days. Please note that it may take additional time for your bank or credit card company to complete the transaction. If you do not receive your refund within 15 business days of approval, please contact us at hello@rovelab.com.\nOpens external website in a new window.\nOpens in a new window.\nOpens external website.\nContact - Rove Lab™ - Checkout"
+      }
+    },
+    {
+      "id": "assistant",
+      "title": "Store's assistant asked about returns",
+      "tool": "ask_business",
+      "endpoint": "rovelab-us.myshopify.com",
+      "outcome": "ok",
+      "summary": "Asked what a return after delivery to 14228 would cost, including fees, return shipping, delivery refunds, the window, final sale and exchanges. Its answer is an AI-written summary, used only for what the policy can't settle for this item:",
+      "detail": {
+        "kind": "assistant",
+        "text": "For the M1 Boneless Sofa Sectional in Helium Cloud, the information supports a $99 return fee deducted from your refund; the final refund amount also depends on what you paid. The return window is 100 days from delivery, and you must request authorization before shipping the item back. Return eligibility requires original condition, proof of purchase, and protective packaging according to one policy; another says original condition and proof of purchase but does not mention packaging, so the packaging requirement is inconsistent. For U.S. orders, the return label is provided and the $99 fee is described as covering return shipping, but who pays any additional shipping cost is not specified. The information does not say whether original delivery charges are refunded or whether this specific item is final sale; final-sale items generally cannot be returned. Exchanges are handled by returning the original item and placing a new order once the return is approved."
+      }
+    },
+    {
+      "id": "extract",
+      "title": "Terms read and compared",
+      "tool": "claude-haiku-5-5",
+      "endpoint": "Anthropic API",
+      "outcome": "ok",
+      "summary": "The model read 3 terms from the policy; 3 terms from the assistant's answer. Every quote was checked word for word against its source, and every number against its quote; code did the arithmetic. Compared field by field, they disagree on who pays return shipping, so the card shows both and picks neither."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Refund policy</title>
+    <meta charset="UTF-8">
+    <script nonce="oXpqRIjEWzAirg8/BkiafiSZniA6hMGQWPGkYpmFqhU=">
+      const debounce = function(func, wait, immediate) {
+        var timeout;
+        return function() {
+          var context = this, args = arguments;
+          clearTimeout(timeout);
+          timeout = setTimeout(function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          }, wait);
+          if (immediate && !timeout) func.apply(context, args);
+        };
+      };
+
+      const sendMessage = function() {
+        parent.postMessage({ action: 'checkoutModalIframeResized', height: document.body.scrollHeight + 'px'}, '*');
+      };
+
+      document.addEventListener('DOMContentLoaded', sendMessage, false);
+      window.addEventListener('resize', debounce(sendMessage, 200), false);
+
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' || event.key === 'Esc') {
+          window.parent.postMessage('closeCheckoutPolicyModal', '*')
+        }
+      })
+    </script>
+
+
+    <link rel="stylesheet" crossorigin="anonymous" href="//cdn.shopify.com/shopifycloud/shopify/assets/checkout/standalone-dfb65dca3b130340ce121985031c6a5511d52eb90543c2a728b7f48667ab05ca.css" integrity="sha256-37ZdyjsTA0DOEhmFAxxqVRHVLrkFQ8KnKLf0hmerBco=" />
+  </head>
+  <body class="page-policies default-background text-container">
+      <p>Our return policy allows you 100 days from the date you receive your item to request a return. To be eligible, the item must be in its original condition with protective packaging, and you must provide the receipt or proof of purchase. <span>A $99 return fee will be deducted from your refund.</span></p>
+<p>To initiate a return, please contact us at hello@rovelab.com. We will then send you a return shipping label along with instructions on how and where to send your package. Please ensure that you request a return before sending your item; items returned without prior authorization will not be accepted.</p>
+<p>If you have any questions regarding returns, feel free to reach out to us at hello@rovelab.com.</p>
+<p><strong>Damages and Issues:</strong></p>
+<p>Upon receiving your order, please inspect it immediately. If you find that the item is defective, damaged, or incorrect, contact us right away so we can address the issue promptly.</p>
+<p><strong>Exceptions:</strong></p>
+<p>We are unable to accept returns for final sale items or gift cards.</p>
+<p><strong>Exchanges:</strong></p>
+<p>To get the item you want most quickly, return the original item and place a new order once your return is approved.</p>
+<p><strong>Refunds:</strong></p>
+<p>After we receive and inspect your return, we will inform you whether your refund has been approved. If approved, the refund will be processed to your original payment method within 10 business days. Please note that it may take additional time for your bank or credit card company to complete the transaction. If you do not receive your refund within 15 business days of approval, please contact us at hello@rovelab.com.</p>
+<p> </p>
+<p> </p>
+
+
+    <div class="hidden">
+  <span class="visually-hidden" id="forwarding-external-new-window-message">
+    Opens external website in a new window.
+  </span>
+
+  <span class="visually-hidden" id="forwarding-new-window-message">
+    Opens in a new window.
+  </span>
+
+  <span class="visually-hidden" id="forwarding-external-message">
+    Opens external website.
+  </span>
+
+  <span class="visually-hidden" id="checkout-context-step-one">
+    Contact - Rove Lab™ - Checkout
+  </span>
+</div>
+
+  </body>
+</html>

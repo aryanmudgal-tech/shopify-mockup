@@ -106,3 +106,60 @@ Files are numbered by the step in spec section 11. `00` is the store's `/.well-k
 - **The policy pages hadn't changed either.** The text the live check read from both `refund_policy` links matched the recorded HTML line for line, so every policy quote held.
 - **Live searches return more results than the fixtures.** The app asks for 20 results where the verification run asked for 10, so Garvee's "Corduroy swatch" search shows 20 results live and 10 recorded. Neither contains a sample, so the card is the same.
 - **burrow.com served its product page to the server** without blocking it, so the title fallback works for Burrow. Other stores may block it; then the app searches with the link's handle words instead.
+
+## 9. Model extraction - stage 4
+
+- Model: `claude-haiku-5-5`, the fast tier, which is on the live model list for this key on 2026-11-15.
+- Output: a forced, strict tool call. `tool_choice` names the tool and `strict: true` makes the input match the schema in [`server/terms.ts`](../server/terms.ts).
+- **Temperature 0 isn't possible.** The spec asked for it, but Haiku 5.5 rejects any non-default temperature with a 400, and on API version 2026-10-21 (what the SDK sends) every model does. Repeatable runs come from the strict schema and from the cache instead.
+- Cache: every read is saved under [`fixtures/model-cache/`](../fixtures/model-cache/), keyed by a hash of the policy text, the assistant's answer and the variant ID, plus the model and a prompt version. A live check whose texts haven't changed takes about 2 seconds instead of 8, and the recorded demo and `npm test` need no network and no key.
+
+### 9.1 How a read becomes a figure
+
+The model reads the policy page and the assistant's answer in two separate calls, so it can't blend them. Code then checks every value: each quote must be an exact passage of its own source, each number (10%, $250, 30 days) must appear in that field's own quotes, and a value needs at least one quote. Anything that fails goes back to the model once as a tool error, and what still fails is dropped as unknown.
+
+Code then compares the two reads field by field ([`server/reconcile.ts`](../server/reconcile.ts)). If both state a value and the values differ, the field becomes a disagreement: the card shows both quotes with their labels and computes nothing from either. Otherwise the policy wins where it speaks, and the assistant fills what the policy doesn't cover. [`server/cost.ts`](../server/cost.ts) does all the arithmetic.
+
+### 9.2 Golden test
+
+The hand-written Burrow and Garvee lines from stages 2 and 3 are now expected outputs in [`server/golden/expected.ts`](../server/golden/expected.ts). The test compares figures, conditions, fee rates and caps, the window, the exchange, final sale and which source each line quotes, and checks every quote against its source. It also checks that the model picks Burrow's Chenille swatch, which the store's search ranks below the Basketweave.
+
+One correction while converting: Burrow's policy says "The fee is always capped at $250, per returned item", so the with-box fee carries the cap too. It doesn't bind, so no figure changed.
+
+The first fresh runs missed three judgment calls:
+
+1. Burrow's policy read called the window start plain "delivery", although its own quote says "delivered per shipping carrier confirmation".
+2. One Burrow assistant read filed return shipping as "customer pays, amount unstated", which raised a false disagreement with the policy.
+3. One Garvee policy read called the return fee "none", which I assume came from the cancellation line "We will not impose any processing fee on you".
+
+A forced tool call gives Haiku no room to think, so I added a first `analysis` field to the tool. The model writes which passages apply and which it sets aside, then fills the values. I also added two general rules: a cancellation processing fee isn't a return fee, and a fee described as the return shipping charge means shipping is included in the fee.
+
+After that, fresh reads matched the golden lines 22 times in a row: 16 on the recorded texts and 6 against live Shopify. The swatch reads matched every time, and the model gave its reason ("the Performance Basketweave sample is a different weave").
+
+## 10. Generalization run - three more stores
+
+- Run with: `npx tsx scripts/check.ts <link> 14228 --record fixtures/generalization/<store>`, live, on 2026-11-15. Every call, page and the final card are in [`fixtures/generalization/`](../fixtures/generalization/). None of these stores is part of the demo.
+- Stores: three furniture sellers from Global Catalog that offer `ask_business`, picked for variety. Sundays sells one swatch per fabric, Rove Lab sells a swatch kit, and Slumberland is a traditional furniture retailer.
+
+| Store and product | To buy | Try it first | If you're wrong |
+|---|---|---|---|
+| Sundays, Get Together 3-Piece Modular Sofa, Cream Linen | FILLED: $3,800, free delivery | FILLED: $0 Cream Linen swatch, the exact fabric | FILLED, but one figure is WRONG (see 10.1) |
+| Rove Lab, M1 Boneless Sofa Sectional, Helium Cloud | Partly: $997 listed, the cart quoted no delivery | Empty: the store sells a kit, not this fabric's swatch | FILLED: $99 for any return, 100 days, a disagreement on return shipping |
+| Slumberland, Mahoney Loveseat, Chocolate | Partly: $489.99 listed, the cart quoted no delivery | Empty: no swatches, which is right | Unreadable |
+
+Rows filled: Sundays 3 of 3, Rove Lab 1 of 3 plus a partial door price, Slumberland 0 of 3 plus a partial door price.
+
+### 10.1 Extraction errors I found by reading the policies myself
+
+1. **Sundays, wrong figure.** The policy charges "A flat rate return shipping fee of $150" on every return, plus "a return re-packaging fee of $75" without the original packaging. So a return costs $150 with the box and $225 without. The card says $150 and $75, so the without-box return looks cheaper. Every quote was real, which is why the quote check couldn't catch it. The cause is my contract: one charge can be filed as a fee or as return shipping. The policy read filed the $150 as the with-box fee, and the assistant read filed it as return shipping, which also raised a false disagreement.
+   - **Proposed fix:** a rule that a charge called return shipping goes in `return_shipping` unless the fee itself is described as the shipping charge, plus a code check that flags any card where the without-box loss is lower than the with-box loss.
+2. **Rove Lab, over-reading.** The policy read called return shipping "free" because of "We will then send you a return shipping label". The policy never says the label is free. The assistant says the $99 fee covers return shipping. The card showed both quotes and computed nothing from either, so the buyer still sees the $99 fee. That's the right failure, but the policy read shouldn't have inferred "free".
+3. **Slumberland, missed term.** The assistant's answer says the store "offers a full refund if you’re unhappy with its size, shape, look, or fit within the first 5 days after taking possession". The model read the 5-day window correctly but didn't read "full refund" as no fee. With no cost line, the card turns unreadable and hides the window it does know. Two fixes are possible: treat a stated full refund as no fee, and show a known window even when costs are unknown.
+
+### 10.2 What else the run showed
+
+- **Swatch matching generalized well.** At Sundays the model picked "Swatch Cream Linen, LiveLife™ Fabric" and named the Cream Boucle swatch as a different fabric.
+- **Two of three carts quoted no delivery** with country and ZIP. Burrow and Garvee both did, so the "Price at your door" row is thinner than the demo suggests. The card says so instead of guessing.
+- **Slumberland's `refund_policy` link has no return terms.** It covers service, repairs and payment refunds. The assistant knew the 5-day rule from somewhere else.
+- **"This store lists no sample" is too strong for Rove Lab,** which does sell a swatch kit. Better copy for that case: "No sample of this exact fabric."
+- **Maiden Home, which I didn't run in full,** puts the fabric in the product title instead of an option, so the check has no fabric to match a swatch against.

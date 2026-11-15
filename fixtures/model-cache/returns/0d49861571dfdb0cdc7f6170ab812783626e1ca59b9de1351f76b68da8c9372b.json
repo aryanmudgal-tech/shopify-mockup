@@ -1,0 +1,139 @@
+{
+  "model": "claude-haiku-5-5",
+  "cached": false,
+  "policy": {
+    "source": "policy",
+    "terms": {
+      "window": {
+        "days": 100,
+        "starts": "delivery",
+        "quotes": [
+          {
+            "text": "Our return policy allows you 100 days from the date you receive your item to request a return.",
+            "source": "policy"
+          }
+        ]
+      },
+      "fees_by_condition": [
+        {
+          "condition": "any",
+          "fee": {
+            "type": "flat",
+            "percent": null,
+            "amount": 99,
+            "cap": null
+          },
+          "quotes": [
+            {
+              "text": "A $99 return fee will be deducted from your refund.",
+              "source": "policy"
+            }
+          ]
+        }
+      ],
+      "return_shipping": {
+        "type": "customer_pays_unstated",
+        "amount": null,
+        "quotes": [
+          {
+            "text": "We will then send you a return shipping label along with instructions on how and where to send your package.",
+            "source": "policy"
+          }
+        ]
+      },
+      "original_delivery_refunded": {
+        "value": null,
+        "quotes": []
+      },
+      "exchange": {
+        "free": null,
+        "count": null,
+        "needs_original_packaging": null,
+        "within_return_window": null,
+        "quotes": [
+          {
+            "text": "To get the item you want most quickly, return the original item and place a new order once your return is approved.",
+            "source": "policy"
+          }
+        ]
+      },
+      "final_sale": {
+        "value": null,
+        "quotes": []
+      }
+    },
+    "attempts": 1,
+    "dropped": [],
+    "error": null
+  },
+  "assistant": {
+    "source": "assistant",
+    "terms": {
+      "window": {
+        "days": 100,
+        "starts": "delivery",
+        "quotes": [
+          {
+            "text": "The return window is 100 days from delivery",
+            "source": "assistant"
+          }
+        ]
+      },
+      "fees_by_condition": [
+        {
+          "condition": "any",
+          "fee": {
+            "type": "flat",
+            "percent": null,
+            "amount": 99,
+            "cap": null
+          },
+          "quotes": [
+            {
+              "text": "the information supports a $99 return fee deducted from your refund",
+              "source": "assistant"
+            }
+          ]
+        }
+      ],
+      "return_shipping": {
+        "type": "included_in_fee",
+        "amount": null,
+        "quotes": [
+          {
+            "text": "the $99 fee is described as covering return shipping",
+            "source": "assistant"
+          }
+        ]
+      },
+      "original_delivery_refunded": {
+        "value": null,
+        "quotes": []
+      },
+      "exchange": {
+        "free": null,
+        "count": null,
+        "needs_original_packaging": null,
+        "within_return_window": null,
+        "quotes": [
+          {
+            "text": "Exchanges are handled by returning the original item and placing a new order once the return is approved.",
+            "source": "assistant"
+          }
+        ]
+      },
+      "final_sale": {
+        "value": null,
+        "quotes": [
+          {
+            "text": "The information does not say whether original delivery charges are refunded or whether this specific item is final sale",
+            "source": "assistant"
+          }
+        ]
+      }
+    },
+    "attempts": 1,
+    "dropped": [],
+    "error": null
+  }
+}

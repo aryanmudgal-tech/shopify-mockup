@@ -1,0 +1,2416 @@
+{
+  "fetched_at": "2026-11-15T21:24:43.173Z",
+  "endpoint": "rovelab-us.myshopify.com",
+  "tool": "search_catalog",
+  "args": {
+    "catalog": {
+      "query": "Helium Cloud swatch",
+      "pagination": {
+        "limit": 20
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"services\":{\"dev.ucp.shopping\":[]},\"capabilities\":{\"dev.ucp.shopping.checkout\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/checkout/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/checkout.json\"}],\"dev.ucp.shopping.fulfillment\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}},\"config\":{\"multi_destination\":[],\"method_combinations\":[[\"shipping\"]]}}],\"dev.ucp.shopping.buyer_consent\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json\",\"extends\":[\"dev.ucp.shopping.cart\",\"dev.ucp.shopping.checkout\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.discount\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/discount.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.cart\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/cart/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/cart.json\"}],\"dev.ucp.shopping.order\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/order/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/order.json\"}],\"dev.ucp.shopping.catalog.search\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json\"}],\"dev.ucp.shopping.catalog.lookup\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json\"}],\"dev.shopify.catalog\":[{\"version\":\"2026-08-25\",\"spec\":\"https://shopify.dev/docs/agents/catalog/storefront-catalog\",\"schema\":\"https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json\",\"extends\":[\"dev.ucp.shopping.catalog.search\",\"dev.ucp.shopping.catalog.lookup\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}]},\"payment_handlers\":{\"com.google.pay\":[{\"id\":\"gpay\",\"version\":\"2026-01-11\",\"spec\":\"https://pay.google.com/gp/p/ucp/2026-01-11/\",\"schema\":\"https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json\",\"config\":{\"api_version\":2,\"api_version_minor\":0,\"merchant_info\":{\"merchant_name\":\"Rove Lab™\",\"merchant_id\":\"16708973830884969730\",\"merchant_origin\":\"rovelab.com\",\"auth_jwt\":\"\"},\"allowed_payment_methods\":[{\"type\":\"CARD\",\"parameters\":{\"allowed_auth_methods\":[\"PAN_ONLY\",\"CRYPTOGRAM_3DS\"],\"allowed_card_networks\":[\"VISA\",\"MASTERCARD\",\"AMEX\",\"DISCOVER\",\"JCB\"],\"billing_address_required\":true,\"billing_address_parameters\":{\"format\":\"FULL\",\"phone_number_required\":true}},\"tokenization_specification\":{\"type\":\"PAYMENT_GATEWAY\",\"parameters\":{\"gateway\":\"shopify\",\"gatewayMerchantId\":\"65058504841\"}}}]}}],\"dev.shopify.card\":[{\"id\":\"shopify.card\",\"version\":\"2026-01-15\",\"spec\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md\",\"schema\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json\",\"config\":{\"payment_methods\":[{\"type\":\"card\",\"enabled_card_brands\":[\"visa\",\"master\",\"american_express\",\"discover\",\"diners_club\",\"elo\",\"jcb\",\"unionpay\"]}]}}],\"dev.shopify.shop_pay\":[{\"id\":\"shop_pay\",\"version\":\"2026-04-08\",\"spec\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md\",\"schema\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json\",\"config\":{\"shop_id\":\"65058504841\"}}]}},\"products\":[{\"id\":\"gid://shopify/Product/7845264720009\",\"title\":\"Free Swatches\",\"description\":{\"html\":\"Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision.\"},\"url\":\"https://rovelab.com/products/free-fabric-swatches\",\"handle\":\"free-fabric-swatches\",\"price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/43324525871241\",\"sku\":\"SW-LAB-001\",\"title\":\"CLASSIC SELECTION\",\"description\":{\"html\":\"Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision.\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Swatch Kit\",\"label\":\"CLASSIC SELECTION\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_CLASSIC_SELECTION.webp?v=1754940252\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/43324525871241:1\"},{\"id\":\"gid://shopify/ProductVariant/43324525838473\",\"sku\":\"SW-LAB-002\",\"title\":\"BOLD SELECTION\",\"description\":{\"html\":\"Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision.\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Swatch Kit\",\"label\":\"BOLD SELECTION\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_BOLD_SELECTION.webp?v=1754940265\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/43324525838473:1\"},{\"id\":\"gid://shopify/ProductVariant/44662406217865\",\"sku\":\"SW-LAB-003\",\"title\":\"SWATCH SELECTION\",\"description\":{\"html\":\"Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision.\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Swatch Kit\",\"label\":\"SWATCH SELECTION\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCHv3_c367c6f7-62a8-4564-9bf0-a1db9f01c056.webp?v=1758054458\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44662406217865:1\"},{\"id\":\"gid://shopify/ProductVariant/45945516425353\",\"sku\":\"SW-LAB-007\",\"title\":\"THE OUTDOOR SELECTION\",\"description\":{\"html\":\"Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision.\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Swatch Kit\",\"label\":\"THE OUTDOOR SELECTION\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_7_-_OUTDOOR_SELECTION_1.webp?v=1777322246\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45945516425353:1\"}],\"options\":[{\"name\":\"Swatch Kit\",\"values\":[{\"label\":\"CLASSIC SELECTION\"},{\"label\":\"BOLD SELECTION\"},{\"label\":\"SWATCH SELECTION\"},{\"label\":\"THE OUTDOOR SELECTION\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_CLASSIC_SELECTION.webp?v=1754940252\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-21-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"exclude-feed\",\"parent\",\"swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/328887533705\",\"handle\":\"all-collections\",\"title\":\"Collections\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/7844227121289\",\"title\":\"C8 Round Pouf Ottoman\",\"description\":{\"html\":\"The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort.\"},\"url\":\"https://rovelab.com/products/c8-round-pouf-ottoman\",\"handle\":\"c8-round-pouf-ottoman\",\"price_range\":{\"min\":{\"amount\":24700,\"currency\":\"USD\"},\"max\":{\"amount\":24700,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":54500,\"currency\":\"USD\"},\"max\":{\"amount\":54500,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/42935828086921\",\"sku\":\"XC8-006\",\"title\":\"Platinum Grey\",\"description\":{\"html\":\"The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":54500,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Platinum Grey\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Platinum_Grey_1_1.jpg?v=1724885042\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/42935828086921:1\"},{\"id\":\"gid://shopify/ProductVariant/42935828054153\",\"sku\":\"XC8-004\",\"title\":\"Helium Cloud\",\"description\":{\"html\":\"The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":54500,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Helium Cloud\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Helium_Cloud_1_1.jpg?v=1724885041\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/42935828054153:1\"},{\"id\":\"gid://shopify/ProductVariant/42935828119689\",\"sku\":\"XC8-007\",\"title\":\"Silicon Sand\",\"description\":{\"html\":\"The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":54500,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Silicon Sand\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Silicon_Sand_1_1.jpg?v=1724885042\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/42935828119689:1\"},{\"id\":\"gid://shopify/ProductVariant/42935828185225\",\"sku\":\"XC8-002\",\"title\":\"Copper Tan\",\"description\":{\"html\":\"The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":54500,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Copper Tan\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Copper_Tan_1_1.jpg?v=1724885042\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/42935828185225:1\"},{\"id\":\"gid://shopify/ProductVariant/42935828217993\",\"sku\":\"XC8-005\",\"title\":\"Krypton Green\",\"description\":{\"html\":\"The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":54500,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Krypton Green\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/c8-round-pouf-ottoman-krypton-green-front-profile.webp?v=1744726875\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/42935828217993:1\"},{\"id\":\"gid://shopify/ProductVariant/42935828250761\",\"sku\":\"XC8-001\",\"title\":\"Carbon Black\",\"description\":{\"html\":\"The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":54500,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Carbon Black\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Carbon_Black_1_1.jpg?v=1724885042\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/42935828250761:1\"}],\"options\":[{\"name\":\"Color\",\"values\":[{\"label\":\"Platinum Grey\"},{\"label\":\"Helium Cloud\"},{\"label\":\"Silicon Sand\"},{\"label\":\"Copper Tan\"},{\"label\":\"Krypton Green\"},{\"label\":\"Carbon Black\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Platinum_Grey_1_1.jpg?v=1724885042\",\"alt_text\":\"#color_platinum-grey\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-21-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"add-on\",\"C8\",\"NOREVIEW\",\"parent\",\"preorder\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/293542527113\",\"handle\":\"add-ons\",\"title\":\"Add-ons\",\"description\":{\"html\":\"Complete your space with sofa modules, lamps, and add-ons. Expand your sofa, add the finishing touches, and make your space feel even more like you.\"}},{\"id\":\"gid://shopify/Collection/300116607113\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly.\"}},{\"id\":\"gid://shopify/Collection/310915891337\",\"handle\":\"living-room-essentials\",\"title\":\"Living Room Essentials\",\"description\":{\"html\":\"Everything you need to create a stylish and functional living room setup.\"}},{\"id\":\"gid://shopify/Collection/310916251785\",\"handle\":\"business-waiting-areas\",\"title\":\"Business \\u0026 Waiting Areas\",\"description\":{\"html\":\"Ideal for offices, studios, lobbies or reception areas with stylish comfort.\"}},{\"id\":\"gid://shopify/Collection/310916513929\",\"handle\":\"the-best-price-of-the-year-is-already-live\",\"title\":\"The best price of the year!\",\"description\":{\"html\":\"BLACK FRIDAY IS ON! Prices won’t drop later. Stock won't wait either.\"}}]},{\"id\":\"gid://shopify/Product/8302277001353\",\"title\":\"R4 Sectional Sofa\",\"description\":{\"html\":\"The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort.\"},\"url\":\"https://rovelab.com/products/r4-sofa-sectional-better-than-clouds\",\"handle\":\"r4-sofa-sectional-better-than-clouds\",\"price_range\":{\"min\":{\"amount\":99700,\"currency\":\"USD\"},\"max\":{\"amount\":99700,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":209700,\"currency\":\"USD\"},\"max\":{\"amount\":209700,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/44804245225609\",\"sku\":\"XR4B-001\",\"title\":\"Helium Cloud\",\"description\":{\"html\":\"The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort.\"},\"price\":{\"amount\":99700,\"currency\":\"USD\"},\"list_price\":{\"amount\":209700,\"currency\":\"USD\"},\"availability\":{\"available\":false},\"options\":[{\"name\":\"Color\",\"label\":\"Helium Cloud\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Helium_Cloud_152_e9146b80-6945-4917-b686-f71ee031b563.webp?v=1761243866\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804245225609:1\"},{\"id\":\"gid://shopify/ProductVariant/44804245258377\",\"sku\":\"XR4B-002\",\"title\":\"Krypton Green\",\"description\":{\"html\":\"The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort.\"},\"price\":{\"amount\":99700,\"currency\":\"USD\"},\"list_price\":{\"amount\":209700,\"currency\":\"USD\"},\"availability\":{\"available\":false},\"options\":[{\"name\":\"Color\",\"label\":\"Krypton Green\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Krypton_Green_153_9a9ebed7-0ad9-4954-98ab-c988f98fd692.webp?v=1761243866\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804245258377:1\"},{\"id\":\"gid://shopify/ProductVariant/44804245291145\",\"sku\":\"XR4B-003\",\"title\":\"Silicon Sand\",\"description\":{\"html\":\"The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort.\"},\"price\":{\"amount\":99700,\"currency\":\"USD\"},\"list_price\":{\"amount\":209700,\"currency\":\"USD\"},\"availability\":{\"available\":false},\"options\":[{\"name\":\"Color\",\"label\":\"Silicon Sand\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Silicon_Sand_154_2fb8d3a9-a8de-42fc-bf24-7377ec9d1ee3.webp?v=1761243866\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804245291145:1\"},{\"id\":\"gid://shopify/ProductVariant/44804245323913\",\"sku\":\"XR4B-004\",\"title\":\"Comet Ivory\",\"description\":{\"html\":\"The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort.\"},\"price\":{\"amount\":99700,\"currency\":\"USD\"},\"list_price\":{\"amount\":209700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Comet Ivory\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Silkstone_155_faa903da-2d5e-4b43-b71e-dd8fed5524a1.webp?v=1761243866\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804245323913:1\"},{\"id\":\"gid://shopify/ProductVariant/44804245356681\",\"sku\":\"XR4B-005\",\"title\":\"Lunar Dune\",\"description\":{\"html\":\"The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort.\"},\"price\":{\"amount\":99700,\"currency\":\"USD\"},\"list_price\":{\"amount\":209700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Lunar Dune\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Clay_151_81631eaf-585c-4171-8c04-eba2b77baca7.webp?v=1761243866\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804245356681:1\"}],\"options\":[{\"name\":\"Color\",\"values\":[{\"label\":\"Helium Cloud\"},{\"label\":\"Krypton Green\"},{\"label\":\"Silicon Sand\"},{\"label\":\"Comet Ivory\"},{\"label\":\"Lunar Dune\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Helium_Cloud_152_e9146b80-6945-4917-b686-f71ee031b563.webp?v=1761243866\",\"alt_text\":\"#color_helium-cloud\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-22-6\",\"taxonomy\":\"shopify\"}],\"tags\":[\"ltl-carrier\",\"parent\",\"pillow-included\",\"r4\",\"sectional\",\"sofa\",\"Valentine's Day Deal\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/300116607113\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly.\"}},{\"id\":\"gid://shopify/Collection/302404665481\",\"handle\":\"defranco\",\"title\":\"DeFranco\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/310668099721\",\"handle\":\"klaviyo-coupon\",\"title\":\"Klaviyo coupon\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/310915694729\",\"handle\":\"large-open-spaces\",\"title\":\"Large \\u0026 Open Spaces\",\"description\":{\"html\":\"Got space? Go bold. Modular seating made to elevate your room — your way.\"}},{\"id\":\"gid://shopify/Collection/310915891337\",\"handle\":\"living-room-essentials\",\"title\":\"Living Room Essentials\",\"description\":{\"html\":\"Everything you need to create a stylish and functional living room setup.\"}}]},{\"id\":\"gid://shopify/Product/8302277066889\",\"title\":\"R4 Loveseat Sofa\",\"description\":{\"html\":\"The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights.\"},\"url\":\"https://rovelab.com/products/r4-loveseat-sofa-better-than-clouds\",\"handle\":\"r4-loveseat-sofa-better-than-clouds\",\"price_range\":{\"min\":{\"amount\":63700,\"currency\":\"USD\"},\"max\":{\"amount\":63700,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":159700,\"currency\":\"USD\"},\"max\":{\"amount\":159700,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/44804245553289\",\"sku\":\"XR4D-001\",\"title\":\"Helium Cloud\",\"description\":{\"html\":\"The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights.\"},\"price\":{\"amount\":63700,\"currency\":\"USD\"},\"list_price\":{\"amount\":159700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Helium Cloud\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Helium_Cloud_12_08103e2c-2630-4948-9e94-a4073deb0ea6.webp?v=1761243868\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804245553289:1\"},{\"id\":\"gid://shopify/ProductVariant/44804245586057\",\"sku\":\"XR4D-002\",\"title\":\"Krypton Green\",\"description\":{\"html\":\"The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights.\"},\"price\":{\"amount\":63700,\"currency\":\"USD\"},\"list_price\":{\"amount\":159700,\"currency\":\"USD\"},\"availability\":{\"available\":false},\"options\":[{\"name\":\"Color\",\"label\":\"Krypton Green\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Krypton_Green_13_4d5444b3-0c0f-43eb-83ff-9cdb186594cd.webp?v=1761243869\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804245586057:1\"},{\"id\":\"gid://shopify/ProductVariant/44804245618825\",\"sku\":\"XR4D-003\",\"title\":\"Silicon Sand\",\"description\":{\"html\":\"The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights.\"},\"price\":{\"amount\":63700,\"currency\":\"USD\"},\"list_price\":{\"amount\":159700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Silicon Sand\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Silicon_Sand_14_789e8b00-18fe-4e05-901e-3df5bf0b77df.webp?v=1761243868\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804245618825:1\"},{\"id\":\"gid://shopify/ProductVariant/44804245651593\",\"sku\":\"XR4D-004\",\"title\":\"Comet Ivory\",\"description\":{\"html\":\"The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights.\"},\"price\":{\"amount\":63700,\"currency\":\"USD\"},\"list_price\":{\"amount\":159700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Comet Ivory\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Silkstone_15_536ba989-4b87-4e88-95a3-e6d8a74f9031.webp?v=1761243869\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804245651593:1\"},{\"id\":\"gid://shopify/ProductVariant/44804245684361\",\"sku\":\"XR4D-005\",\"title\":\"Lunar Dune\",\"description\":{\"html\":\"The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights.\"},\"price\":{\"amount\":63700,\"currency\":\"USD\"},\"list_price\":{\"amount\":159700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Lunar Dune\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Clay_11_959ece80-f78c-453b-8cb0-012976f9c824.webp?v=1761243868\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804245684361:1\"}],\"options\":[{\"name\":\"Color\",\"values\":[{\"label\":\"Helium Cloud\"},{\"label\":\"Krypton Green\"},{\"label\":\"Silicon Sand\"},{\"label\":\"Comet Ivory\"},{\"label\":\"Lunar Dune\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Krypton_Green_13_4d5444b3-0c0f-43eb-83ff-9cdb186594cd.webp?v=1761243869\",\"alt_text\":\"#color_krypton-green\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-22-6\",\"taxonomy\":\"shopify\"}],\"tags\":[\"loveseat\",\"ltl-carrier\",\"parent\",\"pillow-included\",\"r4\",\"sofa\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/300116607113\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly.\"}},{\"id\":\"gid://shopify/Collection/302404665481\",\"handle\":\"defranco\",\"title\":\"DeFranco\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/310668099721\",\"handle\":\"klaviyo-coupon\",\"title\":\"Klaviyo coupon\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/310915891337\",\"handle\":\"living-room-essentials\",\"title\":\"Living Room Essentials\",\"description\":{\"html\":\"Everything you need to create a stylish and functional living room setup.\"}},{\"id\":\"gid://shopify/Collection/310916513929\",\"handle\":\"the-best-price-of-the-year-is-already-live\",\"title\":\"The best price of the year!\",\"description\":{\"html\":\"BLACK FRIDAY IS ON! Prices won’t drop later. Stock won't wait either.\"}}]},{\"id\":\"gid://shopify/Product/8302277165193\",\"title\":\"R4 Ottoman Sofa Seat\",\"description\":{\"html\":\"Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration.\"},\"url\":\"https://rovelab.com/products/r4-ottoman-sofa-seat-better-than-clouds\",\"handle\":\"r4-ottoman-sofa-seat-better-than-clouds\",\"price_range\":{\"min\":{\"amount\":24700,\"currency\":\"USD\"},\"max\":{\"amount\":24700,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":49700,\"currency\":\"USD\"},\"max\":{\"amount\":49700,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/44804246306953\",\"sku\":\"XR4OT-001\",\"title\":\"Helium Cloud\",\"description\":{\"html\":\"Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":49700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Helium Cloud\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Left_Helium_Cloud_37_c9f1fa7e-f282-4185-9b80-111dd9250635.webp?v=1761243872\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804246306953:1\"},{\"id\":\"gid://shopify/ProductVariant/44804246339721\",\"sku\":\"XR4OT-002\",\"title\":\"Krypton Green\",\"description\":{\"html\":\"Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":49700,\"currency\":\"USD\"},\"availability\":{\"available\":false},\"options\":[{\"name\":\"Color\",\"label\":\"Krypton Green\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Left_Krypton_Green_38_1690f495-ca9c-404d-bdaa-e4e52e4d0b74.webp?v=1761243873\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804246339721:1\"},{\"id\":\"gid://shopify/ProductVariant/44804246372489\",\"sku\":\"XR4OT-003\",\"title\":\"Silicon Sand\",\"description\":{\"html\":\"Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":49700,\"currency\":\"USD\"},\"availability\":{\"available\":false},\"options\":[{\"name\":\"Color\",\"label\":\"Silicon Sand\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Left_Silicon_Sand_39_6c8a797a-a6cf-467a-96b4-9ba2d5841e37.webp?v=1761243873\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804246372489:1\"},{\"id\":\"gid://shopify/ProductVariant/44804246405257\",\"sku\":\"XR4OT-004\",\"title\":\"Comet Ivory\",\"description\":{\"html\":\"Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":49700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Comet Ivory\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Left_Silkstone_40_8d001d2a-c00c-4d49-a896-5dbee78f4bf7.webp?v=1761243872\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804246405257:1\"},{\"id\":\"gid://shopify/ProductVariant/44804246438025\",\"sku\":\"XR4OT-005\",\"title\":\"Lunar Dune\",\"description\":{\"html\":\"Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration.\"},\"price\":{\"amount\":24700,\"currency\":\"USD\"},\"list_price\":{\"amount\":49700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Lunar Dune\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Left_Clay_36_23601e60-e422-4ee4-a821-1718f4ea13b0.webp?v=1761243873\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804246438025:1\"}],\"options\":[{\"name\":\"Color\",\"values\":[{\"label\":\"Helium Cloud\"},{\"label\":\"Krypton Green\"},{\"label\":\"Silicon Sand\"},{\"label\":\"Comet Ivory\"},{\"label\":\"Lunar Dune\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Front_Silicon_Sand_34_6831e3cb-cb02-465d-bf08-7b56e291575c.webp?v=1761243872\",\"alt_text\":\"#color_silicon-sand\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-14\",\"taxonomy\":\"shopify\"}],\"tags\":[\"add-on\",\"module\",\"NOREVIEW\",\"ottoman\",\"parent-child\",\"r4\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/293542527113\",\"handle\":\"add-ons\",\"title\":\"Add-ons\",\"description\":{\"html\":\"Complete your space with sofa modules, lamps, and add-ons. Expand your sofa, add the finishing touches, and make your space feel even more like you.\"}},{\"id\":\"gid://shopify/Collection/300116607113\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly.\"}},{\"id\":\"gid://shopify/Collection/310668099721\",\"handle\":\"klaviyo-coupon\",\"title\":\"Klaviyo coupon\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/310711582857\",\"handle\":\"r4-add-ons\",\"title\":\"R4 Add-ons\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/310915694729\",\"handle\":\"large-open-spaces\",\"title\":\"Large \\u0026 Open Spaces\",\"description\":{\"html\":\"Got space? Go bold. Modular seating made to elevate your room — your way.\"}}]},{\"id\":\"gid://shopify/Product/8302277132425\",\"title\":\"R4 Armless Sofa Seat\",\"description\":{\"html\":\"The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile.\"},\"url\":\"https://rovelab.com/products/r4-armless-sofa-seat-better-than-clouds\",\"handle\":\"r4-armless-sofa-seat-better-than-clouds\",\"price_range\":{\"min\":{\"amount\":34700,\"currency\":\"USD\"},\"max\":{\"amount\":34700,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":59700,\"currency\":\"USD\"},\"max\":{\"amount\":59700,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/44804246143113\",\"sku\":\"XR4NA-001\",\"title\":\"Helium Cloud\",\"description\":{\"html\":\"The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile.\"},\"price\":{\"amount\":34700,\"currency\":\"USD\"},\"list_price\":{\"amount\":59700,\"currency\":\"USD\"},\"availability\":{\"available\":false},\"options\":[{\"name\":\"Color\",\"label\":\"Helium Cloud\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Helium_Cloud_52_3122e88e-82cf-453b-830d-45d46d98c038.webp?v=1761243871\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804246143113:1\"},{\"id\":\"gid://shopify/ProductVariant/44804246175881\",\"sku\":\"XR4NA-002\",\"title\":\"Krypton Green\",\"description\":{\"html\":\"The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile.\"},\"price\":{\"amount\":34700,\"currency\":\"USD\"},\"list_price\":{\"amount\":59700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Krypton Green\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Krypton_Green_53_2207bcc1-ccb4-48a6-b17c-67c05c621b16.webp?v=1761243871\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804246175881:1\"},{\"id\":\"gid://shopify/ProductVariant/44804246208649\",\"sku\":\"XR4NA-003\",\"title\":\"Silicon Sand\",\"description\":{\"html\":\"The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile.\"},\"price\":{\"amount\":34700,\"currency\":\"USD\"},\"list_price\":{\"amount\":59700,\"currency\":\"USD\"},\"availability\":{\"available\":false},\"options\":[{\"name\":\"Color\",\"label\":\"Silicon Sand\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Silicon_Sand_54_597954be-fa05-429d-acec-90bbc4618074.webp?v=1761243871\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804246208649:1\"},{\"id\":\"gid://shopify/ProductVariant/44804246241417\",\"sku\":\"XR4NA-004\",\"title\":\"Comet Ivory\",\"description\":{\"html\":\"The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile.\"},\"price\":{\"amount\":34700,\"currency\":\"USD\"},\"list_price\":{\"amount\":59700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Comet Ivory\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Silkstone_55_569eff38-3039-461b-b3b2-f4a6d6d90101.webp?v=1761243871\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804246241417:1\"},{\"id\":\"gid://shopify/ProductVariant/44804246274185\",\"sku\":\"XR4NA-005\",\"title\":\"Lunar Dune\",\"description\":{\"html\":\"The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile.\"},\"price\":{\"amount\":34700,\"currency\":\"USD\"},\"list_price\":{\"amount\":59700,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Lunar Dune\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Clay_51_c307012b-df04-41ee-a8f5-bf65ac194183.webp?v=1761243871\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44804246274185:1\"}],\"options\":[{\"name\":\"Color\",\"values\":[{\"label\":\"Helium Cloud\"},{\"label\":\"Krypton Green\"},{\"label\":\"Silicon Sand\"},{\"label\":\"Comet Ivory\"},{\"label\":\"Lunar Dune\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Silkstone_55_569eff38-3039-461b-b3b2-f4a6d6d90101.webp?v=1761243871\",\"alt_text\":\"#color_comet-ivory\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-21-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"add-on\",\"armless\",\"module\",\"parent-child\",\"r4\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/293542527113\",\"handle\":\"add-ons\",\"title\":\"Add-ons\",\"description\":{\"html\":\"Complete your space with sofa modules, lamps, and add-ons. Expand your sofa, add the finishing touches, and make your space feel even more like you.\"}},{\"id\":\"gid://shopify/Collection/300116607113\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly.\"}},{\"id\":\"gid://shopify/Collection/310668099721\",\"handle\":\"klaviyo-coupon\",\"title\":\"Klaviyo coupon\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/310711582857\",\"handle\":\"r4-add-ons\",\"title\":\"R4 Add-ons\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/310915694729\",\"handle\":\"large-open-spaces\",\"title\":\"Large \\u0026 Open Spaces\",\"description\":{\"html\":\"Got space? Go bold. Modular seating made to elevate your room — your way.\"}}]},{\"id\":\"gid://shopify/Product/8401159487625\",\"title\":\"M1 Square Pillow Large\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"url\":\"https://rovelab.com/products/m1-square-pillow-large\",\"handle\":\"m1-square-pillow-large\",\"price_range\":{\"min\":{\"amount\":4900,\"currency\":\"USD\"},\"max\":{\"amount\":6900,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":9800,\"currency\":\"USD\"},\"max\":{\"amount\":9800,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/45099464589449\",\"title\":\"Helium Cloud / 1 Pillow\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"price\":{\"amount\":4900,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Helium Cloud\"},{\"name\":\"Bundle Quantity\",\"label\":\"1 Pillow\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Helium-Cloud_1_8dc44cc4-a083-4933-b46d-137c796370db.jpg?v=1766588444\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45099464589449:1\"},{\"id\":\"gid://shopify/ProductVariant/45099464327305\",\"title\":\"Platinum Grey / 1 Pillow\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"price\":{\"amount\":4900,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Platinum Grey\"},{\"name\":\"Bundle Quantity\",\"label\":\"1 Pillow\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Platinum-Grey_1_fae8e9d8-5470-4207-b203-23d97281bcde.jpg?v=1766588444\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45099464327305:1\"},{\"id\":\"gid://shopify/ProductVariant/45099464360073\",\"title\":\"Silicon Sand / 1 Pillow\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"price\":{\"amount\":4900,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Silicon Sand\"},{\"name\":\"Bundle Quantity\",\"label\":\"1 Pillow\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Silicon-Sand_1_ad23c14a-837d-4f91-9c03-c614881f4f31.jpg?v=1766588444\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45099464360073:1\"},{\"id\":\"gid://shopify/ProductVariant/45099464392841\",\"title\":\"Copper Tan / 1 Pillow\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"price\":{\"amount\":4900,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Copper Tan\"},{\"name\":\"Bundle Quantity\",\"label\":\"1 Pillow\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Copper-Tan_1_d072441d-5d59-458c-98f0-1a6d01784133.jpg?v=1766588444\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45099464392841:1\"},{\"id\":\"gid://shopify/ProductVariant/45099464425609\",\"title\":\"Krypton Green / 1 Pillow\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"price\":{\"amount\":4900,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Krypton Green\"},{\"name\":\"Bundle Quantity\",\"label\":\"1 Pillow\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/m1-modular-square-pillow-krypton-green-front-view_fd0358bf-5766-4d7d-a8b3-b9a7a243f7ac.webp?v=1766588444\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45099464425609:1\"},{\"id\":\"gid://shopify/ProductVariant/45099464458377\",\"title\":\"Carbon Black / 1 Pillow\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"price\":{\"amount\":4900,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Carbon Black\"},{\"name\":\"Bundle Quantity\",\"label\":\"1 Pillow\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Carbon-Black_1_85fbe4fa-54c0-441a-acde-8b2b9faefe86.jpg?v=1766588443\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45099464458377:1\"},{\"id\":\"gid://shopify/ProductVariant/45099464491145\",\"title\":\"Hydrogen Blue / 1 Pillow\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"price\":{\"amount\":4900,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Hydrogen Blue\"},{\"name\":\"Bundle Quantity\",\"label\":\"1 Pillow\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Hydrogen-Blue_1_768be1ff-40c1-4cad-96f1-61bbb8f70695.jpg?v=1766588444\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45099464491145:1\"},{\"id\":\"gid://shopify/ProductVariant/45099464523913\",\"title\":\"Lithium Lavender / 1 Pillow\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"price\":{\"amount\":4900,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Lithium Lavender\"},{\"name\":\"Bundle Quantity\",\"label\":\"1 Pillow\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Lithium-Lavender_1_6084416e-54b3-4ab9-8623-b675655bfab0.jpg?v=1766588444\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45099464523913:1\"},{\"id\":\"gid://shopify/ProductVariant/45099464556681\",\"title\":\"Nitrogen Sky Blue / 1 Pillow\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"price\":{\"amount\":4900,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Nitrogen Sky Blue\"},{\"name\":\"Bundle Quantity\",\"label\":\"1 Pillow\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Nitrogen-Sky-Blue_1_b12d416d-8426-4dbc-bf88-a2f3e4a92720.jpg?v=1766588444\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45099464556681:1\"},{\"id\":\"gid://shopify/ProductVariant/45099464622217\",\"title\":\"Beryllium Blush / 1 Pillow\",\"description\":{\"html\":\"Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it.\"},\"price\":{\"amount\":4900,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Beryllium Blush\"},{\"name\":\"Bundle Quantity\",\"label\":\"1 Pillow\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Beryllium-Blush_1_e512ee57-b3c1-42a9-a89c-267556e94489.jpg?v=1766588444\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45099464622217:1\"}],\"options\":[{\"name\":\"Color\",\"values\":[{\"label\":\"Helium Cloud\"},{\"label\":\"Platinum Grey\"},{\"label\":\"Silicon Sand\"},{\"label\":\"Copper Tan\"},{\"label\":\"Krypton Green\"},{\"label\":\"Carbon Black\"},{\"label\":\"Hydrogen Blue\"},{\"label\":\"Lithium Lavender\"},{\"label\":\"Nitrogen Sky Blue\"},{\"label\":\"Beryllium Blush\"}]},{\"name\":\"Bundle Quantity\",\"values\":[{\"label\":\"1 Pillow\"},{\"label\":\"2 Pillows\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/m1-modular-square-pillow-krypton-green-front-view_fd0358bf-5766-4d7d-a8b3-b9a7a243f7ac.webp?v=1766588444\",\"alt_text\":\"#color_krypton-green_1-pillow\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/hg-3-64\",\"taxonomy\":\"shopify\"}],\"tags\":[\"addons\",\"bundle\",\"decor\",\"exclude-feed\",\"m1\",\"NOREVIEW\",\"parent\",\"pillow\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/293542527113\",\"handle\":\"add-ons\",\"title\":\"Add-ons\",\"description\":{\"html\":\"Complete your space with sofa modules, lamps, and add-ons. Expand your sofa, add the finishing touches, and make your space feel even more like you.\"}},{\"id\":\"gid://shopify/Collection/299872354441\",\"handle\":\"m1-add-ons\",\"title\":\"M1 Add-ons\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/300116607113\",\"handle\":\"all\",\"title\":\"All\",\"description\":{\"html\":\"Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly.\"}},{\"id\":\"gid://shopify/Collection/310915891337\",\"handle\":\"living-room-essentials\",\"title\":\"Living Room Essentials\",\"description\":{\"html\":\"Everything you need to create a stylish and functional living room setup.\"}},{\"id\":\"gid://shopify/Collection/310916251785\",\"handle\":\"business-waiting-areas\",\"title\":\"Business \\u0026 Waiting Areas\",\"description\":{\"html\":\"Ideal for offices, studios, lobbies or reception areas with stylish comfort.\"}}]}],\"pagination\":{\"has_next_page\":false},\"messages\":[]}"
+      }
+    ],
+    "isError": false,
+    "structuredContent": {
+      "ucp": {
+        "version": "2026-08-25",
+        "status": "success",
+        "services": {
+          "dev.ucp.shopping": []
+        },
+        "capabilities": {
+          "dev.ucp.shopping.checkout": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/checkout/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/checkout.json"
+            }
+          ],
+          "dev.ucp.shopping.fulfillment": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json",
+              "extends": [
+                "dev.ucp.shopping.checkout",
+                "dev.ucp.shopping.cart"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              },
+              "config": {
+                "multi_destination": [],
+                "method_combinations": [
+                  [
+                    "shipping"
+                  ]
+                ]
+              }
+            }
+          ],
+          "dev.ucp.shopping.buyer_consent": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json",
+              "extends": [
+                "dev.ucp.shopping.cart",
+                "dev.ucp.shopping.checkout"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ],
+          "dev.ucp.shopping.discount": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/discount.json",
+              "extends": [
+                "dev.ucp.shopping.checkout",
+                "dev.ucp.shopping.cart"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ],
+          "dev.ucp.shopping.cart": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/cart/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/cart.json"
+            }
+          ],
+          "dev.ucp.shopping.order": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/order/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/order.json"
+            }
+          ],
+          "dev.ucp.shopping.catalog.search": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+            }
+          ],
+          "dev.ucp.shopping.catalog.lookup": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+            }
+          ],
+          "dev.shopify.catalog": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://shopify.dev/docs/agents/catalog/storefront-catalog",
+              "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json",
+              "extends": [
+                "dev.ucp.shopping.catalog.search",
+                "dev.ucp.shopping.catalog.lookup"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ]
+        },
+        "payment_handlers": {
+          "com.google.pay": [
+            {
+              "id": "gpay",
+              "version": "2026-01-11",
+              "spec": "https://pay.google.com/gp/p/ucp/2026-01-11/",
+              "schema": "https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json",
+              "config": {
+                "api_version": 2,
+                "api_version_minor": 0,
+                "merchant_info": {
+                  "merchant_name": "Rove Lab™",
+                  "merchant_id": "16708973830884969730",
+                  "merchant_origin": "rovelab.com",
+                  "auth_jwt": ""
+                },
+                "allowed_payment_methods": [
+                  {
+                    "type": "CARD",
+                    "parameters": {
+                      "allowed_auth_methods": [
+                        "PAN_ONLY",
+                        "CRYPTOGRAM_3DS"
+                      ],
+                      "allowed_card_networks": [
+                        "VISA",
+                        "MASTERCARD",
+                        "AMEX",
+                        "DISCOVER",
+                        "JCB"
+                      ],
+                      "billing_address_required": true,
+                      "billing_address_parameters": {
+                        "format": "FULL",
+                        "phone_number_required": true
+                      }
+                    },
+                    "tokenization_specification": {
+                      "type": "PAYMENT_GATEWAY",
+                      "parameters": {
+                        "gateway": "shopify",
+                        "gatewayMerchantId": "65058504841"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "dev.shopify.card": [
+            {
+              "id": "shopify.card",
+              "version": "2026-01-15",
+              "spec": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md",
+              "schema": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json",
+              "config": {
+                "payment_methods": [
+                  {
+                    "type": "card",
+                    "enabled_card_brands": [
+                      "visa",
+                      "master",
+                      "american_express",
+                      "discover",
+                      "diners_club",
+                      "elo",
+                      "jcb",
+                      "unionpay"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "dev.shopify.shop_pay": [
+            {
+              "id": "shop_pay",
+              "version": "2026-04-08",
+              "spec": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md",
+              "schema": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json",
+              "config": {
+                "shop_id": "65058504841"
+              }
+            }
+          ]
+        }
+      },
+      "products": [
+        {
+          "id": "gid://shopify/Product/7845264720009",
+          "title": "Free Swatches",
+          "description": {
+            "html": "Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision."
+          },
+          "url": "https://rovelab.com/products/free-fabric-swatches",
+          "handle": "free-fabric-swatches",
+          "price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/43324525871241",
+              "sku": "SW-LAB-001",
+              "title": "CLASSIC SELECTION",
+              "description": {
+                "html": "Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision."
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Swatch Kit",
+                  "label": "CLASSIC SELECTION"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_CLASSIC_SELECTION.webp?v=1754940252"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/43324525871241:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/43324525838473",
+              "sku": "SW-LAB-002",
+              "title": "BOLD SELECTION",
+              "description": {
+                "html": "Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision."
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Swatch Kit",
+                  "label": "BOLD SELECTION"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_BOLD_SELECTION.webp?v=1754940265"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/43324525838473:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44662406217865",
+              "sku": "SW-LAB-003",
+              "title": "SWATCH SELECTION",
+              "description": {
+                "html": "Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision."
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Swatch Kit",
+                  "label": "SWATCH SELECTION"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCHv3_c367c6f7-62a8-4564-9bf0-a1db9f01c056.webp?v=1758054458"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44662406217865:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45945516425353",
+              "sku": "SW-LAB-007",
+              "title": "THE OUTDOOR SELECTION",
+              "description": {
+                "html": "Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision."
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Swatch Kit",
+                  "label": "THE OUTDOOR SELECTION"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_7_-_OUTDOOR_SELECTION_1.webp?v=1777322246"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45945516425353:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Swatch Kit",
+              "values": [
+                {
+                  "label": "CLASSIC SELECTION"
+                },
+                {
+                  "label": "BOLD SELECTION"
+                },
+                {
+                  "label": "SWATCH SELECTION"
+                },
+                {
+                  "label": "THE OUTDOOR SELECTION"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_CLASSIC_SELECTION.webp?v=1754940252"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-21-2",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "exclude-feed",
+            "parent",
+            "swatch"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/328887533705",
+              "handle": "all-collections",
+              "title": "Collections",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/7844227121289",
+          "title": "C8 Round Pouf Ottoman",
+          "description": {
+            "html": "The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort."
+          },
+          "url": "https://rovelab.com/products/c8-round-pouf-ottoman",
+          "handle": "c8-round-pouf-ottoman",
+          "price_range": {
+            "min": {
+              "amount": 24700,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 24700,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 54500,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 54500,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/42935828086921",
+              "sku": "XC8-006",
+              "title": "Platinum Grey",
+              "description": {
+                "html": "The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 54500,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Platinum Grey"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Platinum_Grey_1_1.jpg?v=1724885042"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/42935828086921:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/42935828054153",
+              "sku": "XC8-004",
+              "title": "Helium Cloud",
+              "description": {
+                "html": "The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 54500,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Helium Cloud"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Helium_Cloud_1_1.jpg?v=1724885041"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/42935828054153:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/42935828119689",
+              "sku": "XC8-007",
+              "title": "Silicon Sand",
+              "description": {
+                "html": "The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 54500,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Silicon Sand"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Silicon_Sand_1_1.jpg?v=1724885042"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/42935828119689:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/42935828185225",
+              "sku": "XC8-002",
+              "title": "Copper Tan",
+              "description": {
+                "html": "The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 54500,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Copper Tan"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Copper_Tan_1_1.jpg?v=1724885042"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/42935828185225:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/42935828217993",
+              "sku": "XC8-005",
+              "title": "Krypton Green",
+              "description": {
+                "html": "The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 54500,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Krypton Green"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/c8-round-pouf-ottoman-krypton-green-front-profile.webp?v=1744726875"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/42935828217993:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/42935828250761",
+              "sku": "XC8-001",
+              "title": "Carbon Black",
+              "description": {
+                "html": "The C8 Round Pouf Ottoman is the perfect complement to your modular sofa setup. Offering versatile functionality, it serves as extra seating, a comfortable footrest, or a stylish accent piece. Its compact design fits seamlessly into small spaces without compromising on comfort."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 54500,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Carbon Black"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Carbon_Black_1_1.jpg?v=1724885042"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/42935828250761:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "values": [
+                {
+                  "label": "Platinum Grey"
+                },
+                {
+                  "label": "Helium Cloud"
+                },
+                {
+                  "label": "Silicon Sand"
+                },
+                {
+                  "label": "Copper Tan"
+                },
+                {
+                  "label": "Krypton Green"
+                },
+                {
+                  "label": "Carbon Black"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/C8_Round_Pouf_Ottoman_PW_Platinum_Grey_1_1.jpg?v=1724885042",
+              "alt_text": "#color_platinum-grey"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-21-2",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "add-on",
+            "C8",
+            "NOREVIEW",
+            "parent",
+            "preorder"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/293542527113",
+              "handle": "add-ons",
+              "title": "Add-ons",
+              "description": {
+                "html": "Complete your space with sofa modules, lamps, and add-ons. Expand your sofa, add the finishing touches, and make your space feel even more like you."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/300116607113",
+              "handle": "all",
+              "title": "All",
+              "description": {
+                "html": "Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310915891337",
+              "handle": "living-room-essentials",
+              "title": "Living Room Essentials",
+              "description": {
+                "html": "Everything you need to create a stylish and functional living room setup."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310916251785",
+              "handle": "business-waiting-areas",
+              "title": "Business & Waiting Areas",
+              "description": {
+                "html": "Ideal for offices, studios, lobbies or reception areas with stylish comfort."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310916513929",
+              "handle": "the-best-price-of-the-year-is-already-live",
+              "title": "The best price of the year!",
+              "description": {
+                "html": "BLACK FRIDAY IS ON! Prices won’t drop later. Stock won't wait either."
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/8302277001353",
+          "title": "R4 Sectional Sofa",
+          "description": {
+            "html": "The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort."
+          },
+          "url": "https://rovelab.com/products/r4-sofa-sectional-better-than-clouds",
+          "handle": "r4-sofa-sectional-better-than-clouds",
+          "price_range": {
+            "min": {
+              "amount": 99700,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 99700,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 209700,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 209700,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/44804245225609",
+              "sku": "XR4B-001",
+              "title": "Helium Cloud",
+              "description": {
+                "html": "The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort."
+              },
+              "price": {
+                "amount": 99700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 209700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": false
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Helium Cloud"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Helium_Cloud_152_e9146b80-6945-4917-b686-f71ee031b563.webp?v=1761243866"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804245225609:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804245258377",
+              "sku": "XR4B-002",
+              "title": "Krypton Green",
+              "description": {
+                "html": "The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort."
+              },
+              "price": {
+                "amount": 99700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 209700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": false
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Krypton Green"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Krypton_Green_153_9a9ebed7-0ad9-4954-98ab-c988f98fd692.webp?v=1761243866"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804245258377:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804245291145",
+              "sku": "XR4B-003",
+              "title": "Silicon Sand",
+              "description": {
+                "html": "The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort."
+              },
+              "price": {
+                "amount": 99700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 209700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": false
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Silicon Sand"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Silicon_Sand_154_2fb8d3a9-a8de-42fc-bf24-7377ec9d1ee3.webp?v=1761243866"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804245291145:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804245323913",
+              "sku": "XR4B-004",
+              "title": "Comet Ivory",
+              "description": {
+                "html": "The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort."
+              },
+              "price": {
+                "amount": 99700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 209700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Comet Ivory"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Silkstone_155_faa903da-2d5e-4b43-b71e-dd8fed5524a1.webp?v=1761243866"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804245323913:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804245356681",
+              "sku": "XR4B-005",
+              "title": "Lunar Dune",
+              "description": {
+                "html": "The R4 Sectional Sofa wraps you in cloud-like comfort with SmartFoam™ technology designed for guilt-free relaxation. Its modular design adapts to any space, making it easy to assemble and reconfigure whenever you want. Experience the perfect balance of cozy softness and contemporary style, your perfect centerpiece for unforgettable gatherings and everyday comfort."
+              },
+              "price": {
+                "amount": 99700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 209700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Lunar Dune"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Clay_151_81631eaf-585c-4171-8c04-eba2b77baca7.webp?v=1761243866"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804245356681:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "values": [
+                {
+                  "label": "Helium Cloud"
+                },
+                {
+                  "label": "Krypton Green"
+                },
+                {
+                  "label": "Silicon Sand"
+                },
+                {
+                  "label": "Comet Ivory"
+                },
+                {
+                  "label": "Lunar Dune"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Sectional_Front_Helium_Cloud_152_e9146b80-6945-4917-b686-f71ee031b563.webp?v=1761243866",
+              "alt_text": "#color_helium-cloud"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-22-6",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "ltl-carrier",
+            "parent",
+            "pillow-included",
+            "r4",
+            "sectional",
+            "sofa",
+            "Valentine's Day Deal"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/300116607113",
+              "handle": "all",
+              "title": "All",
+              "description": {
+                "html": "Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/302404665481",
+              "handle": "defranco",
+              "title": "DeFranco",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310668099721",
+              "handle": "klaviyo-coupon",
+              "title": "Klaviyo coupon",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310915694729",
+              "handle": "large-open-spaces",
+              "title": "Large & Open Spaces",
+              "description": {
+                "html": "Got space? Go bold. Modular seating made to elevate your room — your way."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310915891337",
+              "handle": "living-room-essentials",
+              "title": "Living Room Essentials",
+              "description": {
+                "html": "Everything you need to create a stylish and functional living room setup."
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/8302277066889",
+          "title": "R4 Loveseat Sofa",
+          "description": {
+            "html": "The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights."
+          },
+          "url": "https://rovelab.com/products/r4-loveseat-sofa-better-than-clouds",
+          "handle": "r4-loveseat-sofa-better-than-clouds",
+          "price_range": {
+            "min": {
+              "amount": 63700,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 63700,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 159700,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 159700,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/44804245553289",
+              "sku": "XR4D-001",
+              "title": "Helium Cloud",
+              "description": {
+                "html": "The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights."
+              },
+              "price": {
+                "amount": 63700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 159700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Helium Cloud"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Helium_Cloud_12_08103e2c-2630-4948-9e94-a4073deb0ea6.webp?v=1761243868"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804245553289:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804245586057",
+              "sku": "XR4D-002",
+              "title": "Krypton Green",
+              "description": {
+                "html": "The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights."
+              },
+              "price": {
+                "amount": 63700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 159700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": false
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Krypton Green"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Krypton_Green_13_4d5444b3-0c0f-43eb-83ff-9cdb186594cd.webp?v=1761243869"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804245586057:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804245618825",
+              "sku": "XR4D-003",
+              "title": "Silicon Sand",
+              "description": {
+                "html": "The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights."
+              },
+              "price": {
+                "amount": 63700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 159700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Silicon Sand"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Silicon_Sand_14_789e8b00-18fe-4e05-901e-3df5bf0b77df.webp?v=1761243868"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804245618825:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804245651593",
+              "sku": "XR4D-004",
+              "title": "Comet Ivory",
+              "description": {
+                "html": "The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights."
+              },
+              "price": {
+                "amount": 63700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 159700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Comet Ivory"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Silkstone_15_536ba989-4b87-4e88-95a3-e6d8a74f9031.webp?v=1761243869"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804245651593:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804245684361",
+              "sku": "XR4D-005",
+              "title": "Lunar Dune",
+              "description": {
+                "html": "The R4 Loveseat Sofa wraps you in cloud-like comfort with SmartFoam™ technology, designed for guilt-free relaxation. Perfect for small spaces, this compact loveseat fits effortlessly into cozy apartments and tighter living rooms. It comes in a box for easy delivery and assembles without tools. Cozy softness, contemporary style, and the perfect spot for movie nights."
+              },
+              "price": {
+                "amount": 63700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 159700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Lunar Dune"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Clay_11_959ece80-f78c-453b-8cb0-012976f9c824.webp?v=1761243868"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804245684361:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "values": [
+                {
+                  "label": "Helium Cloud"
+                },
+                {
+                  "label": "Krypton Green"
+                },
+                {
+                  "label": "Silicon Sand"
+                },
+                {
+                  "label": "Comet Ivory"
+                },
+                {
+                  "label": "Lunar Dune"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Loveseat_Front_Krypton_Green_13_4d5444b3-0c0f-43eb-83ff-9cdb186594cd.webp?v=1761243869",
+              "alt_text": "#color_krypton-green"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-22-6",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "loveseat",
+            "ltl-carrier",
+            "parent",
+            "pillow-included",
+            "r4",
+            "sofa"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/300116607113",
+              "handle": "all",
+              "title": "All",
+              "description": {
+                "html": "Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/302404665481",
+              "handle": "defranco",
+              "title": "DeFranco",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310668099721",
+              "handle": "klaviyo-coupon",
+              "title": "Klaviyo coupon",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310915891337",
+              "handle": "living-room-essentials",
+              "title": "Living Room Essentials",
+              "description": {
+                "html": "Everything you need to create a stylish and functional living room setup."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310916513929",
+              "handle": "the-best-price-of-the-year-is-already-live",
+              "title": "The best price of the year!",
+              "description": {
+                "html": "BLACK FRIDAY IS ON! Prices won’t drop later. Stock won't wait either."
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/8302277165193",
+          "title": "R4 Ottoman Sofa Seat",
+          "description": {
+            "html": "Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration."
+          },
+          "url": "https://rovelab.com/products/r4-ottoman-sofa-seat-better-than-clouds",
+          "handle": "r4-ottoman-sofa-seat-better-than-clouds",
+          "price_range": {
+            "min": {
+              "amount": 24700,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 24700,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 49700,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 49700,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/44804246306953",
+              "sku": "XR4OT-001",
+              "title": "Helium Cloud",
+              "description": {
+                "html": "Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 49700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Helium Cloud"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Left_Helium_Cloud_37_c9f1fa7e-f282-4185-9b80-111dd9250635.webp?v=1761243872"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804246306953:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804246339721",
+              "sku": "XR4OT-002",
+              "title": "Krypton Green",
+              "description": {
+                "html": "Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 49700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": false
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Krypton Green"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Left_Krypton_Green_38_1690f495-ca9c-404d-bdaa-e4e52e4d0b74.webp?v=1761243873"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804246339721:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804246372489",
+              "sku": "XR4OT-003",
+              "title": "Silicon Sand",
+              "description": {
+                "html": "Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 49700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": false
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Silicon Sand"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Left_Silicon_Sand_39_6c8a797a-a6cf-467a-96b4-9ba2d5841e37.webp?v=1761243873"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804246372489:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804246405257",
+              "sku": "XR4OT-004",
+              "title": "Comet Ivory",
+              "description": {
+                "html": "Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 49700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Comet Ivory"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Left_Silkstone_40_8d001d2a-c00c-4d49-a896-5dbee78f4bf7.webp?v=1761243872"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804246405257:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804246438025",
+              "sku": "XR4OT-005",
+              "title": "Lunar Dune",
+              "description": {
+                "html": "Like a cloud you can feel—the R4 Ottoman Sofa Seat is a cozy, comfortable modular expansion piece for your R4 Sofa. Perfect for movie nights and moments of relaxation. Seamlessly extend your seating with flexible design and premium SmartFoam™ comfort. Mix and match to create your ideal configuration."
+              },
+              "price": {
+                "amount": 24700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 49700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Lunar Dune"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Left_Clay_36_23601e60-e422-4ee4-a821-1718f4ea13b0.webp?v=1761243873"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804246438025:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "values": [
+                {
+                  "label": "Helium Cloud"
+                },
+                {
+                  "label": "Krypton Green"
+                },
+                {
+                  "label": "Silicon Sand"
+                },
+                {
+                  "label": "Comet Ivory"
+                },
+                {
+                  "label": "Lunar Dune"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Ottoman_Front_Silicon_Sand_34_6831e3cb-cb02-465d-bf08-7b56e291575c.webp?v=1761243872",
+              "alt_text": "#color_silicon-sand"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-14",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "add-on",
+            "module",
+            "NOREVIEW",
+            "ottoman",
+            "parent-child",
+            "r4"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/293542527113",
+              "handle": "add-ons",
+              "title": "Add-ons",
+              "description": {
+                "html": "Complete your space with sofa modules, lamps, and add-ons. Expand your sofa, add the finishing touches, and make your space feel even more like you."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/300116607113",
+              "handle": "all",
+              "title": "All",
+              "description": {
+                "html": "Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310668099721",
+              "handle": "klaviyo-coupon",
+              "title": "Klaviyo coupon",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310711582857",
+              "handle": "r4-add-ons",
+              "title": "R4 Add-ons",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310915694729",
+              "handle": "large-open-spaces",
+              "title": "Large & Open Spaces",
+              "description": {
+                "html": "Got space? Go bold. Modular seating made to elevate your room — your way."
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/8302277132425",
+          "title": "R4 Armless Sofa Seat",
+          "description": {
+            "html": "The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile."
+          },
+          "url": "https://rovelab.com/products/r4-armless-sofa-seat-better-than-clouds",
+          "handle": "r4-armless-sofa-seat-better-than-clouds",
+          "price_range": {
+            "min": {
+              "amount": 34700,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 34700,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 59700,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 59700,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/44804246143113",
+              "sku": "XR4NA-001",
+              "title": "Helium Cloud",
+              "description": {
+                "html": "The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile."
+              },
+              "price": {
+                "amount": 34700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 59700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": false
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Helium Cloud"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Helium_Cloud_52_3122e88e-82cf-453b-830d-45d46d98c038.webp?v=1761243871"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804246143113:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804246175881",
+              "sku": "XR4NA-002",
+              "title": "Krypton Green",
+              "description": {
+                "html": "The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile."
+              },
+              "price": {
+                "amount": 34700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 59700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Krypton Green"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Krypton_Green_53_2207bcc1-ccb4-48a6-b17c-67c05c621b16.webp?v=1761243871"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804246175881:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804246208649",
+              "sku": "XR4NA-003",
+              "title": "Silicon Sand",
+              "description": {
+                "html": "The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile."
+              },
+              "price": {
+                "amount": 34700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 59700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": false
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Silicon Sand"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Silicon_Sand_54_597954be-fa05-429d-acec-90bbc4618074.webp?v=1761243871"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804246208649:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804246241417",
+              "sku": "XR4NA-004",
+              "title": "Comet Ivory",
+              "description": {
+                "html": "The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile."
+              },
+              "price": {
+                "amount": 34700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 59700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Comet Ivory"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Silkstone_55_569eff38-3039-461b-b3b2-f4a6d6d90101.webp?v=1761243871"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804246241417:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44804246274185",
+              "sku": "XR4NA-005",
+              "title": "Lunar Dune",
+              "description": {
+                "html": "The R4 Armless Sofa Module brings cloud-soft comfort and the flexibility to make your sofa your own. Add it to your R4 Sofa setup for more room to stretch out, rearrange your configuration as your space changes, and create the perfect spot for movie nights. Built with SmartFoam™ comfort, it’s made for sinking in, getting comfortable, and staying awhile."
+              },
+              "price": {
+                "amount": 34700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 59700,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Lunar Dune"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Clay_51_c307012b-df04-41ee-a8f5-bf65ac194183.webp?v=1761243871"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44804246274185:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "values": [
+                {
+                  "label": "Helium Cloud"
+                },
+                {
+                  "label": "Krypton Green"
+                },
+                {
+                  "label": "Silicon Sand"
+                },
+                {
+                  "label": "Comet Ivory"
+                },
+                {
+                  "label": "Lunar Dune"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/R4_Armless_Front_Silkstone_55_569eff38-3039-461b-b3b2-f4a6d6d90101.webp?v=1761243871",
+              "alt_text": "#color_comet-ivory"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-21-2",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "add-on",
+            "armless",
+            "module",
+            "parent-child",
+            "r4"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/293542527113",
+              "handle": "add-ons",
+              "title": "Add-ons",
+              "description": {
+                "html": "Complete your space with sofa modules, lamps, and add-ons. Expand your sofa, add the finishing touches, and make your space feel even more like you."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/300116607113",
+              "handle": "all",
+              "title": "All",
+              "description": {
+                "html": "Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310668099721",
+              "handle": "klaviyo-coupon",
+              "title": "Klaviyo coupon",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310711582857",
+              "handle": "r4-add-ons",
+              "title": "R4 Add-ons",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310915694729",
+              "handle": "large-open-spaces",
+              "title": "Large & Open Spaces",
+              "description": {
+                "html": "Got space? Go bold. Modular seating made to elevate your room — your way."
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/8401159487625",
+          "title": "M1 Square Pillow Large",
+          "description": {
+            "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+          },
+          "url": "https://rovelab.com/products/m1-square-pillow-large",
+          "handle": "m1-square-pillow-large",
+          "price_range": {
+            "min": {
+              "amount": 4900,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 6900,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 9800,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 9800,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/45099464589449",
+              "title": "Helium Cloud / 1 Pillow",
+              "description": {
+                "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+              },
+              "price": {
+                "amount": 4900,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Helium Cloud"
+                },
+                {
+                  "name": "Bundle Quantity",
+                  "label": "1 Pillow"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Helium-Cloud_1_8dc44cc4-a083-4933-b46d-137c796370db.jpg?v=1766588444"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45099464589449:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45099464327305",
+              "title": "Platinum Grey / 1 Pillow",
+              "description": {
+                "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+              },
+              "price": {
+                "amount": 4900,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Platinum Grey"
+                },
+                {
+                  "name": "Bundle Quantity",
+                  "label": "1 Pillow"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Platinum-Grey_1_fae8e9d8-5470-4207-b203-23d97281bcde.jpg?v=1766588444"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45099464327305:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45099464360073",
+              "title": "Silicon Sand / 1 Pillow",
+              "description": {
+                "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+              },
+              "price": {
+                "amount": 4900,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Silicon Sand"
+                },
+                {
+                  "name": "Bundle Quantity",
+                  "label": "1 Pillow"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Silicon-Sand_1_ad23c14a-837d-4f91-9c03-c614881f4f31.jpg?v=1766588444"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45099464360073:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45099464392841",
+              "title": "Copper Tan / 1 Pillow",
+              "description": {
+                "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+              },
+              "price": {
+                "amount": 4900,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Copper Tan"
+                },
+                {
+                  "name": "Bundle Quantity",
+                  "label": "1 Pillow"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Copper-Tan_1_d072441d-5d59-458c-98f0-1a6d01784133.jpg?v=1766588444"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45099464392841:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45099464425609",
+              "title": "Krypton Green / 1 Pillow",
+              "description": {
+                "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+              },
+              "price": {
+                "amount": 4900,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Krypton Green"
+                },
+                {
+                  "name": "Bundle Quantity",
+                  "label": "1 Pillow"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/m1-modular-square-pillow-krypton-green-front-view_fd0358bf-5766-4d7d-a8b3-b9a7a243f7ac.webp?v=1766588444"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45099464425609:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45099464458377",
+              "title": "Carbon Black / 1 Pillow",
+              "description": {
+                "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+              },
+              "price": {
+                "amount": 4900,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Carbon Black"
+                },
+                {
+                  "name": "Bundle Quantity",
+                  "label": "1 Pillow"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Carbon-Black_1_85fbe4fa-54c0-441a-acde-8b2b9faefe86.jpg?v=1766588443"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45099464458377:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45099464491145",
+              "title": "Hydrogen Blue / 1 Pillow",
+              "description": {
+                "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+              },
+              "price": {
+                "amount": 4900,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Hydrogen Blue"
+                },
+                {
+                  "name": "Bundle Quantity",
+                  "label": "1 Pillow"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Hydrogen-Blue_1_768be1ff-40c1-4cad-96f1-61bbb8f70695.jpg?v=1766588444"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45099464491145:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45099464523913",
+              "title": "Lithium Lavender / 1 Pillow",
+              "description": {
+                "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+              },
+              "price": {
+                "amount": 4900,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Lithium Lavender"
+                },
+                {
+                  "name": "Bundle Quantity",
+                  "label": "1 Pillow"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Lithium-Lavender_1_6084416e-54b3-4ab9-8623-b675655bfab0.jpg?v=1766588444"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45099464523913:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45099464556681",
+              "title": "Nitrogen Sky Blue / 1 Pillow",
+              "description": {
+                "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+              },
+              "price": {
+                "amount": 4900,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Nitrogen Sky Blue"
+                },
+                {
+                  "name": "Bundle Quantity",
+                  "label": "1 Pillow"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Nitrogen-Sky-Blue_1_b12d416d-8426-4dbc-bf88-a2f3e4a92720.jpg?v=1766588444"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45099464556681:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45099464622217",
+              "title": "Beryllium Blush / 1 Pillow",
+              "description": {
+                "html": "Designed to fit seamlessly into your Rove Lab setup or stand on its own in any cozy corner, the M1 Square Pillow adds extra comfort with a clean, modern shape. OEKO-TEX® certified and made to last, it’s an easy way to add softness and style wherever you need it."
+              },
+              "price": {
+                "amount": 4900,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Beryllium Blush"
+                },
+                {
+                  "name": "Bundle Quantity",
+                  "label": "1 Pillow"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/M1-Square-Pillow-Beryllium-Blush_1_e512ee57-b3c1-42a9-a89c-267556e94489.jpg?v=1766588444"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45099464622217:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "values": [
+                {
+                  "label": "Helium Cloud"
+                },
+                {
+                  "label": "Platinum Grey"
+                },
+                {
+                  "label": "Silicon Sand"
+                },
+                {
+                  "label": "Copper Tan"
+                },
+                {
+                  "label": "Krypton Green"
+                },
+                {
+                  "label": "Carbon Black"
+                },
+                {
+                  "label": "Hydrogen Blue"
+                },
+                {
+                  "label": "Lithium Lavender"
+                },
+                {
+                  "label": "Nitrogen Sky Blue"
+                },
+                {
+                  "label": "Beryllium Blush"
+                }
+              ]
+            },
+            {
+              "name": "Bundle Quantity",
+              "values": [
+                {
+                  "label": "1 Pillow"
+                },
+                {
+                  "label": "2 Pillows"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/m1-modular-square-pillow-krypton-green-front-view_fd0358bf-5766-4d7d-a8b3-b9a7a243f7ac.webp?v=1766588444",
+              "alt_text": "#color_krypton-green_1-pillow"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/hg-3-64",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "addons",
+            "bundle",
+            "decor",
+            "exclude-feed",
+            "m1",
+            "NOREVIEW",
+            "parent",
+            "pillow"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/293542527113",
+              "handle": "add-ons",
+              "title": "Add-ons",
+              "description": {
+                "html": "Complete your space with sofa modules, lamps, and add-ons. Expand your sofa, add the finishing touches, and make your space feel even more like you."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/299872354441",
+              "handle": "m1-add-ons",
+              "title": "M1 Add-ons",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/300116607113",
+              "handle": "all",
+              "title": "All",
+              "description": {
+                "html": "Discover Rove Lab’s modular sofas and explore all our collections. Couches designed for comfort, flexible configurations, and modern living, with easy, tool-free assembly."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310915891337",
+              "handle": "living-room-essentials",
+              "title": "Living Room Essentials",
+              "description": {
+                "html": "Everything you need to create a stylish and functional living room setup."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/310916251785",
+              "handle": "business-waiting-areas",
+              "title": "Business & Waiting Areas",
+              "description": {
+                "html": "Ideal for offices, studios, lobbies or reception areas with stylish comfort."
+              }
+            }
+          ]
+        }
+      ],
+      "pagination": {
+        "has_next_page": false
+      },
+      "messages": []
+    }
+  }
+}

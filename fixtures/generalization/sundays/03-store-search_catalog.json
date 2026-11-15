@@ -1,0 +1,2969 @@
+{
+  "fetched_at": "2026-11-15T21:24:05.753Z",
+  "endpoint": "sundays-company-production.myshopify.com",
+  "tool": "search_catalog",
+  "args": {
+    "catalog": {
+      "query": "Cream Linen swatch",
+      "pagination": {
+        "limit": 20
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"services\":{\"dev.ucp.shopping\":[]},\"capabilities\":{\"dev.ucp.shopping.checkout\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/checkout/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/checkout.json\"}],\"dev.ucp.shopping.fulfillment\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}},\"config\":{\"multi_destination\":[],\"method_combinations\":[[\"shipping\"]]}}],\"dev.ucp.shopping.buyer_consent\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json\",\"extends\":[\"dev.ucp.shopping.cart\",\"dev.ucp.shopping.checkout\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.discount\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/discount.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.cart\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/cart/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/cart.json\"}],\"dev.ucp.shopping.order\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/order/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/order.json\"}],\"dev.ucp.shopping.catalog.search\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json\"}],\"dev.ucp.shopping.catalog.lookup\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json\"}],\"dev.shopify.catalog\":[{\"version\":\"2026-08-25\",\"spec\":\"https://shopify.dev/docs/agents/catalog/storefront-catalog\",\"schema\":\"https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json\",\"extends\":[\"dev.ucp.shopping.catalog.search\",\"dev.ucp.shopping.catalog.lookup\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.common.location.search\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/location/search\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/location_search.json\"}],\"dev.ucp.common.location.lookup\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/location/lookup\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/location_lookup.json\"}]},\"payment_handlers\":{\"com.google.pay\":[{\"id\":\"gpay\",\"version\":\"2026-01-11\",\"spec\":\"https://pay.google.com/gp/p/ucp/2026-01-11/\",\"schema\":\"https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json\",\"config\":{\"api_version\":2,\"api_version_minor\":0,\"merchant_info\":{\"merchant_name\":\"Sundays Company US\",\"merchant_id\":\"16708973830884969730\",\"merchant_origin\":\"www.sundays-company.com\",\"auth_jwt\":\"\"},\"allowed_payment_methods\":[{\"type\":\"CARD\",\"parameters\":{\"allowed_auth_methods\":[\"PAN_ONLY\",\"CRYPTOGRAM_3DS\"],\"allowed_card_networks\":[\"VISA\",\"MASTERCARD\",\"AMEX\",\"DISCOVER\",\"JCB\"],\"billing_address_required\":true,\"billing_address_parameters\":{\"format\":\"FULL\",\"phone_number_required\":true}},\"tokenization_specification\":{\"type\":\"PAYMENT_GATEWAY\",\"parameters\":{\"gateway\":\"shopify\",\"gatewayMerchantId\":\"5465964615\"}}}]}}],\"dev.shopify.card\":[{\"id\":\"shopify.card\",\"version\":\"2026-01-15\",\"spec\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md\",\"schema\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json\",\"config\":{\"payment_methods\":[{\"type\":\"card\",\"enabled_card_brands\":[\"visa\",\"master\",\"american_express\",\"discover\",\"diners_club\",\"elo\",\"jcb\",\"unionpay\"]}]}}],\"dev.shopify.shop_pay\":[{\"id\":\"shop_pay\",\"version\":\"2026-04-08\",\"spec\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md\",\"schema\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json\",\"config\":{\"shop_id\":\"5465964615\"}}]}},\"products\":[{\"id\":\"gid://shopify/Product/6652723953735\",\"title\":\"Swatch Cream Linen, LiveLife™  Fabric\",\"description\":{\"html\":\"Our signature family-friendly fabric is breathable, moisture-repellent, and stain-resistant, offering barrier protection for years to come. Care: Soak up spills with a paper towel. For tougher stains, wash with mild soap and water. Cushion covers can be dry cleaned or machine washed in a cold, gentle cycle. Material: 36% polyester, 26% cotton, 16% linen, 22% viscose. Abrasion: 50,000 double rubs. SKU: SWA-YJALEX484680\"},\"url\":\"https://www.sundays-company.com/products/swatch-yj-creamlinen\",\"handle\":\"swatch-yj-creamlinen\",\"price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588520779847\",\"sku\":\"SWA-YJALEX484680\",\"title\":\"Default Title\",\"description\":{\"html\":\"Our signature family-friendly fabric is breathable, moisture-repellent, and stain-resistant, offering barrier protection for years to come. Care: Soak up spills with a paper towel. For tougher stains, wash with mild soap and water. Cushion covers can be dry cleaned or machine washed in a cold, gentle cycle. Material: 36% polyester, 26% cotton, 16% linen, 22% viscose. Abrasion: 50,000 double rubs. SKU: SWA-YJALEX484680\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-YJALEX484680_Swatch_Variant_Thumbnail.jpg?v=1780935089\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588520779847:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-YJALEX484680_Swatch_Variant_Thumbnail.jpg?v=1780935089\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Ready to Ship\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/262785564743\",\"handle\":\"swatches\",\"title\":\"swatches\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/271538651207\",\"handle\":\"okendo-exclusions\",\"title\":\"Okendo Exclusions\",\"description\":{\"html\":\"Okendo exclusion list for reviews\"}}]},{\"id\":\"gid://shopify/Product/6642166497351\",\"title\":\"Get Together™ 4-Piece Modular Sectional, Standard, Cream Linen\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"url\":\"https://www.sundays-company.com/products/get-together-4-piece-standard-modular-sectional-cream-linen\",\"handle\":\"get-together-4-piece-standard-modular-sectional-cream-linen\",\"price_range\":{\"min\":{\"amount\":474050,\"currency\":\"USD\"},\"max\":{\"amount\":474050,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":499000,\"currency\":\"USD\"},\"max\":{\"amount\":499000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588345798727\",\"sku\":\"SEC-YJ-037-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"price\":{\"amount\":474050,\"currency\":\"USD\"},\"list_price\":{\"amount\":499000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-037-018_elevated_Variant_silo.jpg?v=1792611474\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588345798727:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-037-018_elevated_Variant_silo.jpg?v=1792611474\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"Advertising: IntentNov26\",\"All Get Together™ 4-Piece Modular Sectional\",\"Best Sellers Email\",\"BFCM 2026\",\"Google Catalogue\",\"LiveLife\",\"Living Room L2\",\"Nav Sofa\",\"Paid: Marpipe\",\"Ready to Ship\",\"Segment: Revenue\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261708939335\",\"handle\":\"recently-stocked\",\"title\":\"Ready To Ship\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261794365511\",\"handle\":\"sofas\",\"title\":\"Sofas \\u0026 Sectionals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262887080007\",\"handle\":\"modular-get-together\",\"title\":\"Get Together™ Collection\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/4888926060615\",\"title\":\"Movie Night™ Ottoman, Standard, Cream Linen\",\"description\":{\"html\":\"Our best selling Movie Night collection is the ultimate in five-star comfort, with a smart modular design and a sink-in softness that instantly pulls you in. Thanks to an oversized feather-fibre cushion, this ottoman is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof.\"},\"url\":\"https://www.sundays-company.com/products/movie-night-standard-ottoman-cream-linen\",\"handle\":\"movie-night-standard-ottoman-cream-linen\",\"price_range\":{\"min\":{\"amount\":94050,\"currency\":\"USD\"},\"max\":{\"amount\":94050,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":99000,\"currency\":\"USD\"},\"max\":{\"amount\":99000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588626030663\",\"sku\":\"OTT-YJ-903-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Our best selling Movie Night collection is the ultimate in five-star comfort, with a smart modular design and a sink-in softness that instantly pulls you in. Thanks to an oversized feather-fibre cushion, this ottoman is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof.\"},\"price\":{\"amount\":94050,\"currency\":\"USD\"},\"list_price\":{\"amount\":99000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/OTT-YJ-903-018_Variant_silo_resized.jpg?v=1783992629\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588626030663:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/OTT-YJ-903-018_Variant_silo_resized.jpg?v=1783992629\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"Advertising OOS\",\"All Movie Night™ Ottoman\",\"BFCM 2026\",\"Component\",\"LiveLife\",\"modular\",\"Movie Night Condo Modular\",\"Movie Night ¬™\",\"Movie Night¬™ Condo Modular\",\"Nav Sofa\",\"Ottoman\",\"soft modern sofa\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/167015252039\",\"handle\":\"movie-night\",\"title\":\"Movie Night™ Collection\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261794365511\",\"handle\":\"sofas\",\"title\":\"Sofas \\u0026 Sectionals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262133973063\",\"handle\":\"movie-night-post-purchase-care-email\",\"title\":\"Movie Night™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809157703\",\"handle\":\"ottomans\",\"title\":\"Ottomans\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/7171585671239\",\"title\":\"Swatch Herringbone\",\"description\":{\"html\":\"A cotton-linen blend with a naturally textured look and feel, this fabric is soft, durable and easy to care for. Care: Vacuum regularly to enhance longevity. Blot spills with a clean, dry, absorbent cloth. Use a dry brush to remove crumbs. Material: 87% cotton, 13% linen Abrasion: 25,000 double rubs SKU: SWA-EW-RW110701\"},\"url\":\"https://www.sundays-company.com/products/swatch-herringbone\",\"handle\":\"swatch-herringbone\",\"price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588568490055\",\"sku\":\"SWA-EW-RW110701\",\"title\":\"Default Title\",\"description\":{\"html\":\"A cotton-linen blend with a naturally textured look and feel, this fabric is soft, durable and easy to care for. Care: Vacuum regularly to enhance longevity. Blot spills with a clean, dry, absorbent cloth. Use a dry brush to remove crumbs. Material: 87% cotton, 13% linen Abrasion: 25,000 double rubs SKU: SWA-EW-RW110701\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-EW-RW110701_Swatch_Variant_Thumbnail.jpg?v=1780937804\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588568490055:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-EW-RW110701_Swatch_Variant_Thumbnail.jpg?v=1780937804\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Ready to Ship\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/262785564743\",\"handle\":\"swatches\",\"title\":\"swatches\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/271538651207\",\"handle\":\"okendo-exclusions\",\"title\":\"Okendo Exclusions\",\"description\":{\"html\":\"Okendo exclusion list for reviews\"}}]},{\"id\":\"gid://shopify/Product/6638719696967\",\"title\":\"Get Together™ 4-Piece Modular Sectional, Large, Cream Linen\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"url\":\"https://www.sundays-company.com/products/get-together-4-piece-modular-sectional-large-cream-linen\",\"handle\":\"get-together-4-piece-modular-sectional-large-cream-linen\",\"price_range\":{\"min\":{\"amount\":521550,\"currency\":\"USD\"},\"max\":{\"amount\":521550,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":549000,\"currency\":\"USD\"},\"max\":{\"amount\":549000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588347437127\",\"sku\":\"SEC-YJ-032-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"price\":{\"amount\":521550,\"currency\":\"USD\"},\"list_price\":{\"amount\":549000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-032-018_Variant_silo_resized.jpg?v=1783992662\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588347437127:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-032-018_Variant_silo_resized.jpg?v=1783992662\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"All Get Together™ 4-Piece Modular Sectional\",\"BFCM 2026\",\"Google Catalogue\",\"LiveLife\",\"Nav Sofa\",\"Ready to Ship\",\"Segment: Revenue\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/263092633671\",\"handle\":\"get-together™-post-purchase-care-email\",\"title\":\"Get Together™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/270097711175\",\"handle\":\"master-collection-get-together-pdp-grouping\",\"title\":\"Master Collection - Get Together (PDP Grouping)\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/271538520135\",\"handle\":\"okendo-attributes-all-products\",\"title\":\"Okendo Attributes - All Products\",\"description\":{\"html\":\"To display Okendo attributes in review responsive forms\"}}]},{\"id\":\"gid://shopify/Product/7296904527943\",\"title\":\"Get Together™ Sofa, 3 Seater, Cream Linen\",\"description\":{\"html\":\"The Get Together Sofa takes our best selling collection and reimagines it as a single frame sofa with clean lines and thoughtful proportions. It’s made with extra deep seats and soft-yet-supportive cushions that hold their shape—minimal fluffing required.\"},\"url\":\"https://www.sundays-company.com/products/get-together%E2%84%A2-sofa-3-seater-cream-linen\",\"handle\":\"get-together™-sofa-3-seater-cream-linen\",\"price_range\":{\"min\":{\"amount\":261250,\"currency\":\"USD\"},\"max\":{\"amount\":261250,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":275000,\"currency\":\"USD\"},\"max\":{\"amount\":275000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/42039111188551\",\"sku\":\"SOF-YJ-014-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"The Get Together Sofa takes our best selling collection and reimagines it as a single frame sofa with clean lines and thoughtful proportions. It’s made with extra deep seats and soft-yet-supportive cushions that hold their shape—minimal fluffing required.\"},\"price\":{\"amount\":261250,\"currency\":\"USD\"},\"list_price\":{\"amount\":275000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-014-018_Variant_silo_resized.jpg?v=1783990467\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/42039111188551:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-014-018_Variant_silo_resized.jpg?v=1783990467\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"Advertising OOS\",\"Advertising: IntentNov26\",\"Badge: New\",\"BFCM 2026\",\"Google Catalogue\",\"Living Room L2\",\"Nav Sofa\",\"Paid: Marpipe\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/158837833799\",\"handle\":\"new\",\"title\":\"New Arrivals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261794365511\",\"handle\":\"sofas\",\"title\":\"Sofas \\u0026 Sectionals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261893652551\",\"handle\":\"sofas-sofas\",\"title\":\"Sofas\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/6638717468743\",\"title\":\"Get Together™ 3-Piece Modular Sofa, Large, Cream Linen\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"url\":\"https://www.sundays-company.com/products/get-together-3-piece-modular-sofa-large-cream-linen\",\"handle\":\"get-together-3-piece-modular-sofa-large-cream-linen\",\"price_range\":{\"min\":{\"amount\":418000,\"currency\":\"USD\"},\"max\":{\"amount\":418000,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":440000,\"currency\":\"USD\"},\"max\":{\"amount\":440000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588473593927\",\"sku\":\"SEC-YJ-030-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"price\":{\"amount\":418000,\"currency\":\"USD\"},\"list_price\":{\"amount\":440000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-030-018_Variant_silo_resized.jpg?v=1783991498\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588473593927:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-030-018_Variant_silo_resized.jpg?v=1783991498\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"All Get Together™ 3-Piece Modular Sofa\",\"BFCM 2026\",\"Google Catalogue\",\"LiveLife\",\"Nav Sofa\",\"Ready to Ship\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261708939335\",\"handle\":\"recently-stocked\",\"title\":\"Ready To Ship\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/263092633671\",\"handle\":\"get-together™-post-purchase-care-email\",\"title\":\"Get Together™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/264149172295\",\"handle\":\"sofa\",\"title\":\"Sofa\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/6642166530119\",\"title\":\"Get Together™ 5-Piece Modular Sectional Closed, Standard, Cream Linen\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"url\":\"https://www.sundays-company.com/products/get-together-5-piece-standard-modular-sectional-closed-cream-linen\",\"handle\":\"get-together-5-piece-standard-modular-sectional-closed-cream-linen\",\"price_range\":{\"min\":{\"amount\":627950,\"currency\":\"USD\"},\"max\":{\"amount\":627950,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":661000,\"currency\":\"USD\"},\"max\":{\"amount\":661000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588220330055\",\"sku\":\"SEC-YJ-038-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"price\":{\"amount\":627950,\"currency\":\"USD\"},\"list_price\":{\"amount\":661000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-038-018_Variant_silo_resized.jpg?v=1783994709\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588220330055:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-038-018_Variant_silo_resized.jpg?v=1783994709\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"Advertising: IntentNov26\",\"All Get Together™ 5-Piece Modular Sectional Closed\",\"BFCM 2026\",\"Google Catalogue\",\"LiveLife\",\"Nav Sofa\",\"Ready to Ship\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261708939335\",\"handle\":\"recently-stocked\",\"title\":\"Ready To Ship\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261794365511\",\"handle\":\"sofas\",\"title\":\"Sofas \\u0026 Sectionals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262887080007\",\"handle\":\"modular-get-together\",\"title\":\"Get Together™ Collection\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/7296904331335\",\"title\":\"Movie Night™ Sofa, 2.5 Seater, Cream Linen\",\"description\":{\"html\":\"Our best selling Movie Night Collection, now in a streamlined new silhouette. Thanks to oversized feather-fibre cushions, this sofa is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof.\"},\"url\":\"https://www.sundays-company.com/products/movie-night%E2%84%A2-sofa-2-5-seater-cream-linen\",\"handle\":\"movie-night™-sofa-2-5-seater-cream-linen\",\"price_range\":{\"min\":{\"amount\":251750,\"currency\":\"USD\"},\"max\":{\"amount\":251750,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":265000,\"currency\":\"USD\"},\"max\":{\"amount\":265000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/42039110533191\",\"sku\":\"SOF-YJ-017-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Our best selling Movie Night Collection, now in a streamlined new silhouette. Thanks to oversized feather-fibre cushions, this sofa is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof.\"},\"price\":{\"amount\":251750,\"currency\":\"USD\"},\"list_price\":{\"amount\":265000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-017-018_Variant_silo_resized.jpg?v=1783993781\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/42039110533191:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-017-018_Variant_silo_resized.jpg?v=1783993781\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"Advertising: IntentNov26\",\"Badge: New\",\"BFCM 2026\",\"Google Catalogue\",\"Nav Sofa\",\"Paid: Marpipe\",\"Ready to Ship\",\"Small Spaces\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/167015252039\",\"handle\":\"movie-night\",\"title\":\"Movie Night™ Collection\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261794365511\",\"handle\":\"sofas\",\"title\":\"Sofas \\u0026 Sectionals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261893652551\",\"handle\":\"sofas-sofas\",\"title\":\"Sofas\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262133973063\",\"handle\":\"movie-night-post-purchase-care-email\",\"title\":\"Movie Night™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/4961359331399\",\"title\":\"Movie Night™ 6-Piece Modular U-Shaped Sectional, Standard, Cream Linen\",\"description\":{\"html\":\"Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays.\"},\"url\":\"https://www.sundays-company.com/products/movie-night-standard-6-piece-modular-u-shaped-sectional-cream-linen\",\"handle\":\"movie-night-standard-6-piece-modular-u-shaped-sectional-cream-linen\",\"price_range\":{\"min\":{\"amount\":663100,\"currency\":\"USD\"},\"max\":{\"amount\":663100,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":698000,\"currency\":\"USD\"},\"max\":{\"amount\":698000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588453670983\",\"sku\":\"SEC-YJ-917-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays.\"},\"price\":{\"amount\":663100,\"currency\":\"USD\"},\"list_price\":{\"amount\":698000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-917-018_MovieNight_Variant_Thumbnail.jpg?v=1780947645\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588453670983:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-917-018_MovieNight_Variant_Thumbnail.jpg?v=1780947645\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"Advertising OOS\",\"Advertising: IntentNov26\",\"All Movie Night™ 6-Piece Modular Sectional Open Both Sides\",\"BFCM 2026\",\"couch\",\"Google Catalogue\",\"LiveLife\",\"modular\",\"Movie Night Condo Modular\",\"Movie Night ¬™\",\"Movie Night ¬™ Modular\",\"Movie Night¬™ Condo Modular\",\"Movie Night¬™ Modular 3 Pieces Up\",\"Nav Sofa\",\"Paid: Marpipe\",\"sectional\",\"soft modern sofa\",\"white sectional\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/167015252039\",\"handle\":\"movie-night\",\"title\":\"Movie Night™ Collection\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261794365511\",\"handle\":\"sofas\",\"title\":\"Sofas \\u0026 Sectionals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262133973063\",\"handle\":\"movie-night-post-purchase-care-email\",\"title\":\"Movie Night™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/6638719959111\",\"title\":\"Get Together™ 5-Piece Modular Sectional, Large, Cream Linen\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"url\":\"https://www.sundays-company.com/products/get-together-5-piece-modular-sectional-open-large-cream-linen\",\"handle\":\"get-together-5-piece-modular-sectional-open-large-cream-linen\",\"price_range\":{\"min\":{\"amount\":645050,\"currency\":\"USD\"},\"max\":{\"amount\":645050,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":679000,\"currency\":\"USD\"},\"max\":{\"amount\":679000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588592902215\",\"sku\":\"SEC-YJ-028-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"price\":{\"amount\":645050,\"currency\":\"USD\"},\"list_price\":{\"amount\":679000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-028-018_GetTogether_Variant_Lifestyle_Thumbnail.jpg?v=1780939342\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588592902215:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-028-018_GetTogether_Variant_Lifestyle_Thumbnail.jpg?v=1780939342\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"Advertising OOS\",\"All Get Together™ 5-Piece Modular Sectional\",\"BFCM 2026\",\"Google Catalogue\",\"LiveLife\",\"Nav Sofa\",\"Segment: Lifestyle Hero\",\"Segment: Lifestyle Variant\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/263092633671\",\"handle\":\"get-together™-post-purchase-care-email\",\"title\":\"Get Together™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/270097711175\",\"handle\":\"master-collection-get-together-pdp-grouping\",\"title\":\"Master Collection - Get Together (PDP Grouping)\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/271538520135\",\"handle\":\"okendo-attributes-all-products\",\"title\":\"Okendo Attributes - All Products\",\"description\":{\"html\":\"To display Okendo attributes in review responsive forms\"}}]},{\"id\":\"gid://shopify/Product/9073964908615\",\"title\":\"Get Together™ 4-Piece Modular Sectional Armless, Standard, Cream Linen\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"url\":\"https://www.sundays-company.com/products/get-together-4-piece-modular-sectional-closed-open-standard-cream-linen\",\"handle\":\"get-together-4-piece-modular-sectional-closed-open-standard-cream-linen\",\"price_range\":{\"min\":{\"amount\":495900,\"currency\":\"USD\"},\"max\":{\"amount\":495900,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":522000,\"currency\":\"USD\"},\"max\":{\"amount\":522000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/49032187248711\",\"sku\":\"SEC-YJ-097-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"price\":{\"amount\":495900,\"currency\":\"USD\"},\"list_price\":{\"amount\":522000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-097-018_GetTogether_Variant_silo.jpg?v=1791588876\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/49032187248711:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-097-018_GetTogether_Variant_silo.jpg?v=1791588876\"}],\"tags\":[\"!Sale: 5% off\",\"BFCM 2026\",\"Google Catalogue\",\"LiveLife\",\"Living Room L2\",\"Nav Sofa\",\"Ready to Ship\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261794365511\",\"handle\":\"sofas\",\"title\":\"Sofas \\u0026 Sectionals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262887080007\",\"handle\":\"modular-get-together\",\"title\":\"Get Together™ Collection\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/263092633671\",\"handle\":\"get-together™-post-purchase-care-email\",\"title\":\"Get Together™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/4958586077255\",\"title\":\"Movie Night™ 2-Piece Modular Sofa, Large, Cream Linen\",\"description\":{\"html\":\"Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays.\"},\"url\":\"https://www.sundays-company.com/products/movie-night-large-2-piece-modular-sofa-cream-linen\",\"handle\":\"movie-night-large-2-piece-modular-sofa-cream-linen\",\"price_range\":{\"min\":{\"amount\":271700,\"currency\":\"USD\"},\"max\":{\"amount\":271700,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":286000,\"currency\":\"USD\"},\"max\":{\"amount\":286000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588249821255\",\"sku\":\"SEC-YJ-918-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays.\"},\"price\":{\"amount\":271700,\"currency\":\"USD\"},\"list_price\":{\"amount\":286000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-918-018_MovieNight_Variant_Lifestyle_Thumbnail.jpg?v=1780945393\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588249821255:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-918-018_MovieNight_Variant_Lifestyle_Thumbnail.jpg?v=1780945393\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"All Movie Night™ 2-Piece Modular Sofa\",\"Badge: Best Seller\",\"BFCM 2026\",\"couch\",\"Google Catalogue\",\"LiveLife\",\"modular\",\"Movie Night™\",\"Movie Night™ Modular\",\"Nav Loveseat\",\"Nav Sofa\",\"NYC Apartment\",\"Ready to Ship\",\"Segment: Lifestyle Hero\",\"Segment: Lifestyle Variant\",\"Segment: Revenue\",\"Sofa\",\"soft modern sofa\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261708939335\",\"handle\":\"recently-stocked\",\"title\":\"Ready To Ship\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262133973063\",\"handle\":\"movie-night-post-purchase-care-email\",\"title\":\"Movie Night™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/264149172295\",\"handle\":\"sofa\",\"title\":\"Sofa\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/7296904101959\",\"title\":\"Get Together™ Sofa, 3.5 Seater, Cream Linen\",\"description\":{\"html\":\"The Get Together Sofa takes our best selling collection and reimagines it as a single frame sofa with clean lines and thoughtful proportions. It’s made with extra deep seats and soft-yet-supportive cushions that hold their shape—minimal fluffing required.\"},\"url\":\"https://www.sundays-company.com/products/get-together%E2%84%A2-sofa-3-5-seater-cream-linen\",\"handle\":\"get-together™-sofa-3-5-seater-cream-linen\",\"price_range\":{\"min\":{\"amount\":284050,\"currency\":\"USD\"},\"max\":{\"amount\":284050,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":299000,\"currency\":\"USD\"},\"max\":{\"amount\":299000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/42039109320775\",\"sku\":\"SOF-YJ-019-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"The Get Together Sofa takes our best selling collection and reimagines it as a single frame sofa with clean lines and thoughtful proportions. It’s made with extra deep seats and soft-yet-supportive cushions that hold their shape—minimal fluffing required.\"},\"price\":{\"amount\":284050,\"currency\":\"USD\"},\"list_price\":{\"amount\":299000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-019-018_Variant_silo_resized.jpg?v=1783994086\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/42039109320775:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-019-018_Variant_silo_resized.jpg?v=1783994086\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"Advertising OOS\",\"Advertising: IntentNov26\",\"Badge: New\",\"BFCM 2026\",\"Google Catalogue\",\"Nav Sofa\",\"Paid: Marpipe\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/158837833799\",\"handle\":\"new\",\"title\":\"New Arrivals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261794365511\",\"handle\":\"sofas\",\"title\":\"Sofas \\u0026 Sectionals\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261893652551\",\"handle\":\"sofas-sofas\",\"title\":\"Sofas\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/7171585736775\",\"title\":\"Swatch Cereal\",\"description\":{\"html\":\"A linen blend with a naturally textured look and feel, this fabric is soft, durable and easy to care for. Care: Soak up spills with a paper towel. For tougher stains, wash with mild soap and water. Material: 64% polyester, 21% viscose, 10% linen, 3% acrylic, 2% cotton Abrasion: 30,000 double rubs SKU: SWA-HO-FORESTBASKETWEAVECREAM\"},\"url\":\"https://www.sundays-company.com/products/swatch-cereal\",\"handle\":\"swatch-cereal\",\"price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588555939911\",\"sku\":\"SWA-HO-FORESTBASKETWEAVECREAM\",\"title\":\"Default Title\",\"description\":{\"html\":\"A linen blend with a naturally textured look and feel, this fabric is soft, durable and easy to care for. Care: Soak up spills with a paper towel. For tougher stains, wash with mild soap and water. Material: 64% polyester, 21% viscose, 10% linen, 3% acrylic, 2% cotton Abrasion: 30,000 double rubs SKU: SWA-HO-FORESTBASKETWEAVECREAM\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-HO-FORESTBASKETWEAVECREAM_Swatch_Variant_Thumbnail.jpg?v=1780940720\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588555939911:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-HO-FORESTBASKETWEAVECREAM_Swatch_Variant_Thumbnail.jpg?v=1780940720\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/hb-3-2-6-5\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Ready to Ship\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/262785564743\",\"handle\":\"swatches\",\"title\":\"swatches\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/271538651207\",\"handle\":\"okendo-exclusions\",\"title\":\"Okendo Exclusions\",\"description\":{\"html\":\"Okendo exclusion list for reviews\"}}]},{\"id\":\"gid://shopify/Product/6638717304903\",\"title\":\"Get Together™ 2-Piece Modular Sofa, Large, Cream Linen\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"url\":\"https://www.sundays-company.com/products/get-together-2-piece-modular-sofa-large-cream-linen\",\"handle\":\"get-together-2-piece-modular-sofa-large-cream-linen\",\"price_range\":{\"min\":{\"amount\":294500,\"currency\":\"USD\"},\"max\":{\"amount\":294500,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":310000,\"currency\":\"USD\"},\"max\":{\"amount\":310000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588415889479\",\"sku\":\"SEC-YJ-029-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come.\"},\"price\":{\"amount\":294500,\"currency\":\"USD\"},\"list_price\":{\"amount\":310000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-029-018_GetTogether_Variant_Thumbnail.jpg?v=1780943755\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588415889479:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-029-018_GetTogether_Variant_Thumbnail.jpg?v=1780943755\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"All Get Together™ 2-Piece Modular Sofa\",\"BFCM 2026\",\"Google Catalogue\",\"LiveLife\",\"Nav Loveseat\",\"Nav Sofa\",\"Ready to Ship\",\"Segment: Revenue\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261708939335\",\"handle\":\"recently-stocked\",\"title\":\"Ready To Ship\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/263092633671\",\"handle\":\"get-together™-post-purchase-care-email\",\"title\":\"Get Together™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/264149172295\",\"handle\":\"sofa\",\"title\":\"Sofa\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/4872039727175\",\"title\":\"Movie Night™ 4-Piece Modular Sectional, Large, Cream Linen\",\"description\":{\"html\":\"Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays.\"},\"url\":\"https://www.sundays-company.com/products/movie-night-4-piece-modular-sectional-large-cream-linen\",\"handle\":\"movie-night-4-piece-modular-sectional-large-cream-linen\",\"price_range\":{\"min\":{\"amount\":503500,\"currency\":\"USD\"},\"max\":{\"amount\":503500,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":530000,\"currency\":\"USD\"},\"max\":{\"amount\":530000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588391149639\",\"sku\":\"SEC-YJ-902-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays.\"},\"price\":{\"amount\":503500,\"currency\":\"USD\"},\"list_price\":{\"amount\":530000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-902-018_MovieNight_Variant_Thumbnail.jpg?v=1780940005\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588391149639:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-902-018_MovieNight_Variant_Thumbnail.jpg?v=1780940005\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"Advertising OOS\",\"All Movie Night™ 4-Piece Modular Sectional\",\"BFCM 2026\",\"Google Catalogue\",\"LiveLife\",\"modular\",\"Movie Night Modular\",\"Movie Night ¬™\",\"Movie Night ¬™ Modular\",\"Movie Night¬™ Modular 3 Pieces Up\",\"Nav Sofa\",\"NYC Apartment\",\"sectional\",\"Segment: Lifestyle Hero\",\"Segment: Revenue\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261708939335\",\"handle\":\"recently-stocked\",\"title\":\"Ready To Ship\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262133973063\",\"handle\":\"movie-night-post-purchase-care-email\",\"title\":\"Movie Night™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/264541405255\",\"handle\":\"showroom-collection\",\"title\":\"Showroom Collection\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/4872015708231\",\"title\":\"Movie Night™ Ottoman, Large, Cream Linen\",\"description\":{\"html\":\"Our best selling Movie Night collection is the ultimate in five-star comfort, with a smart modular design and a sink-in softness that instantly pulls you in. Thanks to an oversized feather-fibre cushion, this ottoman is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof.\"},\"url\":\"https://www.sundays-company.com/products/movie-night-large-ottoman-cream-linen\",\"handle\":\"movie-night-large-ottoman-cream-linen\",\"price_range\":{\"min\":{\"amount\":103550,\"currency\":\"USD\"},\"max\":{\"amount\":103550,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":109000,\"currency\":\"USD\"},\"max\":{\"amount\":109000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588574421063\",\"sku\":\"OTT-YJ-902-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Our best selling Movie Night collection is the ultimate in five-star comfort, with a smart modular design and a sink-in softness that instantly pulls you in. Thanks to an oversized feather-fibre cushion, this ottoman is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof.\"},\"price\":{\"amount\":103550,\"currency\":\"USD\"},\"list_price\":{\"amount\":109000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/OTT-YJ-902-018_Variant_silo_resized.jpg?v=1783992314\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588574421063:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/OTT-YJ-902-018_Variant_silo_resized.jpg?v=1783992314\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"All Movie Night™ Ottoman\",\"BFCM 2026\",\"Component\",\"LiveLife\",\"modular\",\"Movie Night Modular\",\"Movie Night ¬™\",\"Movie Night ¬™ Modular\",\"Nav Sofa\",\"Ottoman\",\"Ready to Ship\",\"soft modern sofa\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/261708939335\",\"handle\":\"recently-stocked\",\"title\":\"Ready To Ship\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262133973063\",\"handle\":\"movie-night-post-purchase-care-email\",\"title\":\"Movie Night™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809157703\",\"handle\":\"ottomans\",\"title\":\"Ottomans\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/271538520135\",\"handle\":\"okendo-attributes-all-products\",\"title\":\"Okendo Attributes - All Products\",\"description\":{\"html\":\"To display Okendo attributes in review responsive forms\"}}]},{\"id\":\"gid://shopify/Product/6670522417223\",\"title\":\"Swatch Cream Boucle\",\"description\":{\"html\":\"Woven with a unique fusion of twisted polypropylene yarns, this fabric blends tones and textures for a dynamic bouclé look and feel. Featuring superior durability, this material is a great choice for statement pieces. Care: Remove loose debris and blot stains. Blot or spray a solution made of 1 part solvent and 4 parts water, allowing the solution to soak in. Thoroughly rinse the fabric with water. Let area dry completely. Abrasion: 25,000 double rubs SKU: SWA-RNFD71\"},\"url\":\"https://www.sundays-company.com/products/swatch-cream-boucle\",\"handle\":\"swatch-cream-boucle\",\"price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588219871303\",\"sku\":\"SWA-RNFD71\",\"title\":\"Default Title\",\"description\":{\"html\":\"Woven with a unique fusion of twisted polypropylene yarns, this fabric blends tones and textures for a dynamic bouclé look and feel. Featuring superior durability, this material is a great choice for statement pieces. Care: Remove loose debris and blot stains. Blot or spray a solution made of 1 part solvent and 4 parts water, allowing the solution to soak in. Thoroughly rinse the fabric with water. Let area dry completely. Abrasion: 25,000 double rubs SKU: SWA-RNFD71\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-RNFD71.jpg?v=1780941989\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588219871303:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-RNFD71.jpg?v=1780941989\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/na\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Ready to Ship\",\"Swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/262785564743\",\"handle\":\"swatches\",\"title\":\"swatches\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/271538651207\",\"handle\":\"okendo-exclusions\",\"title\":\"Okendo Exclusions\",\"description\":{\"html\":\"Okendo exclusion list for reviews\"}}]},{\"id\":\"gid://shopify/Product/7162135642183\",\"title\":\"Movie Night™ 5-Piece Modular Sectional Open, Large, Cream Linen\",\"description\":{\"html\":\"Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays.\"},\"url\":\"https://www.sundays-company.com/products/movie-night%E2%84%A2-5-piece-modular-sectional-open-large-cream-linen\",\"handle\":\"movie-night™-5-piece-modular-sectional-open-large-cream-linen\",\"price_range\":{\"min\":{\"amount\":648850,\"currency\":\"USD\"},\"max\":{\"amount\":648850,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":683000,\"currency\":\"USD\"},\"max\":{\"amount\":683000,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/41588561608775\",\"sku\":\"SEC-YJ-925-018\",\"title\":\"Default Title\",\"description\":{\"html\":\"Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays.\"},\"price\":{\"amount\":648850,\"currency\":\"USD\"},\"list_price\":{\"amount\":683000,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Title\",\"label\":\"Default Title\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-925-018_Variant_silo_resized.jpg?v=1783990563\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://sundays-company-production.myshopify.com/cart/41588561608775:1\"}],\"options\":[{\"name\":\"Title\",\"values\":[{\"label\":\"Default Title\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-925-018_Variant_silo_resized.jpg?v=1783990563\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-22-6\",\"taxonomy\":\"shopify\"}],\"tags\":[\"!Sale: 5% off\",\"Advertising OOS\",\"Badge: New Configuration\",\"BFCM 2026\",\"Google Catalogue\",\"Nav Sofa\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/95394103367\",\"handle\":\"shop-all\",\"title\":\"Shop All\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262133973063\",\"handle\":\"movie-night-post-purchase-care-email\",\"title\":\"Movie Night™ Post Purchase Care Email\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/262809059399\",\"handle\":\"chairs\",\"title\":\"Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/269931937863\",\"handle\":\"new-master-collection-movie-night-dev-test\",\"title\":\"Master Collection - Movie Night (PDP Grouping)\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/271538520135\",\"handle\":\"okendo-attributes-all-products\",\"title\":\"Okendo Attributes - All Products\",\"description\":{\"html\":\"To display Okendo attributes in review responsive forms\"}}]}],\"pagination\":{\"has_next_page\":true,\"cursor\":\"eyJncmFwaHFsX2N1cnNvciI6ImV5SndZV2RsSWpveUxDSnNZWE4wWDJsa0lqbzNNVFl5TVRNMU5qUXlNVGd6TENKeVpYWmxjbk5sSWpwMGNuVmxMQ0p2Wm1aelpYUWlPakU1ZlE9PSIsInBhZ2UiOjJ9\"},\"messages\":[]}"
+      }
+    ],
+    "isError": false,
+    "structuredContent": {
+      "ucp": {
+        "version": "2026-08-25",
+        "status": "success",
+        "services": {
+          "dev.ucp.shopping": []
+        },
+        "capabilities": {
+          "dev.ucp.shopping.checkout": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/checkout/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/checkout.json"
+            }
+          ],
+          "dev.ucp.shopping.fulfillment": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json",
+              "extends": [
+                "dev.ucp.shopping.checkout",
+                "dev.ucp.shopping.cart"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              },
+              "config": {
+                "multi_destination": [],
+                "method_combinations": [
+                  [
+                    "shipping"
+                  ]
+                ]
+              }
+            }
+          ],
+          "dev.ucp.shopping.buyer_consent": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json",
+              "extends": [
+                "dev.ucp.shopping.cart",
+                "dev.ucp.shopping.checkout"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ],
+          "dev.ucp.shopping.discount": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/discount.json",
+              "extends": [
+                "dev.ucp.shopping.checkout",
+                "dev.ucp.shopping.cart"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ],
+          "dev.ucp.shopping.cart": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/cart/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/cart.json"
+            }
+          ],
+          "dev.ucp.shopping.order": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/order/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/order.json"
+            }
+          ],
+          "dev.ucp.shopping.catalog.search": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+            }
+          ],
+          "dev.ucp.shopping.catalog.lookup": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+            }
+          ],
+          "dev.shopify.catalog": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://shopify.dev/docs/agents/catalog/storefront-catalog",
+              "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json",
+              "extends": [
+                "dev.ucp.shopping.catalog.search",
+                "dev.ucp.shopping.catalog.lookup"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ],
+          "dev.ucp.common.location.search": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/common/location/search",
+              "schema": "https://ucp.dev/2026-08-25/schemas/common/location_search.json"
+            }
+          ],
+          "dev.ucp.common.location.lookup": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/common/location/lookup",
+              "schema": "https://ucp.dev/2026-08-25/schemas/common/location_lookup.json"
+            }
+          ]
+        },
+        "payment_handlers": {
+          "com.google.pay": [
+            {
+              "id": "gpay",
+              "version": "2026-01-11",
+              "spec": "https://pay.google.com/gp/p/ucp/2026-01-11/",
+              "schema": "https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json",
+              "config": {
+                "api_version": 2,
+                "api_version_minor": 0,
+                "merchant_info": {
+                  "merchant_name": "Sundays Company US",
+                  "merchant_id": "16708973830884969730",
+                  "merchant_origin": "www.sundays-company.com",
+                  "auth_jwt": ""
+                },
+                "allowed_payment_methods": [
+                  {
+                    "type": "CARD",
+                    "parameters": {
+                      "allowed_auth_methods": [
+                        "PAN_ONLY",
+                        "CRYPTOGRAM_3DS"
+                      ],
+                      "allowed_card_networks": [
+                        "VISA",
+                        "MASTERCARD",
+                        "AMEX",
+                        "DISCOVER",
+                        "JCB"
+                      ],
+                      "billing_address_required": true,
+                      "billing_address_parameters": {
+                        "format": "FULL",
+                        "phone_number_required": true
+                      }
+                    },
+                    "tokenization_specification": {
+                      "type": "PAYMENT_GATEWAY",
+                      "parameters": {
+                        "gateway": "shopify",
+                        "gatewayMerchantId": "5465964615"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "dev.shopify.card": [
+            {
+              "id": "shopify.card",
+              "version": "2026-01-15",
+              "spec": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md",
+              "schema": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json",
+              "config": {
+                "payment_methods": [
+                  {
+                    "type": "card",
+                    "enabled_card_brands": [
+                      "visa",
+                      "master",
+                      "american_express",
+                      "discover",
+                      "diners_club",
+                      "elo",
+                      "jcb",
+                      "unionpay"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "dev.shopify.shop_pay": [
+            {
+              "id": "shop_pay",
+              "version": "2026-04-08",
+              "spec": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md",
+              "schema": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json",
+              "config": {
+                "shop_id": "5465964615"
+              }
+            }
+          ]
+        }
+      },
+      "products": [
+        {
+          "id": "gid://shopify/Product/6652723953735",
+          "title": "Swatch Cream Linen, LiveLife™  Fabric",
+          "description": {
+            "html": "Our signature family-friendly fabric is breathable, moisture-repellent, and stain-resistant, offering barrier protection for years to come. Care: Soak up spills with a paper towel. For tougher stains, wash with mild soap and water. Cushion covers can be dry cleaned or machine washed in a cold, gentle cycle. Material: 36% polyester, 26% cotton, 16% linen, 22% viscose. Abrasion: 50,000 double rubs. SKU: SWA-YJALEX484680"
+          },
+          "url": "https://www.sundays-company.com/products/swatch-yj-creamlinen",
+          "handle": "swatch-yj-creamlinen",
+          "price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588520779847",
+              "sku": "SWA-YJALEX484680",
+              "title": "Default Title",
+              "description": {
+                "html": "Our signature family-friendly fabric is breathable, moisture-repellent, and stain-resistant, offering barrier protection for years to come. Care: Soak up spills with a paper towel. For tougher stains, wash with mild soap and water. Cushion covers can be dry cleaned or machine washed in a cold, gentle cycle. Material: 36% polyester, 26% cotton, 16% linen, 22% viscose. Abrasion: 50,000 double rubs. SKU: SWA-YJALEX484680"
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-YJALEX484680_Swatch_Variant_Thumbnail.jpg?v=1780935089"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588520779847:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-YJALEX484680_Swatch_Variant_Thumbnail.jpg?v=1780935089"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "Ready to Ship",
+            "Swatch"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/262785564743",
+              "handle": "swatches",
+              "title": "swatches",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/271538651207",
+              "handle": "okendo-exclusions",
+              "title": "Okendo Exclusions",
+              "description": {
+                "html": "Okendo exclusion list for reviews"
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/6642166497351",
+          "title": "Get Together™ 4-Piece Modular Sectional, Standard, Cream Linen",
+          "description": {
+            "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+          },
+          "url": "https://www.sundays-company.com/products/get-together-4-piece-standard-modular-sectional-cream-linen",
+          "handle": "get-together-4-piece-standard-modular-sectional-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 474050,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 474050,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 499000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 499000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588345798727",
+              "sku": "SEC-YJ-037-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+              },
+              "price": {
+                "amount": 474050,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 499000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-037-018_elevated_Variant_silo.jpg?v=1792611474"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588345798727:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-037-018_elevated_Variant_silo.jpg?v=1792611474"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "Advertising: IntentNov26",
+            "All Get Together™ 4-Piece Modular Sectional",
+            "Best Sellers Email",
+            "BFCM 2026",
+            "Google Catalogue",
+            "LiveLife",
+            "Living Room L2",
+            "Nav Sofa",
+            "Paid: Marpipe",
+            "Ready to Ship",
+            "Segment: Revenue"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261708939335",
+              "handle": "recently-stocked",
+              "title": "Ready To Ship",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261794365511",
+              "handle": "sofas",
+              "title": "Sofas & Sectionals",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262887080007",
+              "handle": "modular-get-together",
+              "title": "Get Together™ Collection",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/4888926060615",
+          "title": "Movie Night™ Ottoman, Standard, Cream Linen",
+          "description": {
+            "html": "Our best selling Movie Night collection is the ultimate in five-star comfort, with a smart modular design and a sink-in softness that instantly pulls you in. Thanks to an oversized feather-fibre cushion, this ottoman is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof."
+          },
+          "url": "https://www.sundays-company.com/products/movie-night-standard-ottoman-cream-linen",
+          "handle": "movie-night-standard-ottoman-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 94050,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 94050,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 99000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 99000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588626030663",
+              "sku": "OTT-YJ-903-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Our best selling Movie Night collection is the ultimate in five-star comfort, with a smart modular design and a sink-in softness that instantly pulls you in. Thanks to an oversized feather-fibre cushion, this ottoman is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof."
+              },
+              "price": {
+                "amount": 94050,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 99000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/OTT-YJ-903-018_Variant_silo_resized.jpg?v=1783992629"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588626030663:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/OTT-YJ-903-018_Variant_silo_resized.jpg?v=1783992629"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "Advertising OOS",
+            "All Movie Night™ Ottoman",
+            "BFCM 2026",
+            "Component",
+            "LiveLife",
+            "modular",
+            "Movie Night Condo Modular",
+            "Movie Night ¬™",
+            "Movie Night¬™ Condo Modular",
+            "Nav Sofa",
+            "Ottoman",
+            "soft modern sofa"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/167015252039",
+              "handle": "movie-night",
+              "title": "Movie Night™ Collection",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261794365511",
+              "handle": "sofas",
+              "title": "Sofas & Sectionals",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262133973063",
+              "handle": "movie-night-post-purchase-care-email",
+              "title": "Movie Night™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809157703",
+              "handle": "ottomans",
+              "title": "Ottomans",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/7171585671239",
+          "title": "Swatch Herringbone",
+          "description": {
+            "html": "A cotton-linen blend with a naturally textured look and feel, this fabric is soft, durable and easy to care for. Care: Vacuum regularly to enhance longevity. Blot spills with a clean, dry, absorbent cloth. Use a dry brush to remove crumbs. Material: 87% cotton, 13% linen Abrasion: 25,000 double rubs SKU: SWA-EW-RW110701"
+          },
+          "url": "https://www.sundays-company.com/products/swatch-herringbone",
+          "handle": "swatch-herringbone",
+          "price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588568490055",
+              "sku": "SWA-EW-RW110701",
+              "title": "Default Title",
+              "description": {
+                "html": "A cotton-linen blend with a naturally textured look and feel, this fabric is soft, durable and easy to care for. Care: Vacuum regularly to enhance longevity. Blot spills with a clean, dry, absorbent cloth. Use a dry brush to remove crumbs. Material: 87% cotton, 13% linen Abrasion: 25,000 double rubs SKU: SWA-EW-RW110701"
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-EW-RW110701_Swatch_Variant_Thumbnail.jpg?v=1780937804"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588568490055:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-EW-RW110701_Swatch_Variant_Thumbnail.jpg?v=1780937804"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "Ready to Ship",
+            "Swatch"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/262785564743",
+              "handle": "swatches",
+              "title": "swatches",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/271538651207",
+              "handle": "okendo-exclusions",
+              "title": "Okendo Exclusions",
+              "description": {
+                "html": "Okendo exclusion list for reviews"
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/6638719696967",
+          "title": "Get Together™ 4-Piece Modular Sectional, Large, Cream Linen",
+          "description": {
+            "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+          },
+          "url": "https://www.sundays-company.com/products/get-together-4-piece-modular-sectional-large-cream-linen",
+          "handle": "get-together-4-piece-modular-sectional-large-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 521550,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 521550,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 549000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 549000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588347437127",
+              "sku": "SEC-YJ-032-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+              },
+              "price": {
+                "amount": 521550,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 549000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-032-018_Variant_silo_resized.jpg?v=1783992662"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588347437127:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-032-018_Variant_silo_resized.jpg?v=1783992662"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "All Get Together™ 4-Piece Modular Sectional",
+            "BFCM 2026",
+            "Google Catalogue",
+            "LiveLife",
+            "Nav Sofa",
+            "Ready to Ship",
+            "Segment: Revenue"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/263092633671",
+              "handle": "get-together™-post-purchase-care-email",
+              "title": "Get Together™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/270097711175",
+              "handle": "master-collection-get-together-pdp-grouping",
+              "title": "Master Collection - Get Together (PDP Grouping)",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/271538520135",
+              "handle": "okendo-attributes-all-products",
+              "title": "Okendo Attributes - All Products",
+              "description": {
+                "html": "To display Okendo attributes in review responsive forms"
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/7296904527943",
+          "title": "Get Together™ Sofa, 3 Seater, Cream Linen",
+          "description": {
+            "html": "The Get Together Sofa takes our best selling collection and reimagines it as a single frame sofa with clean lines and thoughtful proportions. It’s made with extra deep seats and soft-yet-supportive cushions that hold their shape—minimal fluffing required."
+          },
+          "url": "https://www.sundays-company.com/products/get-together%E2%84%A2-sofa-3-seater-cream-linen",
+          "handle": "get-together™-sofa-3-seater-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 261250,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 261250,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 275000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 275000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/42039111188551",
+              "sku": "SOF-YJ-014-018",
+              "title": "Default Title",
+              "description": {
+                "html": "The Get Together Sofa takes our best selling collection and reimagines it as a single frame sofa with clean lines and thoughtful proportions. It’s made with extra deep seats and soft-yet-supportive cushions that hold their shape—minimal fluffing required."
+              },
+              "price": {
+                "amount": 261250,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 275000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-014-018_Variant_silo_resized.jpg?v=1783990467"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/42039111188551:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-014-018_Variant_silo_resized.jpg?v=1783990467"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "Advertising OOS",
+            "Advertising: IntentNov26",
+            "Badge: New",
+            "BFCM 2026",
+            "Google Catalogue",
+            "Living Room L2",
+            "Nav Sofa",
+            "Paid: Marpipe"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/158837833799",
+              "handle": "new",
+              "title": "New Arrivals",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261794365511",
+              "handle": "sofas",
+              "title": "Sofas & Sectionals",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261893652551",
+              "handle": "sofas-sofas",
+              "title": "Sofas",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/6638717468743",
+          "title": "Get Together™ 3-Piece Modular Sofa, Large, Cream Linen",
+          "description": {
+            "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+          },
+          "url": "https://www.sundays-company.com/products/get-together-3-piece-modular-sofa-large-cream-linen",
+          "handle": "get-together-3-piece-modular-sofa-large-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 418000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 418000,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 440000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 440000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588473593927",
+              "sku": "SEC-YJ-030-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+              },
+              "price": {
+                "amount": 418000,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 440000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-030-018_Variant_silo_resized.jpg?v=1783991498"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588473593927:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-030-018_Variant_silo_resized.jpg?v=1783991498"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "All Get Together™ 3-Piece Modular Sofa",
+            "BFCM 2026",
+            "Google Catalogue",
+            "LiveLife",
+            "Nav Sofa",
+            "Ready to Ship"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261708939335",
+              "handle": "recently-stocked",
+              "title": "Ready To Ship",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/263092633671",
+              "handle": "get-together™-post-purchase-care-email",
+              "title": "Get Together™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/264149172295",
+              "handle": "sofa",
+              "title": "Sofa",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/6642166530119",
+          "title": "Get Together™ 5-Piece Modular Sectional Closed, Standard, Cream Linen",
+          "description": {
+            "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+          },
+          "url": "https://www.sundays-company.com/products/get-together-5-piece-standard-modular-sectional-closed-cream-linen",
+          "handle": "get-together-5-piece-standard-modular-sectional-closed-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 627950,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 627950,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 661000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 661000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588220330055",
+              "sku": "SEC-YJ-038-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+              },
+              "price": {
+                "amount": 627950,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 661000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-038-018_Variant_silo_resized.jpg?v=1783994709"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588220330055:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-038-018_Variant_silo_resized.jpg?v=1783994709"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "Advertising: IntentNov26",
+            "All Get Together™ 5-Piece Modular Sectional Closed",
+            "BFCM 2026",
+            "Google Catalogue",
+            "LiveLife",
+            "Nav Sofa",
+            "Ready to Ship"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261708939335",
+              "handle": "recently-stocked",
+              "title": "Ready To Ship",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261794365511",
+              "handle": "sofas",
+              "title": "Sofas & Sectionals",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262887080007",
+              "handle": "modular-get-together",
+              "title": "Get Together™ Collection",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/7296904331335",
+          "title": "Movie Night™ Sofa, 2.5 Seater, Cream Linen",
+          "description": {
+            "html": "Our best selling Movie Night Collection, now in a streamlined new silhouette. Thanks to oversized feather-fibre cushions, this sofa is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof."
+          },
+          "url": "https://www.sundays-company.com/products/movie-night%E2%84%A2-sofa-2-5-seater-cream-linen",
+          "handle": "movie-night™-sofa-2-5-seater-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 251750,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 251750,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 265000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 265000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/42039110533191",
+              "sku": "SOF-YJ-017-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Our best selling Movie Night Collection, now in a streamlined new silhouette. Thanks to oversized feather-fibre cushions, this sofa is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof."
+              },
+              "price": {
+                "amount": 251750,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 265000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-017-018_Variant_silo_resized.jpg?v=1783993781"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/42039110533191:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-017-018_Variant_silo_resized.jpg?v=1783993781"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "Advertising: IntentNov26",
+            "Badge: New",
+            "BFCM 2026",
+            "Google Catalogue",
+            "Nav Sofa",
+            "Paid: Marpipe",
+            "Ready to Ship",
+            "Small Spaces"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/167015252039",
+              "handle": "movie-night",
+              "title": "Movie Night™ Collection",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261794365511",
+              "handle": "sofas",
+              "title": "Sofas & Sectionals",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261893652551",
+              "handle": "sofas-sofas",
+              "title": "Sofas",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262133973063",
+              "handle": "movie-night-post-purchase-care-email",
+              "title": "Movie Night™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/4961359331399",
+          "title": "Movie Night™ 6-Piece Modular U-Shaped Sectional, Standard, Cream Linen",
+          "description": {
+            "html": "Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays."
+          },
+          "url": "https://www.sundays-company.com/products/movie-night-standard-6-piece-modular-u-shaped-sectional-cream-linen",
+          "handle": "movie-night-standard-6-piece-modular-u-shaped-sectional-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 663100,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 663100,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 698000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 698000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588453670983",
+              "sku": "SEC-YJ-917-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays."
+              },
+              "price": {
+                "amount": 663100,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 698000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-917-018_MovieNight_Variant_Thumbnail.jpg?v=1780947645"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588453670983:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-917-018_MovieNight_Variant_Thumbnail.jpg?v=1780947645"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "Advertising OOS",
+            "Advertising: IntentNov26",
+            "All Movie Night™ 6-Piece Modular Sectional Open Both Sides",
+            "BFCM 2026",
+            "couch",
+            "Google Catalogue",
+            "LiveLife",
+            "modular",
+            "Movie Night Condo Modular",
+            "Movie Night ¬™",
+            "Movie Night ¬™ Modular",
+            "Movie Night¬™ Condo Modular",
+            "Movie Night¬™ Modular 3 Pieces Up",
+            "Nav Sofa",
+            "Paid: Marpipe",
+            "sectional",
+            "soft modern sofa",
+            "white sectional"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/167015252039",
+              "handle": "movie-night",
+              "title": "Movie Night™ Collection",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261794365511",
+              "handle": "sofas",
+              "title": "Sofas & Sectionals",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262133973063",
+              "handle": "movie-night-post-purchase-care-email",
+              "title": "Movie Night™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/6638719959111",
+          "title": "Get Together™ 5-Piece Modular Sectional, Large, Cream Linen",
+          "description": {
+            "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+          },
+          "url": "https://www.sundays-company.com/products/get-together-5-piece-modular-sectional-open-large-cream-linen",
+          "handle": "get-together-5-piece-modular-sectional-open-large-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 645050,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 645050,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 679000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 679000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588592902215",
+              "sku": "SEC-YJ-028-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+              },
+              "price": {
+                "amount": 645050,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 679000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-028-018_GetTogether_Variant_Lifestyle_Thumbnail.jpg?v=1780939342"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588592902215:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-028-018_GetTogether_Variant_Lifestyle_Thumbnail.jpg?v=1780939342"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "Advertising OOS",
+            "All Get Together™ 5-Piece Modular Sectional",
+            "BFCM 2026",
+            "Google Catalogue",
+            "LiveLife",
+            "Nav Sofa",
+            "Segment: Lifestyle Hero",
+            "Segment: Lifestyle Variant"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/263092633671",
+              "handle": "get-together™-post-purchase-care-email",
+              "title": "Get Together™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/270097711175",
+              "handle": "master-collection-get-together-pdp-grouping",
+              "title": "Master Collection - Get Together (PDP Grouping)",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/271538520135",
+              "handle": "okendo-attributes-all-products",
+              "title": "Okendo Attributes - All Products",
+              "description": {
+                "html": "To display Okendo attributes in review responsive forms"
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/9073964908615",
+          "title": "Get Together™ 4-Piece Modular Sectional Armless, Standard, Cream Linen",
+          "description": {
+            "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+          },
+          "url": "https://www.sundays-company.com/products/get-together-4-piece-modular-sectional-closed-open-standard-cream-linen",
+          "handle": "get-together-4-piece-modular-sectional-closed-open-standard-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 495900,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 495900,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 522000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 522000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/49032187248711",
+              "sku": "SEC-YJ-097-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+              },
+              "price": {
+                "amount": 495900,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 522000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-097-018_GetTogether_Variant_silo.jpg?v=1791588876"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/49032187248711:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-097-018_GetTogether_Variant_silo.jpg?v=1791588876"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "BFCM 2026",
+            "Google Catalogue",
+            "LiveLife",
+            "Living Room L2",
+            "Nav Sofa",
+            "Ready to Ship"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261794365511",
+              "handle": "sofas",
+              "title": "Sofas & Sectionals",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262887080007",
+              "handle": "modular-get-together",
+              "title": "Get Together™ Collection",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/263092633671",
+              "handle": "get-together™-post-purchase-care-email",
+              "title": "Get Together™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/4958586077255",
+          "title": "Movie Night™ 2-Piece Modular Sofa, Large, Cream Linen",
+          "description": {
+            "html": "Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays."
+          },
+          "url": "https://www.sundays-company.com/products/movie-night-large-2-piece-modular-sofa-cream-linen",
+          "handle": "movie-night-large-2-piece-modular-sofa-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 271700,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 271700,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 286000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 286000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588249821255",
+              "sku": "SEC-YJ-918-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays."
+              },
+              "price": {
+                "amount": 271700,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 286000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-918-018_MovieNight_Variant_Lifestyle_Thumbnail.jpg?v=1780945393"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588249821255:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-918-018_MovieNight_Variant_Lifestyle_Thumbnail.jpg?v=1780945393"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "All Movie Night™ 2-Piece Modular Sofa",
+            "Badge: Best Seller",
+            "BFCM 2026",
+            "couch",
+            "Google Catalogue",
+            "LiveLife",
+            "modular",
+            "Movie Night™",
+            "Movie Night™ Modular",
+            "Nav Loveseat",
+            "Nav Sofa",
+            "NYC Apartment",
+            "Ready to Ship",
+            "Segment: Lifestyle Hero",
+            "Segment: Lifestyle Variant",
+            "Segment: Revenue",
+            "Sofa",
+            "soft modern sofa"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261708939335",
+              "handle": "recently-stocked",
+              "title": "Ready To Ship",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262133973063",
+              "handle": "movie-night-post-purchase-care-email",
+              "title": "Movie Night™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/264149172295",
+              "handle": "sofa",
+              "title": "Sofa",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/7296904101959",
+          "title": "Get Together™ Sofa, 3.5 Seater, Cream Linen",
+          "description": {
+            "html": "The Get Together Sofa takes our best selling collection and reimagines it as a single frame sofa with clean lines and thoughtful proportions. It’s made with extra deep seats and soft-yet-supportive cushions that hold their shape—minimal fluffing required."
+          },
+          "url": "https://www.sundays-company.com/products/get-together%E2%84%A2-sofa-3-5-seater-cream-linen",
+          "handle": "get-together™-sofa-3-5-seater-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 284050,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 284050,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 299000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 299000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/42039109320775",
+              "sku": "SOF-YJ-019-018",
+              "title": "Default Title",
+              "description": {
+                "html": "The Get Together Sofa takes our best selling collection and reimagines it as a single frame sofa with clean lines and thoughtful proportions. It’s made with extra deep seats and soft-yet-supportive cushions that hold their shape—minimal fluffing required."
+              },
+              "price": {
+                "amount": 284050,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 299000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-019-018_Variant_silo_resized.jpg?v=1783994086"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/42039109320775:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SOF-YJ-019-018_Variant_silo_resized.jpg?v=1783994086"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "Advertising OOS",
+            "Advertising: IntentNov26",
+            "Badge: New",
+            "BFCM 2026",
+            "Google Catalogue",
+            "Nav Sofa",
+            "Paid: Marpipe"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/158837833799",
+              "handle": "new",
+              "title": "New Arrivals",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261794365511",
+              "handle": "sofas",
+              "title": "Sofas & Sectionals",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261893652551",
+              "handle": "sofas-sofas",
+              "title": "Sofas",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/7171585736775",
+          "title": "Swatch Cereal",
+          "description": {
+            "html": "A linen blend with a naturally textured look and feel, this fabric is soft, durable and easy to care for. Care: Soak up spills with a paper towel. For tougher stains, wash with mild soap and water. Material: 64% polyester, 21% viscose, 10% linen, 3% acrylic, 2% cotton Abrasion: 30,000 double rubs SKU: SWA-HO-FORESTBASKETWEAVECREAM"
+          },
+          "url": "https://www.sundays-company.com/products/swatch-cereal",
+          "handle": "swatch-cereal",
+          "price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588555939911",
+              "sku": "SWA-HO-FORESTBASKETWEAVECREAM",
+              "title": "Default Title",
+              "description": {
+                "html": "A linen blend with a naturally textured look and feel, this fabric is soft, durable and easy to care for. Care: Soak up spills with a paper towel. For tougher stains, wash with mild soap and water. Material: 64% polyester, 21% viscose, 10% linen, 3% acrylic, 2% cotton Abrasion: 30,000 double rubs SKU: SWA-HO-FORESTBASKETWEAVECREAM"
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-HO-FORESTBASKETWEAVECREAM_Swatch_Variant_Thumbnail.jpg?v=1780940720"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588555939911:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-HO-FORESTBASKETWEAVECREAM_Swatch_Variant_Thumbnail.jpg?v=1780940720"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/hb-3-2-6-5",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "Ready to Ship",
+            "Swatch"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/262785564743",
+              "handle": "swatches",
+              "title": "swatches",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/271538651207",
+              "handle": "okendo-exclusions",
+              "title": "Okendo Exclusions",
+              "description": {
+                "html": "Okendo exclusion list for reviews"
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/6638717304903",
+          "title": "Get Together™ 2-Piece Modular Sofa, Large, Cream Linen",
+          "description": {
+            "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+          },
+          "url": "https://www.sundays-company.com/products/get-together-2-piece-modular-sofa-large-cream-linen",
+          "handle": "get-together-2-piece-modular-sofa-large-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 294500,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 294500,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 310000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 310000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588415889479",
+              "sku": "SEC-YJ-029-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Comfort that stays. Built from the inside out, the Get Together™ pairs eight-way hand-tied springs with high-density foam core cushions for even, comfortable support in every seat. Washable performance slipcovers can handle everyday spills and messes, and a modular design lets it adapt as your life changes. It’s a sofa made to be used and loved for years to come."
+              },
+              "price": {
+                "amount": 294500,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 310000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-029-018_GetTogether_Variant_Thumbnail.jpg?v=1780943755"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588415889479:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-029-018_GetTogether_Variant_Thumbnail.jpg?v=1780943755"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "All Get Together™ 2-Piece Modular Sofa",
+            "BFCM 2026",
+            "Google Catalogue",
+            "LiveLife",
+            "Nav Loveseat",
+            "Nav Sofa",
+            "Ready to Ship",
+            "Segment: Revenue"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261708939335",
+              "handle": "recently-stocked",
+              "title": "Ready To Ship",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/263092633671",
+              "handle": "get-together™-post-purchase-care-email",
+              "title": "Get Together™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/264149172295",
+              "handle": "sofa",
+              "title": "Sofa",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/4872039727175",
+          "title": "Movie Night™ 4-Piece Modular Sectional, Large, Cream Linen",
+          "description": {
+            "html": "Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays."
+          },
+          "url": "https://www.sundays-company.com/products/movie-night-4-piece-modular-sectional-large-cream-linen",
+          "handle": "movie-night-4-piece-modular-sectional-large-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 503500,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 503500,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 530000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 530000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588391149639",
+              "sku": "SEC-YJ-902-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays."
+              },
+              "price": {
+                "amount": 503500,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 530000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-902-018_MovieNight_Variant_Thumbnail.jpg?v=1780940005"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588391149639:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-902-018_MovieNight_Variant_Thumbnail.jpg?v=1780940005"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "Advertising OOS",
+            "All Movie Night™ 4-Piece Modular Sectional",
+            "BFCM 2026",
+            "Google Catalogue",
+            "LiveLife",
+            "modular",
+            "Movie Night Modular",
+            "Movie Night ¬™",
+            "Movie Night ¬™ Modular",
+            "Movie Night¬™ Modular 3 Pieces Up",
+            "Nav Sofa",
+            "NYC Apartment",
+            "sectional",
+            "Segment: Lifestyle Hero",
+            "Segment: Revenue"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261708939335",
+              "handle": "recently-stocked",
+              "title": "Ready To Ship",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262133973063",
+              "handle": "movie-night-post-purchase-care-email",
+              "title": "Movie Night™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/264541405255",
+              "handle": "showroom-collection",
+              "title": "Showroom Collection",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/4872015708231",
+          "title": "Movie Night™ Ottoman, Large, Cream Linen",
+          "description": {
+            "html": "Our best selling Movie Night collection is the ultimate in five-star comfort, with a smart modular design and a sink-in softness that instantly pulls you in. Thanks to an oversized feather-fibre cushion, this ottoman is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof."
+          },
+          "url": "https://www.sundays-company.com/products/movie-night-large-ottoman-cream-linen",
+          "handle": "movie-night-large-ottoman-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 103550,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 103550,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 109000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 109000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588574421063",
+              "sku": "OTT-YJ-902-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Our best selling Movie Night collection is the ultimate in five-star comfort, with a smart modular design and a sink-in softness that instantly pulls you in. Thanks to an oversized feather-fibre cushion, this ottoman is pure, pillowy perfection. It's also stain-resistant, durable, and real-life-proof."
+              },
+              "price": {
+                "amount": 103550,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 109000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/OTT-YJ-902-018_Variant_silo_resized.jpg?v=1783992314"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588574421063:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/OTT-YJ-902-018_Variant_silo_resized.jpg?v=1783992314"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "All Movie Night™ Ottoman",
+            "BFCM 2026",
+            "Component",
+            "LiveLife",
+            "modular",
+            "Movie Night Modular",
+            "Movie Night ¬™",
+            "Movie Night ¬™ Modular",
+            "Nav Sofa",
+            "Ottoman",
+            "Ready to Ship",
+            "soft modern sofa"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/261708939335",
+              "handle": "recently-stocked",
+              "title": "Ready To Ship",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262133973063",
+              "handle": "movie-night-post-purchase-care-email",
+              "title": "Movie Night™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809157703",
+              "handle": "ottomans",
+              "title": "Ottomans",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/271538520135",
+              "handle": "okendo-attributes-all-products",
+              "title": "Okendo Attributes - All Products",
+              "description": {
+                "html": "To display Okendo attributes in review responsive forms"
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/6670522417223",
+          "title": "Swatch Cream Boucle",
+          "description": {
+            "html": "Woven with a unique fusion of twisted polypropylene yarns, this fabric blends tones and textures for a dynamic bouclé look and feel. Featuring superior durability, this material is a great choice for statement pieces. Care: Remove loose debris and blot stains. Blot or spray a solution made of 1 part solvent and 4 parts water, allowing the solution to soak in. Thoroughly rinse the fabric with water. Let area dry completely. Abrasion: 25,000 double rubs SKU: SWA-RNFD71"
+          },
+          "url": "https://www.sundays-company.com/products/swatch-cream-boucle",
+          "handle": "swatch-cream-boucle",
+          "price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588219871303",
+              "sku": "SWA-RNFD71",
+              "title": "Default Title",
+              "description": {
+                "html": "Woven with a unique fusion of twisted polypropylene yarns, this fabric blends tones and textures for a dynamic bouclé look and feel. Featuring superior durability, this material is a great choice for statement pieces. Care: Remove loose debris and blot stains. Blot or spray a solution made of 1 part solvent and 4 parts water, allowing the solution to soak in. Thoroughly rinse the fabric with water. Let area dry completely. Abrasion: 25,000 double rubs SKU: SWA-RNFD71"
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-RNFD71.jpg?v=1780941989"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588219871303:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SWA-RNFD71.jpg?v=1780941989"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/na",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "Ready to Ship",
+            "Swatch"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/262785564743",
+              "handle": "swatches",
+              "title": "swatches",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/271538651207",
+              "handle": "okendo-exclusions",
+              "title": "Okendo Exclusions",
+              "description": {
+                "html": "Okendo exclusion list for reviews"
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/7162135642183",
+          "title": "Movie Night™ 5-Piece Modular Sectional Open, Large, Cream Linen",
+          "description": {
+            "html": "Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays."
+          },
+          "url": "https://www.sundays-company.com/products/movie-night%E2%84%A2-5-piece-modular-sectional-open-large-cream-linen",
+          "handle": "movie-night™-5-piece-modular-sectional-open-large-cream-linen",
+          "price_range": {
+            "min": {
+              "amount": 648850,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 648850,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 683000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 683000,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588561608775",
+              "sku": "SEC-YJ-925-018",
+              "title": "Default Title",
+              "description": {
+                "html": "Some sofas you sit on. This one you live on. Relaxed yet refined, the Movie Night™ Sofa pairs feather and fibre cushions with a premium foam core for a deeply comfortable, pillowy sit. Stain-resistant performance fabric handles real life, and the modular design adapts as your needs change. It’s a sofa that settles into a home and stays."
+              },
+              "price": {
+                "amount": 648850,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 683000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Title",
+                  "label": "Default Title"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-925-018_Variant_silo_resized.jpg?v=1783990563"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://sundays-company-production.myshopify.com/cart/41588561608775:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Title",
+              "values": [
+                {
+                  "label": "Default Title"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-925-018_Variant_silo_resized.jpg?v=1783990563"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-22-6",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "!Sale: 5% off",
+            "Advertising OOS",
+            "Badge: New Configuration",
+            "BFCM 2026",
+            "Google Catalogue",
+            "Nav Sofa"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/95394103367",
+              "handle": "shop-all",
+              "title": "Shop All",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262133973063",
+              "handle": "movie-night-post-purchase-care-email",
+              "title": "Movie Night™ Post Purchase Care Email",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/262809059399",
+              "handle": "chairs",
+              "title": "Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/269931937863",
+              "handle": "new-master-collection-movie-night-dev-test",
+              "title": "Master Collection - Movie Night (PDP Grouping)",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/271538520135",
+              "handle": "okendo-attributes-all-products",
+              "title": "Okendo Attributes - All Products",
+              "description": {
+                "html": "To display Okendo attributes in review responsive forms"
+              }
+            }
+          ]
+        }
+      ],
+      "pagination": {
+        "has_next_page": true,
+        "cursor": "eyJncmFwaHFsX2N1cnNvciI6ImV5SndZV2RsSWpveUxDSnNZWE4wWDJsa0lqbzNNVFl5TVRNMU5qUXlNVGd6TENKeVpYWmxjbk5sSWpwMGNuVmxMQ0p2Wm1aelpYUWlPakU1ZlE9PSIsInBhZ2UiOjJ9"
+      },
+      "messages": []
+    }
+  }
+}

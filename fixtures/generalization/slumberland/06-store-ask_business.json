@@ -1,0 +1,53 @@
+{
+  "fetched_at": "2026-11-15T21:24:57.570Z",
+  "endpoint": "ca59ae-5.myshopify.com",
+  "tool": "ask_business",
+  "args": {
+    "ask": {
+      "query": "If I return this item after delivery to 14228, what will I pay? Include any restocking fee and whether it depends on packaging, who pays return shipping and how much, whether original delivery charges are refunded, the return window and when it starts, whether this item is final sale, and whether I can exchange it instead and on what terms.",
+      "ids": [
+        "gid://shopify/ProductVariant/49048623055150"
+      ],
+      "context": {
+        "address_country": "US",
+        "postal_code": "14228",
+        "language": "en"
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"capabilities\":{\"dev.ucp.common.ask\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/ask/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/ask.json\"}]}},\"answer\":{\"plain\":\"The Mahoney Loveseat is furniture, so the stated policy offers a full refund if you’re unhappy with its size, shape, look, or fit within the first 5 days after taking possession. The store’s information doesn’t specify a restocking fee, packaging requirements, return-shipping responsibility or cost, refund of original delivery charges, or whether this item is final sale. It also doesn’t state whether an exchange is available or on what terms.\"},\"links\":[{\"type\":\"product\",\"url\":\"https://www.slumberland.com/products/mahoney-loveseat?variant=49048623055150\",\"title\":\"Mahoney Loveseat - Chocolate\",\"id\":\"gid://shopify/ProductVariant/49048623055150\"}]}"
+      }
+    ],
+    "isError": false,
+    "structuredContent": {
+      "ucp": {
+        "version": "2026-08-25",
+        "status": "success",
+        "capabilities": {
+          "dev.ucp.common.ask": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/common/ask/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/common/ask.json"
+            }
+          ]
+        }
+      },
+      "answer": {
+        "plain": "The Mahoney Loveseat is furniture, so the stated policy offers a full refund if you’re unhappy with its size, shape, look, or fit within the first 5 days after taking possession. The store’s information doesn’t specify a restocking fee, packaging requirements, return-shipping responsibility or cost, refund of original delivery charges, or whether this item is final sale. It also doesn’t state whether an exchange is available or on what terms."
+      },
+      "links": [
+        {
+          "type": "product",
+          "url": "https://www.slumberland.com/products/mahoney-loveseat?variant=49048623055150",
+          "title": "Mahoney Loveseat - Chocolate",
+          "id": "gid://shopify/ProductVariant/49048623055150"
+        }
+      ]
+    }
+  }
+}
