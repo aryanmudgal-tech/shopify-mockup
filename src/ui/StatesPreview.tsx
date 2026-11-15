@@ -29,6 +29,7 @@ const BASE: CardModel = {
     rating: { value: 4.2, scaleMax: 5, count: 41 },
     listedCents: 99900,
     checkoutUrl: "#",
+    variantNote: null,
   },
   toBuy: { status: "priced", listedCents: 99900, deliveryCents: 14900, deliveryLabel: "White glove delivery", doorCents: 114800 },
   tryFirst: { status: "none" },

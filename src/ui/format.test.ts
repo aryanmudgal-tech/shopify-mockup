@@ -9,7 +9,7 @@ describe("groupByQuotes", () => {
       { kind: "fee_unstated", quotes: q },
       { kind: "return_shipping_unstated", quotes: [{ ...q[0]! }] },
       // Same words from the assistant are a different quote.
-      { kind: "exchange", conditions: "original box", quotes: [{ text: "the fee is 10% or 20%", source: "assistant" }] },
+      { kind: "exchange", count: 1, conditions: "original box", quotes: [{ text: "the fee is 10% or 20%", source: "assistant" }] },
     ];
     const groups = groupByQuotes(lines);
     expect(groups.map((g) => g.lines.length)).toEqual([2, 1]);

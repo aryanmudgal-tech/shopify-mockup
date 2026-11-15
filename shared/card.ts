@@ -43,6 +43,11 @@ export interface ProductHeader {
   listedCents: number;
   /** Hand-off for "Buy it". Keeps the Catalog's attribution parameters. */
   checkoutUrl: string | null;
+  /**
+   * Set when the link named no variant and the check had to pick one, e.g.
+   * "Your link didn't name a fabric, so this shows Crushed Gravel - Performance Chenille."
+   */
+  variantNote: string | null;
 }
 
 // --- To buy -----------------------------------------------------------------
@@ -65,6 +70,8 @@ export type ToBuyRow =
 export type TryFirstRow =
   | {
       status: "sample";
+      /** The swatch's own variant, checked to exist in the store's search results. */
+      variantId: string;
       title: string;
       priceCents: number;
       imageUrl: string | null;
@@ -119,7 +126,8 @@ export type ReturnLine =
   | { kind: "return_shipping_unstated"; quotes: Quote[] }
   /** deliveryCents is null when the cart couldn't price delivery. */
   | { kind: "delivery_refund_unstated"; deliveryCents: number | null; quotes: Quote[] }
-  | { kind: "exchange"; conditions: string; quotes: Quote[] }
+  /** count is how many free exchanges the store allows, null when it doesn't say. */
+  | { kind: "exchange"; count: number | null; conditions: string; quotes: Quote[] }
   | { kind: "final_sale"; value: boolean; quotes: Quote[] }
   /** The policy and the assistant say different things: show both, pick neither. */
   | { kind: "disagreement"; topic: string; quotes: Quote[] };
@@ -154,7 +162,7 @@ export type IfWrongRow =
 // --- How I checked ----------------------------------------------------------
 
 export interface CheckStep {
-  id: "identify" | "price" | "sample" | "policy" | "assistant";
+  id: "identify" | "price" | "sample" | "policy" | "assistant" | "extract";
   title: string;
   /** The UCP tool called, e.g. "lookup_catalog"; null for a page read. */
   tool: string | null;

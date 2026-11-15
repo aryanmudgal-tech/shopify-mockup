@@ -62,6 +62,7 @@ const STAND_INS: Record<string, StandIn> = {
         { kind: "delivery_refund_unstated", deliveryCents, quotes: [BURROW_DELIVERY] },
         {
           kind: "exchange",
+          count: 1,
           conditions: "with the original box, within the 30 days",
           quotes: [P("we offer one free exchange within the 30-day return window, with original packaging")],
         },
@@ -83,6 +84,7 @@ const STAND_INS: Record<string, StandIn> = {
         { kind: "delivery_refund_unstated", deliveryCents, quotes: [BURROW_DELIVERY] },
         {
           kind: "exchange",
+          count: 1,
           conditions: "with the original box, within the 30 days",
           quotes: [A("One free exchange is available within the 30-day window if the original packaging is intact")],
         },

@@ -63,6 +63,7 @@ function toFound(product: any, wanted: string | null, via: FoundProduct["via"]):
         : null,
       listedCents: variant.price.amount,
       checkoutUrl: variant.checkout_url ?? null,
+      variantNote: null,
     },
     variantId: variant.id,
     variantTitle: options.map((o) => o.label).join(" / ") || variant.title,
