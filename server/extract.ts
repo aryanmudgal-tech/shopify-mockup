@@ -23,7 +23,7 @@ import { emptyTerms, TERMS_SCHEMA, TERMS_TOOL_NAME, type Condition, type Sourced
 import { returnsQuestion } from "./ask";
 
 /** Bump when the prompt or the schema changes, so cached reads are redone. */
-export const EXTRACTOR_VERSION = 3;
+export const EXTRACTOR_VERSION = 4;
 
 export interface ItemContext {
   title: string;

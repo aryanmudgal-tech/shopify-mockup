@@ -97,7 +97,7 @@ export const TERMS_SCHEMA = object({
   fees_by_condition: {
     type: "array",
     description:
-      "One entry per condition the return fee depends on: with_original_packaging and without_original_packaging when it depends on packaging, otherwise one entry with condition any. Empty when the text mentions no fee.",
+      "Return charges other than one flat return shipping amount: restocking, re-packaging or return fees. A return shipping charge that is a percentage of the price or depends on packaging also goes here, with return_shipping set to included_in_fee. One entry per condition: with_original_packaging and without_original_packaging when a charge depends on packaging (when a charge applies only without the original packaging, record with_original_packaging with type none), otherwise one entry with condition any. Empty when the text mentions no such charge.",
     items: object({
       condition: { type: "string", enum: ["with_original_packaging", "without_original_packaging", "any"] },
       fee: object({
@@ -105,7 +105,7 @@ export const TERMS_SCHEMA = object({
           type: "string",
           enum: ["percent", "flat", "none", "charged_amount_unstated"],
           description:
-            "charged_amount_unstated when the text says the buyer pays a return or restocking fee but gives no amount or rate. none only when the text says change-of-mind returns carry no fee.",
+            "charged_amount_unstated when the text says the buyer pays a return or restocking fee but gives no amount or rate. none only when the text says change-of-mind returns carry no fee or get a full refund, or (for with_original_packaging) when the charge applies only without the packaging.",
         },
         percent: nullable({ type: "number", description: "The stated percentage, for type percent." }),
         amount: nullable({ type: "number", description: "The stated dollar amount, for type flat, as a plain number." }),
@@ -119,7 +119,7 @@ export const TERMS_SCHEMA = object({
       type: "string",
       enum: ["free", "flat", "included_in_fee", "customer_pays_unstated", "not_mentioned"],
       description:
-        "included_in_fee when the return fee is itself described as the return shipping charge, even if the text doesn't say who pays the carrier; customer_pays_unstated when the buyer pays return shipping and no amount is stated; free when the store pays it; flat with amount for a stated fixed charge.",
+        "flat with amount when the text states one fixed return shipping charge for every return (record it here, not in fees_by_condition); included_in_fee when the return fee is itself described as the return shipping charge and is a percentage or depends on packaging, even if the text doesn't say who pays the carrier; customer_pays_unstated when the buyer pays return shipping and no amount is stated; free only when the text says the store pays return shipping or returns are free (the store sending or providing a return label is not enough); not_mentioned otherwise.",
     },
     amount: nullable({ type: "number", description: "The stated dollar amount, for type flat." }),
     quotes,

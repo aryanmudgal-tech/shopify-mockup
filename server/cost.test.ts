@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Quote, ReturnsSources } from "../shared/card";
-import { feeCents, returnsRow } from "./cost";
+import { dollarAmounts, feeCents, returnsRow } from "./cost";
 import { emptyTerms, type SourcedTerms } from "./terms";
 
 const P = (text: string): Quote => ({ text, source: "policy" });
@@ -119,7 +119,103 @@ describe("returnsRow", () => {
     expect(row.lines).toEqual([{ kind: "disagreement", topic: "the return fee", quotes: [P("10%")] }]);
   });
 
-  it("is unreadable when neither source says what a return costs", () => {
+  it("is unreadable when nothing at all is known", () => {
     expect(returnsRow(terms({}), [], { itemCents: 1, deliveryCents: 0 }, SOURCES).status).toBe("unreadable");
+  });
+});
+
+describe("arithmetic checks (fail closed)", () => {
+  const S150 = P("A flat rate return shipping fee of $150 will be applied to your refund or exchange.");
+  const S75 = P("If you do not have the original packaging, a return re-packaging fee of $75 will be applied to your refund or exchange.");
+  const flat = (amount: number) => ({ type: "flat" as const, percent: null, amount, cap: null });
+  const none = { type: "none" as const, percent: null, amount: null, cap: null };
+
+  it("Sundays, read right: $150 shipping on every return, plus $75 without the box", () => {
+    const row = returnsRow(
+      terms({
+        fees_by_condition: [
+          { condition: "with_original_packaging", fee: none, quotes: [S75] },
+          { condition: "without_original_packaging", fee: flat(75), quotes: [S75] },
+        ],
+        return_shipping: { type: "flat", amount: 150, quotes: [S150] },
+      }),
+      [],
+      { itemCents: 380000, deliveryCents: 0 },
+      SOURCES,
+    );
+    if (row.status !== "terms") throw new Error(row.status);
+    expect(row.lines.filter((l) => l.kind === "loss").map((l) => (l.kind === "loss" ? [l.condition, l.lossCents] : null))).toEqual([
+      ["with the original box", 15000],
+      ["without the box", 22500],
+    ]);
+  });
+
+  it("Sundays, read wrong ($150 filed as the with-box fee): without the box comes out cheaper, so it fails closed", () => {
+    const row = returnsRow(
+      terms({
+        fees_by_condition: [
+          { condition: "with_original_packaging", fee: flat(150), quotes: [S150] },
+          { condition: "without_original_packaging", fee: flat(75), quotes: [S75] },
+        ],
+      }),
+      [],
+      { itemCents: 380000, deliveryCents: 0 },
+      SOURCES,
+    );
+    expect(row).toMatchObject({ status: "unverified", reason: expect.stringContaining("cheaper"), quotes: [S150, S75] });
+    // No figure survives: only lines without a computed amount.
+    if (row.status === "unverified") expect(row.lines).toEqual([]);
+  });
+
+  it("fails closed when a quoted dollar amount isn't used (a dropped charge)", () => {
+    const row = returnsRow(
+      terms({
+        fees_by_condition: [
+          { condition: "any", fee: flat(99), quotes: [P("A $99 return fee will be deducted, plus a $50 pickup charge.")] },
+        ],
+      }),
+      [],
+      { itemCents: 99700, deliveryCents: 0 },
+      SOURCES,
+    );
+    expect(row).toMatchObject({ status: "unverified", reason: expect.stringContaining("$50") });
+  });
+
+  it("counts the price, a cap and a store-computed figure as used", () => {
+    const row = returnsRow(
+      terms({
+        fees_by_condition: [
+          {
+            condition: "with_original_packaging",
+            fee: { type: "percent", percent: 10, amount: null, cap: 250 },
+            quotes: [P("On its listed $1,364 price, that would be $136.40, capped at $250")],
+          },
+        ],
+      }),
+      [],
+      { itemCents: 136400, deliveryCents: 0 },
+      SOURCES,
+    );
+    expect(row.status).toBe("terms");
+  });
+
+  it("shows a known window when nothing says what a return costs", () => {
+    const row = returnsRow(
+      terms({ window: { days: 5, starts: "delivery", quotes: [P("within the first 5 days")] } }),
+      [],
+      { itemCents: 48999, deliveryCents: null },
+      SOURCES,
+    );
+    expect(row).toMatchObject({
+      status: "terms",
+      lines: [{ kind: "cost_unstated" }, { kind: "delivery_refund_unstated", deliveryCents: null }],
+      window: { days: 5 },
+    });
+  });
+});
+
+describe("dollarAmounts", () => {
+  it("reads whole, comma and cent amounts", () => {
+    expect(dollarAmounts("a $150 fee, $1,364 listed, $136.40 back, 30 days, 10%")).toEqual([15000, 136400, 13640]);
   });
 });

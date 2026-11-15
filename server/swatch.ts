@@ -6,7 +6,7 @@ import type { ModelDeps } from "./extract";
 import { ModelCache } from "./modelCache";
 import { MODEL_ID, ModelError } from "./model";
 
-export const SWATCH_VERSION = 1;
+export const SWATCH_VERSION = 2;
 const TOOL = "match_sample";
 
 const SYSTEM = `You find a fabric sample for a shopper, using the ${TOOL} tool.
@@ -21,6 +21,7 @@ const SCHEMA = {
   type: "object",
   properties: {
     reason: { type: "string", description: "One sentence on why the product matches, or why none does." },
+    any_samples: { type: "boolean", description: "true if any result is a fabric sample or swatch product, even of another fabric." },
     match: {
       anyOf: [
         {
@@ -33,7 +34,7 @@ const SCHEMA = {
       ],
     },
   },
-  required: ["reason", "match"],
+  required: ["reason", "any_samples", "match"],
   additionalProperties: false,
 };
 
@@ -51,12 +52,15 @@ export interface SwatchDecision {
   reason: string;
   /** Set when the model named a product or variant that isn't in the results. */
   rejected: string | null;
+  /** The results include samples, of this fabric or another. */
+  anySamples: boolean;
   cached: boolean;
   model: string;
 }
 
 interface Saved {
   reason: string;
+  any_samples: boolean;
   match: { product_id: string; variant_id: string } | null;
 }
 
@@ -99,11 +103,11 @@ export async function matchSwatch(
       tool: { name: TOOL, description: "Record which product, if any, is a sample of the sofa's exact fabric.", input_schema: SCHEMA },
     });
     const input = res.input as Saved;
-    saved = { reason: String(input?.reason ?? ""), match: input?.match ?? null };
+    saved = { reason: String(input?.reason ?? ""), any_samples: input?.any_samples === true, match: input?.match ?? null };
     deps.cache.put("swatch", key, saved);
   }
 
-  const decision = { reason: saved.reason, cached, model: modelId };
+  const decision = { reason: saved.reason, anySamples: saved.any_samples === true, cached, model: modelId };
   if (!saved.match) return { ...decision, match: null, rejected: null };
 
   // Guardrail 3: the IDs must exist in the results code fetched.

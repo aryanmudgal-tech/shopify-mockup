@@ -32,7 +32,7 @@ const BASE: CardModel = {
     variantNote: null,
   },
   toBuy: { status: "priced", listedCents: 99900, deliveryCents: 14900, deliveryLabel: "White glove delivery", doorCents: 114800 },
-  tryFirst: { status: "none" },
+  tryFirst: { status: "none", otherSamples: false },
   ifWrong: { status: "unreadable", reason: "", sources: BOTH },
   steps: [],
 };
@@ -110,6 +110,33 @@ const STATES: { title: string; card: CardModel }[] = [
           { kind: "disagreement", topic: "return shipping", quotes: [P("A $199 return shipping fee applies."), A("Return shipping is free.")] },
         ],
         window: null,
+      },
+    },
+  },
+  {
+    title: "Fail closed: a check found the figures don't account for the store's words, so the row shows the store's quotes and no figure.",
+    card: {
+      ...BASE,
+      ifWrong: {
+        status: "unverified",
+        reason: "Without the box came out cheaper ($75) than with it ($150), so a charge must be on the wrong line.",
+        quotes: [P("A $199 return shipping fee applies."), P("Delivery fees are non-refundable.")],
+        lines: [],
+        window: { days: 14, starts: null, quotes: [P("Items may be returned within 14 days.")] },
+        sources: BOTH,
+      },
+    },
+  },
+  {
+    title: "The store sells samples, but none of this fabric; costs unknown, window known.",
+    card: {
+      ...BASE,
+      tryFirst: { status: "none", otherSamples: true },
+      ifWrong: {
+        status: "terms",
+        sources: BOTH,
+        lines: [{ kind: "cost_unstated", quotes: [] }],
+        window: { days: 14, starts: null, quotes: [P("Items may be returned within 14 days.")] },
       },
     },
   },

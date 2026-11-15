@@ -119,6 +119,8 @@ export interface SampleSearch {
   rejected: string | null;
   model: string | null;
   cached: boolean;
+  /** Some result was a sample, of this fabric or another. */
+  otherSamples: boolean;
 }
 
 /** "Crushed Gravel - Performance Chenille" -> "Crushed Gravel"; "Corduroy | Grey" -> "Corduroy". */
@@ -137,7 +139,7 @@ export async function searchSample(
   fabric: { name: string; label: string } | null,
   deps: ModelDeps,
 ): Promise<SampleSearch> {
-  const out: SampleSearch = { queries: [], match: null, reason: null, rejected: null, model: null, cached: true };
+  const out: SampleSearch = { queries: [], match: null, reason: null, rejected: null, model: null, cached: true, otherSamples: false };
   for (const query of sampleQueries(fabric)) {
     const result = await t.call(storeDomain, "search_catalog", {
       catalog: { query, pagination: { limit: 20 } },
@@ -150,6 +152,7 @@ export async function searchSample(
     out.reason = decision.reason;
     out.model = decision.model;
     out.cached &&= decision.cached;
+    out.otherSamples ||= decision.anySamples;
     if (decision.rejected) out.rejected = decision.rejected;
     if (decision.match) return { ...out, match: decision.match };
   }

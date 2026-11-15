@@ -7,8 +7,15 @@
 //                         + return shipping if a flat amount is stated and it
 //                           isn't included in the fee
 //   delivery refund unstated -> "+ $69 delivery, refund not stated", not added
+//
+// Two checks then make sure the figures account for the store's words, and the
+// row fails closed if either fails: it shows the store's quotes and no figure.
+//   1. Returning without the box can't cost less than returning with it.
+//   2. Every dollar amount in the quoted cost sentences must be used in the
+//      arithmetic, as an input or a result. An unused amount is a dropped charge.
 
 import type { Fee as CardFee, IfWrongRow, Quote, ReturnLine, ReturnsSources, ReturnWindow } from "../shared/card";
+import { formatUsd } from "../shared/money";
 import type { Disagreement } from "./reconcile";
 import type { Condition, Fee, SourcedTerms, WindowStart } from "./terms";
 
@@ -142,13 +149,67 @@ export function returnsRow(terms: SourcedTerms, disagreements: Disagreement[], p
 
   for (const d of disagreements) lines.push({ kind: "disagreement", topic: d.topic, quotes: d.quotes });
 
-  if (!lines.some((l) => COST_KINDS.has(l.kind)) && disagreements.length === 0) {
-    return { status: "unreadable", reason: "Neither the policy nor the store's assistant says what a return costs.", sources };
-  }
-
   const w = terms.window;
   const window: ReturnWindow | null =
     w.days !== null || w.starts !== null ? { days: w.days, starts: w.starts ? START_LABEL[w.starts] : null, quotes: w.quotes } : null;
 
+  // Fail closed when the figures don't account for the store's words.
+  const used = [prices.itemCents, flatShippingCents, keptDeliveryCents];
+  for (const f of fees) {
+    if (f.fee.type === "flat" && f.fee.amount !== null) used.push(dollarsToCents(f.fee.amount));
+    if (f.fee.cap !== null) used.push(dollarsToCents(f.fee.cap));
+    const cents = feeCents(f.fee, prices.itemCents);
+    if (cents !== null) used.push(cents);
+  }
+  const problem = arithmeticProblem(lines, used);
+  if (problem) {
+    return {
+      status: "unverified",
+      reason: problem,
+      quotes: uniqueQuotes(...lines.filter((l) => COST_KINDS.has(l.kind)).map((l) => l.quotes)),
+      // Only lines that carry no computed figure stay.
+      lines: lines.filter((l) => l.kind === "exchange" || l.kind === "final_sale" || l.kind === "disagreement"),
+      window,
+      sources,
+    };
+  }
+
+  if (!lines.some((l) => COST_KINDS.has(l.kind)) && disagreements.length === 0) {
+    // Nothing about cost, but other terms are known: show them and say what's missing.
+    if (window || lines.some((l) => l.kind === "exchange" || l.kind === "final_sale")) {
+      return { status: "terms", lines: [{ kind: "cost_unstated", quotes: [] }, ...lines], window, sources };
+    }
+    return { status: "unreadable", reason: "Neither the policy nor the store's assistant says what a return costs.", sources };
+  }
+
   return { status: "terms", lines, window, sources };
+}
+
+/** Dollar amounts written in a sentence, in cents: "$150", "$1,364", "$136.40". */
+export function dollarAmounts(text: string): number[] {
+  return [...text.matchAll(/\$\s?(\d{1,3}(?:,\d{3})+|\d+)(?:\.(\d{1,2}))?/g)].map(
+    (m) => Number(m[1]!.replace(/,/g, "")) * 100 + Number((m[2] ?? "0").padEnd(2, "0")),
+  );
+}
+
+/**
+ * Why the figures can't be trusted, or null. `used` holds every amount the
+ * arithmetic used: the price, flat charges, caps, kept delivery and the fees
+ * it computed.
+ */
+export function arithmeticProblem(lines: ReturnLine[], used: number[]): string | null {
+  const losses = lines.filter((l): l is Extract<ReturnLine, { kind: "loss" }> => l.kind === "loss");
+  const withBox = losses.find((l) => l.condition === CONDITION_LABEL.with_original_packaging);
+  const without = losses.find((l) => l.condition === CONDITION_LABEL.without_original_packaging);
+  if (withBox && without && without.lossCents < withBox.lossCents) {
+    return `Without the box came out cheaper (${formatUsd(without.lossCents)}) than with it (${formatUsd(withBox.lossCents)}), so a charge must be on the wrong line.`;
+  }
+
+  const accounted = new Set([...used, ...losses.map((l) => l.lossCents)]);
+  const quoted = lines.filter((l) => COST_KINDS.has(l.kind)).flatMap((l) => l.quotes.flatMap((q) => dollarAmounts(q.text)));
+  const unused = [...new Set(quoted.filter((cents) => !accounted.has(cents)))];
+  if (unused.length) {
+    return `The store's words mention ${unused.map(formatUsd).join(" and ")}, but the figures don't use ${unused.length > 1 ? "them" : "it"}, so a charge may have been dropped.`;
+  }
+  return null;
 }

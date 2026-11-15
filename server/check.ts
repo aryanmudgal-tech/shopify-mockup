@@ -117,7 +117,7 @@ function toBuyRow(found: FoundProduct, q: CartQuote): ToBuyRow {
 }
 
 function tryFirstRow(s: SampleSearch): TryFirstRow {
-  if (!s.match) return { status: "none" };
+  if (!s.match) return { status: "none", otherSamples: s.otherSamples };
   const { variantId, title, priceCents, imageUrl, matchedOn, checkoutUrl } = s.match;
   return { status: "sample", variantId, title, priceCents, imageUrl, matchedOn, checkoutUrl };
 }

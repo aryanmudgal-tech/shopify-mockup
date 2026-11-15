@@ -1,4 +1,4 @@
-import type { IfWrongRow, Quote, ReturnLine, ReturnsSources } from "../../shared/card";
+import type { IfWrongRow, Quote, ReturnLine, ReturnsSources, ReturnWindow } from "../../shared/card";
 import { formatUsd } from "../../shared/money";
 import { Gap, Row } from "./Card";
 import { describeFee, groupByQuotes } from "./format";
@@ -17,6 +17,7 @@ export function ReturnsRow({ row }: { row: IfWrongRow }) {
 
 function usesAssistant(row: IfWrongRow): boolean {
   if (row.status === "no_returns") return row.quote.source === "assistant";
+  if (row.status === "unverified") return [...row.quotes, ...row.lines.flatMap((l) => l.quotes)].some((q) => q.source === "assistant");
   if (row.status !== "terms") return false;
   return [...row.lines.flatMap((l) => l.quotes), ...(row.window?.quotes ?? [])].some((q) => q.source === "assistant");
 }
@@ -54,6 +55,23 @@ function ReturnsBody({ row }: { row: IfWrongRow }) {
       </>
     );
   }
+  if (row.status === "unverified") {
+    // Fail closed: the store's words, and no figure.
+    return (
+      <>
+        <p className="lead">I couldn't check my figures against the store's words, so here is what the store says instead.</p>
+        <Quotes quotes={row.quotes} />
+        <p className="breakdown unverified-reason">{row.reason}</p>
+        {row.lines.map((l, i) => (
+          <div className="quote-group" key={i}>
+            <Line line={l} />
+            <Quotes quotes={l.quotes} />
+          </div>
+        ))}
+        <WindowBlock window={row.window} />
+      </>
+    );
+  }
   if (row.status === "unreadable") {
     return (
       <>
@@ -79,17 +97,22 @@ function ReturnsBody({ row }: { row: IfWrongRow }) {
           <Quotes quotes={g.quotes} />
         </div>
       ))}
-      {row.window && (
-        <div className="quote-group">
-          <p className="plain">
-            {row.window.days !== null ? `Return within ${row.window.days} days` : "Return window"}
-            {row.window.starts ? ` of ${row.window.starts}.` : ". "}
-            {!row.window.starts && <Gap>start not stated</Gap>}
-          </p>
-          <Quotes quotes={row.window.quotes} />
-        </div>
-      )}
+      <WindowBlock window={row.window} />
     </>
+  );
+}
+
+function WindowBlock({ window }: { window: ReturnWindow | null }) {
+  if (!window) return null;
+  return (
+    <div className="quote-group">
+      <p className="plain">
+        {window.days !== null ? `Return within ${window.days} days` : "Return window"}
+        {window.starts ? ` of ${window.starts}.` : ". "}
+        {!window.starts && <Gap>start not stated</Gap>}
+      </p>
+      <Quotes quotes={window.quotes} />
+    </div>
   );
 }
 
@@ -165,6 +188,12 @@ function Line({ line }: { line: Merged }) {
       return (
         <p className="plain">
           <Gap>The policy and the store's assistant disagree on {line.topic}.</Gap> Both are quoted below.
+        </p>
+      );
+    case "cost_unstated":
+      return (
+        <p className="plain">
+          <Gap>Neither the policy nor the store's assistant says what a return costs.</Gap>
         </p>
       );
     case "loss":

@@ -80,7 +80,8 @@ export type TryFirstRow =
       /** The swatch variant's own checkout link (spec 7.6). */
       checkoutUrl: string;
     }
-  | { status: "none" }
+  /** otherSamples: the store sells samples, just none of this exact fabric. */
+  | { status: "none"; otherSamples: boolean }
   | { status: "unavailable"; reason: string };
 
 // --- If you're wrong --------------------------------------------------------
@@ -130,7 +131,9 @@ export type ReturnLine =
   | { kind: "exchange"; count: number | null; conditions: string; quotes: Quote[] }
   | { kind: "final_sale"; value: boolean; quotes: Quote[] }
   /** The policy and the assistant say different things: show both, pick neither. */
-  | { kind: "disagreement"; topic: string; quotes: Quote[] };
+  | { kind: "disagreement"; topic: string; quotes: Quote[] }
+  /** Other terms are known, but neither source says what a return costs. */
+  | { kind: "cost_unstated"; quotes: Quote[] };
 
 export interface ReturnWindow {
   days: number | null;
@@ -157,6 +160,19 @@ export interface ReturnsSources {
 export type IfWrongRow =
   | { status: "terms"; lines: ReturnLine[]; window: ReturnWindow | null; sources: ReturnsSources }
   | { status: "no_returns"; quote: Quote; sources: ReturnsSources }
+  /**
+   * Fail closed: a check found the figures don't account for the store's
+   * words, so the row shows the store's quotes and no computed figure.
+   */
+  | {
+      status: "unverified";
+      reason: string;
+      quotes: Quote[];
+      /** Lines with no computed figure (exchange, final sale, disagreements). */
+      lines: ReturnLine[];
+      window: ReturnWindow | null;
+      sources: ReturnsSources;
+    }
   | { status: "unreadable"; reason: string; sources: ReturnsSources };
 
 // --- How I checked ----------------------------------------------------------

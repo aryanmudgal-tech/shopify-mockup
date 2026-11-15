@@ -117,7 +117,9 @@ function TryFirst({ row }: { row: TryFirstRow }) {
       <div className="sample">
         <Swatch imageUrl={null} />
         <p className="plain">
-          This store lists no sample. The return terms are your way back.
+          {row.otherSamples
+            ? "This store sells samples, but none of this exact fabric. The return terms are your way back."
+            : "This store lists no sample. The return terms are your way back."}
         </p>
       </div>
     );

@@ -34,7 +34,8 @@ export type GoldenLine =
   | { kind: "delivery_refund_unstated"; deliveryCents: number | null }
   | { kind: "exchange"; count: number | null; conditions: string; sources: QuoteSource[] }
   | { kind: "final_sale"; value: boolean; sources: QuoteSource[] }
-  | { kind: "disagreement"; topic: string };
+  | { kind: "disagreement"; topic: string }
+  | { kind: "cost_unstated" };
 
 export interface GoldenReturns {
   status: IfWrongRow["status"];
@@ -90,6 +91,8 @@ function goldenLine(l: ReturnLine): GoldenLine {
       return { kind: l.kind, value: l.value, sources };
     case "disagreement":
       return { kind: l.kind, topic: l.topic };
+    case "cost_unstated":
+      return { kind: l.kind };
   }
 }
 
