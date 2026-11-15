@@ -89,6 +89,9 @@ export function returnsRow(terms: SourcedTerms, disagreements: Disagreement[], p
   const lines: ReturnLine[] = [];
   const fees = [...terms.fees_by_condition].sort((x, y) => CONDITION_ORDER.indexOf(x.condition) - CONDITION_ORDER.indexOf(y.condition));
   const unstatedFees = fees.filter((f) => feeCents(f.fee, prices.itemCents) === null);
+  // The loss lines share one set of quotes, so the page shows the store's words
+  // once under all of them (10% with the box, 20% without, capped at $250).
+  const lossQuotes = uniqueQuotes(...fees.filter((f) => feeCents(f.fee, prices.itemCents) !== null).map((f) => f.quotes), extraQuotes);
 
   for (const entry of fees) {
     const fee = feeCents(entry.fee, prices.itemCents);
@@ -101,7 +104,7 @@ export function returnsRow(terms: SourcedTerms, disagreements: Disagreement[], p
       includesReturnShipping: rs.type === "included_in_fee",
       includesDeliveryCents: keptDeliveryCents,
       includesReturnShippingCents: flatShippingCents,
-      quotes: uniqueQuotes(entry.quotes, extraQuotes),
+      quotes: lossQuotes,
     });
   }
 
