@@ -1,0 +1,53 @@
+{
+  "fetched_at": "2026-11-15T21:57:13.750Z",
+  "endpoint": "sundays-company-production.myshopify.com",
+  "tool": "ask_business",
+  "args": {
+    "ask": {
+      "query": "If I return this item after delivery to 14228, what will I pay? Include any restocking fee and whether it depends on packaging, who pays return shipping and how much, whether original delivery charges are refunded, the return window and when it starts, whether this item is final sale, and whether I can exchange it instead and on what terms.",
+      "ids": [
+        "gid://shopify/ProductVariant/41588521959495"
+      ],
+      "context": {
+        "address_country": "US",
+        "postal_code": "14228",
+        "language": "en"
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"capabilities\":{\"dev.ucp.common.ask\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/common/ask/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/common/ask.json\"}]}},\"answer\":{\"plain\":\"For this sofa delivered to 14228, the return window is 30 days from delivery, and it must be in original condition. The return policy conflicts on packaging: one version says returns require the original packaging, while another says missing packaging adds a $75 repackaging fee; the flat return shipping fee is $150 in either case, charged to you. Since this is a sofa, the policy does not specify whether the small-parcel packaging fee applies, so the total fees aren’t clear. The policy says the shipping fee applies to refunds or exchanges, but doesn’t specify whether original delivery charges are refunded; it also doesn’t say whether this item is final sale or give exchange terms beyond accepting exchanges within the 30-day window.\"},\"links\":[{\"type\":\"product\",\"url\":\"https://www.sundays-company.com/products/get-together-3-piece-standard-modular-sofa-cream-linen?variant=41588521959495\",\"title\":\"Get Together™ 3-Piece Modular Sofa, Standard, Cream Linen\",\"id\":\"gid://shopify/ProductVariant/41588521959495\"}]}"
+      }
+    ],
+    "isError": false,
+    "structuredContent": {
+      "ucp": {
+        "version": "2026-08-25",
+        "status": "success",
+        "capabilities": {
+          "dev.ucp.common.ask": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/common/ask/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/common/ask.json"
+            }
+          ]
+        }
+      },
+      "answer": {
+        "plain": "For this sofa delivered to 14228, the return window is 30 days from delivery, and it must be in original condition. The return policy conflicts on packaging: one version says returns require the original packaging, while another says missing packaging adds a $75 repackaging fee; the flat return shipping fee is $150 in either case, charged to you. Since this is a sofa, the policy does not specify whether the small-parcel packaging fee applies, so the total fees aren’t clear. The policy says the shipping fee applies to refunds or exchanges, but doesn’t specify whether original delivery charges are refunded; it also doesn’t say whether this item is final sale or give exchange terms beyond accepting exchanges within the 30-day window."
+      },
+      "links": [
+        {
+          "type": "product",
+          "url": "https://www.sundays-company.com/products/get-together-3-piece-standard-modular-sofa-cream-linen?variant=41588521959495",
+          "title": "Get Together™ 3-Piece Modular Sofa, Standard, Cream Linen",
+          "id": "gid://shopify/ProductVariant/41588521959495"
+        }
+      ]
+    }
+  }
+}

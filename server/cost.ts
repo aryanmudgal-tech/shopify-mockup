@@ -94,7 +94,9 @@ export function returnsRow(terms: SourcedTerms, disagreements: Disagreement[], p
   );
 
   const lines: ReturnLine[] = [];
-  const fees = [...terms.fees_by_condition].sort((x, y) => CONDITION_ORDER.indexOf(x.condition) - CONDITION_ORDER.indexOf(y.condition));
+  const fees = [...terms.fees_by_condition]
+    .sort((x, y) => CONDITION_ORDER.indexOf(x.condition) - CONDITION_ORDER.indexOf(y.condition))
+    .map((f) => (sameCharge(f, rs) ? { ...f, fee: { type: "none" as const, percent: null, amount: null, cap: null } } : f));
   const unstatedFees = fees.filter((f) => feeCents(f.fee, prices.itemCents) === null);
   // The loss lines share one set of quotes, so the page shows the store's words
   // once under all of them (10% with the box, 20% without, capped at $250).
@@ -183,6 +185,18 @@ export function returnsRow(terms: SourcedTerms, disagreements: Disagreement[], p
   }
 
   return { status: "terms", lines, window, sources };
+}
+
+/**
+ * One quoted charge is counted once. A flat fee that rests on the same
+ * sentence and amount as the flat return shipping charge is that charge filed
+ * twice (Sundays: "A flat rate return shipping fee of $150"), so the fee adds
+ * nothing on top of the shipping.
+ */
+function sameCharge(f: SourcedTerms["fees_by_condition"][number], rs: SourcedTerms["return_shipping"]): boolean {
+  if (rs.type !== "flat" || f.fee.type !== "flat" || f.fee.amount !== rs.amount) return false;
+  const squash = (s: string) => s.replace(/\s+/g, " ").trim();
+  return f.quotes.some((fq) => rs.quotes.some((rq) => squash(rq.text).includes(squash(fq.text)) || squash(fq.text).includes(squash(rq.text))));
 }
 
 /** Dollar amounts written in a sentence, in cents: "$150", "$1,364", "$136.40". */

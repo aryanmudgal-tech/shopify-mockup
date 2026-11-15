@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Refund policy</title>
+    <meta charset="UTF-8">
+    <script nonce="isJwFhu1vm66d4dX9+/dA4IpOe7QsHIthDrEYKm4P7Q=">
+      const debounce = function(func, wait, immediate) {
+        var timeout;
+        return function() {
+          var context = this, args = arguments;
+          clearTimeout(timeout);
+          timeout = setTimeout(function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          }, wait);
+          if (immediate && !timeout) func.apply(context, args);
+        };
+      };
+
+      const sendMessage = function() {
+        parent.postMessage({ action: 'checkoutModalIframeResized', height: document.body.scrollHeight + 'px'}, '*');
+      };
+
+      document.addEventListener('DOMContentLoaded', sendMessage, false);
+      window.addEventListener('resize', debounce(sendMessage, 200), false);
+    </script>
+
+    <link rel="stylesheet" crossorigin="anonymous" href="//cdn.shopify.com/shopifycloud/shopify/assets/checkout/standalone-dfb65dca3b130340ce121985031c6a5511d52eb90543c2a728b7f48667ab05ca.css" integrity="sha256-37ZdyjsTA0DOEhmFAxxqVRHVLrkFQ8KnKLf0hmerBco=" />
+  </head>
+  <body class="page-policies default-background text-container">
+      <p>We hope you enjoy our products as much as we do! If something doesn't work for you, we will make it right. Returns for refund or exchange will be accepted within 30 days of delivery in original condition with original packaging. A flat rate return shipping fee of $150 will be applied to your refund or exchange.</p>
+<p>If you do not have the original packaging, a return re-packaging fee of $75 will be applied to your refund or exchange.</p>
+
+
+    <div class="hidden">
+  <span class="visually-hidden" id="forwarding-external-new-window-message">
+    Opens external website in a new window.
+  </span>
+
+  <span class="visually-hidden" id="forwarding-new-window-message">
+    Opens in a new window.
+  </span>
+
+  <span class="visually-hidden" id="forwarding-external-message">
+    Opens external website.
+  </span>
+
+  <span class="visually-hidden" id="checkout-context-step-one">
+    Order details - Sundays Company US - Checkout
+  </span>
+</div>
+
+  </body>
+</html>

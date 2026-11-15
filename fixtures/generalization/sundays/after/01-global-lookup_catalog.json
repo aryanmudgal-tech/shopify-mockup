@@ -1,0 +1,257 @@
+{
+  "fetched_at": "2026-11-15T21:57:12.698Z",
+  "endpoint": "global",
+  "tool": "lookup_catalog",
+  "args": {
+    "catalog": {
+      "ids": [
+        "https://www.sundays-company.com/products/get-together-3-piece-standard-modular-sofa-cream-linen?variant=41588521959495"
+      ],
+      "context": {
+        "address_country": "US",
+        "postal_code": "14228"
+      }
+    }
+  },
+  "result": {
+    "structuredContent": {
+      "ucp": {
+        "version": "2026-08-25",
+        "capabilities": {
+          "dev.ucp.shopping.catalog.search": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+            }
+          ],
+          "dev.ucp.shopping.catalog.lookup": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+            }
+          ],
+          "dev.shopify.catalog.global": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://shopify.dev/docs/agents/catalog/global-catalog",
+              "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog_global.json",
+              "extends": [
+                "dev.ucp.shopping.catalog.search",
+                "dev.ucp.shopping.catalog.lookup"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ]
+        },
+        "status": "success"
+      },
+      "products": [
+        {
+          "id": "gid://shopify/p/1NfP0XaXNPasyjwCiwFmxu",
+          "title": "Get Together™ 3-Piece Modular Sofa, Standard, Cream Linen",
+          "description": {
+            "plain": "Sundays Get Together™ 3-Piece Modular Sofa, Standard, Cream Linen (SKU SEC-YJ-035-018, UPC 400000108001) is a 3-piece modular sofa (modular couch, three-seat sofa, configurable sofa, sofa couch) in Cream Linen, a cream beige, from the Sundays Get Together™ collection.\nIt measures 114 inches wide by 38 inches deep by 37 inches tall (289.6 cm by 96.5 cm by 94.0 cm), seats 3 people, and comes with 5 back cushions, 3 seat cushions, and 2 throw cushions.\nIt is fully modular, built to configure and reconfigure to suit the space.\n\nThe sofa is made up of 3 separate modules built on solid wood and plywood frames, with an eight-way hand-tied suspension of eight-gauge helical springs.\nSeat cushions are a feather-fibre blend wrapped around a high-density foam core, and throw cushions are filled with a feather-fibre blend.\nThe slipcovers, cushion covers, and frame covers are all removable, and the cushions are removable and reversible.\n\nKids and pets are welcome on the LiveLife™ performance fabric, which is stain resistant, moisture-repellent, washable, and non-toxic.\nThe extra-deep seats sit on a high frame that makes getting up and down easy.\nWith a seating capacity of 3, households that need more seating are better served by the Get Together™ 4-piece and 5-piece modular sectionals.\n\n- Colour: Cream Linen, a cream beige, commonly described as cream, beige, ivory, oatmeal, or natural.\n- Fabric: Cream Linen LiveLife™ performance fabric, a linen blend with a naturally textured look and feel\n- Fabric content: 36% polyester, 26% cotton, 16% linen, 22% viscose\n- Rub count: 50,000\n- Fabric performance: stain resistant, moisture-repellent, washable, and non-toxic\n- Stain treatment: PFAS-free stain-repellent treatment\n- Covers: removable slipcovers, cushion covers, and frame covers\n- Cushions: removable and reversible\n- Overall dimensions: 114 inches wide by 38 inches deep by 37 inches tall (289.6 cm by 96.5 cm by 94.0 cm)\n- Seating capacity: 3\n- Size: Standard, with the same configuration also offered in Large\n- Frame material: solid wood and plywood\n\nSeating for 3 people: 3 seat cushions run across 114 inches (289.6 cm) of extra-deep seating.\nHomes with kids and pets: the LiveLife™ fabric is stain resistant and moisture-repellent, and spills are soaked up with a paper towel.\nWashable covers: the slipcovers come off and machine wash on a cold, delicate cycle.\nLow-maintenance upkeep: the soft, supportive cushions require minimal fluffing.\n\nFully modular: the 3 modules configure and reconfigure to suit the space, and alligator-clip connectors are included to secure the pieces together.\nThe Get Together™ collection also includes 2-piece and 3-piece modular sofas, 3-piece, 4-piece, and 5-piece modular sectionals, Armless and Closed (arms on both ends) sectional versions, 5-piece and 6-piece U-shaped sectionals, and Standard and Large sizes, each sold as a separate SKU.\nAlso offered in Spice, Olive, Newport Stripe, Cove, Nomad Snow, Sunbeam, Truffle, Champagne, Sea Salt, Moonlight, Clay, Oatmeal, and Light Pebble; each colourway is a separate SKU.\n\nIncludes 3 sofa modules, 5 back cushions, 3 seat cushions, and 2 throw cushions.\nConnectors to secure the modules together are included.\n\nSoak up spills with a paper towel.\nFor tougher stains, wash with mild soap and water.\nCushion covers can be dry cleaned or machine washed on a cold, gentle cycle.\nMachine wash the slipcovers with the zippers closed, using cold water, a delicate cycle, and mild detergent or none at all.\nHang the slipcovers to dry, since a dryer can damage them and voids the product warranty.\nDry clean stains that remain after washing.\n\nAll foam is CertiPUR certified for emissions, content, and durability.\nWinner of Best Couch in the Forbes 2025 Best Product Awards.\nGet Together™ is the best-selling Sundays collection.\n\nComplimentary in-home delivery and assembly included on all orders to Canadian provinces and the continental United States. Service covers room-of-choice placement, full assembly, and packaging removal at no additional charge."
+          },
+          "handle": "get-together-3-piece-standard-modular-sofa-cream-linen",
+          "rating": {
+            "value": 4.8,
+            "scale_min": 1,
+            "scale_max": 5,
+            "count": 3888
+          },
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-035-018_elevated_Variant_silo.jpg",
+              "alt_text": "Get Together™ 3-Piece Modular Sofa, Standard, Cream Linen",
+              "preview": {
+                "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-035-018_elevated_Variant_silo.jpg",
+                "width": 1024,
+                "height": 1024
+              },
+              "width": 1024,
+              "height": 1024
+            }
+          ],
+          "options": [
+            {
+              "name": "Marketing colour",
+              "values": [
+                {
+                  "label": "Champagne"
+                },
+                {
+                  "label": "Clay"
+                },
+                {
+                  "label": "Cove"
+                },
+                {
+                  "label": "Cream Linen"
+                },
+                {
+                  "label": "Light Pebble"
+                },
+                {
+                  "label": "Newport Stripe"
+                },
+                {
+                  "label": "Nomad Snow"
+                },
+                {
+                  "label": "Oatmeal"
+                },
+                {
+                  "label": "Olive"
+                },
+                {
+                  "label": "Spice"
+                },
+                {
+                  "label": "Sunbeam"
+                },
+                {
+                  "label": "Truffle"
+                }
+              ]
+            },
+            {
+              "name": "Product size",
+              "values": [
+                {
+                  "label": "Large"
+                },
+                {
+                  "label": "Standard"
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "unique_selling_points": [
+              "Features deep seats and pillows that prop you up, with minimal fluffing required and stain-resistant fabric."
+            ],
+            "top_features": [
+              "Deep seats and pillows provide enhanced comfort and support",
+              "Supports shape retention for long-lasting use",
+              "Stain-resistant fabric simplifies cleaning and maintenance",
+              "Minimal fluffing required for easy care",
+              "Modular design allows flexible arrangement"
+            ],
+            "tech_specs": [
+              "Set includes: 3 pieces (sofa, backrest, armrest)",
+              "Upholstery material: Linen or polyester (varies by colorway)",
+              "Upholstery pattern: Solid",
+              "Sofa features: Upholstered, stain resistant, removable cushions",
+              "Available sizes: Standard, Large",
+              "Shape: Modular, convertible"
+            ]
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/41588521959495",
+              "title": "Get Together™ 3-Piece Modular Sofa, Standard, Cream Linen",
+              "description": {
+                "plain": "Sundays Get Together™ 3-Piece Modular Sofa, Standard, Cream Linen (SKU SEC-YJ-035-018, UPC 400000108001) is a 3-piece modular sofa (modular couch, three-seat sofa, configurable sofa, sofa couch) in Cream Linen, a cream beige, from the Sundays Get Together™ collection.\nIt measures 114 inches wide by 38 inches deep by 37 inches tall (289.6 cm by 96.5 cm by 94.0 cm), seats 3 people, and comes with 5 back cushions, 3 seat cushions, and 2 throw cushions.\nIt is fully modular, built to configure and reconfigure to suit the space.\n\nThe sofa is made up of 3 separate modules built on solid wood and plywood frames, with an eight-way hand-tied suspension of eight-gauge helical springs.\nSeat cushions are a feather-fibre blend wrapped around a high-density foam core, and throw cushions are filled with a feather-fibre blend.\nThe slipcovers, cushion covers, and frame covers are all removable, and the cushions are removable and reversible.\n\nKids and pets are welcome on the LiveLife™ performance fabric, which is stain resistant, moisture-repellent, washable, and non-toxic.\nThe extra-deep seats sit on a high frame that makes getting up and down easy.\nWith a seating capacity of 3, households that need more seating are better served by the Get Together™ 4-piece and 5-piece modular sectionals.\n\n- Colour: Cream Linen, a cream beige, commonly described as cream, beige, ivory, oatmeal, or natural.\n- Fabric: Cream Linen LiveLife™ performance fabric, a linen blend with a naturally textured look and feel\n- Fabric content: 36% polyester, 26% cotton, 16% linen, 22% viscose\n- Rub count: 50,000\n- Fabric performance: stain resistant, moisture-repellent, washable, and non-toxic\n- Stain treatment: PFAS-free stain-repellent treatment\n- Covers: removable slipcovers, cushion covers, and frame covers\n- Cushions: removable and reversible\n- Overall dimensions: 114 inches wide by 38 inches deep by 37 inches tall (289.6 cm by 96.5 cm by 94.0 cm)\n- Seating capacity: 3\n- Size: Standard, with the same configuration also offered in Large\n- Frame material: solid wood and plywood\n\nSeating for 3 people: 3 seat cushions run across 114 inches (289.6 cm) of extra-deep seating.\nHomes with kids and pets: the LiveLife™ fabric is stain resistant and moisture-repellent, and spills are soaked up with a paper towel.\nWashable covers: the slipcovers come off and machine wash on a cold, delicate cycle.\nLow-maintenance upkeep: the soft, supportive cushions require minimal fluffing.\n\nFully modular: the 3 modules configure and reconfigure to suit the space, and alligator-clip connectors are included to secure the pieces together.\nThe Get Together™ collection also includes 2-piece and 3-piece modular sofas, 3-piece, 4-piece, and 5-piece modular sectionals, Armless and Closed (arms on both ends) sectional versions, 5-piece and 6-piece U-shaped sectionals, and Standard and Large sizes, each sold as a separate SKU.\nAlso offered in Spice, Olive, Newport Stripe, Cove, Nomad Snow, Sunbeam, Truffle, Champagne, Sea Salt, Moonlight, Clay, Oatmeal, and Light Pebble; each colourway is a separate SKU.\n\nIncludes 3 sofa modules, 5 back cushions, 3 seat cushions, and 2 throw cushions.\nConnectors to secure the modules together are included.\n\nSoak up spills with a paper towel.\nFor tougher stains, wash with mild soap and water.\nCushion covers can be dry cleaned or machine washed on a cold, gentle cycle.\nMachine wash the slipcovers with the zippers closed, using cold water, a delicate cycle, and mild detergent or none at all.\nHang the slipcovers to dry, since a dryer can damage them and voids the product warranty.\nDry clean stains that remain after washing.\n\nAll foam is CertiPUR certified for emissions, content, and durability.\nWinner of Best Couch in the Forbes 2025 Best Product Awards.\nGet Together™ is the best-selling Sundays collection.\n\nComplimentary in-home delivery and assembly included on all orders to Canadian provinces and the continental United States. Service covers room-of-choice placement, full assembly, and packaging removal at no additional charge."
+              },
+              "handle": "get-together-3-piece-standard-modular-sofa-cream-linen",
+              "url": "https://www.sundays-company.com/products/get-together-3-piece-standard-modular-sofa-cream-linen?variant=41588521959495&_gsid=2mSqmaVTJtot&utm_source=shopify&utm_medium=catalog",
+              "price": {
+                "amount": 380000,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 400000,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Marketing colour",
+                  "label": "Cream Linen"
+                },
+                {
+                  "name": "Product size",
+                  "label": "Standard"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-035-018_elevated_Variant_silo.jpg",
+                  "alt_text": "Get Together™ 3-Piece Modular Sofa, Standard, Cream Linen",
+                  "preview": {
+                    "url": "https://cdn.shopify.com/s/files/1/0054/6596/4615/files/SEC-YJ-035-018_elevated_Variant_silo.jpg",
+                    "width": 1024,
+                    "height": 1024
+                  },
+                  "width": 1024,
+                  "height": 1024
+                }
+              ],
+              "seller": {
+                "id": "gid://shopify/Shop/5465964615",
+                "name": "Sundays Company US",
+                "url": "https://www.sundays-company.com",
+                "domain": "sundays-company-production.myshopify.com",
+                "links": [
+                  {
+                    "type": "privacy_policy",
+                    "url": "https://checkout.shopify.com/5465964615/policies/8341127239.html"
+                  },
+                  {
+                    "type": "terms_of_service",
+                    "url": "https://checkout.shopify.com/5465964615/policies/8341160007.html"
+                  },
+                  {
+                    "type": "refund_policy",
+                    "url": "https://checkout.shopify.com/5465964615/policies/8341094471.html"
+                  }
+                ]
+              },
+              "checkout_url": "https://www.sundays-company.com/buy/41588521959495:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&attribution/click_id_tag=_gsid&attribution/click_id_value=2mSqmaVTJtot&_gsid=2mSqmaVTJtot",
+              "rating": {
+                "value": 5,
+                "scale_min": 1,
+                "scale_max": 5,
+                "count": 2
+              },
+              "condition": [
+                "new"
+              ],
+              "eligible": {
+                "native_checkout": false
+              },
+              "source": "shopify",
+              "inputs": [
+                {
+                  "id": "https://www.sundays-company.com/products/get-together-3-piece-standard-modular-sofa-cream-linen?variant=41588521959495",
+                  "match": "featured"
+                }
+              ]
+            }
+          ],
+          "price_range": {
+            "min": {
+              "amount": 380000,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 380000,
+              "currency": "USD"
+            }
+          }
+        }
+      ],
+      "messages": []
+    }
+  }
+}

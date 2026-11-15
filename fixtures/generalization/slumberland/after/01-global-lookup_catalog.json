@@ -1,0 +1,230 @@
+{
+  "fetched_at": "2026-11-15T21:56:05.680Z",
+  "endpoint": "global",
+  "tool": "lookup_catalog",
+  "args": {
+    "catalog": {
+      "ids": [
+        "https://www.slumberland.com/products/mahoney-loveseat?variant=49048623055150"
+      ],
+      "context": {
+        "address_country": "US",
+        "postal_code": "14228"
+      }
+    }
+  },
+  "result": {
+    "structuredContent": {
+      "ucp": {
+        "version": "2026-08-25",
+        "capabilities": {
+          "dev.ucp.shopping.catalog.search": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+            }
+          ],
+          "dev.ucp.shopping.catalog.lookup": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+            }
+          ],
+          "dev.shopify.catalog.global": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://shopify.dev/docs/agents/catalog/global-catalog",
+              "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog_global.json",
+              "extends": [
+                "dev.ucp.shopping.catalog.search",
+                "dev.ucp.shopping.catalog.lookup"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ]
+        },
+        "status": "success"
+      },
+      "products": [
+        {
+          "id": "gid://shopify/p/1A4g43gMA356Qo6J4C6lRa",
+          "title": "Mahoney Loveseat",
+          "description": {
+            "plain": "Reimagining dependable comfort, the beautiful Mahoney Loveseat introduces you to a world of approachable and everyday style. Marrying classic elements, such as a tufted back, with a modern structure, it strikes the perfect balance. Sink into the luxuriously soft, multi-hued upholstery that embodies relaxation in every fiber. Engineered with a corner-blocked frame, attached back, and loose seat cushions, it boasts high-resiliency foam wrapped in dense poly fiber for enduring coziness. Accentuating its appeal are included pillows with gentle polyfill, while the faux wood finished feet exude elegance. With a sag-resistant platform foundation, this perfectly sized loveseat offers smooth, lasting, comfortable support."
+          },
+          "handle": "mahoney-loveseat",
+          "rating": {
+            "value": 4.6,
+            "scale_min": 1,
+            "scale_max": 5,
+            "count": 72
+          },
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/products/QK1066117_ASHL_PRI_OL.jpg",
+              "alt_text": "Mahoney Loveseat - QK1066117_ASHL_PRI_OL",
+              "preview": {
+                "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/products/QK1066117_ASHL_PRI_OL.jpg",
+                "width": 2000,
+                "height": 2000
+              },
+              "width": 2000,
+              "height": 2000
+            }
+          ],
+          "options": [
+            {
+              "name": "Upholstery color",
+              "values": [
+                {
+                  "label": "Brown"
+                },
+                {
+                  "label": "Chocolate"
+                },
+                {
+                  "label": "Dark Brown"
+                },
+                {
+                  "label": "Grey"
+                },
+                {
+                  "label": "Light Gray"
+                },
+                {
+                  "label": "Pearl Silver"
+                },
+                {
+                  "label": "Pebble"
+                },
+                {
+                  "label": "White"
+                }
+              ]
+            }
+          ],
+          "metadata": {
+            "unique_selling_points": [
+              "Combines classic tufted design with modern comfort and high-resiliency foam for lasting support."
+            ],
+            "top_features": [
+              "Tufted backrest provides classic style and enhanced support",
+              "High-resiliency foam wrapped in dense poly fiber ensures long-lasting comfort",
+              "Multi-hued upholstery offers a relaxed, inviting look",
+              "Corner-blocked frame and attached back offer stability and durability",
+              "Sag-resistant platform foundation maintains shape over time"
+            ],
+            "tech_specs": [
+              "Dimensions: 53 in (L) x 38 in (W) x 37 in (H)",
+              "Upholstery Material: Polyester",
+              "Upholstery Pattern: Solid",
+              "Firmness: Medium",
+              "Frame: Corner-blocked, attached back",
+              "Feet: Faux wood finish"
+            ]
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/49048623055150",
+              "title": "Mahoney Loveseat",
+              "description": {
+                "plain": "Reimagining dependable comfort, the beautiful Mahoney Loveseat introduces you to a world of approachable and everyday style. Marrying classic elements, such as a tufted back, with a modern structure, it strikes the perfect balance. Sink into the luxuriously soft, multi-hued upholstery that embodies relaxation in every fiber. Engineered with a corner-blocked frame, attached back, and loose seat cushions, it boasts high-resiliency foam wrapped in dense poly fiber for enduring coziness. Accentuating its appeal are included pillows with gentle polyfill, while the faux wood finished feet exude elegance. With a sag-resistant platform foundation, this perfectly sized loveseat offers smooth, lasting, comfortable support."
+              },
+              "handle": "mahoney-loveseat",
+              "url": "https://www.slumberland.com/products/mahoney-loveseat?variant=49048623055150&_gsid=S1K4YDNubTMG&utm_source=shopify&utm_medium=catalog",
+              "price": {
+                "amount": 48999,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Upholstery color",
+                  "label": "Chocolate"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/products/QK1066117_ASHL_PRI_OL.jpg",
+                  "alt_text": "Mahoney Loveseat - QK1066117_ASHL_PRI_OL",
+                  "preview": {
+                    "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/products/QK1066117_ASHL_PRI_OL.jpg",
+                    "width": 2000,
+                    "height": 2000
+                  },
+                  "width": 2000,
+                  "height": 2000
+                }
+              ],
+              "seller": {
+                "id": "gid://shopify/Shop/85126021422",
+                "name": "Slumberland",
+                "url": "https://www.slumberland.com",
+                "domain": "ca59ae-5.myshopify.com",
+                "links": [
+                  {
+                    "type": "privacy_policy",
+                    "url": "https://checkout.shopify.com/85126021422/policies/38779355438.html"
+                  },
+                  {
+                    "type": "terms_of_service",
+                    "url": "https://checkout.shopify.com/85126021422/policies/38779388206.html"
+                  },
+                  {
+                    "type": "refund_policy",
+                    "url": "https://checkout.shopify.com/85126021422/policies/38995165486.html"
+                  },
+                  {
+                    "type": "shipping_policy",
+                    "url": "https://checkout.shopify.com/85126021422/policies/38995198254.html"
+                  }
+                ]
+              },
+              "checkout_url": "https://www.slumberland.com/buy/49048623055150:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&attribution/click_id_tag=_gsid&attribution/click_id_value=S1K4YDNubTMG&_gsid=S1K4YDNubTMG",
+              "rating": {
+                "value": 5,
+                "scale_min": 1,
+                "scale_max": 5,
+                "count": 2
+              },
+              "condition": [
+                "new"
+              ],
+              "eligible": {
+                "native_checkout": false
+              },
+              "source": "shopify",
+              "inputs": [
+                {
+                  "id": "https://www.slumberland.com/products/mahoney-loveseat?variant=49048623055150",
+                  "match": "featured"
+                }
+              ]
+            }
+          ],
+          "price_range": {
+            "min": {
+              "amount": 48999,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 48999,
+              "currency": "USD"
+            }
+          }
+        }
+      ],
+      "messages": []
+    }
+  }
+}

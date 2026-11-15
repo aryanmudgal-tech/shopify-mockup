@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Refund policy</title>
+    <meta charset="UTF-8">
+    <script nonce="IQgKRtg7AKd1wYnQckCTp7VlH/A7vnhBb7nV520OgIY=">
+      const debounce = function(func, wait, immediate) {
+        var timeout;
+        return function() {
+          var context = this, args = arguments;
+          clearTimeout(timeout);
+          timeout = setTimeout(function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          }, wait);
+          if (immediate && !timeout) func.apply(context, args);
+        };
+      };
+
+      const sendMessage = function() {
+        parent.postMessage({ action: 'checkoutModalIframeResized', height: document.body.scrollHeight + 'px'}, '*');
+      };
+
+      document.addEventListener('DOMContentLoaded', sendMessage, false);
+      window.addEventListener('resize', debounce(sendMessage, 200), false);
+
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' || event.key === 'Esc') {
+          window.parent.postMessage('closeCheckoutPolicyModal', '*')
+        }
+      })
+    </script>
+
+
+    <link rel="stylesheet" crossorigin="anonymous" href="//cdn.shopify.com/shopifycloud/shopify/assets/checkout/standalone-dfb65dca3b130340ce121985031c6a5511d52eb90543c2a728b7f48667ab05ca.css" integrity="sha256-37ZdyjsTA0DOEhmFAxxqVRHVLrkFQ8KnKLf0hmerBco=" />
+  </head>
+  <body class="page-policies default-background text-container">
+      <div id="shopify-section-template--22877718511918__rich_text_cAUJKM" class="shopify-section cc-rich-text">
+<div class="section section--main color-scheme--transparent" id="template--22877718511918__rich_text_cAUJKM">
+<div class="container flex justify-start text-start">
+<div class="max-w-text-overlay">
+<h2 class="section__block section__block--heading md-down:px-gutter h3"><span class="contained-heading inline-block">Service And Repairs</span></h2>
+<div class="section__block  reading-width--inline md-down:px-gutter rte mr-auto">
+<p>Handling Damage (At Time Of Delivery)</p>
+<ul>
+<li>Any damage to your home or product must be reported to your local store within 5 days.</li>
+<li>We reserve the right to inspect the damage. Service may be denied if damage was discovered to have occurred after delivery.</li>
+<li>Slumberland will either repair/replace the item or component, at our discretion.</li>
+</ul>
+<p>Manufacturer Defects (Product Warranty Claims)</p>
+<ul>
+<li>Product warranties vary by manufacturer.</li>
+<li>Slumberland will help facilitate service based on the terms and conditions of the manufacturer’s warranty.</li>
+<li>Slumberland reserves the right to inspect all warranty claims and will decide to repair or replace defective merchandise at our discretion – no refunds.</li>
+<li>Slumberland will provide service within our delivery areas.</li>
+<li>For the first 90 days, Slumberland will provide service at no charge.</li>
+<li>After 90 days of the product being in your home, inspection fees, delivery fees, and technician labor costs may apply.</li>
+<li>For items outside of the manufacturer’s warranty, Slumberland will provide a technician referral in your area.All “As-Is” merchandise sales are final. Manufacturer warranties do not apply.</li>
+<li>Please refer to any manufacturer’s documentation pertaining to their warranty, care instructions and terms of use.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="shopify-section-template--22877718511918__rich_text_XUgKPw" class="shopify-section cc-rich-text">
+<div class="section section--main color-scheme--transparent" id="template--22877718511918__rich_text_XUgKPw">
+<div class="container flex justify-start text-start">
+<div class="max-w-text-overlay">
+<h2 class="section__block section__block--heading md-down:px-gutter h3"><span class="contained-heading inline-block">Refunds</span></h2>
+<div class="section__block  reading-width--inline md-down:px-gutter rte mr-auto">
+<ul>
+<li>Cash and Check refunds will be in the form of a check and issued within 10 business days from when the payment has posted to all bank accounts.</li>
+<li>Bank/Credit card payments will be refunded back to the same card as the original payment was made. Banks vary on processing time of refunds. A Slumberland Gift card can be substituted if the original card is invalid.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    <div class="hidden">
+  <span class="visually-hidden" id="forwarding-external-new-window-message">
+    Opens external website in a new window.
+  </span>
+
+  <span class="visually-hidden" id="forwarding-new-window-message">
+    Opens in a new window.
+  </span>
+
+  <span class="visually-hidden" id="forwarding-external-message">
+    Opens external website.
+  </span>
+
+  <span class="visually-hidden" id="checkout-context-step-one">
+    Contact - Slumberland - Checkout
+  </span>
+</div>
+
+  </body>
+</html>

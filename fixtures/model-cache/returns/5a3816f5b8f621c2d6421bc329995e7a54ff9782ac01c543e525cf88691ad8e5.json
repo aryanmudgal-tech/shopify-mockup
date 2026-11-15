@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "cached": false,
+  "policy": {
+    "source": "policy",
+    "terms": {
+      "window": {
+        "days": null,
+        "starts": null,
+        "quotes": []
+      },
+      "fees_by_condition": [],
+      "return_shipping": {
+        "type": "not_mentioned",
+        "amount": null,
+        "quotes": []
+      },
+      "original_delivery_refunded": {
+        "value": null,
+        "quotes": []
+      },
+      "exchange": {
+        "free": null,
+        "count": null,
+        "needs_original_packaging": null,
+        "within_return_window": null,
+        "quotes": []
+      },
+      "final_sale": {
+        "value": null,
+        "quotes": []
+      }
+    },
+    "attempts": 1,
+    "dropped": [],
+    "error": null
+  },
+  "assistant": {
+    "source": "assistant",
+    "terms": {
+      "window": {
+        "days": 5,
+        "starts": null,
+        "quotes": [
+          {
+            "text": "the stated policy offers a full refund if you’re unhappy with its size, shape, look, or fit within the first 5 days after taking possession",
+            "source": "assistant"
+          }
+        ]
+      },
+      "fees_by_condition": [],
+      "return_shipping": {
+        "type": "not_mentioned",
+        "amount": null,
+        "quotes": []
+      },
+      "original_delivery_refunded": {
+        "value": null,
+        "quotes": []
+      },
+      "exchange": {
+        "free": null,
+        "count": null,
+        "needs_original_packaging": null,
+        "within_return_window": null,
+        "quotes": []
+      },
+      "final_sale": {
+        "value": null,
+        "quotes": []
+      }
+    },
+    "attempts": 1,
+    "dropped": [],
+    "error": null
+  }
+}

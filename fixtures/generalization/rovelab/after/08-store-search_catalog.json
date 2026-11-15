@@ -1,0 +1,434 @@
+{
+  "fetched_at": "2026-11-15T21:55:56.702Z",
+  "endpoint": "rovelab-us.myshopify.com",
+  "tool": "search_catalog",
+  "args": {
+    "catalog": {
+      "query": "swatch",
+      "pagination": {
+        "limit": 20
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"services\":{\"dev.ucp.shopping\":[]},\"capabilities\":{\"dev.ucp.shopping.checkout\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/checkout/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/checkout.json\"}],\"dev.ucp.shopping.fulfillment\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}},\"config\":{\"multi_destination\":[],\"method_combinations\":[[\"shipping\"]]}}],\"dev.ucp.shopping.buyer_consent\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json\",\"extends\":[\"dev.ucp.shopping.cart\",\"dev.ucp.shopping.checkout\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.discount\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/discount.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.cart\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/cart/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/cart.json\"}],\"dev.ucp.shopping.order\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/order/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/order.json\"}],\"dev.ucp.shopping.catalog.search\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json\"}],\"dev.ucp.shopping.catalog.lookup\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json\"}],\"dev.shopify.catalog\":[{\"version\":\"2026-08-25\",\"spec\":\"https://shopify.dev/docs/agents/catalog/storefront-catalog\",\"schema\":\"https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json\",\"extends\":[\"dev.ucp.shopping.catalog.search\",\"dev.ucp.shopping.catalog.lookup\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}]},\"payment_handlers\":{\"com.google.pay\":[{\"id\":\"gpay\",\"version\":\"2026-01-11\",\"spec\":\"https://pay.google.com/gp/p/ucp/2026-01-11/\",\"schema\":\"https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json\",\"config\":{\"api_version\":2,\"api_version_minor\":0,\"merchant_info\":{\"merchant_name\":\"Rove Lab™\",\"merchant_id\":\"16708973830884969730\",\"merchant_origin\":\"rovelab.com\",\"auth_jwt\":\"\"},\"allowed_payment_methods\":[{\"type\":\"CARD\",\"parameters\":{\"allowed_auth_methods\":[\"PAN_ONLY\",\"CRYPTOGRAM_3DS\"],\"allowed_card_networks\":[\"VISA\",\"MASTERCARD\",\"AMEX\",\"DISCOVER\",\"JCB\"],\"billing_address_required\":true,\"billing_address_parameters\":{\"format\":\"FULL\",\"phone_number_required\":true}},\"tokenization_specification\":{\"type\":\"PAYMENT_GATEWAY\",\"parameters\":{\"gateway\":\"shopify\",\"gatewayMerchantId\":\"65058504841\"}}}]}}],\"dev.shopify.card\":[{\"id\":\"shopify.card\",\"version\":\"2026-01-15\",\"spec\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md\",\"schema\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json\",\"config\":{\"payment_methods\":[{\"type\":\"card\",\"enabled_card_brands\":[\"visa\",\"master\",\"american_express\",\"discover\",\"diners_club\",\"elo\",\"jcb\",\"unionpay\"]}]}}],\"dev.shopify.shop_pay\":[{\"id\":\"shop_pay\",\"version\":\"2026-04-08\",\"spec\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md\",\"schema\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json\",\"config\":{\"shop_id\":\"65058504841\"}}]}},\"products\":[{\"id\":\"gid://shopify/Product/7845264720009\",\"title\":\"Free Swatches\",\"description\":{\"html\":\"Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision.\"},\"url\":\"https://rovelab.com/products/free-fabric-swatches\",\"handle\":\"free-fabric-swatches\",\"price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":0,\"currency\":\"USD\"},\"max\":{\"amount\":0,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/43324525871241\",\"sku\":\"SW-LAB-001\",\"title\":\"CLASSIC SELECTION\",\"description\":{\"html\":\"Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision.\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Swatch Kit\",\"label\":\"CLASSIC SELECTION\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_CLASSIC_SELECTION.webp?v=1754940252\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/43324525871241:1\"},{\"id\":\"gid://shopify/ProductVariant/43324525838473\",\"sku\":\"SW-LAB-002\",\"title\":\"BOLD SELECTION\",\"description\":{\"html\":\"Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision.\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Swatch Kit\",\"label\":\"BOLD SELECTION\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_BOLD_SELECTION.webp?v=1754940265\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/43324525838473:1\"},{\"id\":\"gid://shopify/ProductVariant/44662406217865\",\"sku\":\"SW-LAB-003\",\"title\":\"SWATCH SELECTION\",\"description\":{\"html\":\"Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision.\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Swatch Kit\",\"label\":\"SWATCH SELECTION\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCHv3_c367c6f7-62a8-4564-9bf0-a1db9f01c056.webp?v=1758054458\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/44662406217865:1\"},{\"id\":\"gid://shopify/ProductVariant/45945516425353\",\"sku\":\"SW-LAB-007\",\"title\":\"THE OUTDOOR SELECTION\",\"description\":{\"html\":\"Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision.\"},\"price\":{\"amount\":0,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Swatch Kit\",\"label\":\"THE OUTDOOR SELECTION\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_7_-_OUTDOOR_SELECTION_1.webp?v=1777322246\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://rovelab-us.myshopify.com/cart/45945516425353:1\"}],\"options\":[{\"name\":\"Swatch Kit\",\"values\":[{\"label\":\"CLASSIC SELECTION\"},{\"label\":\"BOLD SELECTION\"},{\"label\":\"SWATCH SELECTION\"},{\"label\":\"THE OUTDOOR SELECTION\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_CLASSIC_SELECTION.webp?v=1754940252\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-21-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"exclude-feed\",\"parent\",\"swatch\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/328887533705\",\"handle\":\"all-collections\",\"title\":\"Collections\",\"description\":{\"html\":\"\"}}]}],\"pagination\":{\"has_next_page\":false},\"messages\":[]}"
+      }
+    ],
+    "isError": false,
+    "structuredContent": {
+      "ucp": {
+        "version": "2026-08-25",
+        "status": "success",
+        "services": {
+          "dev.ucp.shopping": []
+        },
+        "capabilities": {
+          "dev.ucp.shopping.checkout": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/checkout/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/checkout.json"
+            }
+          ],
+          "dev.ucp.shopping.fulfillment": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json",
+              "extends": [
+                "dev.ucp.shopping.checkout",
+                "dev.ucp.shopping.cart"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              },
+              "config": {
+                "multi_destination": [],
+                "method_combinations": [
+                  [
+                    "shipping"
+                  ]
+                ]
+              }
+            }
+          ],
+          "dev.ucp.shopping.buyer_consent": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json",
+              "extends": [
+                "dev.ucp.shopping.cart",
+                "dev.ucp.shopping.checkout"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ],
+          "dev.ucp.shopping.discount": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/discount.json",
+              "extends": [
+                "dev.ucp.shopping.checkout",
+                "dev.ucp.shopping.cart"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ],
+          "dev.ucp.shopping.cart": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/cart/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/cart.json"
+            }
+          ],
+          "dev.ucp.shopping.order": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/order/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/order.json"
+            }
+          ],
+          "dev.ucp.shopping.catalog.search": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+            }
+          ],
+          "dev.ucp.shopping.catalog.lookup": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+            }
+          ],
+          "dev.shopify.catalog": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://shopify.dev/docs/agents/catalog/storefront-catalog",
+              "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json",
+              "extends": [
+                "dev.ucp.shopping.catalog.search",
+                "dev.ucp.shopping.catalog.lookup"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ]
+        },
+        "payment_handlers": {
+          "com.google.pay": [
+            {
+              "id": "gpay",
+              "version": "2026-01-11",
+              "spec": "https://pay.google.com/gp/p/ucp/2026-01-11/",
+              "schema": "https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json",
+              "config": {
+                "api_version": 2,
+                "api_version_minor": 0,
+                "merchant_info": {
+                  "merchant_name": "Rove Lab™",
+                  "merchant_id": "16708973830884969730",
+                  "merchant_origin": "rovelab.com",
+                  "auth_jwt": ""
+                },
+                "allowed_payment_methods": [
+                  {
+                    "type": "CARD",
+                    "parameters": {
+                      "allowed_auth_methods": [
+                        "PAN_ONLY",
+                        "CRYPTOGRAM_3DS"
+                      ],
+                      "allowed_card_networks": [
+                        "VISA",
+                        "MASTERCARD",
+                        "AMEX",
+                        "DISCOVER",
+                        "JCB"
+                      ],
+                      "billing_address_required": true,
+                      "billing_address_parameters": {
+                        "format": "FULL",
+                        "phone_number_required": true
+                      }
+                    },
+                    "tokenization_specification": {
+                      "type": "PAYMENT_GATEWAY",
+                      "parameters": {
+                        "gateway": "shopify",
+                        "gatewayMerchantId": "65058504841"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "dev.shopify.card": [
+            {
+              "id": "shopify.card",
+              "version": "2026-01-15",
+              "spec": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md",
+              "schema": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json",
+              "config": {
+                "payment_methods": [
+                  {
+                    "type": "card",
+                    "enabled_card_brands": [
+                      "visa",
+                      "master",
+                      "american_express",
+                      "discover",
+                      "diners_club",
+                      "elo",
+                      "jcb",
+                      "unionpay"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "dev.shopify.shop_pay": [
+            {
+              "id": "shop_pay",
+              "version": "2026-04-08",
+              "spec": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md",
+              "schema": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json",
+              "config": {
+                "shop_id": "65058504841"
+              }
+            }
+          ]
+        }
+      },
+      "products": [
+        {
+          "id": "gid://shopify/Product/7845264720009",
+          "title": "Free Swatches",
+          "description": {
+            "html": "Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision."
+          },
+          "url": "https://rovelab.com/products/free-fabric-swatches",
+          "handle": "free-fabric-swatches",
+          "price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 0,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 0,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/43324525871241",
+              "sku": "SW-LAB-001",
+              "title": "CLASSIC SELECTION",
+              "description": {
+                "html": "Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision."
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Swatch Kit",
+                  "label": "CLASSIC SELECTION"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_CLASSIC_SELECTION.webp?v=1754940252"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/43324525871241:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/43324525838473",
+              "sku": "SW-LAB-002",
+              "title": "BOLD SELECTION",
+              "description": {
+                "html": "Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision."
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Swatch Kit",
+                  "label": "BOLD SELECTION"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_BOLD_SELECTION.webp?v=1754940265"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/43324525838473:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/44662406217865",
+              "sku": "SW-LAB-003",
+              "title": "SWATCH SELECTION",
+              "description": {
+                "html": "Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision."
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Swatch Kit",
+                  "label": "SWATCH SELECTION"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCHv3_c367c6f7-62a8-4564-9bf0-a1db9f01c056.webp?v=1758054458"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/44662406217865:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/45945516425353",
+              "sku": "SW-LAB-007",
+              "title": "THE OUTDOOR SELECTION",
+              "description": {
+                "html": "Find the perfect color for your sofa with confidence. Rove Lab now offers four free swatch kits to help you choose the ideal shade for your space. The Classic Selection – Featuring our 6 original colors, timeless and versatile: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green and Carbon Black. The Bold Selection – A complete set of 10 swatches, including the 6 original colors plus 4 new, bolder shades for a more vibrant and distinctive look: Helium Cloud, Platinum Grey, Silicon Sand, Copper Tan, Krypton Green, Carbon Black, Nitrogen Sky Blue, Lithium Lavender, Hydrogen Blue and Beryllium Blush. The Signature Selection – Featuring 9 of our colors and fabrics, each one representing a breakthrough in design thinking: beautiful colors, elevated textures, and the perfect balance of innovation and luxury. Here you will find – Shearling: Almond, Fawn, and Espresso. Chatou Bouclé: Pearl. Performance Corduroy: Lunar Dune, Comet Ivory, Nebula Blue, Terraform Green, Dark Matter. The Outdoor Selection – 8 new colours and fabrics, solid and striped, powered by advanced outdoor-ready technology for comfort that performs beautifully outside: Moonlight, Celestial Stone, Comet Mist, Eclipse Obsidian, Celestial Azure, Cosmic Aperol, Orbit Groove and Solar Riviera. Order your free kit today and explore the textures and tones in your own home before making your decision."
+              },
+              "price": {
+                "amount": 0,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Swatch Kit",
+                  "label": "THE OUTDOOR SELECTION"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_7_-_OUTDOOR_SELECTION_1.webp?v=1777322246"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://rovelab-us.myshopify.com/cart/45945516425353:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Swatch Kit",
+              "values": [
+                {
+                  "label": "CLASSIC SELECTION"
+                },
+                {
+                  "label": "BOLD SELECTION"
+                },
+                {
+                  "label": "SWATCH SELECTION"
+                },
+                {
+                  "label": "THE OUTDOOR SELECTION"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0650/5850/4841/files/SWATCH_3_-_CLASSIC_SELECTION.webp?v=1754940252"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-21-2",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "exclude-feed",
+            "parent",
+            "swatch"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/328887533705",
+              "handle": "all-collections",
+              "title": "Collections",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        }
+      ],
+      "pagination": {
+        "has_next_page": false
+      },
+      "messages": []
+    }
+  }
+}

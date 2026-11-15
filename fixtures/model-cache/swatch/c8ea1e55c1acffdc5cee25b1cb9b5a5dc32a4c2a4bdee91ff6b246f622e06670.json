@@ -1,0 +1,8 @@
+{
+  "reason": "The sofa's fabric is Cream Linen, and the search results include \"Swatch Cream Linen, LiveLife™ Fabric\" (product 6652723953735), a sample of that same colour and linen material.",
+  "any_samples": true,
+  "match": {
+    "product_id": "gid://shopify/Product/6652723953735",
+    "variant_id": "gid://shopify/ProductVariant/41588520779847"
+  }
+}

@@ -219,3 +219,24 @@ describe("dollarAmounts", () => {
     expect(dollarAmounts("a $150 fee, $1,364 listed, $136.40 back, 30 days, 10%")).toEqual([15000, 136400, 13640]);
   });
 });
+
+describe("one quoted charge is counted once", () => {
+  it("Sundays, $150 filed as both the with-box fee and return shipping: counted once, $150 and $225", () => {
+    const S150 = P("A flat rate return shipping fee of $150 will be applied to your refund or exchange.");
+    const S75 = P("If you do not have the original packaging, a return re-packaging fee of $75 will be applied to your refund or exchange.");
+    const row = returnsRow(
+      terms({
+        fees_by_condition: [
+          { condition: "with_original_packaging", fee: { type: "flat", percent: null, amount: 150, cap: null }, quotes: [P("A flat rate return shipping fee of $150 will be applied to your refund")] },
+          { condition: "without_original_packaging", fee: { type: "flat", percent: null, amount: 75, cap: null }, quotes: [S75] },
+        ],
+        return_shipping: { type: "flat", amount: 150, quotes: [S150] },
+      }),
+      [],
+      { itemCents: 380000, deliveryCents: 0 },
+      SOURCES,
+    );
+    if (row.status !== "terms") throw new Error(`${row.status}: ${"reason" in row ? row.reason : ""}`);
+    expect(row.lines.filter((l) => l.kind === "loss").map((l) => (l.kind === "loss" ? l.lossCents : 0))).toEqual([15000, 22500]);
+  });
+});

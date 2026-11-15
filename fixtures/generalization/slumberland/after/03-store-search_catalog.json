@@ -1,0 +1,931 @@
+{
+  "fetched_at": "2026-11-15T21:56:06.101Z",
+  "endpoint": "ca59ae-5.myshopify.com",
+  "tool": "search_catalog",
+  "args": {
+    "catalog": {
+      "query": "Chocolate swatch",
+      "pagination": {
+        "limit": 20
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"services\":{\"dev.ucp.shopping\":[]},\"capabilities\":{\"dev.ucp.shopping.checkout\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/checkout/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/checkout.json\"}],\"dev.ucp.shopping.fulfillment\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}},\"config\":{\"multi_destination\":[],\"method_combinations\":[[\"shipping\"]]}}],\"dev.ucp.shopping.buyer_consent\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json\",\"extends\":[\"dev.ucp.shopping.cart\",\"dev.ucp.shopping.checkout\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.discount\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/discount.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.cart\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/cart/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/cart.json\"}],\"dev.ucp.shopping.order\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/order/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/order.json\"}],\"dev.ucp.shopping.catalog.search\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json\"}],\"dev.ucp.shopping.catalog.lookup\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json\"}],\"dev.shopify.catalog\":[{\"version\":\"2026-08-25\",\"spec\":\"https://shopify.dev/docs/agents/catalog/storefront-catalog\",\"schema\":\"https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json\",\"extends\":[\"dev.ucp.shopping.catalog.search\",\"dev.ucp.shopping.catalog.lookup\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}]},\"payment_handlers\":{\"com.google.pay\":[{\"id\":\"gpay\",\"version\":\"2026-01-11\",\"spec\":\"https://pay.google.com/gp/p/ucp/2026-01-11/\",\"schema\":\"https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json\",\"config\":{\"api_version\":2,\"api_version_minor\":0,\"merchant_info\":{\"merchant_name\":\"Slumberland\",\"merchant_id\":\"16708973830884969730\",\"merchant_origin\":\"www.slumberland.com\",\"auth_jwt\":\"\"},\"allowed_payment_methods\":[{\"type\":\"CARD\",\"parameters\":{\"allowed_auth_methods\":[\"PAN_ONLY\",\"CRYPTOGRAM_3DS\"],\"allowed_card_networks\":[\"VISA\",\"MASTERCARD\",\"AMEX\",\"DISCOVER\",\"JCB\"],\"billing_address_required\":true,\"billing_address_parameters\":{\"format\":\"FULL\",\"phone_number_required\":true}},\"tokenization_specification\":{\"type\":\"PAYMENT_GATEWAY\",\"parameters\":{\"gateway\":\"shopify\",\"gatewayMerchantId\":\"85126021422\"}}}]}}],\"dev.shopify.card\":[{\"id\":\"shopify.card\",\"version\":\"2026-01-15\",\"spec\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md\",\"schema\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json\",\"config\":{\"payment_methods\":[{\"type\":\"card\",\"enabled_card_brands\":[\"visa\",\"master\",\"american_express\",\"discover\",\"diners_club\",\"elo\",\"jcb\",\"unionpay\"]}]}}],\"dev.shopify.shop_pay\":[{\"id\":\"shop_pay\",\"version\":\"2026-04-08\",\"spec\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md\",\"schema\":\"https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json\",\"config\":{\"shop_id\":\"85126021422\"}}]}},\"products\":[{\"id\":\"gid://shopify/Product/9779683524910\",\"title\":\"Frohn Reclining Sofa\",\"description\":{\"html\":\"The Frohn Reclining Sofa delivers casual comfort with smooth pull-tab recline, pillow-style armrests, and attached cushions. Its corner-blocked frame and metal-reinforced seat ensure long-lasting support, while soft polyester upholstery adds everyday softness in graphite or chocolate finishes.\"},\"url\":\"https://www.slumberland.com/products/frohn-reclining-sofa\",\"handle\":\"frohn-reclining-sofa\",\"price_range\":{\"min\":{\"amount\":59999,\"currency\":\"USD\"},\"max\":{\"amount\":59999,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":104999,\"currency\":\"USD\"},\"max\":{\"amount\":104999,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/49967413526830\",\"sku\":\"QK1097700\",\"title\":\"Graphite\",\"description\":{\"html\":\"The Frohn Reclining Sofa delivers casual comfort with smooth pull-tab recline, pillow-style armrests, and attached cushions. Its corner-blocked frame and metal-reinforced seat ensure long-lasting support, while soft polyester upholstery adds everyday softness in graphite or chocolate finishes.\"},\"price\":{\"amount\":59999,\"currency\":\"USD\"},\"list_price\":{\"amount\":104999,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Graphite\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1097700_ASHL_PRI_OL.jpg?v=1762469594\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://ca59ae-5.myshopify.com/cart/49967413526830:1\"},{\"id\":\"gid://shopify/ProductVariant/49967413428526\",\"sku\":\"QK1097703\",\"title\":\"Chocolate\",\"description\":{\"html\":\"The Frohn Reclining Sofa delivers casual comfort with smooth pull-tab recline, pillow-style armrests, and attached cushions. Its corner-blocked frame and metal-reinforced seat ensure long-lasting support, while soft polyester upholstery adds everyday softness in graphite or chocolate finishes.\"},\"price\":{\"amount\":59999,\"currency\":\"USD\"},\"list_price\":{\"amount\":104999,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Chocolate\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1097703_ASHL_PRI_OL.jpg?v=1752117397\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://ca59ae-5.myshopify.com/cart/49967413428526:1\"}],\"options\":[{\"name\":\"Color\",\"values\":[{\"label\":\"Graphite\"},{\"label\":\"Chocolate\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1097700_ASHL_PRI_OL.jpg?v=1762469594\",\"alt_text\":\"Frohn Graphite Reclining Sofa QK1097700\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-22\",\"taxonomy\":\"shopify\"}],\"tags\":[\"advertised-on-sale\",\"Ashley Furniture\",\"Assembled in the USA\",\"bestseller\",\"bhfti\",\"covered-protection-plan\",\"Frohn\",\"ista-3a-certified\",\"living-room\",\"master-id--FrohnRecliningSofa\",\"parts-orderable-service-issues\",\"proposition-65\",\"reclining\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/470750429486\",\"handle\":\"all-living-room\",\"title\":\"All Living Room Furniture\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/470750593326\",\"handle\":\"top-brands\",\"title\":\"Top Brands\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497383604526\",\"handle\":\"ashley\",\"title\":\"Ashley Furniture\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497598103854\",\"handle\":\"all-living-room-seating\",\"title\":\"Living Room Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497598136622\",\"handle\":\"couches-and-sofas\",\"title\":\"Sofas \\u0026 Couches\",\"description\":{\"html\":\"Find sofas designed for everyday comfort and lasting style. Explore a range of sizes, fabrics, and designs to fit your living space.\"}}]},{\"id\":\"gid://shopify/Product/10117732303150\",\"title\":\"Stayfish Rocker Recliner\",\"description\":{\"html\":\"Every day is a great day with this rocker recliner around. Take a load off and forget your worries as you ease back into plush, luxurious cushions and pillow top armrests. Need more comfort and support for your body? Cue the tall back. And while it might look like you broke the bank, this chocolate brown chair packs a punch well within budget.\"},\"url\":\"https://www.slumberland.com/products/stayfish-rocker-recliner\",\"handle\":\"stayfish-rocker-recliner\",\"price_range\":{\"min\":{\"amount\":36999,\"currency\":\"USD\"},\"max\":{\"amount\":36999,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":69999,\"currency\":\"USD\"},\"max\":{\"amount\":69999,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/51294097768750\",\"sku\":\"QK1104041\",\"title\":\"Chocolate\",\"description\":{\"html\":\"Every day is a great day with this rocker recliner around. Take a load off and forget your worries as you ease back into plush, luxurious cushions and pillow top armrests. Need more comfort and support for your body? Cue the tall back. And while it might look like you broke the bank, this chocolate brown chair packs a punch well within budget.\"},\"price\":{\"amount\":36999,\"currency\":\"USD\"},\"list_price\":{\"amount\":69999,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Chocolate\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1104041_ASHL_PRI_OL.jpg?v=1770069404\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://ca59ae-5.myshopify.com/cart/51294097768750:1\"},{\"id\":\"gid://shopify/ProductVariant/51294097801518\",\"sku\":\"QK1104042\",\"title\":\"Gunmetal\",\"description\":{\"html\":\"Every day is a great day with this rocker recliner around. Take a load off and forget your worries as you ease back into plush, luxurious cushions and pillow top armrests. Need more comfort and support for your body? Cue the tall back. And while it might look like you broke the bank, this chocolate brown chair packs a punch well within budget.\"},\"price\":{\"amount\":36999,\"currency\":\"USD\"},\"list_price\":{\"amount\":69999,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Gunmetal\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1104042_ASHL_PRI_OL.jpg?v=1770069404\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://ca59ae-5.myshopify.com/cart/51294097801518:1\"}],\"options\":[{\"name\":\"Color\",\"values\":[{\"label\":\"Chocolate\"},{\"label\":\"Gunmetal\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1104041_ASHL_PRI_OL.jpg?v=1770069404\",\"alt_text\":\"Stayfish Chocolate Rocker Recliner QK1104041\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-7-1-2\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Ashley Furniture\",\"Assembled in the USA\",\"bhfti\",\"core-assortment\",\"covered-protection-plan\",\"ista-3a-certified\",\"master-id--StayfishRockerRecliner\",\"parts-orderable-service-issues\",\"proposition-65\",\"reclining\",\"rocking-gliding\",\"Stayfish\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/470750396718\",\"handle\":\"all-chairs\",\"title\":\"All Chairs\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/470750593326\",\"handle\":\"top-brands\",\"title\":\"Top Brands\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497383604526\",\"handle\":\"ashley\",\"title\":\"Ashley Furniture\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497597907246\",\"handle\":\"recliners\",\"title\":\"Recliners\",\"description\":{\"html\":\"Relax in comfort with recliners designed for support and everyday use. Choose from manual and power options in a range of styles.\"}},{\"id\":\"gid://shopify/Collection/497598103854\",\"handle\":\"all-living-room-seating\",\"title\":\"Living Room Seating\",\"description\":{\"html\":\"\"}}]},{\"id\":\"gid://shopify/Product/9779684868398\",\"title\":\"Top Tier 2 Piece Reclining Sofa\",\"description\":{\"html\":\"Built for big comfort and big style, the Top Tier 2 Piece Sofa includes four accent pillows and pull-tab reclining on both ends. Upholstered in soft chocolate fabric, it features a corner-blocked frame and metal-reinforced seats for long-lasting support and plush relaxation.\"},\"url\":\"https://www.slumberland.com/products/top-tier-2-piece-reclining-sofa\",\"handle\":\"top-tier-2-piece-reclining-sofa\",\"price_range\":{\"min\":{\"amount\":99999,\"currency\":\"USD\"},\"max\":{\"amount\":99999,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":149998,\"currency\":\"USD\"},\"max\":{\"amount\":149998,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/49967424930094\",\"sku\":\"QK1097977\",\"title\":\"Chocolate\",\"description\":{\"html\":\"Built for big comfort and big style, the Top Tier 2 Piece Sofa includes four accent pillows and pull-tab reclining on both ends. Upholstered in soft chocolate fabric, it features a corner-blocked frame and metal-reinforced seats for long-lasting support and plush relaxation.\"},\"price\":{\"amount\":99999,\"currency\":\"USD\"},\"list_price\":{\"amount\":149998,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Chocolate\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1097977_ASHL_PRI_OL.jpg?v=1752598357\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://ca59ae-5.myshopify.com/cart/49967424930094:1\"}],\"options\":[{\"name\":\"Color\",\"values\":[{\"label\":\"Chocolate\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1097977_ASHL_PRI_OL.jpg?v=1752598357\",\"alt_text\":\"Top Tier Chocolate 2 Piece Reclining Sofa QK1097977\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-22\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Ashley Furniture\",\"Assembled in the USA\",\"bhfti\",\"covered-protection-plan\",\"ista-3a-certified\",\"living-room\",\"master-id--TopTier2PieceSofa\",\"package-sku\",\"parts-orderable-service-issues\",\"proposition-65\",\"reclining\",\"special-purchase\",\"Top Tier\",\"wall-hugger\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/470750429486\",\"handle\":\"all-living-room\",\"title\":\"All Living Room Furniture\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/470750593326\",\"handle\":\"top-brands\",\"title\":\"Top Brands\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497383604526\",\"handle\":\"ashley\",\"title\":\"Ashley Furniture\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497598103854\",\"handle\":\"all-living-room-seating\",\"title\":\"Living Room Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497598136622\",\"handle\":\"couches-and-sofas\",\"title\":\"Sofas \\u0026 Couches\",\"description\":{\"html\":\"Find sofas designed for everyday comfort and lasting style. Explore a range of sizes, fabrics, and designs to fit your living space.\"}}]},{\"id\":\"gid://shopify/Product/9058330345774\",\"title\":\"Stoneland Reclining Console Loveseat\",\"description\":{\"html\":\"For those that love the cool look of leather but long for the warm feel of fabric, this reclining loveseat with console delivers both with ease. Its high-performance padded faux leather is remarkably durable and easy to clean, just the thing for family spaces. Channel-stitched back cushions provide indulgent lumbar support for maximum comfort—not to mention fashion-forward flair.\"},\"url\":\"https://www.slumberland.com/products/stoneland-reclining-console-loveseat\",\"handle\":\"stoneland-reclining-console-loveseat\",\"price_range\":{\"min\":{\"amount\":119999,\"currency\":\"USD\"},\"max\":{\"amount\":119999,\"currency\":\"USD\"}},\"list_price_range\":{\"min\":{\"amount\":179999,\"currency\":\"USD\"},\"max\":{\"amount\":179999,\"currency\":\"USD\"}},\"variants\":[{\"id\":\"gid://shopify/ProductVariant/49036249825582\",\"sku\":\"QK1028246\",\"title\":\"Fossil\",\"description\":{\"html\":\"For those that love the cool look of leather but long for the warm feel of fabric, this reclining loveseat with console delivers both with ease. Its high-performance padded faux leather is remarkably durable and easy to clean, just the thing for family spaces. Channel-stitched back cushions provide indulgent lumbar support for maximum comfort—not to mention fashion-forward flair.\"},\"price\":{\"amount\":119999,\"currency\":\"USD\"},\"list_price\":{\"amount\":179999,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Fossil\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/products/QK1028246_ASHL_PRI_OL.jpg?v=1740724938\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://ca59ae-5.myshopify.com/cart/49036249825582:1\"},{\"id\":\"gid://shopify/ProductVariant/49090199847214\",\"sku\":\"QK1048468\",\"title\":\"Chocolate\",\"description\":{\"html\":\"For those that love the cool look of leather but long for the warm feel of fabric, this reclining loveseat with console delivers both with ease. Its high-performance padded faux leather is remarkably durable and easy to clean, just the thing for family spaces. Channel-stitched back cushions provide indulgent lumbar support for maximum comfort—not to mention fashion-forward flair.\"},\"price\":{\"amount\":119999,\"currency\":\"USD\"},\"list_price\":{\"amount\":179999,\"currency\":\"USD\"},\"availability\":{\"available\":true},\"options\":[{\"name\":\"Color\",\"label\":\"Chocolate\"}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1048468_ASHL_PRI_OL.jpg?v=1741707516\"}],\"requires\":{\"shipping\":true},\"checkout_url\":\"https://ca59ae-5.myshopify.com/cart/49090199847214:1\"}],\"options\":[{\"name\":\"Color\",\"values\":[{\"label\":\"Fossil\"},{\"label\":\"Chocolate\"}]}],\"media\":[{\"type\":\"image\",\"url\":\"https://cdn.shopify.com/s/files/1/0851/2602/1422/products/QK1028246_ASHL_PRI_OL.jpg?v=1740724938\",\"alt_text\":\"Stoneland Reclining Console Loveseat - QK1028246_ASHL_PRI_OL\"}],\"categories\":[{\"value\":\"gid://shopify/TaxonomyCategory/fr-22-4\",\"taxonomy\":\"shopify\"}],\"tags\":[\"Ashley Furniture\",\"bestseller\",\"covered-protection-plan\",\"living-room\",\"master-id--StonelandRecliningConsoleLoveseat\",\"parts-orderable-service-issues\",\"reclining\",\"Stoneland\",\"USA\",\"web-exclusive\"],\"gift_card\":false,\"collections\":[{\"id\":\"gid://shopify/Collection/470750429486\",\"handle\":\"all-living-room\",\"title\":\"All Living Room Furniture\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/470750593326\",\"handle\":\"top-brands\",\"title\":\"Top Brands\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497383604526\",\"handle\":\"ashley\",\"title\":\"Ashley Furniture\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497598103854\",\"handle\":\"all-living-room-seating\",\"title\":\"Living Room Seating\",\"description\":{\"html\":\"\"}},{\"id\":\"gid://shopify/Collection/497598234926\",\"handle\":\"loveseats-sofas\",\"title\":\"Loveseat \\u0026 Apartment Sofas\",\"description\":{\"html\":\"Shop loveseats and apartment sofas designed for smaller spaces without sacrificing comfort. Find compact styles that fit your home.\"}}]}],\"pagination\":{\"has_next_page\":false},\"messages\":[]}"
+      }
+    ],
+    "isError": false,
+    "structuredContent": {
+      "ucp": {
+        "version": "2026-08-25",
+        "status": "success",
+        "services": {
+          "dev.ucp.shopping": []
+        },
+        "capabilities": {
+          "dev.ucp.shopping.checkout": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/checkout/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/checkout.json"
+            }
+          ],
+          "dev.ucp.shopping.fulfillment": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json",
+              "extends": [
+                "dev.ucp.shopping.checkout",
+                "dev.ucp.shopping.cart"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              },
+              "config": {
+                "multi_destination": [],
+                "method_combinations": [
+                  [
+                    "shipping"
+                  ]
+                ]
+              }
+            }
+          ],
+          "dev.ucp.shopping.buyer_consent": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json",
+              "extends": [
+                "dev.ucp.shopping.cart",
+                "dev.ucp.shopping.checkout"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ],
+          "dev.ucp.shopping.discount": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/discount.json",
+              "extends": [
+                "dev.ucp.shopping.checkout",
+                "dev.ucp.shopping.cart"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ],
+          "dev.ucp.shopping.cart": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/cart/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/cart.json"
+            }
+          ],
+          "dev.ucp.shopping.order": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/order/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/order.json"
+            }
+          ],
+          "dev.ucp.shopping.catalog.search": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+            }
+          ],
+          "dev.ucp.shopping.catalog.lookup": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+              "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+            }
+          ],
+          "dev.shopify.catalog": [
+            {
+              "version": "2026-08-25",
+              "spec": "https://shopify.dev/docs/agents/catalog/storefront-catalog",
+              "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json",
+              "extends": [
+                "dev.ucp.shopping.catalog.search",
+                "dev.ucp.shopping.catalog.lookup"
+              ],
+              "requires": {
+                "protocol": {
+                  "min": "2026-08-25"
+                }
+              }
+            }
+          ]
+        },
+        "payment_handlers": {
+          "com.google.pay": [
+            {
+              "id": "gpay",
+              "version": "2026-01-11",
+              "spec": "https://pay.google.com/gp/p/ucp/2026-01-11/",
+              "schema": "https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json",
+              "config": {
+                "api_version": 2,
+                "api_version_minor": 0,
+                "merchant_info": {
+                  "merchant_name": "Slumberland",
+                  "merchant_id": "16708973830884969730",
+                  "merchant_origin": "www.slumberland.com",
+                  "auth_jwt": ""
+                },
+                "allowed_payment_methods": [
+                  {
+                    "type": "CARD",
+                    "parameters": {
+                      "allowed_auth_methods": [
+                        "PAN_ONLY",
+                        "CRYPTOGRAM_3DS"
+                      ],
+                      "allowed_card_networks": [
+                        "VISA",
+                        "MASTERCARD",
+                        "AMEX",
+                        "DISCOVER",
+                        "JCB"
+                      ],
+                      "billing_address_required": true,
+                      "billing_address_parameters": {
+                        "format": "FULL",
+                        "phone_number_required": true
+                      }
+                    },
+                    "tokenization_specification": {
+                      "type": "PAYMENT_GATEWAY",
+                      "parameters": {
+                        "gateway": "shopify",
+                        "gatewayMerchantId": "85126021422"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "dev.shopify.card": [
+            {
+              "id": "shopify.card",
+              "version": "2026-01-15",
+              "spec": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md",
+              "schema": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json",
+              "config": {
+                "payment_methods": [
+                  {
+                    "type": "card",
+                    "enabled_card_brands": [
+                      "visa",
+                      "master",
+                      "american_express",
+                      "discover",
+                      "diners_club",
+                      "elo",
+                      "jcb",
+                      "unionpay"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "dev.shopify.shop_pay": [
+            {
+              "id": "shop_pay",
+              "version": "2026-04-08",
+              "spec": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/spec.md",
+              "schema": "https://shopify.dev/ucp/shop-pay-handler/2026-04-08/schema.json",
+              "config": {
+                "shop_id": "85126021422"
+              }
+            }
+          ]
+        }
+      },
+      "products": [
+        {
+          "id": "gid://shopify/Product/9779683524910",
+          "title": "Frohn Reclining Sofa",
+          "description": {
+            "html": "The Frohn Reclining Sofa delivers casual comfort with smooth pull-tab recline, pillow-style armrests, and attached cushions. Its corner-blocked frame and metal-reinforced seat ensure long-lasting support, while soft polyester upholstery adds everyday softness in graphite or chocolate finishes."
+          },
+          "url": "https://www.slumberland.com/products/frohn-reclining-sofa",
+          "handle": "frohn-reclining-sofa",
+          "price_range": {
+            "min": {
+              "amount": 59999,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 59999,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 104999,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 104999,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/49967413526830",
+              "sku": "QK1097700",
+              "title": "Graphite",
+              "description": {
+                "html": "The Frohn Reclining Sofa delivers casual comfort with smooth pull-tab recline, pillow-style armrests, and attached cushions. Its corner-blocked frame and metal-reinforced seat ensure long-lasting support, while soft polyester upholstery adds everyday softness in graphite or chocolate finishes."
+              },
+              "price": {
+                "amount": 59999,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 104999,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Graphite"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1097700_ASHL_PRI_OL.jpg?v=1762469594"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://ca59ae-5.myshopify.com/cart/49967413526830:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/49967413428526",
+              "sku": "QK1097703",
+              "title": "Chocolate",
+              "description": {
+                "html": "The Frohn Reclining Sofa delivers casual comfort with smooth pull-tab recline, pillow-style armrests, and attached cushions. Its corner-blocked frame and metal-reinforced seat ensure long-lasting support, while soft polyester upholstery adds everyday softness in graphite or chocolate finishes."
+              },
+              "price": {
+                "amount": 59999,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 104999,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Chocolate"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1097703_ASHL_PRI_OL.jpg?v=1752117397"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://ca59ae-5.myshopify.com/cart/49967413428526:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "values": [
+                {
+                  "label": "Graphite"
+                },
+                {
+                  "label": "Chocolate"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1097700_ASHL_PRI_OL.jpg?v=1762469594",
+              "alt_text": "Frohn Graphite Reclining Sofa QK1097700"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-22",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "advertised-on-sale",
+            "Ashley Furniture",
+            "Assembled in the USA",
+            "bestseller",
+            "bhfti",
+            "covered-protection-plan",
+            "Frohn",
+            "ista-3a-certified",
+            "living-room",
+            "master-id--FrohnRecliningSofa",
+            "parts-orderable-service-issues",
+            "proposition-65",
+            "reclining"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/470750429486",
+              "handle": "all-living-room",
+              "title": "All Living Room Furniture",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/470750593326",
+              "handle": "top-brands",
+              "title": "Top Brands",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497383604526",
+              "handle": "ashley",
+              "title": "Ashley Furniture",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497598103854",
+              "handle": "all-living-room-seating",
+              "title": "Living Room Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497598136622",
+              "handle": "couches-and-sofas",
+              "title": "Sofas & Couches",
+              "description": {
+                "html": "Find sofas designed for everyday comfort and lasting style. Explore a range of sizes, fabrics, and designs to fit your living space."
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/10117732303150",
+          "title": "Stayfish Rocker Recliner",
+          "description": {
+            "html": "Every day is a great day with this rocker recliner around. Take a load off and forget your worries as you ease back into plush, luxurious cushions and pillow top armrests. Need more comfort and support for your body? Cue the tall back. And while it might look like you broke the bank, this chocolate brown chair packs a punch well within budget."
+          },
+          "url": "https://www.slumberland.com/products/stayfish-rocker-recliner",
+          "handle": "stayfish-rocker-recliner",
+          "price_range": {
+            "min": {
+              "amount": 36999,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 36999,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 69999,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 69999,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/51294097768750",
+              "sku": "QK1104041",
+              "title": "Chocolate",
+              "description": {
+                "html": "Every day is a great day with this rocker recliner around. Take a load off and forget your worries as you ease back into plush, luxurious cushions and pillow top armrests. Need more comfort and support for your body? Cue the tall back. And while it might look like you broke the bank, this chocolate brown chair packs a punch well within budget."
+              },
+              "price": {
+                "amount": 36999,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 69999,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Chocolate"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1104041_ASHL_PRI_OL.jpg?v=1770069404"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://ca59ae-5.myshopify.com/cart/51294097768750:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/51294097801518",
+              "sku": "QK1104042",
+              "title": "Gunmetal",
+              "description": {
+                "html": "Every day is a great day with this rocker recliner around. Take a load off and forget your worries as you ease back into plush, luxurious cushions and pillow top armrests. Need more comfort and support for your body? Cue the tall back. And while it might look like you broke the bank, this chocolate brown chair packs a punch well within budget."
+              },
+              "price": {
+                "amount": 36999,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 69999,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Gunmetal"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1104042_ASHL_PRI_OL.jpg?v=1770069404"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://ca59ae-5.myshopify.com/cart/51294097801518:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "values": [
+                {
+                  "label": "Chocolate"
+                },
+                {
+                  "label": "Gunmetal"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1104041_ASHL_PRI_OL.jpg?v=1770069404",
+              "alt_text": "Stayfish Chocolate Rocker Recliner QK1104041"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-7-1-2",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "Ashley Furniture",
+            "Assembled in the USA",
+            "bhfti",
+            "core-assortment",
+            "covered-protection-plan",
+            "ista-3a-certified",
+            "master-id--StayfishRockerRecliner",
+            "parts-orderable-service-issues",
+            "proposition-65",
+            "reclining",
+            "rocking-gliding",
+            "Stayfish"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/470750396718",
+              "handle": "all-chairs",
+              "title": "All Chairs",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/470750593326",
+              "handle": "top-brands",
+              "title": "Top Brands",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497383604526",
+              "handle": "ashley",
+              "title": "Ashley Furniture",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497597907246",
+              "handle": "recliners",
+              "title": "Recliners",
+              "description": {
+                "html": "Relax in comfort with recliners designed for support and everyday use. Choose from manual and power options in a range of styles."
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497598103854",
+              "handle": "all-living-room-seating",
+              "title": "Living Room Seating",
+              "description": {
+                "html": ""
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/9779684868398",
+          "title": "Top Tier 2 Piece Reclining Sofa",
+          "description": {
+            "html": "Built for big comfort and big style, the Top Tier 2 Piece Sofa includes four accent pillows and pull-tab reclining on both ends. Upholstered in soft chocolate fabric, it features a corner-blocked frame and metal-reinforced seats for long-lasting support and plush relaxation."
+          },
+          "url": "https://www.slumberland.com/products/top-tier-2-piece-reclining-sofa",
+          "handle": "top-tier-2-piece-reclining-sofa",
+          "price_range": {
+            "min": {
+              "amount": 99999,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 99999,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 149998,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 149998,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/49967424930094",
+              "sku": "QK1097977",
+              "title": "Chocolate",
+              "description": {
+                "html": "Built for big comfort and big style, the Top Tier 2 Piece Sofa includes four accent pillows and pull-tab reclining on both ends. Upholstered in soft chocolate fabric, it features a corner-blocked frame and metal-reinforced seats for long-lasting support and plush relaxation."
+              },
+              "price": {
+                "amount": 99999,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 149998,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Chocolate"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1097977_ASHL_PRI_OL.jpg?v=1752598357"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://ca59ae-5.myshopify.com/cart/49967424930094:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "values": [
+                {
+                  "label": "Chocolate"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1097977_ASHL_PRI_OL.jpg?v=1752598357",
+              "alt_text": "Top Tier Chocolate 2 Piece Reclining Sofa QK1097977"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-22",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "Ashley Furniture",
+            "Assembled in the USA",
+            "bhfti",
+            "covered-protection-plan",
+            "ista-3a-certified",
+            "living-room",
+            "master-id--TopTier2PieceSofa",
+            "package-sku",
+            "parts-orderable-service-issues",
+            "proposition-65",
+            "reclining",
+            "special-purchase",
+            "Top Tier",
+            "wall-hugger"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/470750429486",
+              "handle": "all-living-room",
+              "title": "All Living Room Furniture",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/470750593326",
+              "handle": "top-brands",
+              "title": "Top Brands",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497383604526",
+              "handle": "ashley",
+              "title": "Ashley Furniture",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497598103854",
+              "handle": "all-living-room-seating",
+              "title": "Living Room Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497598136622",
+              "handle": "couches-and-sofas",
+              "title": "Sofas & Couches",
+              "description": {
+                "html": "Find sofas designed for everyday comfort and lasting style. Explore a range of sizes, fabrics, and designs to fit your living space."
+              }
+            }
+          ]
+        },
+        {
+          "id": "gid://shopify/Product/9058330345774",
+          "title": "Stoneland Reclining Console Loveseat",
+          "description": {
+            "html": "For those that love the cool look of leather but long for the warm feel of fabric, this reclining loveseat with console delivers both with ease. Its high-performance padded faux leather is remarkably durable and easy to clean, just the thing for family spaces. Channel-stitched back cushions provide indulgent lumbar support for maximum comfort—not to mention fashion-forward flair."
+          },
+          "url": "https://www.slumberland.com/products/stoneland-reclining-console-loveseat",
+          "handle": "stoneland-reclining-console-loveseat",
+          "price_range": {
+            "min": {
+              "amount": 119999,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 119999,
+              "currency": "USD"
+            }
+          },
+          "list_price_range": {
+            "min": {
+              "amount": 179999,
+              "currency": "USD"
+            },
+            "max": {
+              "amount": 179999,
+              "currency": "USD"
+            }
+          },
+          "variants": [
+            {
+              "id": "gid://shopify/ProductVariant/49036249825582",
+              "sku": "QK1028246",
+              "title": "Fossil",
+              "description": {
+                "html": "For those that love the cool look of leather but long for the warm feel of fabric, this reclining loveseat with console delivers both with ease. Its high-performance padded faux leather is remarkably durable and easy to clean, just the thing for family spaces. Channel-stitched back cushions provide indulgent lumbar support for maximum comfort—not to mention fashion-forward flair."
+              },
+              "price": {
+                "amount": 119999,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 179999,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Fossil"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/products/QK1028246_ASHL_PRI_OL.jpg?v=1740724938"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://ca59ae-5.myshopify.com/cart/49036249825582:1"
+            },
+            {
+              "id": "gid://shopify/ProductVariant/49090199847214",
+              "sku": "QK1048468",
+              "title": "Chocolate",
+              "description": {
+                "html": "For those that love the cool look of leather but long for the warm feel of fabric, this reclining loveseat with console delivers both with ease. Its high-performance padded faux leather is remarkably durable and easy to clean, just the thing for family spaces. Channel-stitched back cushions provide indulgent lumbar support for maximum comfort—not to mention fashion-forward flair."
+              },
+              "price": {
+                "amount": 119999,
+                "currency": "USD"
+              },
+              "list_price": {
+                "amount": 179999,
+                "currency": "USD"
+              },
+              "availability": {
+                "available": true
+              },
+              "options": [
+                {
+                  "name": "Color",
+                  "label": "Chocolate"
+                }
+              ],
+              "media": [
+                {
+                  "type": "image",
+                  "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/files/QK1048468_ASHL_PRI_OL.jpg?v=1741707516"
+                }
+              ],
+              "requires": {
+                "shipping": true
+              },
+              "checkout_url": "https://ca59ae-5.myshopify.com/cart/49090199847214:1"
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "values": [
+                {
+                  "label": "Fossil"
+                },
+                {
+                  "label": "Chocolate"
+                }
+              ]
+            }
+          ],
+          "media": [
+            {
+              "type": "image",
+              "url": "https://cdn.shopify.com/s/files/1/0851/2602/1422/products/QK1028246_ASHL_PRI_OL.jpg?v=1740724938",
+              "alt_text": "Stoneland Reclining Console Loveseat - QK1028246_ASHL_PRI_OL"
+            }
+          ],
+          "categories": [
+            {
+              "value": "gid://shopify/TaxonomyCategory/fr-22-4",
+              "taxonomy": "shopify"
+            }
+          ],
+          "tags": [
+            "Ashley Furniture",
+            "bestseller",
+            "covered-protection-plan",
+            "living-room",
+            "master-id--StonelandRecliningConsoleLoveseat",
+            "parts-orderable-service-issues",
+            "reclining",
+            "Stoneland",
+            "USA",
+            "web-exclusive"
+          ],
+          "gift_card": false,
+          "collections": [
+            {
+              "id": "gid://shopify/Collection/470750429486",
+              "handle": "all-living-room",
+              "title": "All Living Room Furniture",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/470750593326",
+              "handle": "top-brands",
+              "title": "Top Brands",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497383604526",
+              "handle": "ashley",
+              "title": "Ashley Furniture",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497598103854",
+              "handle": "all-living-room-seating",
+              "title": "Living Room Seating",
+              "description": {
+                "html": ""
+              }
+            },
+            {
+              "id": "gid://shopify/Collection/497598234926",
+              "handle": "loveseats-sofas",
+              "title": "Loveseat & Apartment Sofas",
+              "description": {
+                "html": "Shop loveseats and apartment sofas designed for smaller spaces without sacrificing comfort. Find compact styles that fit your home."
+              }
+            }
+          ]
+        }
+      ],
+      "pagination": {
+        "has_next_page": false
+      },
+      "messages": []
+    }
+  }
+}
