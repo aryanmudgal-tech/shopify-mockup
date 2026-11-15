@@ -1,16 +1,20 @@
 // Runs one check from the terminal and prints what the card would show.
 //
-//   npx tsx scripts/check.ts <product link> [zip] [--recorded] [--json out.json]
+//   npx tsx scripts/check.ts <product link> [zip] [--recorded] [--json out.json] [--record dir]
 //
 // Live by default. --recorded answers from the verification fixtures instead.
+// --record saves every call and page the live check makes into dir.
 
 import { writeFileSync } from "node:fs";
+import { loadDotEnv } from "../server/env";
 import type { Card } from "../shared/card";
 import { formatUsd } from "../shared/money";
 import { runCheck } from "../server/check";
 import { LiveTransport } from "../server/ucp/live";
 import { RecordedTransport } from "../server/ucp/recorded";
+import { RecordingTransport } from "../server/ucp/recording";
 
+loadDotEnv();
 const args = process.argv.slice(2);
 const flag = (name: string) => {
   const i = args.indexOf(name);
@@ -18,6 +22,7 @@ const flag = (name: string) => {
 };
 const recorded = args.includes("--recorded") ? (args.splice(args.indexOf("--recorded"), 1), true) : false;
 const jsonOut = flag("--json");
+const recordDir = flag("--record");
 const [link, zip = "14228"] = args;
 if (!link) {
   console.error("usage: npx tsx scripts/check.ts <product link> [zip] [--recorded] [--json out.json]");
@@ -25,7 +30,8 @@ if (!link) {
 }
 
 const started = Date.now();
-const card = await runCheck(recorded ? new RecordedTransport() : new LiveTransport(), link, zip);
+const base = recorded ? new RecordedTransport() : new LiveTransport();
+const card = await runCheck(recordDir ? new RecordingTransport(base, recordDir) : base, link, zip);
 const seconds = ((Date.now() - started) / 1000).toFixed(1);
 
 if (jsonOut) writeFileSync(jsonOut, JSON.stringify(card, null, 2) + "\n");
@@ -52,6 +58,7 @@ function print(c: Card) {
   } else if (r.status === "unreadable") {
     console.log(`  ${r.reason}`);
   }
+  if (c.product.variantNote) console.log(`Note: ${c.product.variantNote}`);
   console.log("How I checked:");
-  for (const st of c.steps) console.log(`  ${st.outcome.padEnd(6)} ${st.title}: ${st.summary.slice(0, 160)}`);
+  for (const st of c.steps) console.log(`  ${st.outcome.padEnd(6)} ${st.title}: ${st.summary.slice(0, 400)}`);
 }

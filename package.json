@@ -11,7 +11,9 @@
     "dev": "tsx watch --clear-screen=false server/index.ts",
     "dev:live": "DATA_MODE=live PORT=5174 tsx watch --clear-screen=false server/index.ts",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:golden:fresh": "GOLDEN_FRESH=1 vitest run server/golden.test.ts",
+    "test:golden:live": "GOLDEN_LIVE=1 GOLDEN_FRESH=1 vitest run server/golden.test.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",
