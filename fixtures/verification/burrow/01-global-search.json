@@ -1,0 +1,2097 @@
+{
+  "fetched_at": "2026-11-15T17:21:29.667Z",
+  "url": "https://catalog.shopify.com/api/ucp/mcp",
+  "final_url": "https://catalog.shopify.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "search_catalog",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/valid-with-capabilities.json"
+          }
+        },
+        "catalog": {
+          "query": "Burrow sofa",
+          "pagination": {
+            "limit": 10
+          },
+          "filters": {
+            "available": true
+          },
+          "context": {
+            "address_country": "US",
+            "address_region": "NY",
+            "postal_code": "14228"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "capabilities": {
+            "dev.ucp.shopping.catalog.search": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+              }
+            ],
+            "dev.ucp.shopping.catalog.lookup": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+              }
+            ],
+            "dev.shopify.catalog.global": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://shopify.dev/docs/agents/catalog/global-catalog",
+                "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog_global.json",
+                "extends": [
+                  "dev.ucp.shopping.catalog.search",
+                  "dev.ucp.shopping.catalog.lookup"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ]
+          },
+          "status": "success"
+        },
+        "products": [
+          {
+            "id": "gid://shopify/p/33SF07cR3JGuCB4kmHfdQi",
+            "title": "Nomad Sofa Sectional",
+            "description": {
+              "plain": "<p>Meet the sofa that changed how people buy furniture—designed to fit how people actually live. The Nomad Modular Collection combines timeless mid-century style with smart, modern engineering. Tool-free assembly, built-in USB charging, and easy-to-move modular design make it as functional as it is iconic.</p><p>Every detail is crafted for longevity—from the hardwood frame and CertiPUR-US® foam cushions to the PFAS-free, performance fabric that resists stains and everyday wear. With Nomad, you get the comfort of a classic and the flexibility of the future.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n<li>Reversible back cushions with tufting</li>\n</ul>"
+            },
+            "handle": "nomad-plus-sofa-sectional",
+            "rating": {
+              "value": 2.2,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 11
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSCPL-3-CGC-MD-BM-TF_503b5603-8aed-4947-b015-b2240e58d73d.jpg",
+                "alt_text": "Nomad Plus Sofa Sectional",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSCPL-3-CGC-MD-BM-TF_503b5603-8aed-4947-b015-b2240e58d73d.jpg",
+                  "width": 2400,
+                  "height": 1350
+                },
+                "width": 2400,
+                "height": 1350
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Cloud - Performance Lino"
+                  },
+                  {
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "label": "Georgia Clay - Performance Chenille"
+                  },
+                  {
+                    "label": "Heather Charcoal - Performance Chenille"
+                  },
+                  {
+                    "label": "Moss Green - Performance Flatweave"
+                  },
+                  {
+                    "label": "Navy Blue - Performance Flatweave"
+                  },
+                  {
+                    "label": "Sienna - Performance Brushed Chenille"
+                  }
+                ]
+              },
+              {
+                "name": "Leg finish",
+                "values": [
+                  {
+                    "label": "Black - Metal"
+                  },
+                  {
+                    "label": "Brass - Metal"
+                  },
+                  {
+                    "label": "Chrome - Metal"
+                  },
+                  {
+                    "label": "Ebony - Wood"
+                  },
+                  {
+                    "label": "Oak - Wood"
+                  },
+                  {
+                    "label": "Walnut - Wood"
+                  }
+                ]
+              },
+              {
+                "name": "Arm style",
+                "values": [
+                  {
+                    "label": "Block"
+                  },
+                  {
+                    "label": "Slope"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Universal modular design with tool-free assembly and built-in USB charging for unmatched flexibility and convenience."
+              ],
+              "top_features": [
+                "Modular universal design: Adapts to various living spaces and layouts for maximum flexibility",
+                "Tool-free assembly: Enables quick and easy setup without the need for tools",
+                "Built-in USB charging: Offers convenient device charging without sacrificing style",
+                "Certipur US certified cushions: Ensures high-quality support and comfort",
+                "PFAS-free performance fabric: Resists stains and everyday wear for lasting durability"
+              ],
+              "tech_specs": [
+                "Frame Material: Hardwood",
+                "Cushion Material: Certipur US certified foam",
+                "Upholstery Material: PFAS-free polyester",
+                "Backrest Orientation: Left-facing",
+                "Shape: L-shaped",
+                "Assembly: Tool-free"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50485002469678",
+                "title": "Nomad Sofa Sectional",
+                "description": {
+                  "plain": "<p>Meet the sofa that changed how people buy furniture—designed to fit how people actually live. The Nomad Modular Collection combines timeless mid-century style with smart, modern engineering. Tool-free assembly, built-in USB charging, and easy-to-move modular design make it as functional as it is iconic.</p><p>Every detail is crafted for longevity—from the hardwood frame and CertiPUR-US® foam cushions to the PFAS-free, performance fabric that resists stains and everyday wear. With Nomad, you get the comfort of a classic and the flexibility of the future.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n<li>Reversible back cushions with tufting</li>\n</ul>"
+                },
+                "handle": "nomad-plus-sofa-sectional",
+                "url": "https://burrow.com/products/nomad-plus-sofa-sectional?_gsid=gM77VoXqVw4R&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 163700,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 251900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "name": "Arm style",
+                    "label": "Block"
+                  },
+                  {
+                    "name": "Leg finish",
+                    "label": "Black - Metal"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSCPL-3-CGC-MD-BM-TF_503b5603-8aed-4947-b015-b2240e58d73d.jpg",
+                    "alt_text": "Nomad Plus Sofa Sectional",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSCPL-3-CGC-MD-BM-TF_503b5603-8aed-4947-b015-b2240e58d73d.jpg",
+                      "width": 2400,
+                      "height": 1350
+                    },
+                    "width": 2400,
+                    "height": 1350
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/50485002469678:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=gM77VoXqVw4R&_gsid=gM77VoXqVw4R",
+                "rating": {
+                  "value": 3.4,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 5
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify"
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 163700,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 163700,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/p/6miC9FzuewJSq3z9zPaFhY",
+            "title": "Nomad Sofa with Ottoman",
+            "description": {
+              "plain": "<p>Meet the sofa that changed how people buy furniture—designed to fit how people actually live. The Nomad Modular Collection combines timeless mid-century style with smart, modern engineering. Tool-free assembly, built-in USB charging, and easy-to-move modular design make it as functional as it is iconic.</p><p>Every detail is crafted for longevity—from the hardwood frame and CertiPUR-US® foam cushions to the PFAS-free, performance fabric that resists stains and everyday wear. With Nomad, you get the comfort of a classic and the flexibility of the future.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n<li>Reversible back cushions with tufting</li>\n</ul>"
+            },
+            "handle": "nomad-plus-sofa-with-ottoman",
+            "rating": {
+              "value": 3.5,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 11
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSOPL-3-CGC-MD-BM-TF_7feeaa94-fbf6-40c6-8c24-59719e12e107.jpg",
+                "alt_text": "Nomad Plus Sofa with Ottoman",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSOPL-3-CGC-MD-BM-TF_7feeaa94-fbf6-40c6-8c24-59719e12e107.jpg",
+                  "width": 2400,
+                  "height": 1350
+                },
+                "width": 2400,
+                "height": 1350
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Camel - Top Grain Leather"
+                  },
+                  {
+                    "label": "Chestnut - Top Grain Leather"
+                  },
+                  {
+                    "label": "Cloud - Performance Lino"
+                  },
+                  {
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "label": "Georgia Clay - Performance Chenille"
+                  },
+                  {
+                    "label": "Graphite Grey - Performance Velvet"
+                  },
+                  {
+                    "label": "Heather Charcoal - Performance Chenille"
+                  },
+                  {
+                    "label": "Jade - Performance Velvet"
+                  },
+                  {
+                    "label": "Midnight - Performance Velvet"
+                  },
+                  {
+                    "label": "Moss Green - Performance Flatweave"
+                  },
+                  {
+                    "label": "Navy Blue - Performance Flatweave"
+                  },
+                  {
+                    "label": "Sienna - Performance Brushed Chenille"
+                  },
+                  {
+                    "label": "Slate - Top Grain Leather"
+                  }
+                ]
+              },
+              {
+                "name": "Leg finish",
+                "values": [
+                  {
+                    "label": "Black - Metal"
+                  },
+                  {
+                    "label": "Brass - Metal"
+                  },
+                  {
+                    "label": "Chrome - Metal"
+                  },
+                  {
+                    "label": "Ebony - Wood"
+                  },
+                  {
+                    "label": "Oak - Wood"
+                  },
+                  {
+                    "label": "Walnut - Wood"
+                  }
+                ]
+              },
+              {
+                "name": "Model",
+                "values": [
+                  {
+                    "label": "Nomad King Sofa with Ottoman"
+                  },
+                  {
+                    "label": "Nomad Leather King Sofa with Ottoman"
+                  },
+                  {
+                    "label": "Nomad Leather Sofa with Ottoman"
+                  },
+                  {
+                    "label": "Nomad Sofa with Ottoman"
+                  },
+                  {
+                    "label": "Nomad Velvet King Sofa with Ottoman"
+                  },
+                  {
+                    "label": "Nomad Velvet Sofa with Ottoman"
+                  }
+                ]
+              },
+              {
+                "name": "Arm style",
+                "values": [
+                  {
+                    "label": "Block"
+                  },
+                  {
+                    "label": "Slope"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Universal modular design with tool-free assembly and built-in USB charging for flexible, convenient living."
+              ],
+              "top_features": [
+                "Modular universal design: Adapts to various room sizes and layouts for flexible living spaces",
+                "Tool-free assembly: Enables quick and easy setup without the need for tools",
+                "Built-in USB charging: Provides convenient charging for devices while relaxing",
+                "Certipur US certified cushions: Ensures high-quality, long-lasting comfort",
+                "PFAS-free performance fabric: Resists stains and everyday wear for easy maintenance"
+              ],
+              "tech_specs": [
+                "Frame Material: Hardwood",
+                "Cushion Material: Certipur US certified foam",
+                "Upholstery Material: Polyester or Velvet (varies by model)",
+                "Sofa Shape: L-shaped",
+                "Orientation: Left-facing or Right-facing (model dependent)",
+                "Assembly: Tool-free"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50484980318510",
+                "title": "Nomad Sofa with Ottoman",
+                "description": {
+                  "plain": "<p>Meet the sofa that changed how people buy furniture—designed to fit how people actually live. The Nomad Modular Collection combines timeless mid-century style with smart, modern engineering. Tool-free assembly, built-in USB charging, and easy-to-move modular design make it as functional as it is iconic.</p><p>Every detail is crafted for longevity—from the hardwood frame and CertiPUR-US® foam cushions to the PFAS-free, performance fabric that resists stains and everyday wear. With Nomad, you get the comfort of a classic and the flexibility of the future.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n<li>Reversible back cushions with tufting</li>\n</ul>"
+                },
+                "handle": "nomad-plus-sofa-with-ottoman",
+                "url": "https://burrow.com/products/nomad-plus-sofa-with-ottoman?_gsid=gM77VoXqVw4R&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 156600,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 240900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Model",
+                    "label": "Nomad Sofa with Ottoman"
+                  },
+                  {
+                    "name": "Fabric",
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "name": "Arm style",
+                    "label": "Block"
+                  },
+                  {
+                    "name": "Leg finish",
+                    "label": "Black - Metal"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSOPL-3-CGC-MD-BM-TF_7feeaa94-fbf6-40c6-8c24-59719e12e107.jpg",
+                    "alt_text": "Nomad Plus Sofa with Ottoman",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSOPL-3-CGC-MD-BM-TF_7feeaa94-fbf6-40c6-8c24-59719e12e107.jpg",
+                      "width": 2400,
+                      "height": 1350
+                    },
+                    "width": 2400,
+                    "height": 1350
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/50484980318510:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=gM77VoXqVw4R&_gsid=gM77VoXqVw4R",
+                "rating": {
+                  "value": 5,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 1
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify"
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 156600,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 156600,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/p/2wFPXdrVSs1HbN5Jv4ZGJH",
+            "title": "Union 3-Seat Sofa",
+            "description": {
+              "plain": "<p>Voted one of Esquire's Best Sofas, Union is our most spacious modular sofa - deep, sink-in seating meets modern design and effortless flexibility. Built for lounging, gathering, or sprawling out solo, Union combines oversized comfort with the engineering you expect from Burrow.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n</ul>"
+            },
+            "handle": "union-3-seat-sofa",
+            "rating": {
+              "value": 3.4,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 55
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-UN-S3-A2-C0-IVF-LW_8bcbfc1c-e3e5-4263-a5db-66a5c0b95847.jpg",
+                "alt_text": "A modern three-seat beige fabric sofa with two matching cylindrical pillows and wooden block legs on a white background.",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-UN-S3-A2-C0-IVF-LW_8bcbfc1c-e3e5-4263-a5db-66a5c0b95847.jpg",
+                  "width": 2400,
+                  "height": 1350
+                },
+                "width": 2400,
+                "height": 1350
+              }
+            ],
+            "options": [
+              {
+                "name": "Configuration",
+                "values": [
+                  {
+                    "label": "Union 2-Seat Sofa"
+                  },
+                  {
+                    "label": "Union 3-Seat Sofa"
+                  },
+                  {
+                    "label": "Union 4 Seat Sectional"
+                  },
+                  {
+                    "label": "Union 5 Seat Sectional"
+                  },
+                  {
+                    "label": "Union 6 Seat Sectional"
+                  },
+                  {
+                    "label": "Union 6 Seat U Sectional"
+                  },
+                  {
+                    "label": "Union 7 Seat Sectional"
+                  },
+                  {
+                    "label": "Union 8 Seat U Sectional"
+                  }
+                ]
+              },
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "label": "Heather Charcoal - Performance Chenille"
+                  },
+                  {
+                    "label": "Ivory - Performance Chenille"
+                  },
+                  {
+                    "label": "Navy Blue - Performance Chenille"
+                  }
+                ]
+              },
+              {
+                "name": "Leg finish",
+                "values": [
+                  {
+                    "label": "Oak - Wood"
+                  },
+                  {
+                    "label": "Walnut - Wood"
+                  }
+                ]
+              },
+              {
+                "name": "Leg style",
+                "values": [
+                  {
+                    "label": "Round Leg"
+                  },
+                  {
+                    "label": "Square Leg"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Combines oversized comfort with universal modular design and certified, PFAS-free cushions for adaptable, high-quality seating."
+              ],
+              "top_features": [
+                "Universal modular design enables flexible arrangement to fit any room layout",
+                "Deep-sink seating provides extra comfort for lounging or entertaining",
+                "CertiPUR-US certified cushions ensure high-quality, safe materials",
+                "PFAS-free upholstery offers a healthier, eco-friendly option",
+                "Oversized comfort zones support solo or group seating"
+              ],
+              "tech_specs": [
+                "Available seat configurations: 2, 3, 4, 5, 6, 7, 8 seats",
+                "Upholstery material: Polyester",
+                "Upholstery pattern: Solid",
+                "Cushion certifications: CertiPUR-US",
+                "Upholstery colors: Gray, Navy, Beige",
+                "Sofa features: Upholstered"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/49995561894190",
+                "title": "Union 3-Seat Sofa",
+                "description": {
+                  "plain": "<p>Voted one of Esquire's Best Sofas, Union is our most spacious modular sofa - deep, sink-in seating meets modern design and effortless flexibility. Built for lounging, gathering, or sprawling out solo, Union combines oversized comfort with the engineering you expect from Burrow.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n</ul>"
+                },
+                "handle": "union-3-seat-sofa",
+                "url": "https://burrow.com/products/union-3-seat-sofa?_gsid=gM77VoXqVw4R&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 158300,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 263900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Leg style",
+                    "label": "Square Leg"
+                  },
+                  {
+                    "name": "Fabric",
+                    "label": "Ivory - Performance Chenille"
+                  },
+                  {
+                    "name": "Configuration",
+                    "label": "Union 3-Seat Sofa"
+                  },
+                  {
+                    "name": "Leg finish",
+                    "label": "Oak - Wood"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-UN-S3-A2-C0-IVF-LW_8bcbfc1c-e3e5-4263-a5db-66a5c0b95847.jpg",
+                    "alt_text": "A modern three-seat beige fabric sofa with two matching cylindrical pillows and wooden block legs on a white background.",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-UN-S3-A2-C0-IVF-LW_8bcbfc1c-e3e5-4263-a5db-66a5c0b95847.jpg",
+                      "width": 2400,
+                      "height": 1350
+                    },
+                    "width": 2400,
+                    "height": 1350
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/49995561894190:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=gM77VoXqVw4R&_gsid=gM77VoXqVw4R",
+                "rating": {
+                  "value": 4.8,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 4
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify"
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 158300,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 158300,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/p/2xc7jxmtUa7CM8BGLQrFbX",
+            "title": "Ember Sofa",
+            "description": {
+              "plain": "<p>Ember features extra-wide, extra-deep seats, plush cushions, and a soft, sculptural silhouette. It’s the kind of comfort you sink into—without sacrificing an ounce of style. Every detail is intentional, from the curved lines to the elevated materials. Proof that comfort and craftsmanship don’t have to be a tradeoff.</p><ul>\n<li>Modular design</li>\n<li>Reversible chaise</li>\n<li>CertiPUR-US® certified</li>\n<li>PFAS-free fabric</li>\n</ul>"
+            },
+            "handle": "ember-sofa",
+            "rating": {
+              "value": 4.3,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 8
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/LRST-SF-EM-S1W0-GC-WN_b23657e0-a0b3-4d97-a651-351ebcc8995e.webp",
+                "alt_text": "Beige modern two-seater sofa with clean lines, fabric upholstery, and wooden tapered legs against a plain white background.",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/LRST-SF-EM-S1W0-GC-WN_b23657e0-a0b3-4d97-a651-351ebcc8995e.webp",
+                  "width": 3840,
+                  "height": 2160
+                },
+                "width": 3840,
+                "height": 2160
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "label": "Georgia Clay - Performance Chenille"
+                  },
+                  {
+                    "label": "Sage - Performance Chenille"
+                  },
+                  {
+                    "label": "Seaglass - Performance Chenille"
+                  }
+                ]
+              },
+              {
+                "name": "Leg finish",
+                "values": [
+                  {
+                    "label": "Oak - Wood"
+                  },
+                  {
+                    "label": "Walnut - Wood"
+                  }
+                ]
+              },
+              {
+                "name": "Size",
+                "values": [
+                  {
+                    "label": "75\""
+                  },
+                  {
+                    "label": "89\""
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Combines exceptional comfort with a sophisticated, modular design for versatile living spaces."
+              ],
+              "top_features": [
+                "Extra wide and deep seats provide superior lounging comfort",
+                "Luxurious fabric upholstery enhances visual appeal and softness",
+                "Plush cushions offer enhanced support and relaxation",
+                "Modular design allows flexible arrangement in various room sizes",
+                "Elegant silhouette elevates modern living spaces"
+              ],
+              "tech_specs": [
+                "Category: Sectional Sofa",
+                "Design: Modular",
+                "Seat Width: Extra wide",
+                "Seat Depth: Extra deep",
+                "Cushioning: Plush",
+                "Upholstery: Luxury fabric"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/49995634540846",
+                "title": "Ember Sofa",
+                "description": {
+                  "plain": "<p>Ember features extra-wide, extra-deep seats, plush cushions, and a soft, sculptural silhouette. It’s the kind of comfort you sink into—without sacrificing an ounce of style. Every detail is intentional, from the curved lines to the elevated materials. Proof that comfort and craftsmanship don’t have to be a tradeoff.</p><ul>\n<li>Modular design</li>\n<li>Reversible chaise</li>\n<li>CertiPUR-US® certified</li>\n<li>PFAS-free fabric</li>\n</ul>"
+                },
+                "handle": "ember-sofa",
+                "url": "https://burrow.com/products/ember-sofa?_gsid=gM77VoXqVw4R&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 120300,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 171900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Size",
+                    "label": "75\""
+                  },
+                  {
+                    "name": "Fabric",
+                    "label": "Georgia Clay - Performance Chenille"
+                  },
+                  {
+                    "name": "Leg finish",
+                    "label": "Walnut - Wood"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/LRST-SF-EM-S1W0-GC-WN_b23657e0-a0b3-4d97-a651-351ebcc8995e.webp",
+                    "alt_text": "Beige modern two-seater sofa with clean lines, fabric upholstery, and wooden tapered legs against a plain white background.",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/LRST-SF-EM-S1W0-GC-WN_b23657e0-a0b3-4d97-a651-351ebcc8995e.webp",
+                      "width": 3840,
+                      "height": 2160
+                    },
+                    "width": 3840,
+                    "height": 2160
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/49995634540846:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=gM77VoXqVw4R&_gsid=gM77VoXqVw4R",
+                "rating": {
+                  "value": 3.5,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 2
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify"
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 120300,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 120300,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/p/6MBtLPeIBsNsElAKT7ye9P",
+            "title": "Range 3-Piece Sofa",
+            "description": {
+              "plain": "<p>Range is our take on modern comfort—plush, laid-back seating designed for everything from streaming marathons to afternoon naps. With clean lines, a low profile, and bold, contemporary style, it’s as much a statement piece as it is a place to unwind. And thanks to our universal modular system, it’s easy to customize, rearrange, and expand with extra seats, tables, and smart upgrades.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified</li>\n<li>PFAS-free</li>\n</ul>"
+            },
+            "handle": "range-plus-3-piece-sofa",
+            "rating": {
+              "value": 2.8,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 12
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-RGPL-S3-A2-C0-GCC-BM_FA_5c6a812b-32b6-4b03-91e1-b8013852ec69.jpg",
+                "alt_text": "Range 3-Piece Sofa",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-RGPL-S3-A2-C0-GCC-BM_FA_5c6a812b-32b6-4b03-91e1-b8013852ec69.jpg",
+                  "width": 2400,
+                  "height": 1350
+                },
+                "width": 2400,
+                "height": 1350
+              },
+              {
+                "type": "video",
+                "url": "https://cdn.shopify.com/videos/c/vp/e70d4b5a91204d3396ca606244ba1b1d/e70d4b5a91204d3396ca606244ba1b1d.m3u8",
+                "alt_text": "Video showing attachable and modular Burrow Range ottoman",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/preview_images/e70d4b5a91204d3396ca606244ba1b1d.thumbnail.0000000000.jpg",
+                  "width": 1280,
+                  "height": 720
+                },
+                "duration": 5,
+                "sources": [
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/e70d4b5a91204d3396ca606244ba1b1d/e70d4b5a91204d3396ca606244ba1b1d.m3u8",
+                    "mime_type": "application/x-mpegURL",
+                    "format": "m3u8",
+                    "width": 1280,
+                    "height": 720
+                  },
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/e70d4b5a91204d3396ca606244ba1b1d/e70d4b5a91204d3396ca606244ba1b1d.HD-720p-1.6Mbps-63298793.mp4",
+                    "mime_type": "video/mp4",
+                    "format": "mp4",
+                    "width": 1280,
+                    "height": 720
+                  },
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/e70d4b5a91204d3396ca606244ba1b1d/e70d4b5a91204d3396ca606244ba1b1d.SD-480p-0.9Mbps-63298793.mp4",
+                    "mime_type": "video/mp4",
+                    "format": "mp4",
+                    "width": 852,
+                    "height": 480
+                  }
+                ]
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Georgia Clay - Performance Chenille"
+                  },
+                  {
+                    "label": "Heather Charcoal - Performance Chenille"
+                  },
+                  {
+                    "label": "Moss Green - Performance Flatweave"
+                  },
+                  {
+                    "label": "Navy Blue - Performance Flatweave"
+                  },
+                  {
+                    "label": "Stone Grey - Performance Flatweave"
+                  }
+                ]
+              },
+              {
+                "name": "Leg finish",
+                "values": [
+                  {
+                    "label": "Black - Metal"
+                  },
+                  {
+                    "label": "Oak - Wood"
+                  },
+                  {
+                    "label": "Walnut - Wood"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Universal modular system allows easy rearrangement and expansion to suit any space."
+              ],
+              "top_features": [
+                "Universal modular design enables flexible arrangement and expansion for various room sizes",
+                "Certipur US certified PUFA-free upholstery ensures a healthier living environment",
+                "Plush, padded seating provides superior comfort for lounging or watching TV",
+                "Bold contemporary style serves as a modern statement piece in any living space"
+              ],
+              "tech_specs": [
+                "Color: Gray, Black",
+                "Upholstery Material: Certipur US certified PUFA-free",
+                "Pattern: Solid",
+                "Seat Type: Upholstered padded",
+                "Orientation: [], Chaise or sectional orientation: []"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50538079191342",
+                "title": "Range 3-Piece Sofa",
+                "description": {
+                  "plain": "<p>Range is our take on modern comfort—plush, laid-back seating designed for everything from streaming marathons to afternoon naps. With clean lines, a low profile, and bold, contemporary style, it’s as much a statement piece as it is a place to unwind. And thanks to our universal modular system, it’s easy to customize, rearrange, and expand with extra seats, tables, and smart upgrades.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified</li>\n<li>PFAS-free</li>\n</ul>"
+                },
+                "handle": "range-plus-3-piece-sofa",
+                "url": "https://burrow.com/products/range-plus-3-piece-sofa?_gsid=gM77VoXqVw4R&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 113000,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 173900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Georgia Clay - Performance Chenille"
+                  },
+                  {
+                    "name": "Leg finish",
+                    "label": "Black - Metal"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-RGPL-S3-A2-C0-GCC-BM_FA_5c6a812b-32b6-4b03-91e1-b8013852ec69.jpg",
+                    "alt_text": "Range 3-Piece Sofa",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-RGPL-S3-A2-C0-GCC-BM_FA_5c6a812b-32b6-4b03-91e1-b8013852ec69.jpg",
+                      "width": 2400,
+                      "height": 1350
+                    },
+                    "width": 2400,
+                    "height": 1350
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/50538079191342:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=gM77VoXqVw4R&_gsid=gM77VoXqVw4R",
+                "rating": {
+                  "value": 3,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 3
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify"
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 113000,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 113000,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/p/1TFOEzm6PvSO7zVtyPscH5",
+            "title": "Nomad Sofa",
+            "description": {
+              "plain": "<p>Meet the sofa that changed how people buy furniture—designed to fit how people actually live. The Nomad Modular Collection combines timeless mid-century style with smart, modern engineering. Tool-free assembly, built-in USB charging, and easy-to-move modular design make it as functional as it is iconic.</p><p>Every detail is crafted for longevity—from the hardwood frame and CertiPUR-US® foam cushions to the PFAS-free, performance fabric that resists stains and everyday wear. With Nomad, you get the comfort of a classic and the flexibility of the future.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n<li>Reversible back cushions with tufting</li>\n</ul>"
+            },
+            "handle": "nomad-plus-sofa",
+            "rating": {
+              "value": 3.8,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 18
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSFPL-3-CGC-MD-BM-TF_67d0c93a-336f-466b-ac7a-97c6a7083c04.jpg",
+                "alt_text": "Nomad Sofa",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSFPL-3-CGC-MD-BM-TF_67d0c93a-336f-466b-ac7a-97c6a7083c04.jpg",
+                  "width": 2400,
+                  "height": 1350
+                },
+                "width": 2400,
+                "height": 1350
+              },
+              {
+                "type": "video",
+                "url": "https://cdn.shopify.com/videos/c/vp/0f1f52b0aa1a4a0aadb9aad28023f4e3/0f1f52b0aa1a4a0aadb9aad28023f4e3.m3u8",
+                "alt_text": "Nomad Sofa",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/preview_images/0f1f52b0aa1a4a0aadb9aad28023f4e3.thumbnail.0000000000.jpg",
+                  "width": 1280,
+                  "height": 720
+                },
+                "duration": 8,
+                "sources": [
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/0f1f52b0aa1a4a0aadb9aad28023f4e3/0f1f52b0aa1a4a0aadb9aad28023f4e3.m3u8",
+                    "mime_type": "application/x-mpegURL",
+                    "format": "m3u8",
+                    "width": 1280,
+                    "height": 720
+                  },
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/0f1f52b0aa1a4a0aadb9aad28023f4e3/0f1f52b0aa1a4a0aadb9aad28023f4e3.HD-720p-1.6Mbps-63508932.mp4",
+                    "mime_type": "video/mp4",
+                    "format": "mp4",
+                    "width": 1280,
+                    "height": 720
+                  },
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/0f1f52b0aa1a4a0aadb9aad28023f4e3/0f1f52b0aa1a4a0aadb9aad28023f4e3.SD-480p-0.9Mbps-63508932.mp4",
+                    "mime_type": "video/mp4",
+                    "format": "mp4",
+                    "width": 852,
+                    "height": 480
+                  }
+                ]
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Cloud - Performance Lino"
+                  },
+                  {
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "label": "Georgia Clay - Performance Chenille"
+                  },
+                  {
+                    "label": "Heather Charcoal - Performance Chenille"
+                  },
+                  {
+                    "label": "Moss Green - Performance Flatweave"
+                  },
+                  {
+                    "label": "Navy Blue - Performance Flatweave"
+                  },
+                  {
+                    "label": "Sienna - Performance Brushed Chenille"
+                  }
+                ]
+              },
+              {
+                "name": "Leg finish",
+                "values": [
+                  {
+                    "label": "Black - Metal"
+                  },
+                  {
+                    "label": "Brass - Metal"
+                  },
+                  {
+                    "label": "Chrome - Metal"
+                  },
+                  {
+                    "label": "Ebony - Wood"
+                  },
+                  {
+                    "label": "Oak - Wood"
+                  },
+                  {
+                    "label": "Walnut - Wood"
+                  }
+                ]
+              },
+              {
+                "name": "Arm style",
+                "values": [
+                  {
+                    "label": "Block"
+                  },
+                  {
+                    "label": "Slope"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Universal modular design with tool-free assembly and built-in USB charging for maximum flexibility and convenience."
+              ],
+              "top_features": [
+                "Universal modular design enables flexible configuration for any living space",
+                "Tool-free assembly allows for quick and easy setup without professional help",
+                "Built-in USB charging port provides convenient device connectivity",
+                "Certipur US certified cushions ensure long-lasting comfort and support",
+                "PFAS-free, stain-resistant performance fabric maintains a clean look over time"
+              ],
+              "tech_specs": [
+                "Frame Material: Hardwood",
+                "Cushion Material: Certipur US certified foam",
+                "Upholstery Material: Performance fabric (PFAS-free)",
+                "Assembly: Tool-free, modular",
+                "Chaise Orientation: Right-facing (select models)",
+                "Color Options: Navy, Green, Gray, Brown, Black, Beige, Orange, Silver, Gold"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50484946305326",
+                "title": "Nomad Sofa",
+                "description": {
+                  "plain": "<p>Meet the sofa that changed how people buy furniture—designed to fit how people actually live. The Nomad Modular Collection combines timeless mid-century style with smart, modern engineering. Tool-free assembly, built-in USB charging, and easy-to-move modular design make it as functional as it is iconic.</p><p>Every detail is crafted for longevity—from the hardwood frame and CertiPUR-US® foam cushions to the PFAS-free, performance fabric that resists stains and everyday wear. With Nomad, you get the comfort of a classic and the flexibility of the future.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n<li>Reversible back cushions with tufting</li>\n</ul>"
+                },
+                "handle": "nomad-plus-sofa",
+                "url": "https://burrow.com/products/nomad-plus-sofa?_gsid=gM77VoXqVw4R&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 136400,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 194900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "name": "Arm style",
+                    "label": "Block"
+                  },
+                  {
+                    "name": "Leg finish",
+                    "label": "Black - Metal"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSFPL-3-CGC-MD-BM-TF_67d0c93a-336f-466b-ac7a-97c6a7083c04.jpg",
+                    "alt_text": "Nomad Sofa",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSFPL-3-CGC-MD-BM-TF_67d0c93a-336f-466b-ac7a-97c6a7083c04.jpg",
+                      "width": 2400,
+                      "height": 1350
+                    },
+                    "width": 2400,
+                    "height": 1350
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/50484946305326:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=gM77VoXqVw4R&_gsid=gM77VoXqVw4R",
+                "rating": {
+                  "value": 2.8,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 4
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify"
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 136400,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 136400,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/p/3suYa9vXhXESrp1A9fufcj",
+            "title": "Shift Sleeper Sofa",
+            "description": {
+              "plain": "<p>Shift is a space-saving sleeper sofa that redefines small-space comfort. Designed to do more with less, it transforms from a modern sofa to a true queen-size bed in seconds - no clunky pullouts, no heavy lifting.</p><p>Built with a CertiPUR-US® all-foam mattress and PFAS-free, stain-resistant fabric, Shift is made for real sleep and real life. Even the arm cushions pull double duty as standard pillows, making every inch as functional as it is thoughtful.</p><p>Perfect for apartments, guest rooms, or flexible living spaces, Shift combines sleek design with effortless versatility—proving that comfort and simplicity can share the same footprint.</p><p>- Queen-sized mattress\n- Arm cushions convert to standard pillows\n- CertiPUR-US® certified\n- PFAS-free fabric</p>"
+            },
+            "handle": "shift-sleeper-sofa",
+            "rating": {
+              "value": 4,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 163
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-SHF-S2-A2-C0-HC-DW_da2d1331-3ea1-4c86-b1c4-dd33bdc8c51e.jpg",
+                "alt_text": "Modern dark gray fabric sofa with clean lines, three wooden legs, and plush cushions on a white background.",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-SHF-S2-A2-C0-HC-DW_da2d1331-3ea1-4c86-b1c4-dd33bdc8c51e.jpg",
+                  "width": 2400,
+                  "height": 1350
+                },
+                "width": 2400,
+                "height": 1350
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Heather Charcoal - Performance Basketweave"
+                  },
+                  {
+                    "label": "Moss Green - Performance Basketweave"
+                  },
+                  {
+                    "label": "Navy Blue - Performance Basketweave"
+                  },
+                  {
+                    "label": "Papyrus - Performance Basketweave"
+                  },
+                  {
+                    "label": "Stone Grey - Performance Basketweave"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Transforms from sofa to genuine queen bed in seconds with no pullout mechanism, featuring CertiPUR-US certified stain-resistant fabric and removable arm cushions that double as pillows."
+              ],
+              "top_features": [
+                "Transforms from sofa to queen bed in seconds for flexible living",
+                "Removable arm cushions double as standard pillows for added convenience",
+                "CertiPUR-US certified, PFAS-free stain-resistant fabric ensures easy care and safety",
+                "Compact design fits easily through stairs and narrow doors for versatile placement",
+                "Includes boxes for convenient storage and transport"
+              ],
+              "tech_specs": [
+                "Mattress: CertiPUR-US certified, PFAS-free foam",
+                "Fabric: Stain-resistant, CertiPUR-US certified polyester",
+                "Queen size: Yes, with removable arm cushions",
+                "Firmness: Medium",
+                "Upholstery color options: Gray, Green",
+                "Upholstery pattern: Solid"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50003242680622",
+                "title": "Shift Sleeper Sofa",
+                "description": {
+                  "plain": "<p>Shift is a space-saving sleeper sofa that redefines small-space comfort. Designed to do more with less, it transforms from a modern sofa to a true queen-size bed in seconds - no clunky pullouts, no heavy lifting.</p><p>Built with a CertiPUR-US® all-foam mattress and PFAS-free, stain-resistant fabric, Shift is made for real sleep and real life. Even the arm cushions pull double duty as standard pillows, making every inch as functional as it is thoughtful.</p><p>Perfect for apartments, guest rooms, or flexible living spaces, Shift combines sleek design with effortless versatility—proving that comfort and simplicity can share the same footprint.</p><p>- Queen-sized mattress\n- Arm cushions convert to standard pillows\n- CertiPUR-US® certified\n- PFAS-free fabric</p>"
+                },
+                "handle": "shift-sleeper-sofa",
+                "url": "https://burrow.com/products/shift-sleeper-sofa?_gsid=gM77VoXqVw4R&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 148700,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 247900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Heather Charcoal - Performance Basketweave"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-SHF-S2-A2-C0-HC-DW_da2d1331-3ea1-4c86-b1c4-dd33bdc8c51e.jpg",
+                    "alt_text": "Modern dark gray fabric sofa with clean lines, three wooden legs, and plush cushions on a white background.",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-SHF-S2-A2-C0-HC-DW_da2d1331-3ea1-4c86-b1c4-dd33bdc8c51e.jpg",
+                      "width": 2400,
+                      "height": 1350
+                    },
+                    "width": 2400,
+                    "height": 1350
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/50003242680622:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=gM77VoXqVw4R&_gsid=gM77VoXqVw4R",
+                "rating": {
+                  "value": 3.5,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 6
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify"
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 148700,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 148700,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/p/13VNLIhpN3Cedrusn1NNXz",
+            "title": "Span Sleeper Storage Sectional with Reversible Chaise",
+            "description": {
+              "plain": "<p>Span is a modern sleeper sofa designed for real life — where comfort, function, and style all matter. Built with a queen-sized CertiPUR-US® mattress, it offers the comfort of a true bed with the polish of a modern sofa. No bulky mechanisms or awkward pullouts here — just a streamlined design that looks right at home in your main living space.</p><p>With its reversible chaise, supportive cushions, and easy-to-use fold-out design, Span transitions seamlessly from everyday lounging to overnight hosting. So you can finally have a sleeper sofa that doesn’t compromise on comfort, design, or durability.</p><ul>\n<li>Queen-sized mattress</li>\n<li>CertiPUR-US® certified</li>\n<li>Reversible chaise</li>\n</ul>"
+            },
+            "handle": "span-sleeper-storage-sectional-with-reversible-chaise",
+            "rating": {
+              "value": 4.1,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 35
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/LRSS-SC-SP-CG-WN_front.webp",
+                "alt_text": "modern light gray sectional sofa with chaise lounge and wooden legs, featuring a clean, minimalist design",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/LRSS-SC-SP-CG-WN_front.webp",
+                  "width": 1920,
+                  "height": 1080
+                },
+                "width": 1920,
+                "height": 1080
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "label": "Georgia Clay - Performance Chenille"
+                  },
+                  {
+                    "label": "Heather Charcoal - Performance Chenille"
+                  },
+                  {
+                    "label": "Navy Blue - Performance Chenille"
+                  },
+                  {
+                    "label": "Sage - Performance Chenille"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Combines a queen-sized CertiPUR-US mattress with a reversible chaise for both bed and sofa use without bulky mechanisms."
+              ],
+              "top_features": [
+                "Reversible chaise provides two seating options for flexible use",
+                "Queen-sized CertiPUR-US mattress ensures high-quality comfort and safety",
+                "Streamlined fold-out design allows easy transition from sofa to bed",
+                "No bulky mechanisms or pullouts for a clean, modern look",
+                "Durable polyester upholstery offers long-lasting support"
+              ],
+              "tech_specs": [
+                "Mattress Type: Queen-sized CertiPUR-US certified",
+                "Chaise: Reversible",
+                "Upholstery Material: Polyester",
+                "Upholstery Color: Beige",
+                "Sectional Shape: L-shaped",
+                "Orientation: Right-facing"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/49995610620206",
+                "title": "Span Sleeper Storage Sectional with Reversible Chaise",
+                "description": {
+                  "plain": "<p>Span is a modern sleeper sofa designed for real life — where comfort, function, and style all matter. Built with a queen-sized CertiPUR-US® mattress, it offers the comfort of a true bed with the polish of a modern sofa. No bulky mechanisms or awkward pullouts here — just a streamlined design that looks right at home in your main living space.</p><p>With its reversible chaise, supportive cushions, and easy-to-use fold-out design, Span transitions seamlessly from everyday lounging to overnight hosting. So you can finally have a sleeper sofa that doesn’t compromise on comfort, design, or durability.</p><ul>\n<li>Queen-sized mattress</li>\n<li>CertiPUR-US® certified</li>\n<li>Reversible chaise</li>\n</ul>"
+                },
+                "handle": "span-sleeper-storage-sectional-with-reversible-chaise",
+                "url": "https://burrow.com/products/span-sleeper-storage-sectional-with-reversible-chaise?_gsid=gM77VoXqVw4R&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 238500,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 366900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Crushed Gravel - Performance Chenille"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/LRSS-SC-SP-CG-WN_front.webp",
+                    "alt_text": "modern light gray sectional sofa with chaise lounge and wooden legs, featuring a clean, minimalist design",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/LRSS-SC-SP-CG-WN_front.webp",
+                      "width": 1920,
+                      "height": 1080
+                    },
+                    "width": 1920,
+                    "height": 1080
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/49995610620206:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=gM77VoXqVw4R&_gsid=gM77VoXqVw4R",
+                "rating": {
+                  "value": 5,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 2
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify"
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 238500,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 238500,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/p/6pzJLLv2IFrq0qqBwuBO3y",
+            "title": "Field 3-Piece Sofa",
+            "description": {
+              "plain": "<p>Field redefines modular seating with deep, structured comfort and a modern, sculpted silhouette. Built on our next-generation modular platform, it’s designed to adapt effortlessly - whether you’re reconfiguring, expanding, or moving.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n</ul>"
+            },
+            "handle": "field-3-piece-sofa",
+            "rating": {
+              "value": 3.2,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 33
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-FD-S3-A2-C0-OA-DW_ac025718-e360-4dee-b428-baa47b95ca0c.jpg",
+                "alt_text": "Modern beige three-seater sofa with fabric upholstery, three back cushions, two side pillows, and wooden legs on a white background.",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-FD-S3-A2-C0-OA-DW_ac025718-e360-4dee-b428-baa47b95ca0c.jpg",
+                  "width": 2400,
+                  "height": 1350
+                },
+                "width": 2400,
+                "height": 1350
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Camel - Top Grain Leather"
+                  },
+                  {
+                    "label": "Navy Blue - Performance Basketweave"
+                  },
+                  {
+                    "label": "Oatmeal - Performance Chenille"
+                  },
+                  {
+                    "label": "Slate - Top Grain Leather"
+                  }
+                ]
+              },
+              {
+                "name": "Configuration",
+                "values": [
+                  {
+                    "label": "Field 2-Piece Sofa"
+                  },
+                  {
+                    "label": "Field 3-Piece Sofa"
+                  },
+                  {
+                    "label": "Field 4-Piece Sofa"
+                  },
+                  {
+                    "label": "Field Leather 2-Piece Sofa"
+                  },
+                  {
+                    "label": "Field Leather 3-Piece Sofa"
+                  },
+                  {
+                    "label": "Field Leather 4-Piece Sofa"
+                  }
+                ]
+              },
+              {
+                "name": "Leg finish",
+                "values": [
+                  {
+                    "label": "Black - Metal"
+                  },
+                  {
+                    "label": "Oak - Wood"
+                  },
+                  {
+                    "label": "Walnut - Wood"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Universal modular design with CertiPUR-US certified cushions and PFAS-free materials for sustainable, adaptable seating."
+              ],
+              "top_features": [
+                "Universal modular design enables easy reconfiguration and expansion to fit any space",
+                "Deep, structured comfort provides lasting support for extended seating",
+                "Sculpted silhouette offers a contemporary, modern look",
+                "CertiPUR-US certified cushions ensure high-quality, safe materials",
+                "PFAS-free upholstery supports eco-conscious living"
+              ],
+              "tech_specs": [
+                "Available configurations: 2-piece, 3-piece, 4-piece",
+                "Upholstery material: Polyester or Leather (varies by model)",
+                "Upholstery color: Gray or Brown (varies by model)",
+                "Orientation: Left-facing chaise",
+                "Shape: L-shaped (3-piece and 4-piece models)",
+                "Features: Upholstered"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/49995609243950",
+                "title": "Field 3-Piece Sofa",
+                "description": {
+                  "plain": "<p>Field redefines modular seating with deep, structured comfort and a modern, sculpted silhouette. Built on our next-generation modular platform, it’s designed to adapt effortlessly - whether you’re reconfiguring, expanding, or moving.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n</ul>"
+                },
+                "handle": "field-3-piece-sofa",
+                "url": "https://burrow.com/products/field-3-piece-sofa?_gsid=gM77VoXqVw4R&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 103100,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 171900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Oatmeal - Performance Chenille"
+                  },
+                  {
+                    "name": "Configuration",
+                    "label": "Field 3-Piece Sofa"
+                  },
+                  {
+                    "name": "Leg finish",
+                    "label": "Walnut - Wood"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-FD-S3-A2-C0-OA-DW_ac025718-e360-4dee-b428-baa47b95ca0c.jpg",
+                    "alt_text": "Modern beige three-seater sofa with fabric upholstery, three back cushions, two side pillows, and wooden legs on a white background.",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-FD-S3-A2-C0-OA-DW_ac025718-e360-4dee-b428-baa47b95ca0c.jpg",
+                      "width": 2400,
+                      "height": 1350
+                    },
+                    "width": 2400,
+                    "height": 1350
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/49995609243950:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=gM77VoXqVw4R&_gsid=gM77VoXqVw4R",
+                "rating": {
+                  "value": 5,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 2
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify"
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 103100,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 103100,
+                "currency": "USD"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/p/4cDbk6oJE4HiaqWN1VpfNl",
+            "title": "Range 2-Piece Sofa",
+            "description": {
+              "plain": "<p>Range is our take on modern comfort—plush, laid-back seating designed for everything from streaming marathons to afternoon naps. With clean lines, a low profile, and bold, contemporary style, it’s as much a statement piece as it is a place to unwind. And thanks to our universal modular system, it’s easy to customize, rearrange, and expand with extra seats, tables, and smart upgrades.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified</li>\n<li>PFAS-free</li>\n</ul>"
+            },
+            "handle": "range-2-piece-sofa",
+            "rating": {
+              "value": 4.2,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 16
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-RG-S2-A2-C0-SG-BM-T0_ae2296e7-5c57-46b8-a549-f0f43efa3424.jpg",
+                "alt_text": "Modern light gray fabric loveseat sofa with two matching round accent pillows and thin black metal legs on white background.",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-RG-S2-A2-C0-SG-BM-T0_ae2296e7-5c57-46b8-a549-f0f43efa3424.jpg",
+                  "width": 2400,
+                  "height": 1350
+                },
+                "width": 2400,
+                "height": 1350
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Stone Grey - Performance Basketweave"
+                  },
+                  {
+                    "label": "Toast - Performance Velvet"
+                  }
+                ]
+              },
+              {
+                "name": "Leg finish",
+                "values": [
+                  {
+                    "label": "Black - Metal"
+                  },
+                  {
+                    "label": "Oak - Wood"
+                  },
+                  {
+                    "label": "Walnut - Wood"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Universal modular system allows easy customization, rearrangement, and expansion of the sofa."
+              ],
+              "top_features": [
+                "Plush upholstered seating provides superior comfort for lounging or watching TV",
+                "Universal modular design enables easy customization and expansion",
+                "Bold geometric pattern and low-profile silhouette offer contemporary style",
+                "Certipur US certified and PFAS-free upholstery ensures safety and environmental responsibility"
+              ],
+              "tech_specs": [
+                "Color: Gray, Black",
+                "Upholstery Pattern: Geometric",
+                "Seat Type: Upholstered padded",
+                "Reclining Mechanism: Not specified",
+                "Firmness: Not specified",
+                "Dimensions: Not specified"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/49995629232430",
+                "title": "Range 2-Piece Sofa",
+                "description": {
+                  "plain": "<p>Range is our take on modern comfort—plush, laid-back seating designed for everything from streaming marathons to afternoon naps. With clean lines, a low profile, and bold, contemporary style, it’s as much a statement piece as it is a place to unwind. And thanks to our universal modular system, it’s easy to customize, rearrange, and expand with extra seats, tables, and smart upgrades.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified</li>\n<li>PFAS-free</li>\n</ul>"
+                },
+                "handle": "range-2-piece-sofa",
+                "url": "https://burrow.com/products/range-2-piece-sofa?_gsid=gM77VoXqVw4R&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 47200,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 117900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Stone Grey - Performance Basketweave"
+                  },
+                  {
+                    "name": "Leg finish",
+                    "label": "Black - Metal"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-RG-S2-A2-C0-SG-BM-T0_ae2296e7-5c57-46b8-a549-f0f43efa3424.jpg",
+                    "alt_text": "Modern light gray fabric loveseat sofa with two matching round accent pillows and thin black metal legs on white background.",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/FLRST-SF-RG-S2-A2-C0-SG-BM-T0_ae2296e7-5c57-46b8-a549-f0f43efa3424.jpg",
+                      "width": 2400,
+                      "height": 1350
+                    },
+                    "width": 2400,
+                    "height": 1350
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/49995629232430:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=gM77VoXqVw4R&_gsid=gM77VoXqVw4R",
+                "rating": {
+                  "value": 1,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 1
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify"
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 47200,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 47200,
+                "currency": "USD"
+              }
+            }
+          }
+        ],
+        "messages": [],
+        "pagination": {
+          "has_next_page": true,
+          "total_count": 620,
+          "cursor": "eyJvZmZzZXQiOjEwLCJ0b3RhbF9jb3VudCI6NjIwLCJyZXR1cm5lZCI6MTB9"
+        }
+      }
+    }
+  }
+}

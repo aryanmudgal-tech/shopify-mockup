@@ -1,0 +1,326 @@
+{
+  "fetched_at": "2026-11-15T17:22:11.001Z",
+  "url": "https://catalog.shopify.com/api/ucp/mcp",
+  "final_url": "https://catalog.shopify.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "lookup_catalog",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/valid-with-capabilities.json"
+          }
+        },
+        "catalog": {
+          "ids": [
+            "https://burrow.com/products/nomad-plus-sofa?variant=50484946305326"
+          ],
+          "context": {
+            "address_country": "US",
+            "address_region": "NY",
+            "postal_code": "14228"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "capabilities": {
+            "dev.ucp.shopping.catalog.search": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+              }
+            ],
+            "dev.ucp.shopping.catalog.lookup": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+              }
+            ],
+            "dev.shopify.catalog.global": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://shopify.dev/docs/agents/catalog/global-catalog",
+                "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog_global.json",
+                "extends": [
+                  "dev.ucp.shopping.catalog.search",
+                  "dev.ucp.shopping.catalog.lookup"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ]
+          },
+          "status": "success"
+        },
+        "products": [
+          {
+            "id": "gid://shopify/p/1TFOEzm6PvSO7zVtyPscH5",
+            "title": "Nomad Sofa",
+            "description": {
+              "plain": "<p>Meet the sofa that changed how people buy furniture—designed to fit how people actually live. The Nomad Modular Collection combines timeless mid-century style with smart, modern engineering. Tool-free assembly, built-in USB charging, and easy-to-move modular design make it as functional as it is iconic.</p><p>Every detail is crafted for longevity—from the hardwood frame and CertiPUR-US® foam cushions to the PFAS-free, performance fabric that resists stains and everyday wear. With Nomad, you get the comfort of a classic and the flexibility of the future.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n<li>Reversible back cushions with tufting</li>\n</ul>"
+            },
+            "handle": "nomad-plus-sofa",
+            "rating": {
+              "value": 3.8,
+              "scale_min": 1,
+              "scale_max": 5,
+              "count": 18
+            },
+            "media": [
+              {
+                "type": "image",
+                "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSFPL-3-CGC-MD-BM-TF_67d0c93a-336f-466b-ac7a-97c6a7083c04.jpg",
+                "alt_text": "Nomad Sofa",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSFPL-3-CGC-MD-BM-TF_67d0c93a-336f-466b-ac7a-97c6a7083c04.jpg",
+                  "width": 2400,
+                  "height": 1350
+                },
+                "width": 2400,
+                "height": 1350
+              },
+              {
+                "type": "video",
+                "url": "https://cdn.shopify.com/videos/c/vp/0f1f52b0aa1a4a0aadb9aad28023f4e3/0f1f52b0aa1a4a0aadb9aad28023f4e3.m3u8",
+                "alt_text": "Nomad Sofa",
+                "preview": {
+                  "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/preview_images/0f1f52b0aa1a4a0aadb9aad28023f4e3.thumbnail.0000000000.jpg",
+                  "width": 1280,
+                  "height": 720
+                },
+                "duration": 8,
+                "sources": [
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/0f1f52b0aa1a4a0aadb9aad28023f4e3/0f1f52b0aa1a4a0aadb9aad28023f4e3.m3u8",
+                    "mime_type": "application/x-mpegURL",
+                    "format": "m3u8",
+                    "width": 1280,
+                    "height": 720
+                  },
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/0f1f52b0aa1a4a0aadb9aad28023f4e3/0f1f52b0aa1a4a0aadb9aad28023f4e3.HD-720p-1.6Mbps-63508932.mp4",
+                    "mime_type": "video/mp4",
+                    "format": "mp4",
+                    "width": 1280,
+                    "height": 720
+                  },
+                  {
+                    "url": "https://cdn.shopify.com/videos/c/vp/0f1f52b0aa1a4a0aadb9aad28023f4e3/0f1f52b0aa1a4a0aadb9aad28023f4e3.SD-480p-0.9Mbps-63508932.mp4",
+                    "mime_type": "video/mp4",
+                    "format": "mp4",
+                    "width": 852,
+                    "height": 480
+                  }
+                ]
+              }
+            ],
+            "options": [
+              {
+                "name": "Fabric",
+                "values": [
+                  {
+                    "label": "Cloud - Performance Lino"
+                  },
+                  {
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "label": "Georgia Clay - Performance Chenille"
+                  },
+                  {
+                    "label": "Heather Charcoal - Performance Chenille"
+                  },
+                  {
+                    "label": "Moss Green - Performance Flatweave"
+                  },
+                  {
+                    "label": "Navy Blue - Performance Flatweave"
+                  },
+                  {
+                    "label": "Sienna - Performance Brushed Chenille"
+                  }
+                ]
+              },
+              {
+                "name": "Leg finish",
+                "values": [
+                  {
+                    "label": "Black - Metal"
+                  },
+                  {
+                    "label": "Brass - Metal"
+                  },
+                  {
+                    "label": "Chrome - Metal"
+                  },
+                  {
+                    "label": "Ebony - Wood"
+                  },
+                  {
+                    "label": "Oak - Wood"
+                  },
+                  {
+                    "label": "Walnut - Wood"
+                  }
+                ]
+              },
+              {
+                "name": "Arm style",
+                "values": [
+                  {
+                    "label": "Block"
+                  },
+                  {
+                    "label": "Slope"
+                  }
+                ]
+              }
+            ],
+            "metadata": {
+              "unique_selling_points": [
+                "Universal modular design with tool-free assembly and built-in USB charging for maximum flexibility and convenience."
+              ],
+              "top_features": [
+                "Universal modular design enables flexible configuration for any living space",
+                "Tool-free assembly allows for quick and easy setup without professional help",
+                "Built-in USB charging port provides convenient device connectivity",
+                "Certipur US certified cushions ensure long-lasting comfort and support",
+                "PFAS-free, stain-resistant performance fabric maintains a clean look over time"
+              ],
+              "tech_specs": [
+                "Frame Material: Hardwood",
+                "Cushion Material: Certipur US certified foam",
+                "Upholstery Material: Performance fabric (PFAS-free)",
+                "Assembly: Tool-free, modular",
+                "Chaise Orientation: Right-facing (select models)",
+                "Color Options: Navy, Green, Gray, Brown, Black, Beige, Orange, Silver, Gold"
+              ]
+            },
+            "variants": [
+              {
+                "id": "gid://shopify/ProductVariant/50484946305326",
+                "title": "Nomad Sofa",
+                "description": {
+                  "plain": "<p>Meet the sofa that changed how people buy furniture—designed to fit how people actually live. The Nomad Modular Collection combines timeless mid-century style with smart, modern engineering. Tool-free assembly, built-in USB charging, and easy-to-move modular design make it as functional as it is iconic.</p><p>Every detail is crafted for longevity—from the hardwood frame and CertiPUR-US® foam cushions to the PFAS-free, performance fabric that resists stains and everyday wear. With Nomad, you get the comfort of a classic and the flexibility of the future.</p><ul>\n<li>Universal modular design</li>\n<li>CertiPUR-US® certified cushions</li>\n<li>PFAS-free materials</li>\n<li>Reversible back cushions with tufting</li>\n</ul>"
+                },
+                "handle": "nomad-plus-sofa",
+                "url": "https://burrow.com/products/nomad-plus-sofa?_gsid=CtSW7Nc5s6QG&utm_source=shopify&utm_medium=catalog",
+                "price": {
+                  "amount": 136400,
+                  "currency": "USD"
+                },
+                "list_price": {
+                  "amount": 194900,
+                  "currency": "USD"
+                },
+                "availability": {
+                  "available": true
+                },
+                "options": [
+                  {
+                    "name": "Fabric",
+                    "label": "Crushed Gravel - Performance Chenille"
+                  },
+                  {
+                    "name": "Arm style",
+                    "label": "Block"
+                  },
+                  {
+                    "name": "Leg finish",
+                    "label": "Black - Metal"
+                  }
+                ],
+                "media": [
+                  {
+                    "type": "image",
+                    "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSFPL-3-CGC-MD-BM-TF_67d0c93a-336f-466b-ac7a-97c6a7083c04.jpg",
+                    "alt_text": "Nomad Sofa",
+                    "preview": {
+                      "url": "https://cdn.shopify.com/s/files/1/0932/3220/2030/files/NSFPL-3-CGC-MD-BM-TF_67d0c93a-336f-466b-ac7a-97c6a7083c04.jpg",
+                      "width": 2400,
+                      "height": 1350
+                    },
+                    "width": 2400,
+                    "height": 1350
+                  }
+                ],
+                "seller": {
+                  "id": "gid://shopify/Shop/93232202030",
+                  "name": "Burrow",
+                  "url": "https://burrow.com",
+                  "domain": "burrow-prod.myshopify.com",
+                  "links": [
+                    {
+                      "type": "privacy_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/44708757806.html"
+                    },
+                    {
+                      "type": "terms_of_service",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564526894.html"
+                    },
+                    {
+                      "type": "refund_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45564592430.html"
+                    },
+                    {
+                      "type": "shipping_policy",
+                      "url": "https://checkout.shopify.com/93232202030/policies/45885391150.html"
+                    }
+                  ]
+                },
+                "checkout_url": "https://burrow-prod.myshopify.com/buy/50484946305326:1?ucp/version=2026-08-25&attribution/utm_source=shopify&attribution/utm_medium=catalog&channel=hydrogen&attribution/click_id_tag=_gsid&attribution/click_id_value=CtSW7Nc5s6QG&_gsid=CtSW7Nc5s6QG",
+                "rating": {
+                  "value": 2.8,
+                  "scale_min": 1,
+                  "scale_max": 5,
+                  "count": 4
+                },
+                "condition": [
+                  "new"
+                ],
+                "eligible": {
+                  "native_checkout": false
+                },
+                "source": "shopify",
+                "inputs": [
+                  {
+                    "id": "https://burrow.com/products/nomad-plus-sofa?variant=50484946305326",
+                    "match": "featured"
+                  }
+                ]
+              }
+            ],
+            "price_range": {
+              "min": {
+                "amount": 136400,
+                "currency": "USD"
+              },
+              "max": {
+                "amount": 136400,
+                "currency": "USD"
+              }
+            }
+          }
+        ],
+        "messages": []
+      }
+    }
+  }
+}
