@@ -3,7 +3,7 @@
 // for recording the video.
 
 import { readFileSync } from "node:fs";
-import type { CallOptions, Endpoint, Page, Transport, UcpResult } from "./transport";
+import type { CallOptions, Endpoint, Page, Probe, Transport, UcpResult } from "./transport";
 import { UcpError } from "./transport";
 
 const FIXTURES = new URL("../../fixtures/verification/", import.meta.url);
@@ -138,6 +138,13 @@ export class RecordedTransport implements Transport {
     const file = store.tools[key];
     if (!file) throw notRecorded(`${tool} at ${endpoint}`);
     return unwrap(readFixture(store.dir, file));
+  }
+
+  async probe(url: string): Promise<Probe> {
+    const host = new URL(url).hostname;
+    const store = STORES.find((s) => s.domain === host);
+    if (!store) throw notRecorded(`a probe of ${host}`);
+    return JSON.parse(readFileSync(new URL(`${store.dir}/10-cart-route-probe.json`, FIXTURES), "utf8")).probe;
   }
 
   async fetchPage(url: string): Promise<Page> {

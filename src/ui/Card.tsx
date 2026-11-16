@@ -145,25 +145,29 @@ export function Gap({ children }: { children: React.ReactNode }) {
 }
 
 function Actions({ card, onHandoff }: { card: CardModel; onHandoff?: (kind: HandoffKind) => void }) {
-  const sample = card.tryFirst.status === "sample" && card.tryFirst.checkoutUrl ? card.tryFirst : null;
-  const buy = card.product.checkoutUrl;
-  if (!sample && !buy) return null;
+  const { buy, sample } = card.handoffs;
+  if (!buy && !sample) return null;
+  const seller = card.product.seller.name;
+  const price = card.tryFirst.status === "sample" ? ` (${formatUsd(card.tryFirst.priceCents)})` : "";
+  const viewing = [buy, sample].some((h) => h?.kind === "product_page");
   return (
     <footer className="actions-wrap">
       <div className="actions">
         {sample && (
-          <a className="action" href={sample.checkoutUrl!} target="_blank" rel="noopener noreferrer" onClick={() => onHandoff?.("sample")}>
-            Order the sample ({formatUsd(sample.priceCents)})
+          <a className="action" href={sample.url} target="_blank" rel="noopener noreferrer" onClick={() => onHandoff?.("sample")}>
+            {sample.kind === "checkout" ? `Order the sample${price}` : `View the sample on ${seller}'s site`}
           </a>
         )}
         {buy && (
-          <a className="action" href={buy} target="_blank" rel="noopener noreferrer" onClick={() => onHandoff?.("buy")}>
-            Buy it
+          <a className="action" href={buy.url} target="_blank" rel="noopener noreferrer" onClick={() => onHandoff?.("buy")}>
+            {buy.kind === "checkout" ? "Buy it" : `View on ${seller}'s site`}
           </a>
         )}
       </div>
-      <p className="handoff-note">
-        {sample && buy ? "Both open" : "This opens"} {card.product.seller.name}'s own checkout in a new tab. You pay there, not here.
+      <p className={viewing ? "handoff-note handoff-note-view" : "handoff-note"}>
+        {viewing
+          ? `Opens ${seller}'s product page, not checkout. Buy it there: ${seller}'s checkout links don't open from outside its own site.`
+          : `${sample && buy ? "Both open" : "This opens"} ${seller}'s own checkout in a new tab. You pay there, not here.`}
       </p>
     </footer>
   );

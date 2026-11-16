@@ -612,6 +612,12 @@ a {
   text-align: center;
 }
 
+/* The button won't open checkout: say so where the buyer is looking. */
+.handoff-note-view {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
 .action {
   display: flex;
   align-items: center;

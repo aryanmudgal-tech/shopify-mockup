@@ -34,6 +34,7 @@ const BASE: CardModel = {
   toBuy: { status: "priced", listedCents: 99900, deliveryCents: 14900, deliveryLabel: "White glove delivery", doorCents: 114800 },
   tryFirst: { status: "none", otherSamples: false },
   ifWrong: { status: "unreadable", reason: "", sources: BOTH },
+  handoffs: { buy: { kind: "checkout", url: "#" }, sample: null },
   steps: [],
 };
 
@@ -138,6 +139,13 @@ const STATES: { title: string; card: CardModel }[] = [
         lines: [{ kind: "cost_unstated", quotes: [] }],
         window: { days: 14, starts: null, quotes: [P("Items may be returned within 14 days.")] },
       },
+    },
+  },
+  {
+    title: "The store's checkout links don't open from outside its site, so the button opens the product page and says so.",
+    card: {
+      ...BASE,
+      handoffs: { buy: { kind: "product_page", url: "#", reason: "Example Store's checkout links don't open from outside its own site." }, sample: null },
     },
   },
   {

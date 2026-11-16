@@ -30,8 +30,17 @@ export interface Card {
   toBuy: ToBuyRow;
   tryFirst: TryFirstRow;
   ifWrong: IfWrongRow;
+  /** What each button opens (spec 6.4). null hides the button. */
+  handoffs: { buy: Handoff | null; sample: Handoff | null };
   steps: CheckStep[];
 }
+
+/**
+ * "checkout" opens the store's checkout. "product_page" is the fallback for a
+ * store whose checkout links can't open from outside its own site: the button
+ * says "View", and the note says the buyer buys there.
+ */
+export type Handoff = { kind: "checkout"; url: string } | { kind: "product_page"; url: string; reason: string };
 
 export interface ProductHeader {
   title: string;

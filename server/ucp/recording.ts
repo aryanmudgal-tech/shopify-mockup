@@ -3,7 +3,7 @@
 
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import type { CallOptions, Endpoint, Page, Transport, UcpResult } from "./transport";
+import type { CallOptions, Endpoint, Page, Probe, Transport, UcpResult } from "./transport";
 
 export class RecordingTransport implements Transport {
   private n = 0;
@@ -37,6 +37,18 @@ export class RecordingTransport implements Transport {
     } catch (err) {
       const error = err instanceof Error ? err.message : String(err);
       writeFileSync(`${file}.json`, JSON.stringify({ fetched_at: new Date().toISOString(), endpoint, tool, args, error }, null, 2) + "\n");
+      throw err;
+    }
+  }
+
+  async probe(url: string): Promise<Probe> {
+    const file = this.name("probe");
+    try {
+      const probe = await this.inner.probe(url);
+      writeFileSync(`${file}.json`, JSON.stringify({ fetched_at: new Date().toISOString(), url, probe }, null, 2) + "\n");
+      return probe;
+    } catch (err) {
+      writeFileSync(`${file}.json`, JSON.stringify({ url, error: err instanceof Error ? err.message : String(err) }, null, 2) + "\n");
       throw err;
     }
   }

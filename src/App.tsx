@@ -90,11 +90,16 @@ export function App() {
   /** After a hand-off, say what opened, so the thread records it. */
   function handoff(kind: HandoffKind, card: CardModel) {
     const seller = card.product.seller.name;
+    const h = card.handoffs[kind];
     const what =
       kind === "sample" && card.tryFirst.status === "sample"
-        ? `the ${card.tryFirst.title} sample (${formatUsd(card.tryFirst.priceCents)})`
-        : `the ${shortTitle(card.product.title)} (${formatUsd(card.product.listedCents)})`;
-    say({ from: "assistant", text: `Opened ${seller}'s checkout for ${what} in a new tab. Nothing is charged until you pay there.` });
+        ? `the ${card.tryFirst.title} sample${h?.kind === "checkout" ? ` (${formatUsd(card.tryFirst.priceCents)})` : ""}`
+        : `the ${shortTitle(card.product.title)}${h?.kind === "checkout" ? ` (${formatUsd(card.product.listedCents)})` : ""}`;
+    const text =
+      h?.kind === "product_page"
+        ? `Opened ${seller}'s product page for ${what} in a new tab. You buy there; nothing is charged here.`
+        : `Opened ${seller}'s checkout for ${what} in a new tab. Nothing is charged until you pay there.`;
+    say({ from: "assistant", text });
   }
 
   function submit(e: React.FormEvent) {

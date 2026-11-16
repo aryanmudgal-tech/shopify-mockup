@@ -5,14 +5,14 @@
 // slow or broken call shows as that row's state instead of losing the card.
 // Builds the card and the "How I checked" steps (spec 6.3).
 
-import type { AssistantSource, Card, CheckStep, IfWrongRow, PolicySource, ToBuyRow, TryFirstRow } from "../shared/card";
+import type { AssistantSource, Card, CheckStep, Handoff, IfWrongRow, PolicySource, ToBuyRow, TryFirstRow } from "../shared/card";
 import { formatUsd } from "../shared/money";
 import { askAssistant } from "./ask";
 import { quoteDoorPrice, type CartQuote } from "./cart";
 import { findProduct, searchSample, type FoundProduct, type SampleSearch } from "./catalog";
 import { returnsRow } from "./cost";
 import { extractReturns, type Extraction, type ModelDeps } from "./extract";
-import { checkHandoff, hostOf, type HandoffCheck } from "./handoff";
+import { cartProbeUrl, checkHandoff, classifyProbe, hostOf, productPageLink, type CartRoute, type HandoffCheck } from "./handoff";
 import { modelFromEnv } from "./model";
 import { cacheFromEnv } from "./modelCache";
 import { readRefundPolicy } from "./policy";
@@ -43,11 +43,12 @@ export async function runCheck(t: Transport, link: string, zip: string, deps: Mo
     );
   }
 
-  const [cart, sample, policy, assistant] = await Promise.all([
+  const [cart, sample, policy, assistant, probe] = await Promise.all([
     settle(quoteDoorPrice(t, found.storeDomain, found.variantId, zip)),
     settle(searchSample(t, found.storeDomain, found.fabric, deps)),
     readRefundPolicy(t, found.refundPolicyUrl),
     askAssistant(t, found.storeDomain, found.variantId, zip),
+    settle(t.probe(cartProbeUrl(found.storeDomain))),
   ]);
 
   const toBuy: ToBuyRow = cart.ok ? toBuyRow(found, cart.value) : { status: "unavailable", reason: cart.reason };
@@ -66,6 +67,17 @@ export async function runCheck(t: Transport, link: string, zip: string, deps: Mo
   const sampleLink = tryFirst.status === "sample" ? checkHandoff(tryFirst.checkoutUrl, tryFirst.variantId, hosts) : null;
   if (tryFirst.status === "sample" && sampleLink && !sampleLink.ok) tryFirst = { ...tryFirst, checkoutUrl: null };
 
+  // A store whose cart pages leave Shopify can't open checkout links: the
+  // buttons open product pages there instead. An inconclusive probe changes nothing.
+  const route = classifyProbe(probe.ok ? probe.value : null, found.storeDomain);
+  const seller = found.header.seller.name;
+  const reason = `${seller}'s checkout links don't open from outside its own site.`;
+  const swatchPage = sample.ok && sample.value.match ? productPageLink(sample.value.match.productUrl, sample.value.match.variantId, hosts) : null;
+  const handoffs = {
+    buy: chooseHandoff(buy, route, productPageLink(found.productPageUrl, found.variantId, hosts), reason),
+    sample: sampleLink ? chooseHandoff(sampleLink, route, swatchPage, reason) : null,
+  };
+
   return {
     mode: t.mode,
     recordedAt: t.recordedAt,
@@ -74,6 +86,7 @@ export async function runCheck(t: Transport, link: string, zip: string, deps: Mo
     toBuy,
     tryFirst,
     ifWrong,
+    handoffs,
     steps: [
       identifyStep(found),
       priceStep(found, cart, toBuy, zip),
@@ -81,17 +94,44 @@ export async function runCheck(t: Transport, link: string, zip: string, deps: Mo
       policyStep(policy),
       assistantStep(found, assistant, zip),
       extractStep(extraction, reconciled),
-      handoffStep(found.header.seller.name, buy, sampleLink),
+      handoffStep(seller, buy, sampleLink, handoffs, route, probe.ok ? null : probe.reason),
     ],
   };
 }
 
-function handoffStep(seller: string, buy: HandoffCheck, sample: HandoffCheck | null): CheckStep {
-  const describe = (label: string, c: HandoffCheck) =>
-    c.ok
+function chooseHandoff(check: HandoffCheck, route: CartRoute, page: string | null, reason: string): Handoff | null {
+  if (route === "off_shopify" && page) return { kind: "product_page", url: page, reason };
+  return check.ok ? { kind: "checkout", url: check.url } : null;
+}
+
+function handoffStep(
+  seller: string,
+  buy: HandoffCheck,
+  sample: HandoffCheck | null,
+  handoffs: Card["handoffs"],
+  route: CartRoute,
+  probeError: string | null,
+): CheckStep {
+  const describe = (label: string, c: HandoffCheck, h: Handoff | null, viewLabel: string) => {
+    if (h?.kind === "product_page") {
+      const page = new URL(h.url);
+      return `"${viewLabel}" opens ${page.hostname}${page.pathname} instead of checkout.`;
+    }
+    return c.ok
       ? `"${label}" opens ${c.host}${c.path}${c.keepsAttribution ? " with Shopify's attribution parameters kept as given" : ""}.`
       : `"${label}" is hidden: ${c.reason}`;
-  const parts = [describe("Buy it", buy), sample ? describe("Order the sample", sample) : "There is no sample, so only \"Buy it\" shows."];
+  };
+  const probeLine =
+    route === "shopify"
+      ? "A test cart page with a made-up token ended on a page Shopify serves, so the store's checkout links should open."
+      : route === "off_shopify"
+        ? `A test cart page with a made-up token ended at a 404 on ${seller}'s own site that Shopify didn't serve, so its checkout links dead-end.`
+        : `The test of the store's cart pages was inconclusive${probeError ? ` (${probeError})` : ""}, so the checkout links stay.`;
+  const parts = [
+    probeLine,
+    describe("Buy it", buy, handoffs.buy, `View on ${seller}'s site`),
+    sample ? describe("Order the sample", sample, handoffs.sample, `View the sample on ${seller}'s site`) : "There is no sample, so only one button shows.",
+  ];
   const failed = !buy.ok || (sample !== null && !sample.ok);
   return {
     id: "handoff",
@@ -99,7 +139,7 @@ function handoffStep(seller: string, buy: HandoffCheck, sample: HandoffCheck | n
     tool: null,
     endpoint: "checkout_url from Shopify",
     outcome: failed ? "failed" : "ok",
-    summary: `${parts.join(" ")} Each link must be ${seller}'s own checkout for the variant on the card. Nothing is charged here; the buyer pays at the store.`,
+    summary: `${parts.join(" ")} Nothing is charged here; the buyer pays at the store.`,
   };
 }
 

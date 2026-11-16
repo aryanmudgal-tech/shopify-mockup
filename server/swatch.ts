@@ -40,6 +40,8 @@ const SCHEMA = {
 
 export interface SwatchMatch {
   title: string;
+  /** The swatch's product page, for the fallback hand-off. */
+  productUrl: string | null;
   variantId: string;
   priceCents: number;
   imageUrl: string | null;
@@ -124,6 +126,7 @@ export async function matchSwatch(
     rejected: null,
     match: {
       title: product.title,
+      productUrl: typeof product.url === "string" ? product.url : null,
       variantId: variant.id,
       priceCents: variant.price.amount,
       imageUrl: product.media?.[0]?.url ?? null,

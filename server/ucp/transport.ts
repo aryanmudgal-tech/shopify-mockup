@@ -21,6 +21,15 @@ export interface Transport {
   call(endpoint: Endpoint, tool: string, args: Record<string, unknown>, opts?: CallOptions): Promise<UcpResult>;
   /** Fetches a web page the check reads: the refund policy, or a product page for the lookup fallback. */
   fetchPage(url: string): Promise<Page>;
+  /** Follows a URL's redirects by hand and reports where it ends (the cart-route probe in server/handoff.ts). */
+  probe(url: string): Promise<Probe>;
+}
+
+export interface Probe {
+  /** Each hop's status and host, from the first request to the last. */
+  hops: { status: number; host: string }[];
+  /** Whether the last response says Shopify served it (the powered-by header). */
+  servedByShopify: boolean;
 }
 
 export interface UcpResult {

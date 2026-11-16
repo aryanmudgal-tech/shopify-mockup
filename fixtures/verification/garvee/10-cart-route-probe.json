@@ -1,0 +1,17 @@
+{
+  "fetched_at": "2026-11-16T00:34:53.985Z",
+  "url": "https://mygarvee.myshopify.com/cart/c/before-you-buy-probe",
+  "probe": {
+    "hops": [
+      {
+        "status": 301,
+        "host": "mygarvee.myshopify.com"
+      },
+      {
+        "status": 404,
+        "host": "www.garvee.com"
+      }
+    ],
+    "servedByShopify": false
+  }
+}

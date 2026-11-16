@@ -131,3 +131,27 @@ describe("hand-off check", () => {
     expect(card.tryFirst).toMatchObject({ status: "sample", checkoutUrl: "https://burrow-prod.myshopify.com/cart/50269421830446:1" });
   });
 });
+
+describe("hand-off fallback for stores whose checkout links leave Shopify", () => {
+  it("Burrow: Shopify serves its cart pages, so both buttons open checkout", async () => {
+    const card = await runCheck(new RecordedTransport(), BURROW, "14228", saved);
+    expect(card.handoffs.buy).toMatchObject({ kind: "checkout", url: expect.stringContaining("/buy/50484946305326:1") });
+    expect(card.handoffs.sample).toEqual({ kind: "checkout", url: "https://burrow-prod.myshopify.com/cart/50269421830446:1" });
+  });
+
+  it("Garvee: its cart pages dead-end on its own site, so the button opens the product page", async () => {
+    const card = await runCheck(new RecordedTransport(), GARVEE, "14228", saved);
+    expect(card.handoffs.buy).toMatchObject({ kind: "product_page", reason: expect.stringContaining("GARVEE's checkout links don't open") });
+    const url = new URL((card.handoffs.buy as { url: string }).url);
+    expect(url.hostname).toBe("www.garvee.com");
+    expect(url.searchParams.get("variant")).toBe("51296972898617");
+    expect(url.searchParams.get("utm_source")).toBe("shopify");
+    expect(card.steps.find((s) => s.id === "handoff")!.summary).toContain("Shopify didn't serve");
+  });
+
+  it("keeps the checkout link when the probe is inconclusive", async () => {
+    const card = await runCheck(faulty({ probe: "fail" }), GARVEE, "14228", saved);
+    expect(card.handoffs.buy).toMatchObject({ kind: "checkout", url: expect.stringContaining("/buy/51296972898617:1") });
+    expect(card.steps.find((s) => s.id === "handoff")!.summary).toContain("inconclusive");
+  });
+});

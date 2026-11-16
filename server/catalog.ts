@@ -18,6 +18,8 @@ export interface FoundProduct {
   via: { kind: "lookup" } | { kind: "search"; query: string };
   /** The link named no variant (or one the Catalog didn't have), so the check picked one. */
   variantGuessed: boolean;
+  /** The variant's page on the store's site, from Global Catalog (attribution included). */
+  productPageUrl: string | null;
 }
 
 const FABRIC_OPTION = /fabric|colou?r|material|upholstery/i;
@@ -79,6 +81,7 @@ function toFound(product: any, wanted: string | null, via: FoundProduct["via"]):
     fabric,
     via,
     variantGuessed,
+    productPageUrl: variant.url ?? product.url ?? null,
   };
 }
 

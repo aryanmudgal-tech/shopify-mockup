@@ -4,7 +4,7 @@
 
 import { randomUUID } from "node:crypto";
 import { defaultProfile, PROFILES } from "./profile";
-import type { CallOptions, Endpoint, Page, Transport, UcpResult } from "./transport";
+import type { CallOptions, Endpoint, Page, Probe, Transport, UcpResult } from "./transport";
 import { UcpError } from "./transport";
 
 const MCP_PROTOCOL_VERSION = "2026-03-26";
@@ -86,6 +86,36 @@ export class LiveTransport implements Transport {
     if (html.length > PAGE_LIMIT_BYTES) throw new UcpError("upstream", "The page was too large to read.");
     return { url: res.url || url, html };
   }
+
+  probe(url: string): Promise<Probe> {
+    return probeRedirects(url, this.fetchImpl);
+  }
+}
+
+export async function probeRedirects(url: string, fetchImpl: typeof fetch): Promise<Probe> {
+  assertPublicHttps(url);
+  const hops: Probe["hops"] = [];
+  let at = url;
+  for (let i = 0; i < 6; i++) {
+    let res: Response;
+    try {
+      res = await fetchImpl(at, {
+        redirect: "manual",
+        headers: { "User-Agent": "BeforeYouBuy/0.1 (prototype)" },
+        signal: AbortSignal.timeout(DEFAULT_TIMEOUT_MS),
+      });
+    } catch (err) {
+      throw new UcpError("upstream", `${new URL(at).hostname} didn't respond (${errorName(err)}).`);
+    }
+    hops.push({ status: res.status, host: new URL(at).hostname });
+    const location = res.headers.get("location");
+    if (res.status >= 300 && res.status < 400 && location) {
+      at = new URL(location, at).toString();
+      continue;
+    }
+    return { hops, servedByShopify: /shopify/i.test(res.headers.get("powered-by") ?? "") };
+  }
+  throw new UcpError("upstream", "Too many redirects.");
 }
 
 /**
