@@ -29,6 +29,9 @@ const OPENING: Message[] = [
 
 let nextId = 3;
 
+/** How long the recorded demo shows "Checking…", so the take doesn't look canned. */
+const RECORDED_PACE_MS = 1600;
+
 export function App() {
   const [messages, setMessages] = useState<Message[]>(OPENING);
   const [stage, setStage] = useState<Stage>("link");
@@ -60,10 +63,16 @@ export function App() {
 
   async function check(link: string, forZip: string) {
     setStage("checking");
+    const started = performance.now();
     const statusId = nextId++;
     setMessages((ms) => [
       ...ms,
-      { id: statusId, from: "assistant", status: true, text: `Checking the catalog, a cart for ${forZip}, samples and returns…` },
+      {
+        id: statusId,
+        from: "assistant",
+        status: true,
+        text: `Checking Shopify's catalog, a cart for ${forZip}, the store's samples, its refund policy and its assistant…`,
+      },
     ]);
     let reply: Message[];
     try {
@@ -82,6 +91,8 @@ export function App() {
     } catch {
       reply = [{ id: nextId++, from: "assistant", text: "I couldn't reach the server. Is it still running?" }];
     }
+    // Recorded answers come back at once; hold the status line long enough to read on video.
+    if (config?.mode === "recorded") await new Promise((r) => setTimeout(r, Math.max(0, RECORDED_PACE_MS - (performance.now() - started))));
     setMessages((ms) => [...ms.filter((m) => m.id !== statusId), ...reply]);
     setStage("link");
     inputRef.current?.focus();
@@ -179,6 +190,9 @@ export function App() {
   );
 }
 
+/** ?clean hides the shortcuts for a screen recording; the data-mode label always stays (spec 9). */
+const CLEAN = new URLSearchParams(location.search).has("clean");
+
 function ModeFooter({ config, onPick }: { config: Config | null; onPick: (link: string) => void }) {
   if (!config) return null;
   return (
@@ -190,7 +204,7 @@ function ModeFooter({ config, onPick }: { config: Config | null; onPick: (link: 
             ? "Live Shopify calls"
             : "Mock data"}
       </span>
-      {config.demoLinks.length > 0 && (
+      {!CLEAN && config.demoLinks.length > 0 && (
         <span className="demo-links">
           Demo links:
           {config.demoLinks.map((l) => (
@@ -200,7 +214,7 @@ function ModeFooter({ config, onPick }: { config: Config | null; onPick: (link: 
           ))}
         </span>
       )}
-      <a href="?states">Empty states</a>
+      {!CLEAN && <a href="?states">Empty states</a>}
     </footer>
   );
 }
