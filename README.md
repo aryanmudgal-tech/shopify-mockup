@@ -1,6 +1,6 @@
 # Before You Buy
 
-A first-time renter finds a sofa on TikTok and asks an assistant whether to buy it. They see one price, but three things decide it: what it costs at their door, whether there's a cheap way to try it first, and what it costs if they're wrong. Before You Buy is the check an agent runs before it hands the buyer to checkout. It answers those three questions from Shopify's own data, quotes the store, and names the source of every figure.
+A first-time renter finds a sofa through ChatGPT and asks whether to buy it. They see one price, but three things decide it: what it costs at their door, whether there's a cheap way to try it first, and what it costs if they're wrong. Before You Buy is the check an agent runs before it hands the buyer to checkout. It answers those three questions from Shopify's own data, quotes the store, and names the source of every figure.
 
 It's a take-home prototype for Shopify, built on the Shopify Catalog API and the Universal Commerce Protocol (UCP). The design is in [`docs/specs/2026-11-15-before-you-buy-design.md`](docs/specs/2026-11-15-before-you-buy-design.md), and every claim about the APIs is checked in [`docs/verification.md`](docs/verification.md).
 

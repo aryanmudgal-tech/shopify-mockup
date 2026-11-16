@@ -102,7 +102,7 @@ Out of scope (all named in the Reflection, section 14):
 
 A minimal, scripted assistant thread, styled neutrally so it reads as "any assistant," not a copy of a specific product. There is no open chat.
 
-1. The thread opens with a scripted buyer message: "Found this sofa on TikTok, should I buy it?"
+1. The thread opens with a scripted buyer message: "Found this sofa on ChatGPT, should I buy it?"
 2. The buyer pastes a product URL into the input.
 
 The input accepts a product URL and a ZIP code only.
@@ -378,7 +378,7 @@ Stop for the owner's review after each stage. Within stages 3 and 4, build rows 
 
 ## 13. Demo path and video outline
 
-- **0:00 to 0:30, problem.** "You've never bought furniture online. You found this sofa on TikTok. You see one price; the costs that decide it are hidden." One statistic. The vision line.
+- **0:00 to 0:30, problem.** "You've never bought furniture online. You found this sofa on ChatGPT. You see one price; the costs that decide it are hidden." One statistic. The vision line.
 - **0:30 to 1:45, store A (Burrow Nomad).** Paste the link. ZIP 14228. The card fills: $1,433 at the door against $1,364 listed, a $1 swatch in the exact fabric, and what a return costs in the store's words, including the free exchange. Open "How I checked." Tap "Order the sample."
 - **1:45 to 2:15, store B (Garvee).** Half the price and free delivery, but no sample, and a return costs a restocking fee and return shipping the store doesn't state. The contrast is the point: the cheaper sofa hides its way back. State it neutrally, as what each store says.
 - **2:15 to 3:00, reflection.** See section 14.

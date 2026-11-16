@@ -30,7 +30,7 @@ Everything on screen takes about 12 seconds in total, including typing the ZIP, 
 
 > Agents find the product. This is the check before you pay.
 >
-> Imagine you've just moved into your first apartment, and you've never bought furniture online. You find this sofa on TikTok. You see one price, but the costs that decide it are hidden: what it really costs at your door, whether you can try it first, and what you lose if you're wrong. Morning Consult found that nearly 40% of shoppers drop a home furnishings purchase they meant to make.
+> Imagine you've just moved into your first apartment, and you've never bought furniture online. You find this sofa on ChatGPT. You see one price, but the costs that decide it are hidden: what it really costs at your door, whether you can try it first, and what you lose if you're wrong. Morning Consult found that nearly 40% of shoppers drop a home furnishings purchase they meant to make.
 
 ## 0:30 - 1:45, Burrow (186 words, 74 s)
 

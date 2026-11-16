@@ -23,7 +23,7 @@ interface Config {
 }
 
 const OPENING: Message[] = [
-  { id: 1, from: "buyer", text: "Found this sofa on TikTok, should I buy it?" },
+  { id: 1, from: "buyer", text: "Found this sofa on ChatGPT, should I buy it?" },
   { id: 2, from: "assistant", text: "Paste the link and I'll check it before you pay." },
 ];
 
