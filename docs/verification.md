@@ -225,3 +225,24 @@ I requested each link once and followed the redirects by hand. That's what a buy
 This is my biggest surprise of stage 5. I haven't opened Garvee's link in a real browser, so I'm not certain a buyer sees the 404, but every server response points that way. The plain `/cart/51296972898617:1` permalink and the cart's own `continue_url` both use the same routes, so they dead-end too.
 
 **Proposed fix, for your call:** for stores like Garvee, hand off through the Checkout MCP instead. Garvee's `tools/list` offers `create_checkout`, which should return a Shopify-hosted checkout that doesn't pass through the store's own site. I haven't tried it yet. Until then, Garvee's "Buy it" isn't part of the demo path, which only taps "Order the sample" at Burrow.
+
+### 11.3 Garvee: you confirmed it, and the Checkout MCP doesn't fix it
+
+You clicked Garvee's "Buy it" in the running app and got the 404, then a redirect to Garvee's home page. So the dead end is real for a buyer.
+
+I tried the Checkout MCP next. `create_checkout` on `mygarvee.myshopify.com` with the variant, quantity one, and country plus ZIP (no buyer details) returned a checkout with status `requires_escalation` and a `continue_url` of `mygarvee.myshopify.com/cart/c/{token}`. Followed by hand, that goes 301 -> `www.garvee.com/cart/c/{token}` -> 404, the same wall. I cancelled the checkout afterwards (`canceled`). The response's `links` hold only policy pages. Both responses are saved as `garvee/09a-create-checkout.json` and `garvee/09b-cancel-checkout.json`.
+
+So every Shopify-hosted way into checkout at Garvee dead-ends the same way: the Catalog's `/buy/` link, the `/cart/` permalink, the cart's `continue_url` and the Checkout MCP's `continue_url`. Garvee's Shopify domain sends cart pages to its own separate site, which doesn't serve them. That's the store's setup, not something the app can route around.
+
+**A harmless way to spot such a store.** Request `https://{seller.domain}/cart/c/probe`, a made-up token that creates nothing, follow the redirects, and see who serves the last page:
+
+| Store | Where the cart route ends | Served by Shopify? |
+|---|---|---|
+| Garvee | `www.garvee.com`, 404 | NO (`server: Google Frontend`) |
+| Burrow | `checkout.burrow.com`, 404 for the fake token | YES (`powered-by: Shopify`) |
+| Slumberland | `www.slumberland.com`, 404 for the fake token | YES |
+| Sundays | `www.sundays-company.com`, 404 for the fake token | YES |
+
+All four 404 on the fake token, but only Garvee's last page isn't Shopify's, so only Garvee can't open a real checkout either. I'm relying on Shopify's `powered-by` header here, which isn't a documented contract, so I'd treat it as a prototype signal.
+
+**Proposed fix, for your call:** run that probe during the check. When the cart route leaves Shopify, "Buy it" opens the variant's product page from Global Catalog instead (its `url` keeps Shopify's attribution, `utm_source=shopify&utm_medium=catalog`), and the note under the button says why. The buyer still buys on the store's own site, one step earlier.

@@ -1,0 +1,302 @@
+{
+  "fetched_at": "2026-11-16T00:26:54.372Z",
+  "url": "https://mygarvee.myshopify.com/api/ucp/mcp",
+  "final_url": "https://mygarvee.myshopify.com/api/ucp/mcp",
+  "http_status": 200,
+  "request": {
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "id": 1,
+    "params": {
+      "name": "cancel_checkout",
+      "arguments": {
+        "meta": {
+          "ucp-agent": {
+            "profile": "https://shopify.dev/ucp/agent-profiles/examples/2026-08-25/valid-with-capabilities.json"
+          }
+        },
+        "id": "gid://shopify/Checkout/hWNJC6mCeotjD1RrBmcSo4bB?key=1a3b8dcc848a01c8867e840a5e2c0c80"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ucp\":{\"version\":\"2026-08-25\",\"status\":\"success\",\"services\":{\"dev.ucp.shopping\":[]},\"capabilities\":{\"dev.ucp.shopping.checkout\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/checkout/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/checkout.json\"}],\"dev.ucp.shopping.fulfillment\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}},\"config\":{\"multi_destination\":[],\"method_combinations\":[[\"shipping\"]]}}],\"dev.ucp.shopping.buyer_consent\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json\",\"extends\":[\"dev.ucp.shopping.cart\",\"dev.ucp.shopping.checkout\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.discount\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/discount.json\",\"extends\":[\"dev.ucp.shopping.checkout\",\"dev.ucp.shopping.cart\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}],\"dev.ucp.shopping.cart\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/cart/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/cart.json\"}],\"dev.ucp.shopping.order\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/order/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/order.json\"}],\"dev.ucp.shopping.catalog.search\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json\"}],\"dev.ucp.shopping.catalog.lookup\":[{\"version\":\"2026-08-25\",\"spec\":\"https://ucp.dev/2026-08-25/specification/shopping/catalog/\",\"schema\":\"https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json\"}],\"dev.shopify.catalog\":[{\"version\":\"2026-08-25\",\"spec\":\"https://shopify.dev/docs/agents/catalog/storefront-catalog\",\"schema\":\"https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json\",\"extends\":[\"dev.ucp.shopping.catalog.search\",\"dev.ucp.shopping.catalog.lookup\"],\"requires\":{\"protocol\":{\"min\":\"2026-08-25\"}}}]},\"payment_handlers\":{\"dev.shopify.card\":[{\"id\":\"shopify.card\",\"version\":\"2026-01-15\",\"spec\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md\",\"schema\":\"https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json\",\"config\":{\"payment_methods\":[{\"type\":\"card\",\"enabled_card_brands\":[\"visa\",\"master\",\"discover\",\"american_express\",\"diners_club\",\"cartes_bancaires\",\"jcb\",\"unionpay\",\"visaelectron\",\"maestro\"]}]}}]}},\"id\":\"gid://shopify/Checkout/hWNJC6mCeotjD1RrBmcSo4bB?key=1a3b8dcc848a01c8867e840a5e2c0c80\",\"currency\":\"USD\",\"buyer\":{\"consent\":{\"dev.ucp.consent.analytics\":{\"granted\":true,\"source\":\"business\",\"description\":\"Analytics and performance measurement\"},\"dev.ucp.consent.preferences\":{\"granted\":true,\"source\":\"business\",\"description\":\"Remember preferences and personalize your shopping experience\"},\"dev.ucp.consent.sale_or_sharing\":{\"granted\":true,\"source\":\"business\",\"description\":\"Sale or sharing of personal data with third parties\"},\"dev.ucp.consent.marketing\":{\"granted\":false,\"source\":\"business\",\"description\":\"Marketing communications\",\"segments\":{\"dev.ucp.consent.marketing.email\":{\"granted\":true,\"source\":\"business\",\"description\":\"Promotional emails\"},\"dev.ucp.consent.marketing.sms\":{\"granted\":false,\"source\":\"business\",\"description\":\"Marketing text messages\"}}}}},\"line_items\":[{\"id\":\"gid://shopify/CartLine/ce34a320-a78d-4a72-8b97-68542551b6ce?cart=hWNJC6mCeotjD1RrBmcSo4bB\",\"item\":{\"id\":\"gid://shopify/ProductVariant/51296972898617\",\"title\":\"Garvee 137\\\" Modular Sectional Sofa, Modern Cloud Sectional Couch with Deep Seat, L-Shape Boneless Couch with Chaise for Living Room Apartments, No Assembly Required (4 Seater + 2 Ottoman), Grey - Corduroy | Grey / 4 Seater + 2 Ottoman\",\"price\":68199,\"image_url\":\"https://cdn.shopify.com/s/files/1/0724/6698/9369/files/cimage_6f9815505600f44c.jpg?v=1761711685\"},\"quantity\":1,\"totals\":[{\"type\":\"subtotal\",\"amount\":68199,\"display_text\":\"Subtotal\"},{\"type\":\"total\",\"amount\":68199,\"display_text\":\"Total\"}]}],\"discounts\":{\"codes\":[],\"applied\":[]},\"totals\":[{\"type\":\"subtotal\",\"amount\":68199,\"display_text\":\"Subtotal\"},{\"type\":\"tax\",\"amount\":0,\"display_text\":\"Tax\"},{\"type\":\"total\",\"amount\":68199,\"display_text\":\"Total\"}],\"fulfillment\":{\"methods\":[]},\"expires_at\":\"2026-11-16T00:26:54Z\",\"links\":[{\"type\":\"refund_policy\",\"title\":\"Refund Policy\",\"url\":\"https://checkout.shopify.com/72466989369/policies/30681628985.html?locale=en\"},{\"type\":\"privacy_policy\",\"title\":\"Privacy Policy\",\"url\":\"https://checkout.shopify.com/72466989369/policies/30681661753.html?locale=en\"},{\"type\":\"terms_of_service\",\"title\":\"Terms of Service\",\"url\":\"https://checkout.shopify.com/72466989369/policies/30681694521.html?locale=en\"},{\"type\":\"shipping_policy\",\"title\":\"Shipping Policy\",\"url\":\"https://checkout.shopify.com/72466989369/policies/30681727289.html?locale=en\"},{\"type\":\"contact_information\",\"title\":\"Contact Information\",\"url\":\"https://checkout.shopify.com/72466989369/policies/30681760057.html?locale=en\"}],\"payment\":{\"instruments\":[]},\"messages\":[],\"status\":\"canceled\",\"continue_url\":\"https://mygarvee.myshopify.com/cart/c/hWNJC6mCeotjD1RrBmcSo4bB?key=1URESXKxS7lH8Dh5a13Othqwo1MYIKdvqh7bGCX9s9DqmZXEXGyvnZhZO60TYxuzcS7tq2U91kL3hdWZAfLt120RMPmSvchSTRukCiS9c7hDyXdm1O4S5sVKot4zO5L47hhLKuPzxY2dGFmfpSHpJwwxKC3wPoHzQCTWtCiPrStAnOiC3Yx3lBbJhMx00y3NjZ\"}"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "ucp": {
+          "version": "2026-08-25",
+          "status": "success",
+          "services": {
+            "dev.ucp.shopping": []
+          },
+          "capabilities": {
+            "dev.ucp.shopping.checkout": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/checkout/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/checkout.json"
+              }
+            ],
+            "dev.ucp.shopping.fulfillment": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/fulfillment/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/fulfillment.json",
+                "extends": [
+                  "dev.ucp.shopping.checkout",
+                  "dev.ucp.shopping.cart"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                },
+                "config": {
+                  "multi_destination": [],
+                  "method_combinations": [
+                    [
+                      "shipping"
+                    ]
+                  ]
+                }
+              }
+            ],
+            "dev.ucp.shopping.buyer_consent": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/buyer-consent/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/buyer_consent.json",
+                "extends": [
+                  "dev.ucp.shopping.cart",
+                  "dev.ucp.shopping.checkout"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ],
+            "dev.ucp.shopping.discount": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/extensions/discount/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/discount.json",
+                "extends": [
+                  "dev.ucp.shopping.checkout",
+                  "dev.ucp.shopping.cart"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ],
+            "dev.ucp.shopping.cart": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/cart/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/cart.json"
+              }
+            ],
+            "dev.ucp.shopping.order": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/order/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/order.json"
+              }
+            ],
+            "dev.ucp.shopping.catalog.search": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_search.json"
+              }
+            ],
+            "dev.ucp.shopping.catalog.lookup": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://ucp.dev/2026-08-25/specification/shopping/catalog/",
+                "schema": "https://ucp.dev/2026-08-25/schemas/shopping/catalog_lookup.json"
+              }
+            ],
+            "dev.shopify.catalog": [
+              {
+                "version": "2026-08-25",
+                "spec": "https://shopify.dev/docs/agents/catalog/storefront-catalog",
+                "schema": "https://shopify.dev/ucp/schemas/2026-08-25/shopify_catalog.json",
+                "extends": [
+                  "dev.ucp.shopping.catalog.search",
+                  "dev.ucp.shopping.catalog.lookup"
+                ],
+                "requires": {
+                  "protocol": {
+                    "min": "2026-08-25"
+                  }
+                }
+              }
+            ]
+          },
+          "payment_handlers": {
+            "dev.shopify.card": [
+              {
+                "id": "shopify.card",
+                "version": "2026-01-15",
+                "spec": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/spec.md",
+                "schema": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/schema.json",
+                "config": {
+                  "payment_methods": [
+                    {
+                      "type": "card",
+                      "enabled_card_brands": [
+                        "visa",
+                        "master",
+                        "discover",
+                        "american_express",
+                        "diners_club",
+                        "cartes_bancaires",
+                        "jcb",
+                        "unionpay",
+                        "visaelectron",
+                        "maestro"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "id": "gid://shopify/Checkout/hWNJC6mCeotjD1RrBmcSo4bB?key=1a3b8dcc848a01c8867e840a5e2c0c80",
+        "currency": "USD",
+        "buyer": {
+          "consent": {
+            "dev.ucp.consent.analytics": {
+              "granted": true,
+              "source": "business",
+              "description": "Analytics and performance measurement"
+            },
+            "dev.ucp.consent.preferences": {
+              "granted": true,
+              "source": "business",
+              "description": "Remember preferences and personalize your shopping experience"
+            },
+            "dev.ucp.consent.sale_or_sharing": {
+              "granted": true,
+              "source": "business",
+              "description": "Sale or sharing of personal data with third parties"
+            },
+            "dev.ucp.consent.marketing": {
+              "granted": false,
+              "source": "business",
+              "description": "Marketing communications",
+              "segments": {
+                "dev.ucp.consent.marketing.email": {
+                  "granted": true,
+                  "source": "business",
+                  "description": "Promotional emails"
+                },
+                "dev.ucp.consent.marketing.sms": {
+                  "granted": false,
+                  "source": "business",
+                  "description": "Marketing text messages"
+                }
+              }
+            }
+          }
+        },
+        "line_items": [
+          {
+            "id": "gid://shopify/CartLine/ce34a320-a78d-4a72-8b97-68542551b6ce?cart=hWNJC6mCeotjD1RrBmcSo4bB",
+            "item": {
+              "id": "gid://shopify/ProductVariant/51296972898617",
+              "title": "Garvee 137\" Modular Sectional Sofa, Modern Cloud Sectional Couch with Deep Seat, L-Shape Boneless Couch with Chaise for Living Room Apartments, No Assembly Required (4 Seater + 2 Ottoman), Grey - Corduroy | Grey / 4 Seater + 2 Ottoman",
+              "price": 68199,
+              "image_url": "https://cdn.shopify.com/s/files/1/0724/6698/9369/files/cimage_6f9815505600f44c.jpg?v=1761711685"
+            },
+            "quantity": 1,
+            "totals": [
+              {
+                "type": "subtotal",
+                "amount": 68199,
+                "display_text": "Subtotal"
+              },
+              {
+                "type": "total",
+                "amount": 68199,
+                "display_text": "Total"
+              }
+            ]
+          }
+        ],
+        "discounts": {
+          "codes": [],
+          "applied": []
+        },
+        "totals": [
+          {
+            "type": "subtotal",
+            "amount": 68199,
+            "display_text": "Subtotal"
+          },
+          {
+            "type": "tax",
+            "amount": 0,
+            "display_text": "Tax"
+          },
+          {
+            "type": "total",
+            "amount": 68199,
+            "display_text": "Total"
+          }
+        ],
+        "fulfillment": {
+          "methods": []
+        },
+        "expires_at": "2026-11-16T00:26:54Z",
+        "links": [
+          {
+            "type": "refund_policy",
+            "title": "Refund Policy",
+            "url": "https://checkout.shopify.com/72466989369/policies/30681628985.html?locale=en"
+          },
+          {
+            "type": "privacy_policy",
+            "title": "Privacy Policy",
+            "url": "https://checkout.shopify.com/72466989369/policies/30681661753.html?locale=en"
+          },
+          {
+            "type": "terms_of_service",
+            "title": "Terms of Service",
+            "url": "https://checkout.shopify.com/72466989369/policies/30681694521.html?locale=en"
+          },
+          {
+            "type": "shipping_policy",
+            "title": "Shipping Policy",
+            "url": "https://checkout.shopify.com/72466989369/policies/30681727289.html?locale=en"
+          },
+          {
+            "type": "contact_information",
+            "title": "Contact Information",
+            "url": "https://checkout.shopify.com/72466989369/policies/30681760057.html?locale=en"
+          }
+        ],
+        "payment": {
+          "instruments": []
+        },
+        "messages": [],
+        "status": "canceled",
+        "continue_url": "https://mygarvee.myshopify.com/cart/c/hWNJC6mCeotjD1RrBmcSo4bB?key=1URESXKxS7lH8Dh5a13Othqwo1MYIKdvqh7bGCX9s9DqmZXEXGyvnZhZO60TYxuzcS7tq2U91kL3hdWZAfLt120RMPmSvchSTRukCiS9c7hDyXdm1O4S5sVKot4zO5L47hhLKuPzxY2dGFmfpSHpJwwxKC3wPoHzQCTWtCiPrStAnOiC3Yx3lBbJhMx00y3NjZ"
+      }
+    }
+  }
+}
