@@ -6,6 +6,7 @@ import http from "node:http";
 import { createServer as createVite } from "vite";
 import { handleApi } from "./api";
 import { loadDotEnv } from "./env";
+import { serveMedia } from "./media";
 
 loadDotEnv();
 
@@ -18,6 +19,7 @@ const vite = await createVite({
 });
 
 const server = http.createServer((req, res) => {
+  if (serveMedia(req, res)) return;
   if (req.url?.startsWith("/api/")) {
     handleApi(req, res).catch((err: unknown) => {
       console.error(err);

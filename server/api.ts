@@ -4,6 +4,7 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { CheckResponse, DataMode } from "../shared/card";
 import { runCheck } from "./check";
+import { localizeImages } from "./media";
 import { LiveTransport } from "./ucp/live";
 import { RECORDED_LINKS, RecordedTransport } from "./ucp/recorded";
 import type { Transport } from "./ucp/transport";
@@ -38,7 +39,9 @@ export async function handleApi(req: IncomingMessage, res: ServerResponse): Prom
     if (!/^\d{5}$/.test(zip)) return fail(res, 400, "bad_input", "A US ZIP code is five digits.");
 
     try {
-      const card = await runCheck(transport(), url, zip);
+      const checked = await runCheck(transport(), url, zip);
+      // Recorded mode shows saved copies of the images, if there are any, so the take needs no network.
+      const card = MODE === "recorded" ? localizeImages(checked) : checked;
       return json<CheckResponse>(res, 200, { ok: true, card });
     } catch (err) {
       if (err instanceof UcpError) {
