@@ -259,7 +259,7 @@ function policyStep(policy: PolicySource): CheckStep {
   return {
     ...base,
     outcome: "ok",
-    summary: `Read the store's refund policy page, ${words.toLocaleString("en-US")} words. Every figure in "If you're wrong" and every highlighted quote comes from it.`,
+    summary: `Read the store's refund policy page, ${words.toLocaleString("en-US")} words. Every figure in "If you return it" and every highlighted quote comes from it.`,
     detail: { kind: "policy", text: policy.text },
   };
 }

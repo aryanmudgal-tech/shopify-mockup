@@ -93,7 +93,7 @@ export type TryFirstRow =
   | { status: "none"; otherSamples: boolean }
   | { status: "unavailable"; reason: string };
 
-// --- If you're wrong --------------------------------------------------------
+// --- If you return it -------------------------------------------------------
 
 /**
  * Where a quote comes from (spec revision 4, principle 4). "policy" is the
@@ -115,7 +115,7 @@ export type Fee =
   | { type: "none" };
 
 /**
- * One line of the "If you're wrong" row, with the quotes it rests on. Lines
+ * One line of the "If you return it" row, with the quotes it rests on. Lines
  * next to each other with the same quotes share them, and the page shows them once.
  */
 export type ReturnLine =

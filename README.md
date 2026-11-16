@@ -42,7 +42,7 @@ npx tsx scripts/check.ts "https://burrow.com/products/nomad-plus-sofa?variant=50
 1. **Identify the product.** Global Catalog `lookup_catalog` with the pasted link. If the link doesn't resolve, the app searches the Catalog for the product page's title, and the card says when it had to pick a variant.
 2. **Price at the door.** The store's Cart MCP prices one sofa to the ZIP (country plus ZIP is enough), then the cart is cancelled.
 3. **Try it first.** The store's catalog is searched for a swatch in the sofa's fabric. The model picks the match, and code checks the ID is really in the results.
-4. **If you're wrong.** The app reads the store's refund policy page and asks the store's assistant (`ask_business`). The model reads each source separately into structured terms, and every quote and number is checked against its source. Code then compares the two sources field by field, does all the arithmetic, and fails closed if the figures don't account for the store's words.
+4. **If you return it.** The app reads the store's refund policy page and asks the store's assistant (`ask_business`). The model reads each source separately into structured terms, and every quote and number is checked against its source. Code then compares the two sources field by field, does all the arithmetic, and fails closed if the figures don't account for the store's words.
 5. **Hand-off.** "Order the sample" and "Buy it" open the store's own checkout. If a store's checkout links can't open from outside its site, the button says "View on the store's site" instead.
 
 The model is `claude-haiku-5-5` with a forced, strict tool call. Its reads are saved in `fixtures/model-cache/`, keyed by the texts it read, so repeat runs are fast and the recorded demo needs no key.

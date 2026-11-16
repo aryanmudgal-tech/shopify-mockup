@@ -17,7 +17,7 @@ export function Card({ card, onHandoff }: { card: CardModel; onHandoff?: (kind: 
       <Row label="Try it first" source="Store catalog">
         <TryFirst row={card.tryFirst} />
       </Row>
-      <ReturnsRow row={card.ifWrong} />
+      <ReturnsRow row={card.ifWrong} seller={card.product.seller.name} />
       <HowIChecked steps={card.steps} />
       <Actions card={card} onHandoff={onHandoff} />
     </article>

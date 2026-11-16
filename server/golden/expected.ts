@@ -1,6 +1,6 @@
 // Golden expectations for the two demo stores.
 //
-// These are the hand-written "If you're wrong" lines from the stage 2-3
+// These are the hand-written returns lines from the stage 2-3
 // stand-ins (server/standins.ts, retired in stage 4), turned into expected
 // outputs. Stage 4 passes only when model extraction + reconcile + cost
 // reproduce them for both stores, recorded and live (server/golden.test.ts).

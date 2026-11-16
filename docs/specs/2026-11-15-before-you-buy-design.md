@@ -1,7 +1,8 @@
 # Before You Buy: design spec
 
 - Date: 2026-11-15
-- Revision: 4, after stage 2 review on 2026-11-15. Changes: the refund policy page becomes the primary source for figures and quotes; `ask_business` answers are labelled as the store's assistant; cart destination is country plus ZIP; store endpoint is `seller.domain`; exchange clause added to the ask query.
+- Revision: 5, after the stage 6 review on 2026-11-15. Changes: the returns row is renamed "If you return it" and shows each way a return can go as its own case, cheapest first; the store's exact words move behind "Read in detail" (principle 4); a store whose checkout links can't open from outside its own site gets a "View on {store}'s site" button (6.4).
+- Revision 4, after stage 2 review on 2026-11-15. Changes: the refund policy page becomes the primary source for figures and quotes; `ask_business` answers are labelled as the store's assistant; cart destination is country plus ZIP; store endpoint is `seller.domain`; exchange clause added to the ask query.
 - Revision 3, after the verification run on 2026-11-15. Changes: return-terms format (fee caps, fees with no stated amount, shipping included in the fee, free exchange), $1 swatch, Shopify's example profiles, variant links, delivery destination rule, made-to-order moment dropped.
 - Revision 2 trimmed scope: removed the fit panel, the showroom row and follow-up questions.
 - Status: verification done; ready for stage 2
@@ -68,7 +69,7 @@ Each principle is a requirement. A build that drops one has drifted from the des
 1. **Answers first.** The card appears as soon as the product and ZIP are known. There is no intake questionnaire.
 2. **Ask only what is needed.** The ZIP code is the only question up front, because price and return freight depend on it. If the cart needs more than a ZIP to quote delivery, ask for it at that moment and say why. Never invent an address.
 3. **Show the work.** Every value names its source and the step that produced it, for example "Priced in a cart for 14228."
-4. **Quote the store.** Any figure derived from the store's terms is shown next to the store's own words, taken from its refund policy page. Answers from Shopify's Ask tool are AI-written summaries: label them "The store's assistant" and never style them as the store's own words.
+4. **Quote the store.** Every figure derived from the store's terms names its source on the card, and the store's own words, taken from its refund policy page, are one click away under "Read in detail", grouped by case. When a check fails, the store's words show unfolded instead of any figure. Answers from Shopify's Ask tool are AI-written summaries: label them "The store's assistant" and never style them as the store's own words.
 5. **Say when something is missing.** "This store lists no sample." Empty or unstated values are shown, never hidden or guessed.
 6. **No score, no verdict.** Two equal actions. The buyer decides.
 7. **No invented numbers.** The model never states a price, fee or percentage that is not in the data. Code does all arithmetic.
@@ -120,7 +121,7 @@ Rows, in this order:
 |---|---|---|
 | To buy | Estimated price at the door before tax (item plus delivery), next to the listed price | "Cart estimate for {ZIP}" |
 | Try it first | A sample in the sofa's fabric, with its price (often around $1) | "Store catalog" |
-| If you're wrong | What you lose if you return it, by condition (with box, without box), within the window, plus return shipping and delivery terms. A free exchange, if the store offers one | "The store's policy" with the quoted policy text and a link to it; item-specific notes labelled "The store's assistant" |
+| If you return it | Each way a return can go as its own case, cheapest first, each with its figure: exchange it (if the store offers a free exchange), send it back with the box, send it back without the box. The window, return shipping and delivery terms sit underneath. The store's quoted words are under "Read in detail" | "From {store}'s refund policy" with a link to it; item-specific notes labelled "The store's assistant" |
 
 Below the rows, a "How I checked" strip, collapsed by default, lists each step: product identified, cart priced, store catalog searched for a sample, refund policy read, store's assistant asked about returns. Each step shows what came back.
 
@@ -142,7 +143,7 @@ Verified values for ZIP 14228, from the verification run on 2026-11-15:
 |---|---|---|
 | To buy | $1,364 listed, $1,433 at the door ($69 shipping) | $681.99 listed, $681.99 at the door (free delivery) |
 | Try it first | $1 swatch in the exact fabric, Crushed Gravel Performance Chenille | This store lists no sample. |
-| If you're wrong | $136.40 with the box, $250 without (20% capped at $250), includes return shipping, + $69 delivery, refund not stated. Or $0: one free exchange with the original box. 30 days from confirmed delivery. | You pay return shipping and a restocking fee; the store states neither amount. |
+| If you return it | Exchange it: free, once, with the original box. Send it back with the box: $136.40. Send it back without the box: $250 (20% capped at $250). Both fees cover return shipping. 30 days from confirmed delivery; the store doesn't say whether the $69 delivery is refunded. | Send it back: you pay return shipping and a restocking fee; the store states neither amount. |
 
 ### 6.4 Actions
 
@@ -151,7 +152,9 @@ Two buttons of equal weight:
 - "Order the sample ($X)": hands off to the store's checkout using the swatch's own `checkout_url`.
 - "Buy it": hands off to the store's checkout for the piece.
 
-If no sample exists, only "Buy it" appears, with the "If you're wrong" row kept in view.
+If no sample exists, only "Buy it" appears, with the "If you return it" row kept in view.
+
+If the store's checkout links can't open from outside its own site (the cart-route probe in `docs/verification.md` section 11.3), "Buy it" becomes "View on {store}'s site". It opens the product page, and the line under it says categorically that it opens the product page, not checkout, and that the buyer buys there. If the probe is inconclusive, the checkout link stays.
 
 ## 7. Data sources and calls
 

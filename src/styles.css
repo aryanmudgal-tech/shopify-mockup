@@ -494,6 +494,99 @@ a {
   content: "”";
 }
 
+/* "If you return it": one row per case, so three outcomes never read as one line said three ways. */
+.cases {
+  margin: 0.2rem 0 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 0.55rem;
+}
+
+.case {
+  display: grid;
+  grid-template-columns: 1.6rem minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.7rem 0.85rem;
+}
+
+.case + .case {
+  border-top: 1px solid var(--line);
+}
+
+.case-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: var(--ink-2);
+}
+
+.case-title {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.case-condition {
+  margin: 0.1rem 0 0;
+  font-size: 0.83rem;
+  color: var(--ink-2);
+}
+
+.case-figure {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.case-free {
+  color: var(--spruce);
+}
+
+.case-unstated {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  text-decoration: underline dashed var(--ink-3);
+  text-underline-offset: 0.3em;
+}
+
+.returns-notes {
+  margin: 0.65rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
+.detail-toggle {
+  margin-top: 0.6rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--spruce);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.detail {
+  margin-top: 0.6rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid var(--line);
+}
+
+.detail-label {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-3);
+}
+
 .assistant-words {
   margin: 0.35rem 0 0;
   font-size: 0.85rem;

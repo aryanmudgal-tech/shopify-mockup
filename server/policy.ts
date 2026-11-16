@@ -1,5 +1,5 @@
 // The store's refund policy page, the primary source for every figure and
-// quote in the "If you're wrong" row (spec 7.5, revision 4).
+// quote in the "If you return it" row (spec 7.5).
 
 import type { PolicySource } from "../shared/card";
 import type { Transport } from "./ucp/transport";

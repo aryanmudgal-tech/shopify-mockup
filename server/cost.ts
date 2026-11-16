@@ -1,5 +1,5 @@
 // Spec 7.5: code does all arithmetic. Turns reconciled terms and the prices
-// the check found into the lines of the "If you're wrong" row.
+// the check found into the lines of the "If you return it" row.
 //
 //   fee for a condition = item price × percent, capped at the stated cap;
 //                         a flat fee is the stated amount; no fee is $0

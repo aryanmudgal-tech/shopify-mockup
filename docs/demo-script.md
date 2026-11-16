@@ -32,9 +32,9 @@ Everything on screen takes about 12 seconds in total, including typing the ZIP, 
 >
 > Imagine you've just moved into your first apartment, and you've never bought furniture online. You find this sofa on TikTok. You see one price, but the costs that decide it are hidden: what it really costs at your door, whether you can try it first, and what you lose if you're wrong. Morning Consult found that nearly 40% of shoppers drop a home furnishings purchase they meant to make.
 
-## 0:30 - 1:45, Burrow (172 words, 69 s)
+## 0:30 - 1:45, Burrow (186 words, 74 s)
 
-**On screen:** paste the Burrow link and press Enter. Type 14228 and press Enter. Point at each row as it arrives. Open "How I checked" and scroll through it. Click "Order the sample ($1)".
+**On screen:** paste the Burrow link and press Enter. Type 14228 and press Enter. Point at each row as it arrives, and at each of the three return cases. Click "Read in detail" to show the store's words. Open "How I checked" and scroll through it. Click "Order the sample ($1)".
 
 > I paste the link, and the assistant asks one question: my ZIP. It's the only thing it needs, because the price and the return costs depend on it.
 >
@@ -42,7 +42,7 @@ Everything on screen takes about 12 seconds in total, including typing the ZIP, 
 >
 > Try it first: Burrow sells a $1 swatch, and the check found the exact fabric, Crushed Gravel Performance Chenille. The store's own search ranked a different weave first. The model picked the right one, and the code checked it's real.
 >
-> If I'm wrong: $136.40 with the original box, $250 without. Those figures come from Burrow's own refund policy, highlighted word for word. The policy doesn't say whether delivery is refunded, so the card says that instead of guessing. And there's one free exchange with the original box. Picking the wrong fabric is exactly what a first-timer fears, so this line matters.
+> If I return it, it depends on what I do. I can exchange it once for free, as long as I keep the box. Picking the wrong fabric is exactly what a first-timer fears, so that case comes first. Sending it back costs $136.40 with the box, or $250 without. Read in detail shows Burrow's own policy, word for word. It doesn't say whether delivery is refunded, so the card says that instead of guessing.
 >
 > How I checked shows every call, the policy text, and the assistant's answer, labelled as an AI summary.
 >
@@ -70,4 +70,4 @@ Everything on screen takes about 12 seconds in total, including typing the ZIP, 
 
 ## Total
 
-427 words, which is 2:51 at 150 words a minute, so there are about 9 seconds to spare. The problem beat runs 2 seconds over its slot and the Burrow beat has 6 seconds in hand, so the beats even out. If the take runs long, cut the "One honest detail" line in the Garvee beat (about 9 seconds).
+441 words, which is 2:56 at 150 words a minute, so there are about 4 seconds to spare. The problem beat runs 2 seconds over its slot and the Burrow beat has 1 second in hand. If the take runs long, cut the "One honest detail" line in the Garvee beat (about 9 seconds).
