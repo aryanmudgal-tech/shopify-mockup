@@ -246,3 +246,13 @@ So every Shopify-hosted way into checkout at Garvee dead-ends the same way: the 
 All four 404 on the fake token, but only Garvee's last page isn't Shopify's, so only Garvee can't open a real checkout either. I'm relying on Shopify's `powered-by` header here, which isn't a documented contract, so I'd treat it as a prototype signal.
 
 **Proposed fix, for your call:** run that probe during the check. When the cart route leaves Shopify, "Buy it" opens the variant's product page from Global Catalog instead (its `url` keeps Shopify's attribution, `utm_source=shopify&utm_medium=catalog`), and the note under the button says why. The buyer still buys on the store's own site, one step earlier.
+
+### 11.4 The fallback, built
+
+You chose the fallback, so the check now runs the probe from 11.3 on every store. It goes through the data layer like every other call, and recorded mode replays it from `10-cart-route-probe.json`.
+
+- **When the probe says the cart pages leave Shopify** (a 404 on another site that Shopify didn't serve), the button reads "View on GARVEE's site". It opens the variant's page from Global Catalog, with Shopify's attribution kept and `?variant=` added so the page shows the sofa on the card. The note under it says categorically what happens: "Opens GARVEE's product page, not checkout. Buy it there: GARVEE's checkout links don't open from outside its own site." The thread then says "Opened GARVEE's product page ... You buy there; nothing is charged here."
+- **When the probe is inconclusive** (an error, a timeout, a 200, or a 404 on the store's own Shopify domain), the normal checkout link stays. Burrow's probe ends on a page Shopify serves, so both its buttons still open checkout.
+- **The same rule covers the sample button** ("View the sample on ...") for a store with swatches and this problem. Neither demo store has both.
+
+Checked live: Garvee's card shows the "View" button, and its link loads the sofa's page on `www.garvee.com` (HTTP 200).
